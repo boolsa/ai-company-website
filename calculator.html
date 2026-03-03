@@ -17,7 +17,7 @@
             terracotta: '#C65D3B',
             cream: '#FDF8F3',
             charcoal: '#1A1A1A',
-            stone: '#78716c'
+            stone: '#595450'
           },
           fontFamily: {
             sans: ['Inter', 'sans-serif'],
@@ -27,20 +27,81 @@
       }
     }
   </script>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    .text-stone {
+      color: #595450;
+    }
+    a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
+      outline: 2px solid #C65D3B;
+      outline-offset: 2px;
+    }
+    :focus:not(:focus-visible) {
+      outline: none;
+    }
+    @media (hover: none) and (pointer: coarse) {
+      a, button {
+        min-height: 44px;
+        min-width: 44px;
+      }
+    }
+  </style>
 </head>
 <body class="bg-cream text-charcoal antialiased">
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-terracotta focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:font-semibold">
+    Skip to main content
+  </a>
+
   <nav class="border-b border-stone/20 bg-cream/95 backdrop-blur sticky top-0 z-40">
     <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
       <a href="index.html" class="font-serif text-2xl font-bold text-terracotta">microve<span class="text-xs text-stone align-top">.ai</span></a>
-      <div class="flex items-center gap-6 text-sm">
-        <a href="what-we-do.html" class="hover:text-terracotta">What We Do</a>
-        <a href="calculator.html" class="text-terracotta">Calculator</a>
-        <a href="contact.html" class="bg-terracotta text-white px-4 py-2 rounded-full font-semibold">Book a Call</a>
+      
+      <!-- Desktop Navigation -->
+      <div class="hidden md:flex items-center gap-6 text-sm">
+        <a href="what-we-do.html" class="hover:text-terracotta transition-colors duration-200">What We Do</a>
+        <a href="calculator.html" aria-current="page" class="text-terracotta font-semibold">Calculator</a>
+        <a href="contact.html" class="bg-terracotta text-white px-4 py-2 rounded-full font-semibold hover:bg-[#A94C2E] transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-terracotta focus:ring-offset-2">Book a Call</a>
+      </div>
+      
+      <!-- Mobile Hamburger Button -->
+      <button id="mobileMenuBtn" class="md:hidden p-2 -mr-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-terracotta focus:ring-offset-2" aria-label="Toggle menu" aria-expanded="false">
+        <svg id="menuIcon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+        <svg id="closeIcon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+    </div>
+    
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="hidden md:hidden border-t border-stone/10 bg-cream/98 backdrop-blur">
+      <div class="max-w-5xl mx-auto px-6 py-4 flex flex-col gap-4">
+        <a href="what-we-do.html" class="py-3 px-4 text-stone hover:text-terracotta hover:bg-terracotta/5 rounded-lg transition-colors duration-200 min-h-[44px] flex items-center">What We Do</a>
+        <a href="calculator.html" aria-current="page" class="py-3 px-4 text-terracotta bg-terracotta/5 rounded-lg font-semibold min-h-[44px] flex items-center">Calculator</a>
+        <a href="contact.html" class="py-3 px-4 bg-terracotta text-white rounded-full font-semibold text-center hover:bg-[#A94C2E] transition-colors duration-200 min-h-[44px] flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-terracotta focus:ring-offset-2">Book a Call</a>
       </div>
     </div>
+
+    <script>
+      document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+        const menu = document.getElementById('mobileMenu');
+        const menuIcon = document.getElementById('menuIcon');
+        const closeIcon = document.getElementById('closeIcon');
+        const isExpanded = this.getAttribute('aria-expanded') === 'true';
+        
+        this.setAttribute('aria-expanded', !isExpanded);
+        menu.classList.toggle('hidden');
+        menuIcon.classList.toggle('hidden');
+        closeIcon.classList.toggle('hidden');
+        document.body.classList.toggle('overflow-hidden', !isExpanded);
+      });
+    </script>
   </nav>
 
-  <main class="max-w-5xl mx-auto px-6 py-16">
+  <main id="main-content" class="max-w-5xl mx-auto px-6 py-16">
     <header class="text-center mb-12 max-w-3xl mx-auto">
       <h1 class="font-serif text-4xl md:text-5xl font-bold mb-6">Workflow Cost Calculator</h1>
       <p class="text-stone text-lg leading-relaxed">
@@ -52,15 +113,15 @@
       <div class="bg-white border border-stone/15 rounded-2xl p-7 space-y-6">
         <div>
           <label class="block font-semibold mb-2" for="hours">Automatable hours/week per person</label>
-          <input id="hours" type="number" min="0" value="10" class="w-full border border-stone/30 rounded-lg px-4 py-3">
+          <input id="hours" type="number" min="0" value="10" class="w-full border border-stone/30 rounded-lg px-4 py-3 focus:border-terracotta focus:ring-2 focus:ring-terracotta/20 transition-all duration-200">
         </div>
         <div>
           <label class="block font-semibold mb-2" for="people">People affected</label>
-          <input id="people" type="number" min="1" value="3" class="w-full border border-stone/30 rounded-lg px-4 py-3">
+          <input id="people" type="number" min="1" value="3" class="w-full border border-stone/30 rounded-lg px-4 py-3 focus:border-terracotta focus:ring-2 focus:ring-terracotta/20 transition-all duration-200">
         </div>
         <div>
           <label class="block font-semibold mb-2" for="rate">Average hourly rate</label>
-          <select id="rate" class="w-full border border-stone/30 rounded-lg px-4 py-3 bg-white">
+          <select id="rate" class="w-full border border-stone/30 rounded-lg px-4 py-3 bg-white focus:border-terracotta focus:ring-2 focus:ring-terracotta/20 transition-all duration-200">
             <option value="25">$25/hour</option>
             <option value="50">$50/hour</option>
             <option value="75" selected>$75/hour</option>
@@ -75,18 +136,57 @@
         <p id="hoursSaved" class="text-4xl font-bold mb-6">1,560</p>
 
         <p class="text-white/70 text-sm mb-1">Extra meaningful-work hours per year</p>
-        <p id="meaningfulHours" class="text-4xl font-bold text-emerald-300 mb-6">1,560</p>
+        <p id="meaningfulHours" class="text-4xl font-bold text-terracotta/80 mb-6">1,560</p>
 
         <p class="text-white/70 text-sm mb-1">Estimated annual labor value unlocked</p>
         <p id="savings" class="text-2xl font-semibold mb-6">$117,000</p>
 
-        <a href="contact.html" class="inline-block bg-terracotta text-white px-6 py-3 rounded-full font-semibold">Book a Call</a>
+        <a href="contact.html" class="inline-block bg-terracotta text-white px-6 py-3 rounded-full font-semibold hover:bg-[#A94C2E] transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-terracotta focus:ring-offset-2">Book a Call</a>
+
+        <!-- COST OF WAITING SECTION -->
+        <div class="border-t border-white/20 pt-6 mt-6">
+          <p class="text-white/70 text-sm mb-3 uppercase tracking-wide text-xs font-semibold">
+            The Cost of Waiting
+          </p>
+          
+          <div class="grid grid-cols-3 gap-4 mb-4">
+            <div>
+              <p id="weeklyLoss" class="text-xl font-bold text-red-300">$2,250</p>
+              <p class="text-white/60 text-xs">Lost this week</p>
+            </div>
+            <div>
+              <p id="monthlyLoss" class="text-xl font-bold text-red-300">$9,750</p>
+              <p class="text-white/60 text-xs">Lost this month</p>
+            </div>
+            <div>
+              <p id="quarterlyLoss" class="text-xl font-bold text-red-300">$29,250</p>
+              <p class="text-white/60 text-xs">Lost this quarter</p>
+            </div>
+          </div>
+          
+          <div class="bg-white/10 rounded-lg p-4 mb-4">
+            <p class="text-white/90 text-sm leading-relaxed">
+              <span class="text-terracotta font-semibold">While you wait:</span> 
+              Your competitors automate. Their teams focus on growth. 
+              Their margins improve. Yours stay the same.
+            </p>
+          </div>
+          
+          <div class="flex flex-col gap-3">
+            <p class="text-white/80 text-sm italic">
+              "See exactly where you're bleeding time—before spending a dollar."
+            </p>
+            <a href="contact.html" class="inline-block border-2 border-white text-white px-6 py-3 rounded-full font-semibold hover:bg-white hover:text-charcoal transition-colors text-center">
+              Get Your Free Automation Audit
+            </a>
+          </div>
+        </div>
       </div>
     </section>
   </main>
 
-  <footer class="py-8 text-center text-sm text-stone">
-    © 2026 Microve.ai
+  <footer class="py-12 text-center text-sm text-stone border-t border-stone/10">
+    <p>&copy; 2026 Microve.ai</p>
   </footer>
 
   <script>
@@ -96,6 +196,9 @@
     const hoursSaved = document.getElementById('hoursSaved');
     const meaningfulHours = document.getElementById('meaningfulHours');
     const savings = document.getElementById('savings');
+    const weeklyLoss = document.getElementById('weeklyLoss');
+    const monthlyLoss = document.getElementById('monthlyLoss');
+    const quarterlyLoss = document.getElementById('quarterlyLoss');
 
     const fmt = (n) => '$' + Math.round(n).toLocaleString('en-US');
 
@@ -110,6 +213,11 @@
       hoursSaved.textContent = Math.round(yearlyHoursSaved).toLocaleString('en-US');
       meaningfulHours.textContent = Math.round(yearlyHoursSaved).toLocaleString('en-US');
       savings.textContent = fmt(annualSavings);
+      
+      // Cost of waiting calculations
+      weeklyLoss.textContent = fmt(annualSavings / 52);
+      monthlyLoss.textContent = fmt(annualSavings / 12);
+      quarterlyLoss.textContent = fmt(annualSavings / 4);
     }
 
     [hours, people, rate].forEach((el) => el.addEventListener('input', recalc));

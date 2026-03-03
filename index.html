@@ -17,7 +17,7 @@
             terracotta: '#C65D3B',
             cream: '#FDF8F3',
             charcoal: '#1A1A1A',
-            stone: '#78716c'
+            stone: '#595450'
           },
           fontFamily: {
             sans: ['Inter', 'sans-serif'],
@@ -27,27 +27,92 @@
       }
     }
   </script>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    .text-stone {
+      color: #595450;
+    }
+    a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
+      outline: 2px solid #C65D3B;
+      outline-offset: 2px;
+    }
+    :focus:not(:focus-visible) {
+      outline: none;
+    }
+    @media (hover: none) and (pointer: coarse) {
+      a, button {
+        min-height: 44px;
+        min-width: 44px;
+      }
+    }
+  </style>
 </head>
 <body class="bg-cream text-charcoal antialiased">
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-terracotta focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:font-semibold">
+    Skip to main content
+  </a>
+
   <nav class="border-b border-stone/20 bg-cream/95 backdrop-blur sticky top-0 z-40">
     <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
-      <a href="index.html" class="font-serif text-2xl font-bold text-terracotta">microve<span class="text-xs text-stone align-top">.ai</span></a>
-      <div class="flex items-center gap-6 text-sm">
-        <a href="what-we-do.html" class="hover:text-terracotta">What We Do</a>
-        <a href="calculator.html" class="hover:text-terracotta">Calculator</a>
-        <a href="contact.html" class="bg-terracotta text-white px-4 py-2 rounded-full font-semibold">Book a Call</a>
+      <a href="index.html" aria-current="page" class="font-serif text-2xl font-bold text-terracotta">microve<span class="text-xs text-stone align-top">.ai</span></a>
+      
+      <!-- Desktop Navigation -->
+      <div class="hidden md:flex items-center gap-6 text-sm">
+        <a href="what-we-do.html" class="hover:text-terracotta transition-colors duration-200">What We Do</a>
+        <a href="calculator.html" class="hover:text-terracotta transition-colors duration-200">Calculator</a>
+        <a href="contact.html" class="bg-terracotta text-white px-4 py-2 rounded-full font-semibold hover:bg-[#A94C2E] transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-terracotta focus:ring-offset-2">Book a Call</a>
+      </div>
+      
+      <!-- Mobile Hamburger Button -->
+      <button id="mobileMenuBtn" class="md:hidden p-2 -mr-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-terracotta focus:ring-offset-2" aria-label="Toggle menu" aria-expanded="false">
+        <svg id="menuIcon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+        <svg id="closeIcon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+    </div>
+    
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="hidden md:hidden border-t border-stone/10 bg-cream/98 backdrop-blur">
+      <div class="max-w-5xl mx-auto px-6 py-4 flex flex-col gap-4">
+        <a href="what-we-do.html" class="py-3 px-4 text-stone hover:text-terracotta hover:bg-terracotta/5 rounded-lg transition-colors duration-200 min-h-[44px] flex items-center">What We Do</a>
+        <a href="calculator.html" class="py-3 px-4 text-stone hover:text-terracotta hover:bg-terracotta/5 rounded-lg transition-colors duration-200 min-h-[44px] flex items-center">Calculator</a>
+        <a href="contact.html" class="py-3 px-4 bg-terracotta text-white rounded-full font-semibold text-center hover:bg-[#A94C2E] transition-colors duration-200 min-h-[44px] flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-terracotta focus:ring-offset-2">Book a Call</a>
       </div>
     </div>
+
+    <script>
+      document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+        const menu = document.getElementById('mobileMenu');
+        const menuIcon = document.getElementById('menuIcon');
+        const closeIcon = document.getElementById('closeIcon');
+        const isExpanded = this.getAttribute('aria-expanded') === 'true';
+        
+        this.setAttribute('aria-expanded', !isExpanded);
+        menu.classList.toggle('hidden');
+        menuIcon.classList.toggle('hidden');
+        closeIcon.classList.toggle('hidden');
+        document.body.classList.toggle('overflow-hidden', !isExpanded);
+      });
+    </script>
   </nav>
 
-  <main>
+  <main id="main-content">
     <section class="max-w-5xl mx-auto px-6 pt-20 pb-16 text-center">
-      <h1 class="font-serif text-4xl md:text-6xl font-bold mb-5">Problem is not people.<br>It is the process.</h1>
-      <p class="text-lg md:text-xl text-stone max-w-3xl mx-auto mb-8">Smart teams lose hours repeating brainless tasks — and revenue slips through the gaps. We build automations that give your people time back for meaningful work and keep money from falling through the cracks.</p>
+      <h1 class="font-serif text-4xl md:text-6xl font-bold mb-5">Your best people are drowning<br>in busywork</h1>
+      <p class="text-lg md:text-xl text-stone max-w-3xl mx-auto mb-8">You're watching it happen. The 10-minute routine that repeats 20 times a day. The "quick" sync that devours Tuesday mornings. Your team is sharp. But they're trapped by processes that refuse to scale—and talent is quietly walking out the door.</p>
       <div class="flex flex-wrap justify-center gap-4">
-        <a href="contact.html" class="bg-terracotta text-white px-7 py-3 rounded-full font-semibold">Book a Call</a>
-        <a href="calculator.html" class="border border-charcoal/20 px-7 py-3 rounded-full font-semibold hover:border-terracotta hover:text-terracotta">Use Calculator</a>
+        <a href="contact.html" class="bg-terracotta text-white px-7 py-3 rounded-full font-semibold hover:bg-[#A94C2E] transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-terracotta focus:ring-offset-2">Show us your biggest bottleneck</a>
+        <a href="calculator.html" class="border border-charcoal/20 px-7 py-3 rounded-full font-semibold hover:border-terracotta hover:text-terracotta transition-colors duration-200">Use Calculator</a>
       </div>
+    </section>
+
+    <section class="max-w-3xl mx-auto px-6 pb-12 text-center">
+      <p class="text-stone text-lg leading-relaxed">Built for small-to-medium businesses that need custom automation but cannot justify a full-time tech team or agency prices. You get senior-level implementation without the enterprise overhead.</p>
     </section>
 
     <section class="max-w-5xl mx-auto px-6 pb-16">
@@ -56,7 +121,7 @@
         <div class="flex flex-col gap-10">
           <div class="bg-cream rounded-xl p-8 border border-stone/10 flex flex-col justify-center min-h-[350px]">
             <!-- Abstract Workflow Diagram -->
-            <svg viewBox="0 0 600 280" class="w-full h-auto" xmlns="http://www.w3.org/2000/svg">
+            <svg viewBox="0 0 600 280" class="w-full h-auto max-w-full" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
               <defs>
                 <marker id="arrow-stone" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto">
                   <path d="M 0 0 L 10 5 L 0 10 z" fill="#78716c"/>
@@ -170,17 +235,71 @@
       </div>
     </section>
 
-    <section class="max-w-4xl mx-auto px-6 pb-20 text-center">
-      <div class="bg-white border-2 border-terracotta/20 rounded-2xl p-10 md:p-14 shadow-sm relative overflow-hidden">
-        <div class="absolute top-0 left-0 w-full h-2 bg-terracotta"></div>
-        <h2 class="font-serif text-3xl md:text-4xl font-bold text-charcoal mb-6">Real automation is measurable.</h2>
-        <p class="text-lg text-stone leading-relaxed max-w-2xl mx-auto mb-8">
-          Because Microve builds actual, useful enterprise-level automations, you can precisely measure your time and cost savings. Stop paying for the illusion of "AI running your whole business" when it's really just a chat window. We build systems that prove their ROI.
-        </p>
-        <a href="calculator.html" class="inline-flex items-center gap-2 bg-charcoal text-white px-8 py-4 rounded-full font-bold hover:bg-black transition-colors">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
-          Calculate Your Cost Savings
-        </a>
+    <!-- The Automation Gap Section - Consumer Psychology -->
+    <section class="max-w-5xl mx-auto px-6 pb-20">
+      <div class="bg-terracotta text-white rounded-2xl p-10 md:p-14 relative overflow-hidden">
+        <!-- Subtle background pattern -->
+        <div class="absolute inset-0 opacity-10">
+          <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <pattern id="gap-pattern" width="40" height="40" patternUnits="userSpaceOnUse">
+                <line x1="0" y1="0" x2="40" y2="40" stroke="#ffffff" stroke-width="1"/>
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#gap-pattern)"/>
+          </svg>
+        </div>
+        
+        <div class="relative z-10">
+          <h2 class="font-serif text-3xl md:text-4xl font-bold mb-6">
+            The gap is widening. Not everyone will close it.
+          </h2>
+          
+          <div class="grid md:grid-cols-2 gap-8 mb-8">
+            <div>
+              <p class="text-lg leading-relaxed text-white/90 mb-4">
+                Every business is adopting AI. Some are building real competitive advantages. 
+                Many are just buying subscriptions and hoping.
+              </p>
+              <p class="text-white/80 leading-relaxed">
+                The real risk isn't automating poorly. It's doing nothing while your competitors 
+                systematically remove friction from their operations.
+              </p>
+            </div>
+            <div class="space-y-4">
+              <div class="flex items-start gap-3">
+                <div class="w-2 h-2 rounded-full bg-white mt-2 shrink-0"></div>
+                <p class="text-white/90">
+                  <strong>Early movers</strong> are building unassailable advantages while others debate
+                </p>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="w-2 h-2 rounded-full bg-white mt-2 shrink-0"></div>
+                <p class="text-white/90">
+                  <strong>Manual businesses</strong> are unknowingly training their best people to leave
+                </p>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="w-2 h-2 rounded-full bg-white mt-2 shrink-0"></div>
+                <p class="text-white/90">
+                  <strong>The automation divide</strong> compounds—every week the distance grows
+                </p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="border-t border-white/20 pt-6">
+            <p class="text-xl font-serif italic text-white/95 mb-4">
+              "Automation inequality isn't coming. It's here."
+            </p>
+            <a href="calculator.html" class="inline-flex items-center gap-2 bg-white text-terracotta px-6 py-3 rounded-full font-semibold hover:bg-cream transition-colors duration-200">
+              See What You're Losing Weekly
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+              </svg>
+            </a>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -197,7 +316,7 @@
             <div class="font-serif text-5xl font-bold text-terracotta leading-none mb-2 md:hidden">01</div>
             <div class="font-semibold text-xl text-charcoal mb-1 flex items-center gap-3">
               We listen
-              <span class="text-xs font-normal bg-stone/10 text-stone px-2 py-0.5 rounded-full uppercase tracking-wide group-hover:bg-terracotta group-hover:text-white transition-colors">Phase 1</span>
+              <span class="text-xs font-normal bg-stone/10 text-stone px-2 py-0.5 rounded-full uppercase tracking-wide group-hover:bg-terracotta group-hover:text-white transition-colors duration-200">Phase 1</span>
             </div>
             <div class="font-serif text-2xl text-terracotta/80 mb-4">Your frustrations, unfiltered.</div>
             <div class="text-stone leading-relaxed max-w-xl space-y-3">
@@ -230,7 +349,7 @@
             <div class="font-serif text-5xl font-bold text-terracotta leading-none mb-2 md:hidden">02</div>
             <div class="font-semibold text-xl text-charcoal mb-1 flex items-center gap-3">
               We audit
-              <span class="text-xs font-normal bg-stone/10 text-stone px-2 py-0.5 rounded-full uppercase tracking-wide group-hover:bg-terracotta group-hover:text-white transition-colors">Phase 2</span>
+              <span class="text-xs font-normal bg-stone/10 text-stone px-2 py-0.5 rounded-full uppercase tracking-wide group-hover:bg-terracotta group-hover:text-white transition-colors duration-200">Phase 2</span>
             </div>
             <div class="font-serif text-2xl text-terracotta/80 mb-4">Hours lost. Revenue left on the table.</div>
             <div class="text-stone leading-relaxed max-w-xl space-y-3">
@@ -263,7 +382,7 @@
             <div class="font-serif text-5xl font-bold text-terracotta leading-none mb-2 md:hidden">03</div>
             <div class="font-semibold text-xl text-charcoal mb-1 flex items-center gap-3">
               We design
-              <span class="text-xs font-normal bg-stone/10 text-stone px-2 py-0.5 rounded-full uppercase tracking-wide group-hover:bg-terracotta group-hover:text-white transition-colors">Phase 3</span>
+              <span class="text-xs font-normal bg-stone/10 text-stone px-2 py-0.5 rounded-full uppercase tracking-wide group-hover:bg-terracotta group-hover:text-white transition-colors duration-200">Phase 3</span>
             </div>
             <div class="font-serif text-2xl text-terracotta/80 mb-4">The right fix. Not the trendy one.</div>
             <div class="text-stone leading-relaxed max-w-xl space-y-3">
@@ -271,7 +390,7 @@
               <ul class="space-y-2">
                 <li class="flex items-start gap-2">
                   <svg class="w-5 h-5 text-terracotta shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-                  <span><strong>Hardcoded automation</strong> for predictable tasks.</span>
+                  <span><strong>Rules-based automation</strong> for predictable tasks.</span>
                 </li>
                 <li class="flex items-start gap-2">
                   <svg class="w-5 h-5 text-terracotta shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
@@ -295,7 +414,7 @@
             <div class="font-serif text-5xl font-bold text-terracotta leading-none mb-2 md:hidden">04</div>
             <div class="font-semibold text-xl text-charcoal mb-1 flex items-center gap-3">
               We implement
-              <span class="text-xs font-normal bg-stone/10 text-stone px-2 py-0.5 rounded-full uppercase tracking-wide group-hover:bg-terracotta group-hover:text-white transition-colors">Phase 4</span>
+              <span class="text-xs font-normal bg-stone/10 text-stone px-2 py-0.5 rounded-full uppercase tracking-wide group-hover:bg-terracotta group-hover:text-white transition-colors duration-200">Phase 4</span>
             </div>
             <div class="font-serif text-2xl text-terracotta/80 mb-4">More time. More revenue. Immediately.</div>
             <div class="text-stone leading-relaxed max-w-xl space-y-3">
@@ -323,16 +442,42 @@
       </div>
     </section>
 
+    <!-- StoryBrand Failure Stakes Section -->
+    <section class="max-w-5xl mx-auto px-6 pb-20">
+      <div class="bg-terracotta/5 border-l-4 border-terracotta rounded-r-2xl p-8 md:p-10">
+        <h2 class="font-serif text-2xl font-bold text-charcoal mb-6">The cost of waiting isn't just hours</h2>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div>
+            <h3 class="font-semibold text-terracotta mb-2">The slow death</h3>
+            <p class="text-stone leading-relaxed">Every week you wait, another 10-20 hours of creative problem-solving evaporates into manual tasks. It's not one big failure. It's the compound interest of a thousand tiny inefficiencies.</p>
+          </div>
+          <div>
+            <h3 class="font-semibold text-terracotta mb-2">The automation inequality</h3>
+            <p class="text-stone leading-relaxed">Right now, your competitors are automating these exact tasks. In 6 months, they'll be moving twice as fast with half the overhead. The gap doesn't close—it widens.</p>
+          </div>
+        </div>
+        <div class="mt-6 pt-6 border-t border-terracotta/20">
+          <p class="text-charcoal font-medium italic">"We kept telling ourselves we'd fix it next quarter. Next quarter became next year. Meanwhile, two of our best people left for companies where they could actually do the work they were hired for."</p>
+          <p class="text-stone text-sm mt-2">— The story we hear most often</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Enhanced Who We Are with StoryBrand Guide Story -->
     <section class="bg-charcoal text-white py-16">
       <div class="max-w-5xl mx-auto px-6">
-        <h2 class="font-serif text-3xl font-bold mb-4">Who we are</h2>
-        <p class="text-white/80 max-w-3xl leading-relaxed">We are a team of entrepreneurs with business and investing experience. We build and use these systems in our own companies, so we understand operational frustration from the inside. That is why our consulting is practical, direct, and execution-focused.</p>
+        <h2 class="font-serif text-3xl font-bold mb-6">We've been in the mess, not just observing it</h2>
+        <div class="space-y-4 text-white/80 max-w-3xl leading-relaxed">
+          <p>Three years ago, we were drowning. Our sales team spent 6 hours every Monday just preparing reports—copying data from five tools, reconciling errors, sending updates that nobody read. We hired smart people to think and build relationships, then chained them to spreadsheets.</p>
+          <p>The breaking point: watching a $40K deal slip away because a follow-up task got buried under administrative noise. That wasn't a process failure. It was a betrayal of what our people were capable of.</p>
+          <p>So we rebuilt our own workflows, piece by piece. Then we did it for friends' companies. Now we do it for teams who are tired of watching talent leak into busywork. We serve small-to-medium businesses that need custom automation solutions but cannot afford full-time developers or agency markups. You get senior-level technical execution at a fraction of the cost.</p>
+        </div>
       </div>
     </section>
   </main>
 
-  <footer class="py-8 text-center text-sm text-stone">
-    © 2026 Microve.ai
+  <footer class="py-12 text-center text-sm text-stone border-t border-stone/10">
+    <p>&copy; 2026 Microve.ai</p>
   </footer>
 </body>
 </html>
