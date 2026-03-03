@@ -250,64 +250,85 @@
     <!-- The Automation Gap Section - Consumer Psychology -->
     <section class="max-w-5xl mx-auto px-6 pb-20">
       <div class="bg-terracotta text-white rounded-2xl p-10 md:p-14 relative overflow-hidden">
-        <!-- Subtle background pattern -->
-        <div class="absolute inset-0 opacity-10">
-          <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <pattern id="gap-pattern" width="40" height="40" patternUnits="userSpaceOnUse">
-                <line x1="0" y1="0" x2="40" y2="40" stroke="#ffffff" stroke-width="1"/>
-              </pattern>
-            </defs>
-            <rect width="100%" height="100%" fill="url(#gap-pattern)"/>
+        <!-- Alert Icon -->
+        <div class="absolute top-6 right-6 md:top-8 md:right-8 opacity-20">
+          <svg class="w-24 h-24" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M24 8L6 40h36L24 8z"/>
+            <line x1="24" y1="20" x2="24" y2="28"/>
+            <line x1="24" y1="32" x2="24.01" y2="32"/>
           </svg>
         </div>
         
         <div class="relative z-10">
+          <!-- Header with badge -->
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+              </svg>
+            </div>
+            <span class="text-sm font-bold uppercase tracking-wider text-white/80">Market Reality</span>
+          </div>
+          
           <h2 class="font-serif text-3xl md:text-4xl font-bold mb-6">
-            The gap is widening. Not everyone will close it.
+            The gap is widening. <span class="text-white/90">Not everyone will close it.</span>
           </h2>
           
-          <div class="grid md:grid-cols-2 gap-8 mb-8">
-            <div>
-              <p class="text-lg leading-relaxed text-white/90 mb-4">
-                Every business is adopting AI. Some are building real competitive advantages. Many are just buying subscriptions and hoping.
-              </p>
-              <p class="text-white/80 leading-relaxed">
-                The real risk isn't automating poorly. It's doing nothing while your competitors systematically remove friction from their operations.
+          <div class="mb-8">
+            <p class="text-lg leading-relaxed text-white/90 mb-4">
+              Every business is adopting AI. <strong>Some are building real competitive advantages.</strong> Many are just buying subscriptions and hoping.
+            </p>
+            <p class="text-white/80 leading-relaxed text-lg">
+              The real risk isn't automating poorly. <span class="bg-white/20 px-2 py-1 rounded font-semibold">It's doing nothing while your competitors systematically remove friction from their operations.</span>
+            </p>
+          </div>
+          
+          <!-- Three Risk Cards -->
+          <div class="grid md:grid-cols-3 gap-4 mb-8">
+            <div class="bg-white/10 backdrop-blur rounded-xl p-5 border border-white/20">
+              <div class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center mb-3">
+                <span class="font-bold text-sm">1</span>
+              </div>
+              <p class="text-white/90 leading-relaxed">
+                <strong>Early movers</strong> are building unassailable advantages while others debate
               </p>
             </div>
-            <div class="space-y-4">
-              <div class="flex items-start gap-3">
-                <div class="w-2 h-2 rounded-full bg-white mt-2 shrink-0"></div>
-                <p class="text-white/90">
-                  <strong>Early movers</strong> are building unassailable advantages while others debate
-                </p>
+            <div class="bg-white/10 backdrop-blur rounded-xl p-5 border border-white/20">
+              <div class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center mb-3">
+                <span class="font-bold text-sm">2</span>
               </div>
-              <div class="flex items-start gap-3">
-                <div class="w-2 h-2 rounded-full bg-white mt-2 shrink-0"></div>
-                <p class="text-white/90">
-                  <strong>Manual businesses</strong> are unknowingly training their best people to leave
-                </p>
+              <p class="text-white/90 leading-relaxed">
+                <strong>Manual businesses</strong> are unknowingly training their best people to leave
+              </p>
+            </div>
+            <div class="bg-white/10 backdrop-blur rounded-xl p-5 border border-white/20">
+              <div class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center mb-3">
+                <span class="font-bold text-sm">3</span>
               </div>
-              <div class="flex items-start gap-3">
-                <div class="w-2 h-2 rounded-full bg-white mt-2 shrink-0"></div>
-                <p class="text-white/90">
-                  <strong>The automation divide</strong> compounds—every week the distance grows
-                </p>
-              </div>
+              <p class="text-white/90 leading-relaxed">
+                <strong>The automation divide</strong> compounds—every week the distance grows
+              </p>
             </div>
           </div>
           
-          <div class="border-t border-white/20 pt-6">
-            <p class="text-xl font-serif italic text-white/95 mb-4">
-              "Automation inequality isn't coming. It's here."
-            </p>
-            <a href="calculator.html" class="inline-flex items-center gap-2 bg-white text-terracotta px-6 py-3 rounded-full font-semibold hover:bg-cream transition-colors duration-200">
-              See What You're Losing Weekly
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-              </svg>
-            </a>
+          <div class="border-t border-white/20 pt-8">
+            <div class="bg-white/10 rounded-xl p-6 mb-6 inline-block">
+              <p class="text-2xl md:text-3xl font-serif italic text-white mb-2">
+                "Automation inequality isn't coming."
+              </p>
+              <p class="text-3xl md:text-4xl font-serif font-bold text-white">
+                It's here.
+              </p>
+            </div>
+            <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+              <a href="calculator.html" class="inline-flex items-center gap-2 bg-white text-terracotta px-8 py-4 rounded-full font-bold hover:bg-cream transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-105">
+                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+                </svg>
+                See What You're Losing Weekly
+              </a>
+              <span class="text-white/60 text-sm">Takes 30 seconds</span>
+            </div>
           </div>
         </div>
       </div>
