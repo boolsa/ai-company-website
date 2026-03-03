@@ -14,10 +14,11 @@
       theme: {
         extend: {
           colors: {
-            terracotta: '#C65D3B',
-            cream: '#FDF8F3',
-            charcoal: '#1A1A1A',
-            stone: '#595450'
+            terracotta: '#B85C4A',
+            sage: '#8FA68E',
+            cream: '#FAFAF8',
+            charcoal: '#1F1F1F',
+            stone: '#6B6560'
           },
           fontFamily: {
             sans: ['Inter', 'sans-serif'],
@@ -32,10 +33,16 @@
       scroll-behavior: smooth;
     }
     .text-stone {
-      color: #595450;
+      color: #6B6560;
+    }
+    .bg-cream {
+      background-color: #FAFAF8;
+    }
+    .text-charcoal {
+      color: #1F1F1F;
     }
     a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
-      outline: 2px solid #C65D3B;
+      outline: 2px solid #B85C4A;
       outline-offset: 2px;
     }
     :focus:not(:focus-visible) {
@@ -62,7 +69,7 @@
       <div class="hidden md:flex items-center gap-6 text-sm">
         <a href="what-we-do.html" aria-current="page" class="text-terracotta font-semibold">What We Do</a>
         <a href="calculator.html" class="hover:text-terracotta transition-colors duration-200">Calculator</a>
-        <a href="contact.html" class="bg-terracotta text-white px-4 py-2 rounded-full font-semibold hover:bg-[#A94C2E] transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-terracotta focus:ring-offset-2">Book a Call</a>
+        <a href="contact.html" class="bg-terracotta text-white px-4 py-2 rounded-full font-semibold hover:bg-[#A05040] transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-terracotta focus:ring-offset-2">Book a Call</a>
       </div>
       
       <!-- Mobile Hamburger Button -->
@@ -81,7 +88,7 @@
       <div class="max-w-5xl mx-auto px-6 py-4 flex flex-col gap-4">
         <a href="what-we-do.html" aria-current="page" class="py-3 px-4 text-terracotta bg-terracotta/5 rounded-lg font-semibold min-h-[44px] flex items-center">What We Do</a>
         <a href="calculator.html" class="py-3 px-4 text-stone hover:text-terracotta hover:bg-terracotta/5 rounded-lg transition-colors duration-200 min-h-[44px] flex items-center">Calculator</a>
-        <a href="contact.html" class="py-3 px-4 bg-terracotta text-white rounded-full font-semibold text-center hover:bg-[#A94C2E] transition-colors duration-200 min-h-[44px] flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-terracotta focus:ring-offset-2">Book a Call</a>
+        <a href="contact.html" class="py-3 px-4 bg-terracotta text-white rounded-full font-semibold text-center hover:bg-[#A05040] transition-colors duration-200 min-h-[44px] flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-terracotta focus:ring-offset-2">Book a Call</a>
       </div>
     </div>
 
@@ -159,85 +166,85 @@
 
           <!-- 1. Rules Based: Linear / Rigid -->
           <g transform="translate(0, 0)">
-            <text x="130" y="30" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#1A1A1A" text-anchor="middle">1. Rules Based</text>
-            <text x="130" y="45" font-family="Inter, sans-serif" font-size="10" fill="#78716c" text-anchor="middle">Fixed rules</text>
+            <text x="130" y="30" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#1F1F1F" text-anchor="middle">1. Rules Based</text>
+            <text x="130" y="45" font-family="Inter, sans-serif" font-size="10" fill="#6B6560" text-anchor="middle">Fixed rules</text>
             <!-- Flow -->
-            <rect x="50" y="70" width="40" height="40" rx="4" fill="#ffffff" stroke="#1A1A1A" stroke-width="1.5" />
-            <text x="70" y="94" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="#1A1A1A" text-anchor="middle">A</text>
+            <rect x="50" y="70" width="40" height="40" rx="4" fill="#ffffff" stroke="#1F1F1F" stroke-width="1.5" />
+            <text x="70" y="94" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="#1F1F1F" text-anchor="middle">A</text>
             
-            <path d="M 90 90 L 120 90" fill="none" stroke="#78716c" stroke-width="1.5" marker-end="url(#arrow)"/>
+            <path d="M 90 90 L 120 90" fill="none" stroke="#6B6560" stroke-width="1.5" marker-end="url(#arrow)"/>
             
-            <rect x="130" y="70" width="40" height="40" rx="4" fill="#ffffff" stroke="#1A1A1A" stroke-width="1.5" />
-            <text x="150" y="94" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="#1A1A1A" text-anchor="middle">B</text>
+            <rect x="130" y="70" width="40" height="40" rx="4" fill="#ffffff" stroke="#1F1F1F" stroke-width="1.5" />
+            <text x="150" y="94" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="#1F1F1F" text-anchor="middle">B</text>
             
-            <path d="M 170 90 L 200 90" fill="none" stroke="#78716c" stroke-width="1.5" marker-end="url(#arrow)"/>
+            <path d="M 170 90 L 200 90" fill="none" stroke="#6B6560" stroke-width="1.5" marker-end="url(#arrow)"/>
             
-            <rect x="210" y="70" width="40" height="40" rx="4" fill="#C65D3B" />
+            <rect x="210" y="70" width="40" height="40" rx="4" fill="#B85C4A" />
             <text x="230" y="94" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="#ffffff" text-anchor="middle">C</text>
             
-            <text x="130" y="140" font-family="Inter, sans-serif" font-size="9" fill="#78716c" text-anchor="middle">Always A &rarr; B &rarr; C</text>
+            <text x="130" y="140" font-family="Inter, sans-serif" font-size="9" fill="#6B6560" text-anchor="middle">Always A &rarr; B &rarr; C</text>
           </g>
 
           <!-- Divider -->
-          <line x1="280" y1="20" x2="280" y2="150" stroke="#1A1A1A" stroke-width="1" stroke-dasharray="4 4" opacity="0.1"/>
+          <line x1="280" y1="20" x2="280" y2="150" stroke="#1F1F1F" stroke-width="1" stroke-dasharray="4 4" opacity="0.1"/>
 
           <!-- 2. AI Automation: Branching / Contextual -->
           <g transform="translate(280, 0)">
-            <text x="120" y="30" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#C65D3B" text-anchor="middle">2. AI Automation</text>
-            <text x="120" y="45" font-family="Inter, sans-serif" font-size="10" fill="#78716c" text-anchor="middle">Contextual routing</text>
-            
-            <rect x="20" y="70" width="40" height="40" rx="4" fill="#ffffff" stroke="#C65D3B" stroke-width="1.5" />
-            <text x="40" y="94" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="#C65D3B" text-anchor="middle">?</text>
-            
-            <path d="M 60 90 L 90 90" fill="none" stroke="#78716c" stroke-width="1.5" marker-end="url(#arrow)"/>
-            
+            <text x="120" y="30" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#B85C4A" text-anchor="middle">2. AI Automation</text>
+            <text x="120" y="45" font-family="Inter, sans-serif" font-size="10" fill="#6B6560" text-anchor="middle">Contextual routing</text>
+
+            <rect x="20" y="70" width="40" height="40" rx="4" fill="#ffffff" stroke="#B85C4A" stroke-width="1.5" />
+            <text x="40" y="94" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="#B85C4A" text-anchor="middle">?</text>
+
+            <path d="M 60 90 L 90 90" fill="none" stroke="#6B6560" stroke-width="1.5" marker-end="url(#arrow)"/>
+
             <!-- AI Brain Node -->
-            <rect x="100" y="70" width="40" height="40" rx="20" fill="#1A1A1A" />
+            <rect x="100" y="70" width="40" height="40" rx="20" fill="#1F1F1F" />
             <circle cx="120" cy="90" r="8" fill="none" stroke="#ffffff" stroke-width="1.5"/>
             <circle cx="120" cy="90" r="3" fill="#ffffff"/>
             
-            <path d="M 140 85 C 160 80, 160 60, 180 60" fill="none" stroke="#78716c" stroke-width="1.5" marker-end="url(#arrow)"/>
-            <path d="M 140 95 C 160 100, 160 120, 180 120" fill="none" stroke="#78716c" stroke-width="1.5" marker-end="url(#arrow)"/>
-            
-            <rect x="190" y="40" width="40" height="40" rx="4" fill="#C65D3B" opacity="0.4"/>
-            <text x="210" y="64" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="#1A1A1A" text-anchor="middle">X</text>
-            
-            <rect x="190" y="100" width="40" height="40" rx="4" fill="#C65D3B" />
+            <path d="M 140 85 C 160 80, 160 60, 180 60" fill="none" stroke="#6B6560" stroke-width="1.5" marker-end="url(#arrow)"/>
+            <path d="M 140 95 C 160 100, 160 120, 180 120" fill="none" stroke="#6B6560" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+            <rect x="190" y="40" width="40" height="40" rx="4" fill="#B85C4A" opacity="0.4"/>
+            <text x="210" y="64" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="#1F1F1F" text-anchor="middle">X</text>
+
+            <rect x="190" y="100" width="40" height="40" rx="4" fill="#B85C4A" />
             <text x="210" y="124" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="#ffffff" text-anchor="middle">Y</text>
-            
-            <text x="120" y="150" font-family="Inter, sans-serif" font-size="9" fill="#78716c" text-anchor="middle">Reads context, executes X or Y</text>
+
+            <text x="120" y="150" font-family="Inter, sans-serif" font-size="9" fill="#6B6560" text-anchor="middle">Reads context, executes X or Y</text>
           </g>
 
           <!-- Divider -->
-          <line x1="540" y1="20" x2="540" y2="150" stroke="#1A1A1A" stroke-width="1" stroke-dasharray="4 4" opacity="0.1"/>
+          <line x1="540" y1="20" x2="540" y2="150" stroke="#1F1F1F" stroke-width="1" stroke-dasharray="4 4" opacity="0.1"/>
 
           <!-- 3. ChatGPT: Manual Loop -->
           <g transform="translate(540, 0)">
-            <text x="130" y="30" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#1A1A1A" text-anchor="middle">3. ChatGPT / Gemini</text>
-            <text x="130" y="45" font-family="Inter, sans-serif" font-size="10" fill="#78716c" text-anchor="middle">Manual assistant</text>
-            
+            <text x="130" y="30" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#1F1F1F" text-anchor="middle">3. ChatGPT / Gemini</text>
+            <text x="130" y="45" font-family="Inter, sans-serif" font-size="10" fill="#6B6560" text-anchor="middle">Manual assistant</text>
+
             <!-- User -->
-            <circle cx="60" cy="90" r="15" fill="#ffffff" stroke="#1A1A1A" stroke-width="1.5"/>
-            <path d="M 50 110 C 50 100, 70 100, 70 110" fill="none" stroke="#1A1A1A" stroke-width="1.5"/>
-            
+            <circle cx="60" cy="90" r="15" fill="#ffffff" stroke="#1F1F1F" stroke-width="1.5"/>
+            <path d="M 50 110 C 50 100, 70 100, 70 110" fill="none" stroke="#1F1F1F" stroke-width="1.5"/>
+
             <!-- AI interface -->
-            <rect x="150" y="60" width="60" height="60" rx="8" fill="#ffffff" stroke="#78716c" stroke-width="1.5" stroke-dasharray="2 2"/>
-            <rect x="160" y="70" width="40" height="6" rx="3" fill="#1A1A1A" opacity="0.1"/>
-            <rect x="160" y="85" width="30" height="6" rx="3" fill="#1A1A1A" opacity="0.1"/>
+            <rect x="150" y="60" width="60" height="60" rx="8" fill="#ffffff" stroke="#6B6560" stroke-width="1.5" stroke-dasharray="2 2"/>
+            <rect x="160" y="70" width="40" height="6" rx="3" fill="#1F1F1F" opacity="0.1"/>
+            <rect x="160" y="85" width="30" height="6" rx="3" fill="#1F1F1F" opacity="0.1"/>
             
             <!-- Loops -->
-            <path d="M 80 80 C 100 70, 120 70, 140 80" fill="none" stroke="#C65D3B" stroke-width="1.5" marker-end="url(#arrow)"/>
-            <text x="110" y="65" font-family="Inter, sans-serif" font-size="8" fill="#C65D3B" text-anchor="middle">Prompt</text>
-            
-            <path d="M 140 100 C 120 110, 100 110, 80 100" fill="none" stroke="#78716c" stroke-width="1.5" marker-end="url(#arrow)"/>
-            <text x="110" y="125" font-family="Inter, sans-serif" font-size="8" fill="#78716c" text-anchor="middle">Copy-paste</text>
+            <path d="M 80 80 C 100 70, 120 70, 140 80" fill="none" stroke="#B85C4A" stroke-width="1.5" marker-end="url(#arrow)"/>
+            <text x="110" y="65" font-family="Inter, sans-serif" font-size="8" fill="#B85C4A" text-anchor="middle">Prompt</text>
 
-            <text x="130" y="150" font-family="Inter, sans-serif" font-size="9" fill="#78716c" text-anchor="middle">Requires human driving</text>
+            <path d="M 140 100 C 120 110, 100 110, 80 100" fill="none" stroke="#6B6560" stroke-width="1.5" marker-end="url(#arrow)"/>
+            <text x="110" y="125" font-family="Inter, sans-serif" font-size="8" fill="#6B6560" text-anchor="middle">Copy-paste</text>
+
+            <text x="130" y="150" font-family="Inter, sans-serif" font-size="9" fill="#6B6560" text-anchor="middle">Requires human driving</text>
           </g>
         </svg>
       </div>
 
-      <div class="overflow-x-auto rounded-xl border border-stone/15">
+      <div class="overflow-x-auto rounded-xl border border-stone/15 shadow-sm">
         <table class="w-full text-left text-sm">
           <thead class="bg-cream border-b border-stone/15">
             <tr>
@@ -247,31 +254,31 @@
             </tr>
           </thead>
           <tbody>
-            <tr class="border-b border-stone/10">
-              <td class="px-4 py-3 text-stone">Best for fixed repeat steps</td>
-              <td class="px-4 py-3 text-stone">Best for variable inputs and edge cases</td>
-              <td class="px-4 py-3 text-stone">Best for answers, brainstorming, writing</td>
+            <tr class="border-b border-stone/10 even:bg-cream/30">
+              <td class="px-4 py-5 text-stone">Best for fixed repeat steps</td>
+              <td class="px-4 py-5 text-stone">Best for variable inputs and edge cases</td>
+              <td class="px-4 py-5 text-stone">Best for answers, brainstorming, writing</td>
             </tr>
-            <tr class="border-b border-stone/10">
-              <td class="px-4 py-3 text-stone">If X happens, do Y</td>
-              <td class="px-4 py-3 text-stone">Reads context and decides next action</td>
-              <td class="px-4 py-3 text-stone">Needs prompts and manual follow-up</td>
+            <tr class="border-b border-stone/10 even:bg-cream/30">
+              <td class="px-4 py-5 text-stone">If X happens, do Y</td>
+              <td class="px-4 py-5 text-stone">Reads context and decides next action</td>
+              <td class="px-4 py-5 text-stone">Needs prompts and manual follow-up</td>
             </tr>
-            <tr class="border-b border-stone/10">
-              <td class="px-4 py-3 text-stone">Reliable, fast, low maintenance</td>
-              <td class="px-4 py-3 text-stone">Flexible, adaptive, handles ambiguity</td>
-              <td class="px-4 py-3 text-stone">Useful assistant, but not an automation layer</td>
+            <tr class="border-b-2 border-stone/20 even:bg-cream/30">
+              <td class="px-4 py-5 text-stone">Reliable, fast, low maintenance</td>
+              <td class="px-4 py-5 text-stone">Flexible, adaptive, handles ambiguity</td>
+              <td class="px-4 py-5 text-stone">Useful assistant, but not an automation layer</td>
             </tr>
-            <tr class="border-t-2 border-terracotta/20 bg-cream/50">
-              <td class="px-4 py-4">
+            <tr class="bg-cream/50">
+              <td class="px-4 py-5">
                 <div class="font-semibold text-charcoal text-xs uppercase tracking-wide mb-1">Example</div>
                 <span class="text-stone">New row in CRM &rarr; auto-create folder in Google Drive, send Slack notification, add to project tracker</span>
               </td>
-              <td class="px-4 py-4">
+              <td class="px-4 py-5">
                 <div class="font-semibold text-charcoal text-xs uppercase tracking-wide mb-1">Example</div>
                 <span class="text-stone">Incoming support email &rarr; AI reads it, classifies urgency, drafts a reply, routes to the right team member</span>
               </td>
-              <td class="px-4 py-4">
+              <td class="px-4 py-5">
                 <div class="font-semibold text-charcoal text-xs uppercase tracking-wide mb-1">Example</div>
                 <span class="text-stone">You open ChatGPT, paste an email, ask it to draft a reply, copy the output, paste it back into your inbox</span>
               </td>
@@ -362,7 +369,7 @@
         <p class="text-stone italic">
           "The businesses that automate now are building advantages that compound daily."
         </p>
-        <a href="contact.html" class="shrink-0 bg-terracotta text-white px-8 py-3 rounded-full font-semibold hover:bg-[#A94C2E] transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-terracotta focus:ring-offset-2">
+        <a href="contact.html" class="shrink-0 bg-terracotta text-white px-8 py-3 rounded-full font-semibold hover:bg-[#A05040] transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-terracotta focus:ring-offset-2">
           Start With a Free Audit
         </a>
       </div>
@@ -373,7 +380,7 @@
         <h2 class="font-serif text-2xl font-bold mb-3">Ready to find your bottlenecks?</h2>
         <p class="text-white/80 leading-relaxed text-lg max-w-xl">You show us the problem. We design and implement the automation. Your team gets their hours back.</p>
       </div>
-      <a href="contact.html" class="shrink-0 bg-terracotta hover:bg-[#A94C2E] transition-colors text-white px-8 py-4 rounded-full font-bold text-lg shadow-lg focus:outline-none focus:ring-2 focus:ring-terracotta focus:ring-offset-2">Book a Call</a>
+      <a href="contact.html" class="shrink-0 bg-terracotta hover:bg-[#A05040] transition-colors text-white px-8 py-4 rounded-full font-bold text-lg shadow-lg focus:outline-none focus:ring-2 focus:ring-terracotta focus:ring-offset-2">Book a Call</a>
     </section>
   </main>
 
