@@ -54,6 +54,11 @@
         min-width: 44px;
       }
     }
+    .text-highlight {
+      background: linear-gradient(180deg, transparent 60%, rgba(184, 92, 74, 0.15) 60%);
+      padding: 0 0.25rem;
+      font-weight: 600;
+    }
   </style>
 </head>
 <body class="bg-cream text-charcoal antialiased">
@@ -111,7 +116,7 @@
   <main id="main-content">
     <section class="max-w-5xl mx-auto px-6 pt-20 pb-16 text-center">
       <h1 class="font-serif text-4xl md:text-6xl font-bold mb-5">Your best people are drowning<br>in busywork</h1>
-      <p class="text-lg md:text-xl text-stone max-w-3xl mx-auto mb-8">You're watching it happen. The 10-minute routine that repeats 20 times a day. The "quick" sync that devours Tuesday mornings. Your team is sharp. But they're trapped by processes that refuse to scale—and talent is quietly walking out the door.</p>
+      <p class="text-lg md:text-xl text-stone max-w-3xl mx-auto mb-8">You're watching it happen. <span class="text-highlight">The 10-minute routine that repeats 20 times a day.</span> The "quick" sync that devours Tuesday mornings. Your team is sharp. But they're trapped by processes that refuse to scale—and talent is quietly walking out the door.</p>
       <div class="flex flex-wrap justify-center gap-4">
         <a href="contact.html" class="bg-terracotta text-white px-7 py-3 rounded-full font-semibold hover:bg-[#A05040] transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-terracotta focus:ring-offset-2">Show us your biggest bottleneck</a>
         <a href="calculator.html" class="border border-charcoal/20 px-7 py-3 rounded-full font-semibold hover:border-terracotta hover:text-terracotta transition-colors duration-200">Use Calculator</a>
@@ -119,7 +124,7 @@
     </section>
 
     <section class="max-w-3xl mx-auto px-6 pb-12 text-center">
-      <p class="text-stone text-lg leading-relaxed">Built for small-to-medium businesses that need custom automation but cannot justify a full-time tech team or agency prices. You get senior-level implementation without the enterprise overhead.</p>
+      <p class="text-stone text-lg leading-relaxed">Built for small-to-medium businesses that need custom automation but cannot justify a full-time tech team or agency prices. <span class="font-semibold text-charcoal">You get senior-level implementation without the enterprise overhead.</span></p>
     </section>
 
     <section class="max-w-5xl mx-auto px-6 pb-16">
@@ -236,7 +241,7 @@
             </svg>
           </div>
           <div class="max-w-3xl">
-            <p class="text-stone text-lg leading-relaxed">Most teams are slowed down by repeat admin: copying data, chasing follow-ups, syncing tools manually. That wasted time is time not spent closing deals, serving clients, or making decisions. We automate those specific actions — so your team gets hours back and your revenue stops leaking.</p>
+            <p class="text-stone text-lg leading-relaxed">Most teams are slowed down by repeat admin: copying data, chasing follow-ups, syncing tools manually. <span class="text-highlight">That wasted time is time not spent closing deals, serving clients, or making decisions.</span> We automate those specific actions—so your team gets hours back and your revenue stops leaking.</p>
           </div>
         </div>
       </div>
@@ -265,12 +270,10 @@
           <div class="grid md:grid-cols-2 gap-8 mb-8">
             <div>
               <p class="text-lg leading-relaxed text-white/90 mb-4">
-                Every business is adopting AI. Some are building real competitive advantages. 
-                Many are just buying subscriptions and hoping.
+                Every business is adopting AI. Some are building real competitive advantages. Many are just buying subscriptions and hoping.
               </p>
               <p class="text-white/80 leading-relaxed">
-                The real risk isn't automating poorly. It's doing nothing while your competitors 
-                systematically remove friction from their operations.
+                The real risk isn't automating poorly. It's doing nothing while your competitors systematically remove friction from their operations.
               </p>
             </div>
             <div class="space-y-4">
@@ -310,127 +313,167 @@
       </div>
     </section>
 
-    <!-- Simplified 4-Step Process -->
+    <!-- Enhanced 4-Step Process with Icons -->
     <section class="max-w-5xl mx-auto px-6 pb-20">
-      <h2 class="font-serif text-3xl font-bold mb-12">Every solution is custom-built</h2>
-      <div class="space-y-12">
-        <!-- Step 1 -->
-        <div class="grid md:grid-cols-[80px_1fr] gap-x-8 pb-12 border-b border-stone/10">
-          <div class="hidden md:flex flex-col items-center">
-            <div class="font-serif text-5xl font-bold text-terracotta/60 leading-none">01</div>
-            <div class="w-px bg-sage flex-1 mt-4 min-h-[60px]"></div>
-          </div>
-          <div>
-            <div class="font-serif text-5xl font-bold text-terracotta/60 leading-none mb-2 md:hidden">01</div>
-            <div class="font-semibold text-xl text-charcoal mb-1">We listen</div>
-            <div class="text-stone leading-relaxed max-w-xl">
-              <p class="mb-3">You tell us where your team bleeds time and where revenue stalls.</p>
-              <ul class="space-y-2 text-stone/80">
-                <li class="flex items-start gap-2">
-                  <span class="text-sage mt-1">—</span>
-                  <span>Identify bottlenecks and repetitive work</span>
+      <div class="text-center mb-12">
+        <h2 class="font-serif text-3xl font-bold mb-4">Every solution is custom-built</h2>
+        <p class="text-stone text-lg max-w-2xl mx-auto">No templates. No generic tools. We design around your specific bottlenecks.</p>
+      </div>
+      
+      <div class="space-y-8">
+        <!-- Step 1: We Listen -->
+        <div class="bg-white rounded-2xl p-8 border border-stone/10 shadow-sm hover:shadow-md transition-shadow">
+          <div class="flex flex-col md:flex-row gap-6">
+            <div class="flex-shrink-0">
+              <div class="w-16 h-16 rounded-2xl bg-terracotta/10 flex items-center justify-center">
+                <svg class="w-8 h-8 text-terracotta" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M24 10c-7.18 0-13 5.82-13 13 0 4.5 2.3 8.5 5.8 10.8 1 .7 1.7 1.7 2.2 2.8.5 1.1.5 2.3.5 3.4 0 2.2 1.8 4 4 4s4-1.8 4-4c0-1.1 0-2.3.5-3.4.5-1.1 1.2-2.1 2.2-2.8 3.5-2.3 5.8-6.3 5.8-10.8 0-7.18-5.82-13-13-13z"/>
+                  <path d="M21 18c0-1.66 1.34-3 3-3s3 1.34 3 3-1.34 3-3 3"/>
+                </svg>
+              </div>
+            </div>
+            <div class="flex-1">
+              <div class="flex items-center gap-3 mb-3">
+                <span class="text-sm font-bold text-terracotta/60 uppercase tracking-wider">Step 1</span>
+                <h3 class="font-semibold text-xl text-charcoal">We listen</h3>
+              </div>
+              <p class="text-stone mb-4">You tell us where your team bleeds time and where revenue stalls.</p>
+              <ul class="space-y-2">
+                <li class="flex items-start gap-3">
+                  <span class="w-1.5 h-1.5 rounded-full bg-sage mt-2 shrink-0"></span>
+                  <span class="text-stone"><strong>Identify</strong> bottlenecks and repetitive work</span>
                 </li>
-                <li class="flex items-start gap-2">
-                  <span class="text-sage mt-1">—</span>
-                  <span>Locate follow-ups falling through cracks</span>
+                <li class="flex items-start gap-3">
+                  <span class="w-1.5 h-1.5 rounded-full bg-sage mt-2 shrink-0"></span>
+                  <span class="text-stone"><strong>Locate</strong> follow-ups falling through cracks</span>
                 </li>
-                <li class="flex items-start gap-2">
-                  <span class="text-sage mt-1">—</span>
-                  <span>No sales pitch—just what's costing you hours and money</span>
+                <li class="flex items-start gap-3">
+                  <span class="w-1.5 h-1.5 rounded-full bg-sage mt-2 shrink-0"></span>
+                  <span class="text-stone"><strong>No sales pitch</strong>—just what's costing you hours and money</span>
                 </li>
               </ul>
             </div>
           </div>
         </div>
-        
-        <!-- Step 2 -->
-        <div class="grid md:grid-cols-[80px_1fr] gap-x-8 pb-12 border-b border-stone/10">
-          <div class="hidden md:flex flex-col items-center">
-            <div class="font-serif text-5xl font-bold text-terracotta/60 leading-none">02</div>
-            <div class="w-px bg-sage flex-1 mt-4 min-h-[60px]"></div>
-          </div>
-          <div>
-            <div class="font-serif text-5xl font-bold text-terracotta/60 leading-none mb-2 md:hidden">02</div>
-            <div class="font-semibold text-xl text-charcoal mb-1">We audit</div>
-            <div class="text-stone leading-relaxed max-w-xl">
-              <p class="mb-3">We map specific steps eating time and directly blocking revenue.</p>
-              <ul class="space-y-2 text-stone/80">
-                <li class="flex items-start gap-2">
-                  <span class="text-sage mt-1">—</span>
-                  <span>Find manual handoffs delaying deals</span>
+
+        <!-- Step 2: We Audit -->
+        <div class="bg-white rounded-2xl p-8 border border-stone/10 shadow-sm hover:shadow-md transition-shadow">
+          <div class="flex flex-col md:flex-row gap-6">
+            <div class="flex-shrink-0">
+              <div class="w-16 h-16 rounded-2xl bg-terracotta/10 flex items-center justify-center">
+                <svg class="w-8 h-8 text-terracotta" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="20" cy="20" r="9"/>
+                  <path d="M26 26l9 9"/>
+                  <path d="M16 19l3 3 5-5"/>
+                </svg>
+              </div>
+            </div>
+            <div class="flex-1">
+              <div class="flex items-center gap-3 mb-3">
+                <span class="text-sm font-bold text-terracotta/60 uppercase tracking-wider">Step 2</span>
+                <h3 class="font-semibold text-xl text-charcoal">We audit</h3>
+              </div>
+              <p class="text-stone mb-4">We map specific steps eating time and directly blocking revenue.</p>
+              <ul class="space-y-2">
+                <li class="flex items-start gap-3">
+                  <span class="w-1.5 h-1.5 rounded-full bg-sage mt-2 shrink-0"></span>
+                  <span class="text-stone"><strong>Find</strong> manual handoffs delaying deals</span>
                 </li>
-                <li class="flex items-start gap-2">
-                  <span class="text-sage mt-1">—</span>
-                  <span>Spot error-prone copy-paste routines</span>
+                <li class="flex items-start gap-3">
+                  <span class="w-1.5 h-1.5 rounded-full bg-sage mt-2 shrink-0"></span>
+                  <span class="text-stone"><strong>Spot</strong> error-prone copy-paste routines</span>
                 </li>
-                <li class="flex items-start gap-2">
-                  <span class="text-sage mt-1">—</span>
-                  <span>Determine what to automate vs. what stays human</span>
+                <li class="flex items-start gap-3">
+                  <span class="w-1.5 h-1.5 rounded-full bg-sage mt-2 shrink-0"></span>
+                  <span class="text-stone"><strong>Determine</strong> what to automate vs. what stays human</span>
                 </li>
               </ul>
             </div>
           </div>
         </div>
-        
-        <!-- Step 3 -->
-        <div class="grid md:grid-cols-[80px_1fr] gap-x-8 pb-12 border-b border-stone/10">
-          <div class="hidden md:flex flex-col items-center">
-            <div class="font-serif text-5xl font-bold text-terracotta/60 leading-none">03</div>
-            <div class="w-px bg-sage flex-1 mt-4 min-h-[60px]"></div>
-          </div>
-          <div>
-            <div class="font-serif text-5xl font-bold text-terracotta/60 leading-none mb-2 md:hidden">03</div>
-            <div class="font-semibold text-xl text-charcoal mb-1">We design</div>
-            <div class="text-stone leading-relaxed max-w-xl">
-              <p class="mb-3">We choose solutions based on saving hours and moving revenue.</p>
-              <ul class="space-y-2 text-stone/80">
-                <li class="flex items-start gap-2">
-                  <span class="text-sage mt-1">—</span>
-                  <span>Rules Based automation for predictable tasks</span>
+
+        <!-- Step 3: We Design -->
+        <div class="bg-white rounded-2xl p-8 border border-stone/10 shadow-sm hover:shadow-md transition-shadow">
+          <div class="flex flex-col md:flex-row gap-6">
+            <div class="flex-shrink-0">
+              <div class="w-16 h-16 rounded-2xl bg-terracotta/10 flex items-center justify-center">
+                <svg class="w-8 h-8 text-terracotta" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M38 14l-4-4-18 18-2 6 6-2 18-18z"/>
+                  <path d="M34 10l4 4"/>
+                  <path d="M14 28l6 6"/>
+                  <path d="M10 38h28"/>
+                </svg>
+              </div>
+            </div>
+            <div class="flex-1">
+              <div class="flex items-center gap-3 mb-3">
+                <span class="text-sm font-bold text-terracotta/60 uppercase tracking-wider">Step 3</span>
+                <h3 class="font-semibold text-xl text-charcoal">We design</h3>
+              </div>
+              <p class="text-stone mb-4">We choose solutions based on saving hours and moving revenue.</p>
+              <ul class="space-y-2">
+                <li class="flex items-start gap-3">
+                  <span class="w-1.5 h-1.5 rounded-full bg-sage mt-2 shrink-0"></span>
+                  <span class="text-stone"><strong>Rules Based automation</strong> for predictable tasks</span>
                 </li>
-                <li class="flex items-start gap-2">
-                  <span class="text-sage mt-1">—</span>
-                  <span>AI automation for complex, variable inputs</span>
+                <li class="flex items-start gap-3">
+                  <span class="w-1.5 h-1.5 rounded-full bg-sage mt-2 shrink-0"></span>
+                  <span class="text-stone"><strong>AI automation</strong> for complex, variable inputs</span>
                 </li>
-                <li class="flex items-start gap-2">
-                  <span class="text-sage mt-1">—</span>
-                  <span>Every fix ties to a measurable outcome</span>
+                <li class="flex items-start gap-3">
+                  <span class="w-1.5 h-1.5 rounded-full bg-sage mt-2 shrink-0"></span>
+                  <span class="text-stone"><strong>Every fix</strong> ties to a measurable outcome</span>
                 </li>
               </ul>
             </div>
           </div>
         </div>
-        
-        <!-- Step 4 -->
-        <div class="grid md:grid-cols-[80px_1fr] gap-x-8">
-          <div class="hidden md:flex flex-col items-center">
-            <div class="font-serif text-5xl font-bold text-terracotta/60 leading-none">04</div>
-          </div>
-          <div>
-            <div class="font-serif text-5xl font-bold text-terracotta/60 leading-none mb-2 md:hidden">04</div>
-            <div class="font-semibold text-xl text-charcoal mb-1">We implement</div>
-            <div class="text-stone leading-relaxed max-w-xl">
-              <p class="mb-3">We build and deploy directly inside your existing workflow.</p>
-              <ul class="space-y-2 text-stone/80">
-                <li class="flex items-start gap-2">
-                  <span class="text-sage mt-1">—</span>
-                  <span>Hours returned for selling and building relationships</span>
+
+        <!-- Step 4: We Implement -->
+        <div class="bg-white rounded-2xl p-8 border border-stone/10 shadow-sm hover:shadow-md transition-shadow">
+          <div class="flex flex-col md:flex-row gap-6">
+            <div class="flex-shrink-0">
+              <div class="w-16 h-16 rounded-2xl bg-terracotta/10 flex items-center justify-center">
+                <svg class="w-8 h-8 text-terracotta" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M24 8c-2 8-8 14-16 16 0 0 8 2 12 8 4-6 12-8 12-8-8-2-14-8-16-16z"/>
+                  <circle cx="24" cy="20" r="3"/>
+                  <path d="M16 34l-4 8"/>
+                  <path d="M32 34l4 8"/>
+                </svg>
+              </div>
+            </div>
+            <div class="flex-1">
+              <div class="flex items-center gap-3 mb-3">
+                <span class="text-sm font-bold text-terracotta/60 uppercase tracking-wider">Step 4</span>
+                <h3 class="font-semibold text-xl text-charcoal">We implement</h3>
+              </div>
+              <p class="text-stone mb-4">We build and deploy directly inside your existing workflow.</p>
+              <ul class="space-y-2">
+                <li class="flex items-start gap-3">
+                  <span class="w-1.5 h-1.5 rounded-full bg-sage mt-2 shrink-0"></span>
+                  <span class="text-stone"><strong>Hours returned</strong> for selling and building relationships</span>
                 </li>
-                <li class="flex items-start gap-2">
-                  <span class="text-sage mt-1">—</span>
-                  <span>Faster closed deals—nothing falls through cracks</span>
+                <li class="flex items-start gap-3">
+                  <span class="w-1.5 h-1.5 rounded-full bg-sage mt-2 shrink-0"></span>
+                  <span class="text-stone"><strong>Faster closed deals</strong>—nothing falls through cracks</span>
                 </li>
-                <li class="flex items-start gap-2">
-                  <span class="text-sage mt-1">—</span>
-                  <span>Immediate impact visible in your calendar and P&amp;L</span>
+                <li class="flex items-start gap-3">
+                  <span class="w-1.5 h-1.5 rounded-full bg-sage mt-2 shrink-0"></span>
+                  <span class="text-stone"><strong>Immediate impact</strong> visible in your calendar and P&L</span>
                 </li>
               </ul>
             </div>
           </div>
         </div>
       </div>
-      <div class="mt-12 md:ml-[112px] p-5 bg-terracotta/5 rounded-xl border border-terracotta/20 max-w-xl">
-        <p class="text-charcoal font-medium text-sm">No templates. No generic tools. Each automation is designed around your specific bottleneck. <a href="what-we-do.html" class="text-terracotta font-semibold hover:underline">See how it works &rarr;</a></p>
+      
+      <div class="mt-10 text-center">
+        <a href="what-we-do.html" class="inline-flex items-center gap-2 text-terracotta font-semibold hover:gap-3 transition-all">
+          See detailed breakdown of how it works
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+          </svg>
+        </a>
       </div>
     </section>
 
@@ -441,11 +484,11 @@
         <div class="grid md:grid-cols-2 gap-8">
           <div>
             <h3 class="font-semibold text-terracotta mb-2">The slow death</h3>
-            <p class="text-stone leading-relaxed">Every week you wait, another 10-20 hours of creative problem-solving evaporates into manual tasks. It's not one big failure. It's the compound interest of a thousand tiny inefficiencies.</p>
+            <p class="text-stone leading-relaxed">Every week you wait, another 10-20 hours of creative problem-solving evaporates into manual tasks. <span class="text-highlight">It's not one big failure. It's the compound interest of a thousand tiny inefficiencies.</span></p>
           </div>
           <div>
             <h3 class="font-semibold text-terracotta mb-2">The automation inequality</h3>
-            <p class="text-stone leading-relaxed">Right now, your competitors are automating these exact tasks. In 6 months, they'll be moving twice as fast with half the overhead. The gap doesn't close—it widens.</p>
+            <p class="text-stone leading-relaxed">Right now, your competitors are automating these exact tasks. <strong>In 6 months, they'll be moving twice as fast with half the overhead.</strong> The gap doesn't close—it widens.</p>
           </div>
         </div>
         <div class="mt-6 pt-6 border-t border-stone/10">
@@ -460,8 +503,8 @@
       <div class="max-w-5xl mx-auto px-6">
         <h2 class="font-serif text-3xl font-bold mb-6">We've been in the mess, not just observing it</h2>
         <div class="space-y-4 text-white/80 max-w-3xl leading-relaxed">
-          <p>Three years ago, we were drowning. Our sales team spent 6 hours every Monday just preparing reports—copying data from five tools, reconciling errors, sending updates that nobody read. We hired smart people to think and build relationships, then chained them to spreadsheets.</p>
-          <p>The breaking point: watching a $40K deal slip away because a follow-up task got buried under administrative noise. That wasn't a process failure. It was a betrayal of what our people were capable of.</p>
+          <p>Three years ago, we were drowning. Our sales team spent <span class="text-white font-semibold">6 hours every Monday</span> just preparing reports—copying data from five tools, reconciling errors, sending updates that nobody read. We hired smart people to think and build relationships, then chained them to spreadsheets.</p>
+          <p>The breaking point: watching a <span class="text-white font-semibold">$40K deal slip away</span> because a follow-up task got buried under administrative noise. That wasn't a process failure. <span class="text-highlight" style="background: linear-gradient(180deg, transparent 60%, rgba(184, 92, 74, 0.3) 60%);">It was a betrayal of what our people were capable of.</span></p>
           <p>So we rebuilt our own workflows, piece by piece. Then we did it for friends' companies. Now we do it for teams who are tired of watching talent leak into busywork. We serve small-to-medium businesses that need custom automation solutions but cannot afford full-time developers or agency markups. You get senior-level technical execution at a fraction of the cost.</p>
         </div>
       </div>
