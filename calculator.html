@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator | Microve.ai</title>
+  <meta name="description" content="Estimate how much repetitive work is costing your business each year.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            terracotta: '#C65D3B',
+            cream: '#FDF8F3',
+            charcoal: '#1A1A1A',
+            stone: '#78716c'
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            serif: ['Playfair Display', 'serif']
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-cream text-charcoal antialiased">
+  <nav class="border-b border-stone/20 bg-cream/95 backdrop-blur sticky top-0 z-40">
+    <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="index.html" class="font-serif text-2xl font-bold text-terracotta">microve<span class="text-xs text-stone align-top">.ai</span></a>
+      <div class="flex items-center gap-6 text-sm">
+        <a href="what-we-do.html" class="hover:text-terracotta">What We Do</a>
+        <a href="calculator.html" class="text-terracotta">Calculator</a>
+        <a href="contact.html" class="bg-terracotta text-white px-4 py-2 rounded-full font-semibold">Book a Call</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="max-w-5xl mx-auto px-6 py-16">
+    <header class="text-center mb-12 max-w-3xl mx-auto">
+      <h1 class="font-serif text-4xl md:text-5xl font-bold mb-6">Workflow Cost Calculator</h1>
+      <p class="text-stone text-lg leading-relaxed">
+        Because Microve builds actual, useful enterprise-level AI automations, you can tangibly measure your cost savings—instead of just thinking you have "AI running your whole business" when you don't.
+      </p>
+    </header>
+
+    <section class="grid md:grid-cols-2 gap-8">
+      <div class="bg-white border border-stone/15 rounded-2xl p-7 space-y-6">
+        <div>
+          <label class="block font-semibold mb-2" for="hours">Automatable hours/week per person</label>
+          <input id="hours" type="number" min="0" value="10" class="w-full border border-stone/30 rounded-lg px-4 py-3">
+        </div>
+        <div>
+          <label class="block font-semibold mb-2" for="people">People affected</label>
+          <input id="people" type="number" min="1" value="3" class="w-full border border-stone/30 rounded-lg px-4 py-3">
+        </div>
+        <div>
+          <label class="block font-semibold mb-2" for="rate">Average hourly rate</label>
+          <select id="rate" class="w-full border border-stone/30 rounded-lg px-4 py-3 bg-white">
+            <option value="25">$25/hour</option>
+            <option value="50">$50/hour</option>
+            <option value="75" selected>$75/hour</option>
+            <option value="100">$100/hour</option>
+            <option value="150">$150/hour</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="bg-charcoal text-white rounded-2xl p-7">
+        <p class="text-white/70 text-sm mb-1">Hours saved per year</p>
+        <p id="hoursSaved" class="text-4xl font-bold mb-6">1,560</p>
+
+        <p class="text-white/70 text-sm mb-1">Extra meaningful-work hours per year</p>
+        <p id="meaningfulHours" class="text-4xl font-bold text-emerald-300 mb-6">1,560</p>
+
+        <p class="text-white/70 text-sm mb-1">Estimated annual labor value unlocked</p>
+        <p id="savings" class="text-2xl font-semibold mb-6">$117,000</p>
+
+        <a href="contact.html" class="inline-block bg-terracotta text-white px-6 py-3 rounded-full font-semibold">Book a Call</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="py-8 text-center text-sm text-stone">
+    © 2026 Microve.ai
+  </footer>
+
+  <script>
+    const hours = document.getElementById('hours');
+    const people = document.getElementById('people');
+    const rate = document.getElementById('rate');
+    const hoursSaved = document.getElementById('hoursSaved');
+    const meaningfulHours = document.getElementById('meaningfulHours');
+    const savings = document.getElementById('savings');
+
+    const fmt = (n) => '$' + Math.round(n).toLocaleString('en-US');
+
+    function recalc() {
+      const h = Number(hours.value || 0);
+      const p = Number(people.value || 0);
+      const r = Number(rate.value || 0);
+
+      const yearlyHoursSaved = h * p * 52;
+      const annualSavings = yearlyHoursSaved * r;
+
+      hoursSaved.textContent = Math.round(yearlyHoursSaved).toLocaleString('en-US');
+      meaningfulHours.textContent = Math.round(yearlyHoursSaved).toLocaleString('en-US');
+      savings.textContent = fmt(annualSavings);
+    }
+
+    [hours, people, rate].forEach((el) => el.addEventListener('input', recalc));
+    recalc();
+  </script>
+</body>
+</html>

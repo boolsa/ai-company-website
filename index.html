@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Microve.ai | Practical Micro-Automation</title>
+  <meta name="description" content="We build practical micro-automations that remove tedious steps from your workflow. No AI fantasy. Real business actions.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            terracotta: '#C65D3B',
+            cream: '#FDF8F3',
+            charcoal: '#1A1A1A',
+            stone: '#78716c'
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            serif: ['Playfair Display', 'serif']
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-cream text-charcoal antialiased">
+  <nav class="border-b border-stone/20 bg-cream/95 backdrop-blur sticky top-0 z-40">
+    <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="index.html" class="font-serif text-2xl font-bold text-terracotta">microve<span class="text-xs text-stone align-top">.ai</span></a>
+      <div class="flex items-center gap-6 text-sm">
+        <a href="what-we-do.html" class="hover:text-terracotta">What We Do</a>
+        <a href="calculator.html" class="hover:text-terracotta">Calculator</a>
+        <a href="contact.html" class="bg-terracotta text-white px-4 py-2 rounded-full font-semibold">Book a Call</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="max-w-5xl mx-auto px-6 pt-20 pb-16 text-center">
+      <h1 class="font-serif text-4xl md:text-6xl font-bold mb-5">Problem is not people.<br>It is the process.</h1>
+      <p class="text-lg md:text-xl text-stone max-w-3xl mx-auto mb-8">Smart teams lose hours repeating brainless tasks — and revenue slips through the gaps. We build automations that give your people time back for meaningful work and keep money from falling through the cracks.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="contact.html" class="bg-terracotta text-white px-7 py-3 rounded-full font-semibold">Book a Call</a>
+        <a href="calculator.html" class="border border-charcoal/20 px-7 py-3 rounded-full font-semibold hover:border-terracotta hover:text-terracotta">Use Calculator</a>
+      </div>
+    </section>
+
+    <section class="max-w-5xl mx-auto px-6 pb-16">
+      <div class="bg-white border border-stone/15 rounded-2xl p-8 overflow-hidden relative">
+        <h2 class="font-serif text-3xl font-bold mb-6">What we solve</h2>
+        <div class="flex flex-col gap-10">
+          <div class="bg-cream rounded-xl p-8 border border-stone/10 flex flex-col justify-center min-h-[350px]">
+            <!-- Abstract Workflow Diagram -->
+            <svg viewBox="0 0 600 280" class="w-full h-auto" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <marker id="arrow-stone" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+                  <path d="M 0 0 L 10 5 L 0 10 z" fill="#78716c"/>
+                </marker>
+                <marker id="arrow-terra" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+                  <path d="M 0 0 L 10 5 L 0 10 z" fill="#C65D3B"/>
+                </marker>
+              </defs>
+              
+              <!-- Background grid -->
+              <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+                <circle cx="2" cy="2" r="1" fill="#1A1A1A" opacity="0.05" />
+              </pattern>
+              <rect width="600" height="280" fill="url(#grid)" />
+
+              <!-- BEFORE: The Manual Way -->
+              <text x="30" y="30" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#78716c" letter-spacing="1" uppercase="true">THE MANUAL WAY</text>
+              <g transform="translate(10, 50)">
+                <!-- Trigger -->
+                <circle cx="30" cy="25" r="14" fill="#ffffff" stroke="#78716c" stroke-width="1.5" stroke-dasharray="3 3" />
+                <path d="M 44 25 L 64 25" fill="none" stroke="#78716c" stroke-width="1.5" marker-end="url(#arrow-stone)"/>
+                
+                <!-- Steps 1 to 5 -->
+                <rect x="70" y="10" width="36" height="30" rx="6" fill="#ffffff" stroke="#1A1A1A" stroke-width="1.5" />
+                <text x="88" y="29" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#1A1A1A" text-anchor="middle">1</text>
+                <path d="M 106 25 L 126 25" fill="none" stroke="#78716c" stroke-width="1.5" marker-end="url(#arrow-stone)"/>
+                
+                <rect x="132" y="10" width="36" height="30" rx="6" fill="#ffffff" stroke="#1A1A1A" stroke-width="1.5" />
+                <text x="150" y="29" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#1A1A1A" text-anchor="middle">2</text>
+                <path d="M 168 25 L 188 25" fill="none" stroke="#78716c" stroke-width="1.5" marker-end="url(#arrow-stone)"/>
+                
+                <rect x="194" y="10" width="36" height="30" rx="6" fill="#ffffff" stroke="#1A1A1A" stroke-width="1.5" />
+                <text x="212" y="29" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#1A1A1A" text-anchor="middle">3</text>
+                <path d="M 230 25 L 250 25" fill="none" stroke="#78716c" stroke-width="1.5" marker-end="url(#arrow-stone)"/>
+                
+                <rect x="256" y="10" width="36" height="30" rx="6" fill="#ffffff" stroke="#1A1A1A" stroke-width="1.5" />
+                <text x="274" y="29" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#1A1A1A" text-anchor="middle">4</text>
+                <path d="M 292 25 L 312 25" fill="none" stroke="#78716c" stroke-width="1.5" marker-end="url(#arrow-stone)"/>
+                
+                <rect x="318" y="10" width="36" height="30" rx="6" fill="#ffffff" stroke="#1A1A1A" stroke-width="1.5" />
+                <text x="336" y="29" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#1A1A1A" text-anchor="middle">5</text>
+                <path d="M 354 25 L 374 25" fill="none" stroke="#78716c" stroke-width="1.5" marker-end="url(#arrow-stone)"/>
+                
+                <!-- Outcome -->
+                <rect x="380" y="10" width="80" height="30" rx="15" fill="#1A1A1A" />
+                <text x="420" y="29" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="#ffffff" text-anchor="middle">Result</text>
+                
+                <!-- Brackets -->
+                <path d="M 70 50 L 70 55 L 354 55 L 354 50" fill="none" stroke="#C65D3B" stroke-width="1.5" opacity="0.6" />
+                <text x="212" y="72" font-family="Inter, sans-serif" font-size="10" font-style="italic" fill="#C65D3B" opacity="0.8" text-anchor="middle">Entire workflow is manual</text>
+              </g>
+
+              <!-- Divider -->
+              <line x1="30" y1="145" x2="570" y2="145" stroke="#1A1A1A" stroke-width="1" stroke-dasharray="4 4" opacity="0.1"/>
+
+              <!-- AFTER: The Microve Way -->
+              <text x="30" y="180" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#C65D3B" letter-spacing="1" uppercase="true">THE MICROVE WAY</text>
+              <g transform="translate(10, 195)">
+                <!-- Trigger -->
+                <circle cx="30" cy="25" r="14" fill="#ffffff" stroke="#C65D3B" stroke-width="2" stroke-dasharray="3 3" />
+                <path d="M 44 25 L 64 25" fill="none" stroke="#C65D3B" stroke-width="2" marker-end="url(#arrow-terra)"/>
+                
+                <!-- Step 1 (Human) -->
+                <rect x="70" y="10" width="36" height="30" rx="6" fill="#ffffff" stroke="#1A1A1A" stroke-width="1.5" />
+                <text x="88" y="29" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#1A1A1A" text-anchor="middle">1</text>
+                <path d="M 106 25 L 126 25" fill="none" stroke="#C65D3B" stroke-width="2" marker-end="url(#arrow-terra)"/>
+                
+                <!-- Automation Layer (replaces 2, 3, 4) -->
+                <rect x="132" y="0" width="124" height="50" rx="8" fill="#1A1A1A" />
+                <rect x="144" y="15" width="20" height="20" rx="4" fill="#333" />
+                <text x="154" y="29" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#888" text-anchor="middle">2</text>
+                <line x1="168" y1="25" x2="176" y2="25" stroke="#C65D3B" stroke-width="1.5" />
+                <rect x="180" y="15" width="20" height="20" rx="4" fill="#333" />
+                <text x="190" y="29" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#888" text-anchor="middle">3</text>
+                <line x1="204" y1="25" x2="212" y2="25" stroke="#C65D3B" stroke-width="1.5" />
+                <rect x="216" y="15" width="20" height="20" rx="4" fill="#333" />
+                <text x="226" y="29" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#888" text-anchor="middle">4</text>
+                
+                <text x="194" y="-8" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#C65D3B" text-anchor="middle">Automated</text>
+
+                <path d="M 256 25 L 276 25" fill="none" stroke="#C65D3B" stroke-width="2" marker-end="url(#arrow-terra)"/>
+                
+                <!-- Step 5 (Human) -->
+                <rect x="282" y="10" width="36" height="30" rx="6" fill="#ffffff" stroke="#1A1A1A" stroke-width="1.5" />
+                <text x="300" y="29" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#1A1A1A" text-anchor="middle">5</text>
+                <path d="M 318 25 L 338 25" fill="none" stroke="#C65D3B" stroke-width="2" marker-end="url(#arrow-terra)"/>
+                
+                <!-- Outcome -->
+                <rect x="344" y="10" width="80" height="30" rx="15" fill="#C65D3B" />
+                <text x="384" y="29" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="#ffffff" text-anchor="middle">Result</text>
+                
+                <!-- Time/Rev Saved -->
+                <rect x="432" y="10" width="90" height="30" rx="15" fill="#FDF8F3" stroke="#C65D3B" stroke-width="1.5" />
+                <text x="477" y="29" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#C65D3B" text-anchor="middle">+ Time &amp; Rev</text>
+              </g>
+              
+              <!-- Time saved dashed line and arrow -->
+              <g transform="translate(10, 0)">
+                <line x1="430" y1="90" x2="430" y2="220" stroke="#1A1A1A" stroke-width="1.5" stroke-dasharray="4 4" opacity="0.3"/>
+                <path d="M 430 220 L 400 220" fill="none" stroke="#1A1A1A" stroke-width="1.5" opacity="0.5"/>
+                <polygon points="400,216 392,220 400,224" fill="#1A1A1A" opacity="0.5"/>
+                <text x="440" y="155" font-family="Inter, sans-serif" font-size="10" font-style="italic" fill="#1A1A1A" opacity="0.7" text-anchor="start">Process</text>
+                <text x="440" y="169" font-family="Inter, sans-serif" font-size="10" font-style="italic" fill="#1A1A1A" opacity="0.7" text-anchor="start">shortened</text>
+              </g>
+            </svg>
+          </div>
+          <div class="max-w-3xl">
+            <p class="text-stone text-lg leading-relaxed">Most teams are slowed down by repeat admin: copying data, chasing follow-ups, syncing tools manually. That wasted time is time not spent closing deals, serving clients, or making decisions. We automate those specific actions — so your team gets hours back and your revenue stops leaking.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="max-w-4xl mx-auto px-6 pb-20 text-center">
+      <div class="bg-white border-2 border-terracotta/20 rounded-2xl p-10 md:p-14 shadow-sm relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-2 bg-terracotta"></div>
+        <h2 class="font-serif text-3xl md:text-4xl font-bold text-charcoal mb-6">Real automation is measurable.</h2>
+        <p class="text-lg text-stone leading-relaxed max-w-2xl mx-auto mb-8">
+          Because Microve builds actual, useful enterprise-level automations, you can precisely measure your time and cost savings. Stop paying for the illusion of "AI running your whole business" when it's really just a chat window. We build systems that prove their ROI.
+        </p>
+        <a href="calculator.html" class="inline-flex items-center gap-2 bg-charcoal text-white px-8 py-4 rounded-full font-bold hover:bg-black transition-colors">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+          Calculate Your Cost Savings
+        </a>
+      </div>
+    </section>
+
+    <section class="max-w-5xl mx-auto px-6 pb-20">
+      <h2 class="font-serif text-3xl font-bold mb-12">Every solution is custom-built</h2>
+      <div class="space-y-0">
+        <!-- Step 1 -->
+        <div class="grid md:grid-cols-[80px_1fr] gap-x-8 pb-12 relative">
+          <div class="hidden md:flex flex-col items-center">
+            <div class="font-serif text-5xl font-bold text-terracotta leading-none">01</div>
+            <div class="w-px bg-stone/20 flex-1 mt-4"></div>
+          </div>
+          <div class="group">
+            <div class="font-serif text-5xl font-bold text-terracotta leading-none mb-2 md:hidden">01</div>
+            <div class="font-semibold text-xl text-charcoal mb-1 flex items-center gap-3">
+              We listen
+              <span class="text-xs font-normal bg-stone/10 text-stone px-2 py-0.5 rounded-full uppercase tracking-wide group-hover:bg-terracotta group-hover:text-white transition-colors">Phase 1</span>
+            </div>
+            <div class="font-serif text-2xl text-terracotta/80 mb-4">Your frustrations, unfiltered.</div>
+            <div class="text-stone leading-relaxed max-w-xl space-y-3">
+              <p>You tell us where your team bleeds time and where revenue stalls.</p>
+              <ul class="space-y-2">
+                <li class="flex items-start gap-2">
+                  <svg class="w-5 h-5 text-terracotta shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                  <span>Identify bottlenecks and repetitive work.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg class="w-5 h-5 text-terracotta shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                  <span>Locate follow-ups falling through cracks.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg class="w-5 h-5 text-terracotta shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                  <span><strong>No sales pitch.</strong> Just what's costing you hours and money.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Step 2 -->
+        <div class="grid md:grid-cols-[80px_1fr] gap-x-8 pb-12 relative">
+          <div class="hidden md:flex flex-col items-center">
+            <div class="font-serif text-5xl font-bold text-terracotta leading-none">02</div>
+            <div class="w-px bg-stone/20 flex-1 mt-4"></div>
+          </div>
+          <div class="group">
+            <div class="font-serif text-5xl font-bold text-terracotta leading-none mb-2 md:hidden">02</div>
+            <div class="font-semibold text-xl text-charcoal mb-1 flex items-center gap-3">
+              We audit
+              <span class="text-xs font-normal bg-stone/10 text-stone px-2 py-0.5 rounded-full uppercase tracking-wide group-hover:bg-terracotta group-hover:text-white transition-colors">Phase 2</span>
+            </div>
+            <div class="font-serif text-2xl text-terracotta/80 mb-4">Hours lost. Revenue left on the table.</div>
+            <div class="text-stone leading-relaxed max-w-xl space-y-3">
+              <p>We map specific steps eating time and directly blocking revenue.</p>
+              <ul class="space-y-2">
+                <li class="flex items-start gap-2">
+                  <svg class="w-5 h-5 text-terracotta shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                  <span>Find manual handoffs delaying deals.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg class="w-5 h-5 text-terracotta shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                  <span>Spot error-prone copy-paste routines.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg class="w-5 h-5 text-terracotta shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                  <span>Determine <strong>what to automate</strong> vs. what stays human.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Step 3 -->
+        <div class="grid md:grid-cols-[80px_1fr] gap-x-8 pb-12 relative">
+          <div class="hidden md:flex flex-col items-center">
+            <div class="font-serif text-5xl font-bold text-terracotta leading-none">03</div>
+            <div class="w-px bg-stone/20 flex-1 mt-4"></div>
+          </div>
+          <div class="group">
+            <div class="font-serif text-5xl font-bold text-terracotta leading-none mb-2 md:hidden">03</div>
+            <div class="font-semibold text-xl text-charcoal mb-1 flex items-center gap-3">
+              We design
+              <span class="text-xs font-normal bg-stone/10 text-stone px-2 py-0.5 rounded-full uppercase tracking-wide group-hover:bg-terracotta group-hover:text-white transition-colors">Phase 3</span>
+            </div>
+            <div class="font-serif text-2xl text-terracotta/80 mb-4">The right fix. Not the trendy one.</div>
+            <div class="text-stone leading-relaxed max-w-xl space-y-3">
+              <p>We choose solutions based on saving hours and moving revenue.</p>
+              <ul class="space-y-2">
+                <li class="flex items-start gap-2">
+                  <svg class="w-5 h-5 text-terracotta shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                  <span><strong>Hardcoded automation</strong> for predictable tasks.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg class="w-5 h-5 text-terracotta shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                  <span><strong>AI automation</strong> for complex, variable inputs.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg class="w-5 h-5 text-terracotta shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                  <span>Every fix ties to a measurable outcome: time or money.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Step 4 -->
+        <div class="grid md:grid-cols-[80px_1fr] gap-x-8 relative">
+          <div class="hidden md:flex flex-col items-center">
+            <div class="font-serif text-5xl font-bold text-terracotta leading-none">04</div>
+          </div>
+          <div class="group">
+            <div class="font-serif text-5xl font-bold text-terracotta leading-none mb-2 md:hidden">04</div>
+            <div class="font-semibold text-xl text-charcoal mb-1 flex items-center gap-3">
+              We implement
+              <span class="text-xs font-normal bg-stone/10 text-stone px-2 py-0.5 rounded-full uppercase tracking-wide group-hover:bg-terracotta group-hover:text-white transition-colors">Phase 4</span>
+            </div>
+            <div class="font-serif text-2xl text-terracotta/80 mb-4">More time. More revenue. Immediately.</div>
+            <div class="text-stone leading-relaxed max-w-xl space-y-3">
+              <p>We build and deploy directly inside your existing workflow.</p>
+              <ul class="space-y-2">
+                <li class="flex items-start gap-2">
+                  <svg class="w-5 h-5 text-terracotta shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                  <span>Hours returned for selling and building relationships.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg class="w-5 h-5 text-terracotta shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                  <span>Faster closed deals (nothing falls through cracks).</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg class="w-5 h-5 text-terracotta shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                  <span><strong>Immediate impact</strong> visible in your calendar and P&amp;L.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mt-12 md:ml-[112px] p-5 bg-terracotta/5 rounded-xl border border-terracotta/20 max-w-xl">
+        <p class="text-charcoal font-medium text-sm">No templates. No generic tools. Each automation is designed around your specific bottleneck. <a href="what-we-do.html" class="text-terracotta font-semibold hover:underline">See how it works &rarr;</a></p>
+      </div>
+    </section>
+
+    <section class="bg-charcoal text-white py-16">
+      <div class="max-w-5xl mx-auto px-6">
+        <h2 class="font-serif text-3xl font-bold mb-4">Who we are</h2>
+        <p class="text-white/80 max-w-3xl leading-relaxed">We are a team of entrepreneurs with business and investing experience. We build and use these systems in our own companies, so we understand operational frustration from the inside. That is why our consulting is practical, direct, and execution-focused.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="py-8 text-center text-sm text-stone">
+    © 2026 Microve.ai
+  </footer>
+</body>
+</html>
