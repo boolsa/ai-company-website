@@ -16,6 +16,7 @@
           colors: {
             terracotta: '#1E3A5F',
             sage: '#7A9E7E',
+            coral: '#E07A5F',
             cream: '#FAF9F7',
             charcoal: '#2D3436',
             stone: '#636E72'
@@ -48,11 +49,19 @@
     :focus:not(:focus-visible) {
       outline: none;
     }
+    :root {
+      --color-coral: #E07A5F;
+    }
     @media (hover: none) and (pointer: coarse) {
       a, button {
         min-height: 44px;
         min-width: 44px;
       }
+    }
+    .text-highlight {
+      background: linear-gradient(180deg, transparent 60%, rgba(224, 122, 95, 0.25) 60%);
+      padding: 0 0.25rem;
+      font-weight: 600;
     }
     .section-label {
       font-family: 'JetBrains Mono', monospace;
@@ -76,10 +85,10 @@
       
       <!-- Desktop Navigation -->
       <div class="hidden md:flex items-center gap-6 text-sm">
-        <a href="index.html" class="hover:text-[#1E3A5F] transition-colors duration-200">Main</a>
-        <a href="what-we-do.html" class="hover:text-[#1E3A5F] transition-colors duration-200">What We Do</a>
-        <a href="calculator.html" class="hover:text-[#1E3A5F] transition-colors duration-200">Calculator</a>
-        <a href="contact.html" aria-current="page" class="bg-[#1E3A5F] text-white px-4 py-2 rounded-sm font-semibold hover:bg-[#152D4A] transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#1E3A5F] focus:ring-offset-2 uppercase tracking-wider text-sm">Book a Call</a>
+        <a href="index.html" class="hover:text-[#E07A5F] transition-colors duration-200">Main</a>
+        <a href="what-we-do.html" class="hover:text-[#E07A5F] transition-colors duration-200">What We Do</a>
+        <a href="calculator.html" class="hover:text-[#E07A5F] transition-colors duration-200">Calculator</a>
+        <a href="contact.html" aria-current="page" class="bg-[#E07A5F] text-white px-4 py-2 rounded-sm font-semibold hover:bg-[#C96A4F] transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#E07A5F] focus:ring-offset-2 uppercase tracking-wider text-sm">Book a Call</a>
       </div>
       
       <!-- Mobile Hamburger Button -->
@@ -96,10 +105,10 @@
     <!-- Mobile Menu -->
     <div id="mobileMenu" class="hidden md:hidden border-t border-stone/10 bg-cream/98 backdrop-blur">
       <div class="max-w-5xl mx-auto px-6 py-4 flex flex-col gap-4">
-        <a href="index.html" class="py-3 px-4 text-stone hover:text-[#1E3A5F] hover:bg-[#1E3A5F]/5 rounded-sm transition-colors duration-200 min-h-[44px] flex items-center">Main</a>
-        <a href="what-we-do.html" class="py-3 px-4 text-stone hover:text-[#1E3A5F] hover:bg-[#1E3A5F]/5 rounded-sm transition-colors duration-200 min-h-[44px] flex items-center">What We Do</a>
-        <a href="calculator.html" class="py-3 px-4 text-stone hover:text-[#1E3A5F] hover:bg-[#1E3A5F]/5 rounded-sm transition-colors duration-200 min-h-[44px] flex items-center">Calculator</a>
-        <a href="contact.html" aria-current="page" class="py-3 px-4 bg-[#1E3A5F] text-white rounded-sm font-semibold text-center hover:bg-[#152D4A] transition-colors duration-200 min-h-[44px] flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-[#1E3A5F] focus:ring-offset-2 uppercase tracking-wider text-sm">Book a Call</a>
+        <a href="index.html" class="py-3 px-4 text-stone hover:text-[#E07A5F] hover:bg-[#E07A5F]/5 rounded-sm transition-colors duration-200 min-h-[44px] flex items-center">Main</a>
+        <a href="what-we-do.html" class="py-3 px-4 text-stone hover:text-[#E07A5F] hover:bg-[#E07A5F]/5 rounded-sm transition-colors duration-200 min-h-[44px] flex items-center">What We Do</a>
+        <a href="calculator.html" class="py-3 px-4 text-stone hover:text-[#E07A5F] hover:bg-[#E07A5F]/5 rounded-sm transition-colors duration-200 min-h-[44px] flex items-center">Calculator</a>
+        <a href="contact.html" aria-current="page" class="py-3 px-4 bg-[#E07A5F] text-white rounded-sm font-semibold text-center hover:bg-[#C96A4F] transition-colors duration-200 min-h-[44px] flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-[#E07A5F] focus:ring-offset-2 uppercase tracking-wider text-sm">Book a Call</a>
       </div>
     </div>
 
@@ -128,29 +137,29 @@
     <section class="bg-white border border-stone/15 rounded-sm p-7">
       <form id="contactForm" class="space-y-5" novalidate>
         <div>
-          <label for="name" class="block font-semibold mb-2">Name <span class="text-[#1E3A5F]">*</span></label>
-          <input id="name" name="name" required class="w-full border border-stone/30 rounded-sm px-4 py-3 focus:border-[#1E3A5F] focus:ring-2 focus:ring-[#1E3A5F]/20 transition-all duration-200" type="text" placeholder="Your name" aria-describedby="name-error">
-          <p id="name-error" class="hidden mt-1 text-sm text-[#1E3A5F]" role="alert"></p>
+          <label for="name" class="block font-semibold mb-2">Name <span class="text-[#E07A5F]">*</span></label>
+          <input id="name" name="name" required class="w-full border border-stone/30 rounded-sm px-4 py-3 focus:border-[#E07A5F] focus:ring-2 focus:ring-[#E07A5F]/20 transition-all duration-200" type="text" placeholder="Your name" aria-describedby="name-error">
+          <p id="name-error" class="hidden mt-1 text-sm text-[#E07A5F]" role="alert"></p>
         </div>
 
         <div>
-          <label for="email" class="block font-semibold mb-2">Email <span class="text-[#1E3A5F]">*</span></label>
-          <input id="email" name="email" required class="w-full border border-stone/30 rounded-sm px-4 py-3 focus:border-[#1E3A5F] focus:ring-2 focus:ring-[#1E3A5F]/20 transition-all duration-200" type="email" placeholder="you@company.com" aria-describedby="email-error">
-          <p id="email-error" class="hidden mt-1 text-sm text-[#1E3A5F]" role="alert"></p>
+          <label for="email" class="block font-semibold mb-2">Email <span class="text-[#E07A5F]">*</span></label>
+          <input id="email" name="email" required class="w-full border border-stone/30 rounded-sm px-4 py-3 focus:border-[#E07A5F] focus:ring-2 focus:ring-[#E07A5F]/20 transition-all duration-200" type="email" placeholder="you@company.com" aria-describedby="email-error">
+          <p id="email-error" class="hidden mt-1 text-sm text-[#E07A5F]" role="alert"></p>
         </div>
 
         <div>
           <label for="company" class="block font-semibold mb-2">Company</label>
-          <input id="company" name="company" class="w-full border border-stone/30 rounded-sm px-4 py-3 focus:border-[#1E3A5F] focus:ring-2 focus:ring-[#1E3A5F]/20 transition-all duration-200" type="text" placeholder="Company name">
+          <input id="company" name="company" class="w-full border border-stone/30 rounded-sm px-4 py-3 focus:border-[#E07A5F] focus:ring-2 focus:ring-[#E07A5F]/20 transition-all duration-200" type="text" placeholder="Company name">
         </div>
 
         <div>
-          <label for="workflow" class="block font-semibold mb-2">What workflow step should be automated? <span class="text-[#1E3A5F]">*</span></label>
-          <textarea id="workflow" name="workflow" rows="5" required class="w-full border border-stone/30 rounded-sm px-4 py-3 focus:border-[#1E3A5F] focus:ring-2 focus:ring-[#1E3A5F]/20 transition-all duration-200 resize-y" placeholder="Describe the repetitive step and why it is frustrating." aria-describedby="workflow-error"></textarea>
-          <p id="workflow-error" class="hidden mt-1 text-sm text-[#1E3A5F]" role="alert"></p>
+          <label for="workflow" class="block font-semibold mb-2">What workflow step should be automated? <span class="text-[#E07A5F]">*</span></label>
+          <textarea id="workflow" name="workflow" rows="5" required class="w-full border border-stone/30 rounded-sm px-4 py-3 focus:border-[#E07A5F] focus:ring-2 focus:ring-[#E07A5F]/20 transition-all duration-200 resize-y" placeholder="Describe the repetitive step and why it is frustrating." aria-describedby="workflow-error"></textarea>
+          <p id="workflow-error" class="hidden mt-1 text-sm text-[#E07A5F]" role="alert"></p>
         </div>
 
-        <button type="submit" id="submitBtn" class="bg-[#1E3A5F] text-white px-7 py-3 rounded-sm font-semibold hover:bg-[#152D4A] transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#1E3A5F] focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 min-w-[120px] uppercase tracking-wider text-sm">
+        <button type="submit" id="submitBtn" class="bg-[#E07A5F] text-white px-7 py-3 rounded-sm font-semibold hover:bg-[#C96A4F] transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#E07A5F] focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 min-w-[120px] uppercase tracking-wider text-sm">
           <svg id="spinner" class="hidden w-5 h-5 animate-spin" fill="none" viewBox="0 0 24 24">
             <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
             <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
@@ -201,12 +210,12 @@
       }
       
       if (!isValid && field.value) {
-        field.classList.add('border-[#1E3A5F]');
+        field.classList.add('border-[#E07A5F]');
         field.classList.remove('border-stone/30');
         errorEl.textContent = message;
         errorEl.classList.remove('hidden');
       } else {
-        field.classList.remove('border-[#1E3A5F]');
+        field.classList.remove('border-[#E07A5F]');
         field.classList.add('border-stone/30');
         errorEl.classList.add('hidden');
       }
@@ -217,7 +226,7 @@
     inputs.forEach(input => {
       input.addEventListener('blur', () => validateField(input));
       input.addEventListener('input', () => {
-        if (input.classList.contains('border-[#1E3A5F]')) {
+        if (input.classList.contains('border-[#E07A5F]')) {
           validateField(input);
         }
       });
