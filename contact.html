@@ -14,11 +14,11 @@
       theme: {
         extend: {
           colors: {
-            terracotta: '#B85C4A',
-            sage: '#8FA68E',
-            cream: '#FAFAF8',
-            charcoal: '#1F1F1F',
-            stone: '#6B6560'
+            terracotta: '#1E3A5F',
+            sage: '#7A9E7E',
+            cream: '#FAF9F7',
+            charcoal: '#2D3436',
+            stone: '#636E72'
           },
           fontFamily: {
             sans: ['Inter', 'sans-serif'],
@@ -33,16 +33,16 @@
       scroll-behavior: smooth;
     }
     .text-stone {
-      color: #6B6560;
+      color: #636E72;
     }
     .bg-cream {
-      background-color: #FAFAF8;
+      background-color: #FAF9F7;
     }
     .text-charcoal {
-      color: #1F1F1F;
+      color: #2D3436;
     }
     a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
-      outline: 2px solid #B85C4A;
+      outline: 2px solid #1E3A5F;
       outline-offset: 2px;
     }
     :focus:not(:focus-visible) {
@@ -57,23 +57,23 @@
   </style>
 </head>
 <body class="bg-cream text-charcoal antialiased">
-  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-terracotta focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:font-semibold">
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-[#1E3A5F] focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:font-semibold">
     Skip to main content
   </a>
 
   <nav class="border-b border-stone/20 bg-cream/95 backdrop-blur sticky top-0 z-40">
     <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
-      <a href="index.html" class="font-serif text-2xl font-bold text-terracotta">microve<span class="text-xs text-stone align-top">.ai</span></a>
+      <a href="index.html" class="font-serif text-2xl font-bold text-[#1E3A5F]">microve<span class="text-xs text-stone align-top">.ai</span></a>
       
       <!-- Desktop Navigation -->
       <div class="hidden md:flex items-center gap-6 text-sm">
-        <a href="what-we-do.html" class="hover:text-terracotta transition-colors duration-200">What We Do</a>
-        <a href="calculator.html" class="hover:text-terracotta transition-colors duration-200">Calculator</a>
-        <a href="contact.html" aria-current="page" class="text-terracotta font-semibold">Book a Call</a>
+        <a href="what-we-do.html" class="hover:text-[#1E3A5F] transition-colors duration-200">What We Do</a>
+        <a href="calculator.html" class="hover:text-[#1E3A5F] transition-colors duration-200">Calculator</a>
+        <a href="contact.html" aria-current="page" class="text-[#1E3A5F] font-semibold">Book a Call</a>
       </div>
       
       <!-- Mobile Hamburger Button -->
-      <button id="mobileMenuBtn" class="md:hidden p-2 -mr-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-terracotta focus:ring-offset-2" aria-label="Toggle menu" aria-expanded="false">
+      <button id="mobileMenuBtn" class="md:hidden p-2 -mr-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1E3A5F] focus:ring-offset-2" aria-label="Toggle menu" aria-expanded="false">
         <svg id="menuIcon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
         </svg>
@@ -86,9 +86,9 @@
     <!-- Mobile Menu -->
     <div id="mobileMenu" class="hidden md:hidden border-t border-stone/10 bg-cream/98 backdrop-blur">
       <div class="max-w-5xl mx-auto px-6 py-4 flex flex-col gap-4">
-        <a href="what-we-do.html" class="py-3 px-4 text-stone hover:text-terracotta hover:bg-terracotta/5 rounded-lg transition-colors duration-200 min-h-[44px] flex items-center">What We Do</a>
-        <a href="calculator.html" class="py-3 px-4 text-stone hover:text-terracotta hover:bg-terracotta/5 rounded-lg transition-colors duration-200 min-h-[44px] flex items-center">Calculator</a>
-        <a href="contact.html" aria-current="page" class="py-3 px-4 text-terracotta bg-terracotta/5 rounded-lg font-semibold min-h-[44px] flex items-center">Book a Call</a>
+        <a href="what-we-do.html" class="py-3 px-4 text-stone hover:text-[#1E3A5F] hover:bg-[#1E3A5F]/5 rounded-lg transition-colors duration-200 min-h-[44px] flex items-center">What We Do</a>
+        <a href="calculator.html" class="py-3 px-4 text-stone hover:text-[#1E3A5F] hover:bg-[#1E3A5F]/5 rounded-lg transition-colors duration-200 min-h-[44px] flex items-center">Calculator</a>
+        <a href="contact.html" aria-current="page" class="py-3 px-4 text-[#1E3A5F] bg-[#1E3A5F]/5 rounded-lg font-semibold min-h-[44px] flex items-center">Book a Call</a>
       </div>
     </div>
 
@@ -117,29 +117,29 @@
     <section class="bg-white border border-stone/15 rounded-2xl p-7">
       <form id="contactForm" class="space-y-5" novalidate>
         <div>
-          <label for="name" class="block font-semibold mb-2">Name <span class="text-terracotta">*</span></label>
-          <input id="name" name="name" required class="w-full border border-stone/30 rounded-lg px-4 py-3 focus:border-terracotta focus:ring-2 focus:ring-terracotta/20 transition-all duration-200" type="text" placeholder="Your name" aria-describedby="name-error">
-          <p id="name-error" class="hidden mt-1 text-sm text-terracotta" role="alert"></p>
+          <label for="name" class="block font-semibold mb-2">Name <span class="text-[#1E3A5F]">*</span></label>
+          <input id="name" name="name" required class="w-full border border-stone/30 rounded-lg px-4 py-3 focus:border-[#1E3A5F] focus:ring-2 focus:ring-[#1E3A5F]/20 transition-all duration-200" type="text" placeholder="Your name" aria-describedby="name-error">
+          <p id="name-error" class="hidden mt-1 text-sm text-[#1E3A5F]" role="alert"></p>
         </div>
 
         <div>
-          <label for="email" class="block font-semibold mb-2">Email <span class="text-terracotta">*</span></label>
-          <input id="email" name="email" required class="w-full border border-stone/30 rounded-lg px-4 py-3 focus:border-terracotta focus:ring-2 focus:ring-terracotta/20 transition-all duration-200" type="email" placeholder="you@company.com" aria-describedby="email-error">
-          <p id="email-error" class="hidden mt-1 text-sm text-terracotta" role="alert"></p>
+          <label for="email" class="block font-semibold mb-2">Email <span class="text-[#1E3A5F]">*</span></label>
+          <input id="email" name="email" required class="w-full border border-stone/30 rounded-lg px-4 py-3 focus:border-[#1E3A5F] focus:ring-2 focus:ring-[#1E3A5F]/20 transition-all duration-200" type="email" placeholder="you@company.com" aria-describedby="email-error">
+          <p id="email-error" class="hidden mt-1 text-sm text-[#1E3A5F]" role="alert"></p>
         </div>
 
         <div>
           <label for="company" class="block font-semibold mb-2">Company</label>
-          <input id="company" name="company" class="w-full border border-stone/30 rounded-lg px-4 py-3 focus:border-terracotta focus:ring-2 focus:ring-terracotta/20 transition-all duration-200" type="text" placeholder="Company name">
+          <input id="company" name="company" class="w-full border border-stone/30 rounded-lg px-4 py-3 focus:border-[#1E3A5F] focus:ring-2 focus:ring-[#1E3A5F]/20 transition-all duration-200" type="text" placeholder="Company name">
         </div>
 
         <div>
-          <label for="workflow" class="block font-semibold mb-2">What workflow step should be automated? <span class="text-terracotta">*</span></label>
-          <textarea id="workflow" name="workflow" rows="5" required class="w-full border border-stone/30 rounded-lg px-4 py-3 focus:border-terracotta focus:ring-2 focus:ring-terracotta/20 transition-all duration-200 resize-y" placeholder="Describe the repetitive step and why it is frustrating." aria-describedby="workflow-error"></textarea>
-          <p id="workflow-error" class="hidden mt-1 text-sm text-terracotta" role="alert"></p>
+          <label for="workflow" class="block font-semibold mb-2">What workflow step should be automated? <span class="text-[#1E3A5F]">*</span></label>
+          <textarea id="workflow" name="workflow" rows="5" required class="w-full border border-stone/30 rounded-lg px-4 py-3 focus:border-[#1E3A5F] focus:ring-2 focus:ring-[#1E3A5F]/20 transition-all duration-200 resize-y" placeholder="Describe the repetitive step and why it is frustrating." aria-describedby="workflow-error"></textarea>
+          <p id="workflow-error" class="hidden mt-1 text-sm text-[#1E3A5F]" role="alert"></p>
         </div>
 
-        <button type="submit" id="submitBtn" class="bg-terracotta text-white px-7 py-3 rounded-full font-semibold hover:bg-[#A05040] transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-terracotta focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 min-w-[120px]">
+        <button type="submit" id="submitBtn" class="bg-[#1E3A5F] text-white px-7 py-3 rounded-full font-semibold hover:bg-[#152D4A] transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#1E3A5F] focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 min-w-[120px]">
           <svg id="spinner" class="hidden w-5 h-5 animate-spin" fill="none" viewBox="0 0 24 24">
             <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
             <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
@@ -190,12 +190,12 @@
       }
       
       if (!isValid && field.value) {
-        field.classList.add('border-terracotta');
+        field.classList.add('border-[#1E3A5F]');
         field.classList.remove('border-stone/30');
         errorEl.textContent = message;
         errorEl.classList.remove('hidden');
       } else {
-        field.classList.remove('border-terracotta');
+        field.classList.remove('border-[#1E3A5F]');
         field.classList.add('border-stone/30');
         errorEl.classList.add('hidden');
       }
@@ -206,7 +206,7 @@
     inputs.forEach(input => {
       input.addEventListener('blur', () => validateField(input));
       input.addEventListener('input', () => {
-        if (input.classList.contains('border-terracotta')) {
+        if (input.classList.contains('border-[#1E3A5F]')) {
           validateField(input);
         }
       });
