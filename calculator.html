@@ -8,7 +8,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <script>
     tailwind.config = {
       theme: {
@@ -22,7 +22,7 @@
           },
           fontFamily: {
             sans: ['Inter', 'sans-serif'],
-            serif: ['Playfair Display', 'serif']
+            mono: ['JetBrains Mono', 'monospace']
           }
         }
       }
@@ -54,10 +54,19 @@
         min-width: 44px;
       }
     }
+    .section-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .tight-tracking {
+      letter-spacing: -0.02em;
+    }
   </style>
 </head>
 <body class="bg-cream text-charcoal antialiased">
-  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-[#1E3A5F] focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:font-semibold">
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-[#1E3A5F] focus:text-white focus:px-4 focus:py-2 focus:rounded-sm focus:font-semibold">
     Skip to main content
   </a>
 
@@ -69,7 +78,7 @@
       <div class="hidden md:flex items-center gap-6 text-sm">
         <a href="what-we-do.html" class="hover:text-[#1E3A5F] transition-colors duration-200">What We Do</a>
         <a href="calculator.html" aria-current="page" class="text-[#1E3A5F] font-semibold">Calculator</a>
-        <a href="contact.html" class="bg-[#1E3A5F] text-white px-4 py-2 rounded-full font-semibold hover:bg-[#152D4A] transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#1E3A5F] focus:ring-offset-2">Book a Call</a>
+        <a href="contact.html" class="bg-[#1E3A5F] text-white px-4 py-2 rounded-sm font-semibold hover:bg-[#152D4A] transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#1E3A5F] focus:ring-offset-2">Book a Call</a>
       </div>
       
       <!-- Mobile Hamburger Button -->
@@ -86,9 +95,9 @@
     <!-- Mobile Menu -->
     <div id="mobileMenu" class="hidden md:hidden border-t border-stone/10 bg-cream/98 backdrop-blur">
       <div class="max-w-5xl mx-auto px-6 py-4 flex flex-col gap-4">
-        <a href="what-we-do.html" class="py-3 px-4 text-stone hover:text-[#1E3A5F] hover:bg-[#1E3A5F]/5 rounded-lg transition-colors duration-200 min-h-[44px] flex items-center">What We Do</a>
-        <a href="calculator.html" aria-current="page" class="py-3 px-4 text-[#1E3A5F] bg-[#1E3A5F]/5 rounded-lg font-semibold min-h-[44px] flex items-center">Calculator</a>
-        <a href="contact.html" class="py-3 px-4 bg-[#1E3A5F] text-white rounded-full font-semibold text-center hover:bg-[#152D4A] transition-colors duration-200 min-h-[44px] flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-[#1E3A5F] focus:ring-offset-2">Book a Call</a>
+        <a href="what-we-do.html" class="py-3 px-4 text-stone hover:text-[#1E3A5F] hover:bg-[#1E3A5F]/5 rounded-sm transition-colors duration-200 min-h-[44px] flex items-center">What We Do</a>
+        <a href="calculator.html" aria-current="page" class="py-3 px-4 text-[#1E3A5F] bg-[#1E3A5F]/5 rounded-sm font-semibold min-h-[44px] flex items-center">Calculator</a>
+        <a href="contact.html" class="py-3 px-4 bg-[#1E3A5F] text-white rounded-sm font-semibold text-center hover:bg-[#152D4A] transition-colors duration-200 min-h-[44px] flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-[#1E3A5F] focus:ring-offset-2">Book a Call</a>
       </div>
     </div>
 
@@ -108,27 +117,28 @@
     </script>
   </nav>
 
-  <main id="main-content" class="max-w-5xl mx-auto px-6 py-16">
+  <div class="max-w-5xl mx-auto px-6 pb-4 text-center pt-8"><span class="section-label text-[#1E3A5F]/60 text-sm">[<span class="text-[#1E3A5F]">CALCULATE</span>]</span></div>
+  <main id="main-content" class="max-w-5xl mx-auto px-6 pt-24 pb-32">
     <header class="text-center mb-12 max-w-3xl mx-auto">
-      <h1 class="font-serif text-4xl md:text-5xl font-bold mb-6">Workflow Cost Calculator</h1>
+      <h1 class="font-sans text-5xl md:text-7xl font-bold mb-6 tight-tracking">Workflow Cost Calculator</h1>
       <p class="text-stone text-lg leading-relaxed">
         Because Microve builds actual, useful enterprise-level AI automations, you can tangibly measure your cost savings—instead of just thinking you have "AI running your whole business" when you don't.
       </p>
     </header>
 
     <section class="grid md:grid-cols-2 gap-8">
-      <div class="bg-white border border-stone/15 rounded-2xl p-7 space-y-6">
+      <div class="bg-white border border-stone/15 rounded-sm p-7 space-y-6">
         <div>
           <label class="block font-semibold mb-2" for="hours">Automatable hours/week per person</label>
-          <input id="hours" type="number" min="0" value="10" class="w-full border border-stone/30 rounded-lg px-4 py-3 focus:border-[#1E3A5F] focus:ring-2 focus:ring-[#1E3A5F]/20 transition-all duration-200">
+          <input id="hours" type="number" min="0" value="10" class="w-full border border-stone/30 rounded-sm px-4 py-3 focus:border-[#1E3A5F] focus:ring-2 focus:ring-[#1E3A5F]/20 transition-all duration-200">
         </div>
         <div>
           <label class="block font-semibold mb-2" for="people">People affected</label>
-          <input id="people" type="number" min="1" value="3" class="w-full border border-stone/30 rounded-lg px-4 py-3 focus:border-[#1E3A5F] focus:ring-2 focus:ring-[#1E3A5F]/20 transition-all duration-200">
+          <input id="people" type="number" min="1" value="3" class="w-full border border-stone/30 rounded-sm px-4 py-3 focus:border-[#1E3A5F] focus:ring-2 focus:ring-[#1E3A5F]/20 transition-all duration-200">
         </div>
         <div>
           <label class="block font-semibold mb-2" for="rate">Average hourly rate</label>
-          <select id="rate" class="w-full border border-stone/30 rounded-lg px-4 py-3 bg-white focus:border-[#1E3A5F] focus:ring-2 focus:ring-[#1E3A5F]/20 transition-all duration-200">
+          <select id="rate" class="w-full border border-stone/30 rounded-sm px-4 py-3 bg-white focus:border-[#1E3A5F] focus:ring-2 focus:ring-[#1E3A5F]/20 transition-all duration-200">
             <option value="25">$25/hour</option>
             <option value="50">$50/hour</option>
             <option value="75" selected>$75/hour</option>
@@ -138,17 +148,17 @@
         </div>
       </div>
 
-      <div class="bg-charcoal text-white rounded-2xl p-7">
+      <div class="bg-charcoal text-white rounded-sm p-7">
         <p class="text-white/70 text-sm mb-1">Hours saved per year</p>
-        <p id="hoursSaved" class="text-4xl font-bold mb-6">1,560</p>
+        <p id="hoursSaved" class="text-4xl font-bold mb-6 tight-tracking">1,560</p>
 
         <p class="text-white/70 text-sm mb-1">Extra meaningful-work hours per year</p>
-        <p id="meaningfulHours" class="text-4xl font-bold text-[#1E3A5F]/80 mb-6">1,560</p>
+        <p id="meaningfulHours" class="text-4xl font-bold text-[#1E3A5F]/80 mb-6 tight-tracking">1,560</p>
 
         <p class="text-white/70 text-sm mb-1">Estimated annual labor value unlocked</p>
-        <p id="savings" class="text-2xl font-semibold mb-6">$117,000</p>
+        <p id="savings" class="text-2xl font-semibold mb-6 tight-tracking">$117,000</p>
 
-        <a href="contact.html" class="inline-block bg-[#1E3A5F] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#152D4A] transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#1E3A5F] focus:ring-offset-2">Book a Call</a>
+        <a href="contact.html" class="inline-block bg-[#1E3A5F] text-white px-6 py-3 rounded-sm font-semibold hover:bg-[#152D4A] transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#1E3A5F] focus:ring-offset-2">Book a Call</a>
 
         <!-- COST OF WAITING SECTION -->
         <div class="border-t border-white/20 pt-6 mt-6">
@@ -158,20 +168,20 @@
           
           <div class="grid grid-cols-3 gap-4 mb-4">
             <div>
-              <p id="weeklyLoss" class="text-xl font-bold text-red-300">$2,250</p>
+              <p id="weeklyLoss" class="text-xl font-bold text-red-300 tight-tracking">$2,250</p>
               <p class="text-white/60 text-xs">Lost this week</p>
             </div>
             <div>
-              <p id="monthlyLoss" class="text-xl font-bold text-red-300">$9,750</p>
+              <p id="monthlyLoss" class="text-xl font-bold text-red-300 tight-tracking">$9,750</p>
               <p class="text-white/60 text-xs">Lost this month</p>
             </div>
             <div>
-              <p id="quarterlyLoss" class="text-xl font-bold text-red-300">$29,250</p>
+              <p id="quarterlyLoss" class="text-xl font-bold text-red-300 tight-tracking">$29,250</p>
               <p class="text-white/60 text-xs">Lost this quarter</p>
             </div>
           </div>
           
-          <div class="bg-white/10 rounded-lg p-4 mb-4">
+          <div class="bg-white/10 rounded-sm p-4 mb-4">
             <p class="text-white/90 text-sm leading-relaxed">
               <span class="text-[#1E3A5F] font-semibold">While you wait:</span> 
               Your competitors automate. Their teams focus on growth. 
@@ -183,7 +193,7 @@
             <p class="text-white/80 text-sm italic">
               "See exactly where you're bleeding time—before spending a dollar."
             </p>
-            <a href="contact.html" class="inline-block border-2 border-white text-white px-6 py-3 rounded-full font-semibold hover:bg-white hover:text-charcoal transition-colors text-center">
+            <a href="contact.html" class="inline-block border-2 border-white text-white px-6 py-3 rounded-sm font-semibold hover:bg-white hover:text-charcoal transition-colors text-center">
               Get Your Free Automation Audit
             </a>
           </div>

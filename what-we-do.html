@@ -8,7 +8,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <script>
     tailwind.config = {
       theme: {
@@ -22,7 +22,7 @@
           },
           fontFamily: {
             sans: ['Inter', 'sans-serif'],
-            serif: ['Playfair Display', 'serif']
+            mono: ['JetBrains Mono', 'monospace']
           }
         }
       }
@@ -54,26 +54,35 @@
         min-width: 44px;
       }
     }
+    .section-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .tight-tracking {
+      letter-spacing: -0.02em;
+    }
   </style>
 </head>
 <body class="bg-cream text-charcoal antialiased">
-  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-[#1E3A5F] focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:font-semibold">
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-[#1E3A5F] focus:text-white focus:px-4 focus:py-2 focus:rounded-sm focus:font-semibold">
     Skip to main content
   </a>
 
   <nav class="border-b border-stone/20 bg-cream/95 backdrop-blur sticky top-0 z-40">
     <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
-      <a href="index.html" class="font-serif text-2xl font-bold text-[#1E3A5F]">microve<span class="text-xs text-stone align-top">.ai</span></a>
+      <a href="index.html" class="font-sans text-2xl font-bold text-[#1E3A5F]">microve<span class="text-xs text-stone align-top">.ai</span></a>
       
       <!-- Desktop Navigation -->
       <div class="hidden md:flex items-center gap-6 text-sm">
         <a href="what-we-do.html" aria-current="page" class="text-[#1E3A5F] font-semibold">What We Do</a>
         <a href="calculator.html" class="hover:text-[#1E3A5F] transition-colors duration-200">Calculator</a>
-        <a href="contact.html" class="bg-[#1E3A5F] text-white px-4 py-2 rounded-full font-semibold hover:bg-[#152D4A] transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#1E3A5F] focus:ring-offset-2">Book a Call</a>
+        <a href="contact.html" class="bg-[#1E3A5F] text-white px-4 py-2 rounded-sm font-semibold hover:bg-[#152D4A] transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#1E3A5F] focus:ring-offset-2 uppercase tracking-wider text-sm">Book a Call</a>
       </div>
       
       <!-- Mobile Hamburger Button -->
-      <button id="mobileMenuBtn" class="md:hidden p-2 -mr-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1E3A5F] focus:ring-offset-2" aria-label="Toggle menu" aria-expanded="false">
+      <button id="mobileMenuBtn" class="md:hidden p-2 -mr-2 rounded-sm focus:outline-none focus:ring-2 focus:ring-[#1E3A5F] focus:ring-offset-2" aria-label="Toggle menu" aria-expanded="false">
         <svg id="menuIcon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
         </svg>
@@ -86,9 +95,9 @@
     <!-- Mobile Menu -->
     <div id="mobileMenu" class="hidden md:hidden border-t border-stone/10 bg-cream/98 backdrop-blur">
       <div class="max-w-5xl mx-auto px-6 py-4 flex flex-col gap-4">
-        <a href="what-we-do.html" aria-current="page" class="py-3 px-4 text-[#1E3A5F] bg-[#1E3A5F]/5 rounded-lg font-semibold min-h-[44px] flex items-center">What We Do</a>
-        <a href="calculator.html" class="py-3 px-4 text-stone hover:text-[#1E3A5F] hover:bg-[#1E3A5F]/5 rounded-lg transition-colors duration-200 min-h-[44px] flex items-center">Calculator</a>
-        <a href="contact.html" class="py-3 px-4 bg-[#1E3A5F] text-white rounded-full font-semibold text-center hover:bg-[#152D4A] transition-colors duration-200 min-h-[44px] flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-[#1E3A5F] focus:ring-offset-2">Book a Call</a>
+        <a href="what-we-do.html" aria-current="page" class="py-3 px-4 text-[#1E3A5F] bg-[#1E3A5F]/5 rounded-sm font-semibold min-h-[44px] flex items-center">What We Do</a>
+        <a href="calculator.html" class="py-3 px-4 text-stone hover:text-[#1E3A5F] hover:bg-[#1E3A5F]/5 rounded-sm transition-colors duration-200 min-h-[44px] flex items-center">Calculator</a>
+        <a href="contact.html" class="py-3 px-4 bg-[#1E3A5F] text-white rounded-sm font-semibold text-center hover:bg-[#152D4A] transition-colors duration-200 min-h-[44px] flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-[#1E3A5F] focus:ring-offset-2 uppercase tracking-wider text-sm">Book a Call</a>
       </div>
     </div>
 
@@ -108,14 +117,15 @@
     </script>
   </nav>
 
-  <main id="main-content" class="max-w-4xl mx-auto px-6 py-16 space-y-8">
-    <header>
-      <h1 class="font-serif text-4xl md:text-5xl font-bold mb-4">What we do</h1>
+  <main id="main-content" class="max-w-4xl mx-auto px-6 pt-24 pb-32 space-y-8">
+    <header class="pt-32">
+      <h1 class="font-sans text-5xl md:text-7xl font-bold mb-4 tight-tracking">What we do</h1>
       <p class="text-lg text-stone">We build micro-automations that remove specific repetitive steps from your workflow.</p>
     </header>
 
-    <section class="bg-white rounded-2xl border border-stone/15 p-7 md:p-10">
-      <h2 class="font-serif text-2xl font-bold mb-4">What micro-automation actually means</h2>
+    <div class="max-w-4xl mx-auto px-6 pb-4"><span class="section-label text-[#1E3A5F]/60 text-sm">[<span class="text-[#1E3A5F]">CONCEPT</span>]</span></div>
+    <section class="bg-white rounded-sm border border-stone/15 p-7 md:p-10 pt-32">
+      <h2 class="font-sans text-3xl md:text-4xl font-bold mb-4 tight-tracking">What micro-automation actually means</h2>
       <p class="text-lg text-charcoal mb-6">This is not about "replacing your team with AI." It's about removing friction.</p>
       <ul class="space-y-4 text-stone">
         <li class="flex items-start gap-3">
@@ -133,8 +143,9 @@
       </ul>
     </section>
 
-    <section class="bg-white rounded-2xl border border-stone/15 p-7 md:p-10">
-      <h2 class="font-serif text-2xl font-bold mb-4">Why this beats generic AI</h2>
+    <div class="max-w-4xl mx-auto px-6 pb-4"><span class="section-label text-[#1E3A5F]/60 text-sm">[<span class="text-[#1E3A5F]">COMPARE</span>]</span></div>
+    <section class="bg-white rounded-sm border border-stone/15 p-7 md:p-10 pt-32">
+      <h2 class="font-sans text-3xl md:text-4xl font-bold mb-4 tight-tracking">Why this beats generic AI</h2>
       <p class="text-lg text-charcoal mb-6">General LLMs (like ChatGPT) are great at answering questions. But businesses need actions.</p>
       <ul class="space-y-4 text-stone">
         <li class="flex items-start gap-3">
@@ -152,11 +163,12 @@
       </ul>
     </section>
 
-    <section class="bg-white rounded-2xl border border-stone/15 p-7">
-      <h2 class="font-semibold text-xl mb-4">Rules Based Automation vs AI Automation vs ChatGPT/Gemini</h2>
+    <div class="max-w-4xl mx-auto px-6 pb-4"><span class="section-label text-[#1E3A5F]/60 text-sm">[<span class="text-[#1E3A5F]">SYSTEMS</span>]</span></div>
+    <section class="bg-white rounded-sm border border-stone/15 p-7 pt-32">
+      <h2 class="font-sans text-3xl md:text-4xl font-bold mb-4 tight-tracking">Rules Based Automation vs AI Automation vs ChatGPT/Gemini</h2>
       
       <!-- Visual diagram of the 3 paradigms -->
-      <div class="mb-8 p-6 bg-cream rounded-xl border border-stone/10 overflow-hidden">
+      <div class="mb-8 p-6 bg-cream rounded-sm border border-stone/10 overflow-hidden">
         <svg viewBox="0 0 800 200" class="w-full h-auto max-w-full" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
@@ -244,7 +256,7 @@
         </svg>
       </div>
 
-      <div class="overflow-x-auto rounded-xl border border-stone/15 shadow-sm">
+      <div class="overflow-x-auto rounded-sm border border-stone/15 shadow-sm">
         <table class="w-full text-left text-sm">
           <thead class="bg-cream border-b border-stone/15">
             <tr>
@@ -289,8 +301,9 @@
       <p class="text-stone leading-relaxed mt-4">We design both rules-based and AI automation depending on the actual bottleneck. We choose based on business need, not hype.</p>
     </section>
 
-    <section class="bg-white rounded-2xl border border-stone/15 p-7 md:p-10">
-      <h2 class="font-serif text-2xl font-bold mb-4">Why we consult differently</h2>
+    <div class="max-w-4xl mx-auto px-6 pb-4"><span class="section-label text-[#1E3A5F]/60 text-sm">[<span class="text-[#1E3A5F]">APPROACH</span>]</span></div>
+    <section class="bg-white rounded-sm border border-stone/15 p-7 md:p-10 pt-32">
+      <h2 class="font-sans text-3xl md:text-4xl font-bold mb-4 tight-tracking">Why we consult differently</h2>
       <p class="text-lg text-charcoal mb-6">We aren't just selling "automation hype." We use these systems.</p>
       <ul class="space-y-4 text-stone">
         <li class="flex items-start gap-3">
@@ -308,14 +321,15 @@
       </ul>
     </section>
 
+    <div class="max-w-4xl mx-auto px-6 pb-4"><span class="section-label text-[#1E3A5F]/60 text-sm">[<span class="text-[#1E3A5F]">STAKES</span>]</span></div>
     <!-- The Hidden Exit Section - Consumer Psychology -->
-    <section class="bg-white border-2 border-charcoal/10 rounded-2xl p-10 md:p-14 relative">
+    <section class="bg-white border-2 border-charcoal/10 rounded-sm p-10 md:p-14 relative pt-32">
       <!-- Decorative element -->
-      <div class="absolute -top-3 left-10 bg-[#1E3A5F] text-white text-xs font-bold uppercase tracking-wider px-4 py-1 rounded-full">
+      <div class="absolute -top-3 left-10 bg-[#1E3A5F] text-white text-xs font-bold uppercase tracking-wider px-4 py-1 rounded-sm">
         The Hidden Cost
       </div>
       
-      <h2 class="font-serif text-3xl md:text-4xl font-bold text-charcoal mb-6 mt-2">
+      <h2 class="font-sans text-4xl md:text-5xl font-bold text-charcoal mb-6 mt-2 tight-tracking">
         Your best people are watching—and leaving
       </h2>
       
@@ -353,7 +367,7 @@
             The companies winning right now aren't working harder. They're removing friction 
             so their people can focus on what humans do best.
           </p>
-          <div class="bg-cream rounded-xl p-5 border border-[#1E3A5F]/20">
+          <div class="bg-cream rounded-sm p-5 border border-[#1E3A5F]/20">
             <p class="text-charcoal font-medium mb-2">
               "Automation isn't about replacing people. It's about retaining them."
             </p>
@@ -369,18 +383,19 @@
         <p class="text-stone italic">
           "The businesses that automate now are building advantages that compound daily."
         </p>
-        <a href="contact.html" class="shrink-0 bg-[#1E3A5F] text-white px-8 py-3 rounded-full font-semibold hover:bg-[#152D4A] transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#1E3A5F] focus:ring-offset-2">
+        <a href="contact.html" class="shrink-0 bg-[#1E3A5F] text-white px-8 py-3 rounded-sm font-semibold hover:bg-[#152D4A] transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#1E3A5F] focus:ring-offset-2 uppercase tracking-wider text-sm">
           Start With a Free Audit
         </a>
       </div>
     </section>
 
-    <section class="bg-charcoal text-white rounded-2xl p-7 md:p-10 flex flex-col md:flex-row gap-8 justify-between items-center">
+    <div class="max-w-4xl mx-auto px-6 pb-4"><span class="section-label text-[#1E3A5F]/60 text-sm">[<span class="text-[#1E3A5F]">NEXT</span>]</span></div>
+    <section class="bg-charcoal text-white rounded-sm p-7 md:p-10 flex flex-col md:flex-row gap-8 justify-between items-center pt-32">
       <div>
-        <h2 class="font-serif text-2xl font-bold mb-3">Ready to find your bottlenecks?</h2>
+        <h2 class="font-sans text-3xl md:text-4xl font-bold mb-3 tight-tracking">Ready to find your bottlenecks?</h2>
         <p class="text-white/80 leading-relaxed text-lg max-w-xl">You show us the problem. We design and implement the automation. Your team gets their hours back.</p>
       </div>
-      <a href="contact.html" class="shrink-0 bg-[#1E3A5F] hover:bg-[#152D4A] transition-colors text-white px-8 py-4 rounded-full font-bold text-lg shadow-lg focus:outline-none focus:ring-2 focus:ring-[#1E3A5F] focus:ring-offset-2">Book a Call</a>
+      <a href="contact.html" class="shrink-0 bg-[#1E3A5F] hover:bg-[#152D4A] transition-colors text-white px-8 py-4 rounded-sm font-bold text-lg shadow-lg focus:outline-none focus:ring-2 focus:ring-[#1E3A5F] focus:ring-offset-2 uppercase tracking-wider text-sm">Book a Call</a>
     </section>
   </main>
 
