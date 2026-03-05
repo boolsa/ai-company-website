@@ -11,7 +11,11 @@ Microve.ai positions itself as the practical alternative to "AI fantasy" hype. T
 ## Pages
 
 - **`index.html`** - Homepage with StoryBrand messaging, workflow diagram, 4-step process, and competitive positioning
-- **`what-we-do.html`** - Detailed service explanation with automation type comparison table and competitive messaging
+- **`what-we-do.html`** - Detailed service explanation with:
+  - Hero SVG graphic showing human-machine-automation workflow
+  - Three-way comparison: Generic LLMs vs Agentic Platforms vs Microve
+  - [SYSTEMS] section explaining rule-based vs AI automation choice framework
+  - Condensed [STAKES] section with visual stat (67%)
 - **`calculator.html`** - Interactive cost calculator with "Cost of Waiting" feature showing weekly/monthly/quarterly losses
 - **`contact.html`** - Lead capture form with validation and enhanced UX
 
@@ -87,6 +91,21 @@ A refined palette balancing trust with energy:
 - **Performance:** Minimal external dependencies (Tailwind CDN, Google Fonts)
 
 ## Recent Major Updates
+
+### v3.1 - What We Do Page Enhancement
+- Added hero SVG graphic showing automation workflow (human → process → output)
+- New [COMPARE] section with three-way comparison:
+  - Generic LLMs (ChatGPT, Claude) — manual prompting, no workflow integration
+  - Agentic Platforms (LangChain, AutoGPT) — complex configuration, overkill for SMBs
+  - Microve.ai — zero configuration, custom-built, runs automatically
+- Rewrote [SYSTEMS] section explaining rule-based vs AI automation:
+  - Visual equation showing Rules + AI = Measurable Results
+  - Clear criteria for choosing each approach
+  - Focus on business outcomes (cost savings, productivity, revenue)
+- Condensed [STAKES] section from 65 lines to 20 lines:
+  - Single stat visualization (67% of employees quit due to repetitive tasks)
+  - Punchy headline: "Chained to busywork, talent walks"
+  - Streamlined to core message with single CTA
 
 ### v3.0 - Swiss Design System (dify.ai inspired)
 - Switched to Inter font family (removed Playfair Display serif)
