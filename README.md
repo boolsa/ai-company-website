@@ -17,30 +17,46 @@ Microve.ai positions itself as the practical alternative to "AI fantasy" hype. T
 
 ## Design Philosophy
 
-### Color Scheme: "Sage & Clay"
+### Design System: Swiss Minimalism (inspired by dify.ai)
 
-A nature-inspired palette that maintains warmth while improving readability:
+Clean, grid-based, highly legible design with minimal embellishment:
+- **2px border radius** throughout (nearly sharp corners)
+- **Generous whitespace** (120px+ section padding)
+- **Tight typography tracking** (-0.02em) on headlines
+- **Monospace section labels** [ELIMINATE], [PROCESS], [TRANSFORM], [COMPOUND], [ABOUT]
+
+### Color Scheme: Grounded Professional + Coral Accent
+
+A refined palette balancing trust with energy:
 
 | Color | Hex | Usage |
 |-------|-----|-------|
-| **Clay (Terracotta)** | `#B85C4A` | Primary CTAs, accents, highlights |
-| **Sage** | `#8FA68E` | Secondary accents, timeline connectors, visual rest |
-| **Warm White** | `#FAFAF8` | Background - cleaner than cream, reduces yellow cast |
-| **Charcoal** | `#1F1F1F` | Primary text - crisp with slight warmth |
-| **Stone** | `#6B6560` | Secondary text - 12:1 contrast ratio (WCAG AAA) |
+| **Deep Navy** | `#1E3A5F` | Logo, headings, dark sections, trust/competence |
+| **Sage Green** | `#7A9E7E` | Completion states, growth accents, visual rest |
+| **Soft Coral** | `#E07A5F` | Primary CTAs, statistics, highlights, action/energy |
+| **Warm White** | `#FAF9F7` | Background - clean, no yellow tint |
+| **Charcoal** | `#2D3436` | Primary text - professional, readable |
+| **Stone** | `#636E72` | Secondary text - 12:1 contrast ratio (WCAG AAA) |
+
+**Color Psychology:**
+- Navy = Trust, stability, competence
+- Sage = Growth, balance, approachability
+- Coral = Energy, warmth, action (complementary to cool navy/sage)
+- Usage ratio: 60% neutral / 30% navy+sage / 10% coral accents
 
 ### Typography
 
-- **Headlines:** Playfair Display (serif) - conveys heritage and trustworthiness
-- **Body:** Inter (sans-serif) - modern, highly readable
+- **Headlines:** Inter (sans-serif) - modern, tight tracking (-0.02em)
+- **Body:** Inter (sans-serif) - highly readable
+- **Labels:** JetBrains Mono (monospace) - [ELIMINATE], [PROCESS], etc.
 - **Contrast:** 12:1 ratio exceeds accessibility standards
 
 ### Key Features
 
 1. **StoryBrand Framework** - A-grade implementation with:
-   - Situation-based hero identification
-   - Specific founder story creating empathy
-   - Clear failure stakes (cost of waiting)
+   - Situation-based hero identification ("Your best people are drowning in busywork")
+   - Specific founder story creating empathy ("We lost a $40K deal...")
+   - Clear failure stakes (automation gap, cost of waiting)
    - Visual 4-step process plan
 
 2. **Competitive Positioning** - Anti-hype messaging:
@@ -72,14 +88,29 @@ A nature-inspired palette that maintains warmth while improving readability:
 
 ## Recent Major Updates
 
-### v2.0 - Sage & Clay Redesign
-- Muted terracotta from aggressive orange-red to clay (#B85C4A)
-- Changed background from yellow-cream to warm white (#FAFAF8)
-- Added sage green (#8FA68E) as secondary accent for visual rest
+### v3.0 - Swiss Design System (dify.ai inspired)
+- Switched to Inter font family (removed Playfair Display serif)
+- Added JetBrains Mono for bracketed section labels
+- Implemented 2px border radius (rounded-sm) for Swiss minimalism
+- Added bracketed section labels [ELIMINATE], [PROCESS], [TRANSFORM], [COMPOUND], [ABOUT]
+- Increased section spacing to 120px+ (py-32)
+- Added tight tracking (-0.02em) on headlines
+- Increased hero typography to 72px
+- Removed statistics block (unsubstantiated claims)
+- Increased logo size (text-3xl)
+
+### v2.5 - Coral Accent Addition
+- Added Soft Coral (#E07A5F) as third accent color
+- Primary CTAs now use coral instead of navy
+- Statistics and highlights use coral for energy
+- Text highlights use coral underline (rgba(224, 122, 95, 0.25))
+- Maintains navy for headings, logo, and dark sections
+
+### v2.0 - Grounded Professional
+- Changed from terracotta to Deep Navy (#1E3A5F)
+- Updated sage to #7A9E7E
+- Changed background to Warm White (#FAF9F7)
 - Improved text contrast to 12:1 ratio (WCAG AAA)
-- Simplified 4-step timeline layout
-- Enhanced comparison table with zebra striping
-- Fixed SVG diagram contrast issues
 
 ### v1.5 - UX/UI Overhaul
 - Added mobile hamburger navigation
@@ -103,11 +134,12 @@ tailwind.config = {
   theme: {
     extend: {
       colors: {
-        terracotta: '#B85C4A',
-        sage: '#8FA68E',
-        cream: '#FAFAF8',
-        charcoal: '#1F1F1F',
-        stone: '#6B6560'
+        navy: '#1E3A5F',
+        sage: '#7A9E7E',
+        coral: '#E07A5F',
+        cream: '#FAF9F7',
+        charcoal: '#2D3436',
+        stone: '#636E72'
       }
     }
   }
@@ -124,6 +156,14 @@ microve-ai/
 └── README.md          # This file
 ```
 
+## Navigation Structure
+
+**Desktop & Mobile:**
+- Main → Homepage
+- What We Do → Services explanation
+- Calculator → Cost savings calculator
+- Book a Call → Contact form
+
 ## Notes
 
 - This is a lightweight static build requiring no framework or build process
@@ -131,6 +171,7 @@ microve-ai/
 - SVG diagrams are inline for performance and scalability
 - No external assets beyond Tailwind CDN and Google Fonts
 - Site is optimized for small-to-medium business owners as the target audience
+- No client testimonials, use cases, or unsubstantiated metrics
 
 ## Target Audience
 
