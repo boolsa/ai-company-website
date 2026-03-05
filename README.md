@@ -92,6 +92,38 @@ A refined palette balancing trust with energy:
 
 ## Recent Major Updates
 
+### v4.0 - Navigation Overhaul + Background + AI Reality Messaging
+
+#### Navigation (all pages)
+Complete nav redesign across all 4 pages, based on award-winning frontend design patterns:
+
+- **Logo** — Refined from `text-3xl` to `1.5rem`; `.ai` TLD now uses JetBrains Mono at `0.6875rem` with precise `top: -5px` baseline raise — intentional type detail, not a superscript accident
+- **"Main" → "Home"** — Clearer, universally understood nav label
+- **Scroll-aware nav** — Passive scroll listener adds navy-tinted shadow + border darkening at 12px scroll; nav compresses `py-4 → py-2.5` on scroll, all at `0.25s ease`
+- **Active state** — Coral `#E07A5F` 2px underline bar via `::after` pseudo-element; hover animates `scaleX(0 → 1)` from left with directional micro-interaction
+- **CTA button** — Upgraded from `rounded-sm` square corners to full pill (`border-radius: 9999px`); inline arrow SVG; rest shadow + hover lift `translateY(-1px)`
+- **Hamburger → X morph** — Three `<span>` lines morphing to X via CSS transforms; no JS class toggling for animation
+- **Mobile menu** — Smooth slide-in via `max-height` + `opacity` transition (`cubic-bezier(0.4, 0, 0.2, 1)`); active item gets coral left border
+- **Accessibility** — `aria-controls`, `role="region"`, Escape key closes menu and returns focus, click-outside closes menu
+
+#### Background (all pages)
+- Replaced flat `#FAF9F7` cream background with a **dot grid pattern** — navy dots (`rgba(30,58,95,0.18)`) at 1.5px radius, 28px spacing
+- Removed `bg-cream` Tailwind class from all `<body>` tags (was overriding custom CSS); added `!important` guards
+- Applied consistently across `index.html`, `what-we-do.html`, `calculator.html`, `contact.html`
+
+#### What We Do Page — AI Reality Check Section
+New [REALITY CHECK] section added above [COMPARE], with contrarian AI hype messaging:
+
+- **Headline:** "Most AI Projects Fail. Here's Why Ours Don't."
+- Body copy directly addresses the AI hype problem — companies spending recklessly without understanding what AI actually does
+- Real example: $12K integration vs $150K AI model — same bottleneck, radically different cost
+- Pull quote callout box: *"The real advantage isn't artificial intelligence — it's intelligent decisions about where to deploy it."*
+- 3 differentiation cards: Diagnostic before deployment / Custom-built not configured / Surgical not scattered
+
+#### What We Do Page — Header reorder
+- "What we do" heading + subtext moved **above** the SVG workflow diagram (was below it)
+- Diagram now appears after the framing copy, as supporting evidence rather than leading content
+
 ### v3.1 - What We Do Page Enhancement
 - Added hero SVG graphic showing automation workflow (human → process → output)
 - New [COMPARE] section with three-way comparison:
@@ -178,7 +210,7 @@ microve-ai/
 ## Navigation Structure
 
 **Desktop & Mobile:**
-- Main → Homepage
+- Home → Homepage
 - What We Do → Services explanation
 - Calculator → Cost savings calculator
 - Book a Call → Contact form

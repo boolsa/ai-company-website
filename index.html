@@ -51,6 +51,8 @@
     }
     :root {
       --color-coral: #E07A5F;
+      --color-navy: #1E3A5F;
+      --color-cream: #FAF9F7;
     }
     @media (hover: none) and (pointer: coarse) {
       a, button {
@@ -72,59 +74,287 @@
     .tight-tracking {
       letter-spacing: -0.02em;
     }
+
+    /* Dot Grid Background */
+    body {
+      position: relative;
+      overflow-x: hidden;
+      background-color: #FAF9F7 !important;
+      background-image:
+        radial-gradient(circle, rgba(30, 58, 95, 0.18) 1.5px, transparent 1.5px) !important;
+      background-size: 28px 28px !important;
+    }
+
+    /* ── Nav ── */
+    #site-nav {
+      background-color: #FAF9F7;
+      border-bottom: 1px solid rgba(99, 110, 114, 0.15);
+      transition: box-shadow 0.25s ease, border-color 0.25s ease;
+    }
+    #site-nav.nav-scrolled {
+      box-shadow: 0 1px 16px rgba(30, 58, 95, 0.08), 0 1px 3px rgba(30, 58, 95, 0.06);
+      border-bottom-color: rgba(99, 110, 114, 0.22);
+    }
+    #site-nav .nav-inner {
+      transition: padding-top 0.25s ease, padding-bottom 0.25s ease;
+    }
+    #site-nav.nav-scrolled .nav-inner {
+      padding-top: 0.625rem;
+      padding-bottom: 0.625rem;
+    }
+
+    /* Logo */
+    .nav-logo {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #1E3A5F;
+      letter-spacing: -0.03em;
+      line-height: 1;
+      display: flex;
+      align-items: baseline;
+      gap: 0;
+      text-decoration: none;
+    }
+    .nav-logo-tld {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6875rem;
+      font-weight: 500;
+      color: #636E72;
+      letter-spacing: 0;
+      margin-left: 1px;
+      position: relative;
+      top: -5px;
+    }
+
+    /* Desktop nav links */
+    .nav-link {
+      position: relative;
+      font-size: 0.8125rem;
+      font-weight: 500;
+      color: #636E72;
+      text-decoration: none;
+      padding-bottom: 2px;
+      transition: color 0.18s ease;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background-color: #E07A5F;
+      border-radius: 2px;
+      transform: scaleX(0);
+      transform-origin: left center;
+      transition: transform 0.2s ease;
+    }
+    .nav-link:hover {
+      color: #1E3A5F;
+    }
+    .nav-link:hover::after {
+      transform: scaleX(1);
+    }
+    .nav-link.active {
+      color: #1E3A5F;
+      font-weight: 600;
+    }
+    .nav-link.active::after {
+      transform: scaleX(1);
+    }
+
+    /* CTA button */
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background-color: #E07A5F;
+      color: #fff;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      padding: 0.45rem 1rem;
+      border-radius: 9999px;
+      text-decoration: none;
+      box-shadow: 0 1px 4px rgba(224, 122, 95, 0.35);
+      transition: background-color 0.18s ease, box-shadow 0.18s ease, transform 0.15s ease;
+    }
+    .nav-cta:hover {
+      background-color: #C96A4F;
+      box-shadow: 0 3px 10px rgba(224, 122, 95, 0.4);
+      transform: translateY(-1px);
+    }
+    .nav-cta:active {
+      transform: translateY(0);
+      box-shadow: 0 1px 4px rgba(224, 122, 95, 0.3);
+    }
+
+    /* Mobile menu */
+    #mobileMenu {
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                  opacity 0.25s ease;
+      opacity: 0;
+      border-top: 1px solid rgba(99, 110, 114, 0.1);
+      background-color: #FAF9F7;
+    }
+    #mobileMenu.open {
+      max-height: 320px;
+      opacity: 1;
+    }
+    .mobile-nav-link {
+      display: flex;
+      align-items: center;
+      padding: 0.75rem 1rem;
+      border-radius: 6px;
+      font-size: 0.9375rem;
+      font-weight: 500;
+      color: #636E72;
+      text-decoration: none;
+      min-height: 44px;
+      transition: color 0.15s ease, background-color 0.15s ease;
+      border-left: 2px solid transparent;
+    }
+    .mobile-nav-link:hover {
+      color: #1E3A5F;
+      background-color: rgba(30, 58, 95, 0.04);
+    }
+    .mobile-nav-link.active {
+      color: #1E3A5F;
+      font-weight: 600;
+      background-color: rgba(30, 58, 95, 0.05);
+      border-left-color: #E07A5F;
+    }
+    .mobile-nav-cta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.75rem 1rem;
+      border-radius: 9999px;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: #fff;
+      background-color: #E07A5F;
+      text-decoration: none;
+      min-height: 44px;
+      box-shadow: 0 1px 4px rgba(224, 122, 95, 0.3);
+      transition: background-color 0.15s ease;
+    }
+    .mobile-nav-cta:hover {
+      background-color: #C96A4F;
+    }
+
+    /* Hamburger morph */
+    .hamburger-line {
+      display: block;
+      width: 20px;
+      height: 1.75px;
+      background-color: #1E3A5F;
+      border-radius: 2px;
+      transition: transform 0.25s ease, opacity 0.2s ease;
+      transform-origin: center;
+    }
+    #mobileMenuBtn[aria-expanded="true"] .hamburger-line:nth-child(1) {
+      transform: translateY(5.75px) rotate(45deg);
+    }
+    #mobileMenuBtn[aria-expanded="true"] .hamburger-line:nth-child(2) {
+      opacity: 0;
+      transform: scaleX(0);
+    }
+    #mobileMenuBtn[aria-expanded="true"] .hamburger-line:nth-child(3) {
+      transform: translateY(-5.75px) rotate(-45deg);
+    }
   </style>
 </head>
-<body class="bg-cream text-charcoal antialiased">
+<body class="text-charcoal antialiased">
   <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-[#1E3A5F] focus:text-white focus:px-4 focus:py-2 focus:rounded-sm focus:font-semibold">
     Skip to main content
   </a>
 
-  <nav class="border-b border-stone/20 bg-cream/95 backdrop-blur sticky top-0 z-40">
-    <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
-      <a href="index.html" aria-current="page" class="font-sans text-3xl font-bold text-[#1E3A5F] tracking-tight">microve<span class="text-sm text-stone align-top">.ai</span></a>
-      
+  <nav id="site-nav" class="sticky top-0 z-40" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
+
+      <!-- Logo -->
+      <a href="index.html" aria-label="Microve.ai — home" class="nav-logo">
+        microve<span class="nav-logo-tld">.ai</span>
+      </a>
+
       <!-- Desktop Navigation -->
-      <div class="hidden md:flex items-center gap-6 text-sm">
-        <a href="index.html" aria-current="page" class="text-[#1E3A5F] font-semibold">Main</a>
-        <a href="what-we-do.html" class="hover:text-[#E07A5F] transition-colors duration-200">What We Do</a>
-        <a href="calculator.html" class="hover:text-[#E07A5F] transition-colors duration-200">Calculator</a>
-        <a href="contact.html" class="bg-[#E07A5F] text-white px-4 py-2 rounded-sm font-semibold hover:bg-[#C96A4F] transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#E07A5F] focus:ring-offset-2">Book a Call</a>
+      <div class="hidden md:flex items-center gap-7">
+        <a href="index.html" aria-current="page" class="nav-link active">Home</a>
+        <a href="what-we-do.html" class="nav-link">What We Do</a>
+        <a href="calculator.html" class="nav-link">Calculator</a>
+        <a href="contact.html" class="nav-cta" aria-label="Book a call with Microve.ai">
+          Book a Call
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+            <path d="M2.5 6h7M6.5 3l3 3-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
       </div>
-      
-      <!-- Mobile Hamburger Button -->
-      <button id="mobileMenuBtn" class="md:hidden p-2 -mr-2 rounded-sm focus:outline-none focus:ring-2 focus:ring-[#1E3A5F] focus:ring-offset-2" aria-label="Toggle menu" aria-expanded="false">
-        <svg id="menuIcon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-        </svg>
-        <svg id="closeIcon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-        </svg>
+
+      <!-- Mobile Hamburger -->
+      <button id="mobileMenuBtn"
+              class="md:hidden flex flex-col justify-center gap-[4.5px] w-9 h-9 -mr-1 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1E3A5F] focus:ring-offset-2"
+              aria-label="Toggle navigation menu"
+              aria-expanded="false"
+              aria-controls="mobileMenu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
       </button>
     </div>
-    
+
     <!-- Mobile Menu -->
-    <div id="mobileMenu" class="hidden md:hidden border-t border-stone/10 bg-cream/98 backdrop-blur">
-      <div class="max-w-5xl mx-auto px-6 py-4 flex flex-col gap-4">
-        <a href="index.html" aria-current="page" class="py-3 px-4 text-[#1E3A5F] bg-[#1E3A5F]/5 rounded-sm font-semibold min-h-[44px] flex items-center">Main</a>
-        <a href="what-we-do.html" class="py-3 px-4 text-stone hover:text-[#E07A5F] hover:bg-[#E07A5F]/5 rounded-sm transition-colors duration-200 min-h-[44px] flex items-center">What We Do</a>
-        <a href="calculator.html" class="py-3 px-4 text-stone hover:text-[#E07A5F] hover:bg-[#E07A5F]/5 rounded-sm transition-colors duration-200 min-h-[44px] flex items-center">Calculator</a>
-        <a href="contact.html" class="py-3 px-4 bg-[#E07A5F] text-white rounded-sm font-semibold text-center hover:bg-[#C96A4F] transition-colors duration-200 min-h-[44px] flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-[#E07A5F] focus:ring-offset-2">Book a Call</a>
+    <div id="mobileMenu" role="region" aria-label="Mobile navigation">
+      <div class="max-w-5xl mx-auto px-4 py-3 flex flex-col gap-1">
+        <a href="index.html" aria-current="page" class="mobile-nav-link active">Home</a>
+        <a href="what-we-do.html" class="mobile-nav-link">What We Do</a>
+        <a href="calculator.html" class="mobile-nav-link">Calculator</a>
+        <div class="pt-2 pb-1">
+          <a href="contact.html" class="mobile-nav-cta">Book a Call</a>
+        </div>
       </div>
     </div>
 
     <script>
-      document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+      (function () {
+        const btn = document.getElementById('mobileMenuBtn');
         const menu = document.getElementById('mobileMenu');
-        const menuIcon = document.getElementById('menuIcon');
-        const closeIcon = document.getElementById('closeIcon');
-        const isExpanded = this.getAttribute('aria-expanded') === 'true';
-        
-        this.setAttribute('aria-expanded', !isExpanded);
-        menu.classList.toggle('hidden');
-        menuIcon.classList.toggle('hidden');
-        closeIcon.classList.toggle('hidden');
-        document.body.classList.toggle('overflow-hidden', !isExpanded);
-      });
+
+        // Scroll-aware nav
+        const nav = document.getElementById('site-nav');
+        window.addEventListener('scroll', function () {
+          nav.classList.toggle('nav-scrolled', window.scrollY > 12);
+        }, { passive: true });
+
+        // Mobile toggle
+        btn.addEventListener('click', function () {
+          const isOpen = this.getAttribute('aria-expanded') === 'true';
+          this.setAttribute('aria-expanded', String(!isOpen));
+          menu.classList.toggle('open', !isOpen);
+          document.body.style.overflow = !isOpen ? 'hidden' : '';
+        });
+
+        // Close on outside click
+        document.addEventListener('click', function (e) {
+          if (!nav.contains(e.target) && menu.classList.contains('open')) {
+            btn.setAttribute('aria-expanded', 'false');
+            menu.classList.remove('open');
+            document.body.style.overflow = '';
+          }
+        });
+
+        // Close on Escape
+        document.addEventListener('keydown', function (e) {
+          if (e.key === 'Escape' && menu.classList.contains('open')) {
+            btn.setAttribute('aria-expanded', 'false');
+            menu.classList.remove('open');
+            document.body.style.overflow = '';
+            btn.focus();
+          }
+        });
+      })();
     </script>
   </nav>
 
@@ -145,25 +375,10 @@
         <a href="calculator.html" class="border border-charcoal/20 px-8 py-4 rounded-sm font-semibold hover:border-[#E07A5F] hover:text-[#E07A5F] transition-colors duration-200">Use Calculator</a>
       </div>
       
-      <!-- Immediate Stats -->
-      <div class="grid grid-cols-3 gap-8 max-w-lg mx-auto pt-8 border-t border-stone/10">
-        <div class="text-center">
-          <p class="text-3xl font-bold text-[#E07A5F]">10+</p>
-          <p class="text-sm text-stone">hrs saved/week</p>
-        </div>
-        <div class="text-center">
-          <p class="text-3xl font-bold text-[#E07A5F]">24hr</p>
-          <p class="text-sm text-stone">setup time</p>
-        </div>
-        <div class="text-center">
-          <p class="text-3xl font-bold text-[#E07A5F]">100%</p>
-          <p class="text-sm text-stone">custom built</p>
-        </div>
-      </div>
     </section>
 
     <!-- Section Label: ELIMINATE -->
-    <div class="max-w-5xl mx-auto px-6 pt-16 pb-4">
+    <div class="max-w-5xl mx-auto px-6 pt-6 pb-4">
       <span class="section-label text-[#1E3A5F]/60 text-sm">[<span class="text-[#E07A5F]">ELIMINATE</span>]</span>
     </div>
 
@@ -281,21 +496,21 @@
               </g>
             </svg>
           </div>
-          <div class="grid grid-cols-3 gap-4 max-w-xl">
+          <div class="grid grid-cols-3 gap-4 max-w-xl mx-auto">
             <div class="text-center">
-              <p class="text-2xl font-bold text-[#E07A5F]">Copy</p>
-              <p class="text-stone text-xs mt-1">data between tools</p>
+              <p class="text-2xl font-bold text-[#E07A5F]">Capture</p>
+              <p class="text-stone text-xs mt-1">new requests</p>
             </div>
             <div class="text-center">
-              <p class="text-2xl font-bold text-[#E07A5F]">Chase</p>
-              <p class="text-stone text-xs mt-1">follow-ups manually</p>
+              <p class="text-2xl font-bold text-[#E07A5F]">Follow</p>
+              <p class="text-stone text-xs mt-1">status updates</p>
             </div>
             <div class="text-center">
               <p class="text-2xl font-bold text-[#E07A5F]">Sync</p>
-              <p class="text-stone text-xs mt-1">tools by hand</p>
+              <p class="text-stone text-xs mt-1">records across tools</p>
             </div>
           </div>
-          <p class="text-stone text-base mt-4 max-w-xl"><span class="text-highlight">That wasted time is time not spent closing deals.</span> We automate those specific actions.</p>
+          <p class="text-stone text-base mt-4 max-w-xl mx-auto text-center"><span class="text-highlight">You should be closing deals.</span> We automate the repeat actions, not the people decisions.</p>
         </div>
       </div>
     </section>

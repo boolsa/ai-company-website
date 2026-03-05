@@ -51,6 +51,8 @@
     }
     :root {
       --color-coral: #E07A5F;
+      --color-navy: #1E3A5F;
+      --color-cream: #FAF9F7;
     }
     @media (hover: none) and (pointer: coarse) {
       a, button {
@@ -72,199 +74,453 @@
     .tight-tracking {
       letter-spacing: -0.02em;
     }
+
+    /* Enhanced Background - Geometric Dot Grid */
+    body {
+      position: relative;
+      overflow-x: hidden;
+      background-color: #FAF9F7 !important;
+      background-image:
+        radial-gradient(circle, rgba(30, 58, 95, 0.18) 1.5px, transparent 1.5px) !important;
+      background-size: 28px 28px !important;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .gradient-orb {
+        animation: none;
+      }
+    }
+
+    /* ── Nav ── */
+    #site-nav {
+      background-color: #FAF9F7;
+      border-bottom: 1px solid rgba(99, 110, 114, 0.15);
+      transition: box-shadow 0.25s ease, border-color 0.25s ease;
+    }
+    #site-nav.nav-scrolled {
+      box-shadow: 0 1px 16px rgba(30, 58, 95, 0.08), 0 1px 3px rgba(30, 58, 95, 0.06);
+      border-bottom-color: rgba(99, 110, 114, 0.22);
+    }
+    #site-nav .nav-inner {
+      transition: padding-top 0.25s ease, padding-bottom 0.25s ease;
+    }
+    #site-nav.nav-scrolled .nav-inner {
+      padding-top: 0.625rem;
+      padding-bottom: 0.625rem;
+    }
+
+    /* Logo */
+    .nav-logo {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #1E3A5F;
+      letter-spacing: -0.03em;
+      line-height: 1;
+      display: flex;
+      align-items: baseline;
+      gap: 0;
+      text-decoration: none;
+    }
+    .nav-logo-tld {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6875rem;
+      font-weight: 500;
+      color: #636E72;
+      letter-spacing: 0;
+      margin-left: 1px;
+      position: relative;
+      top: -5px;
+    }
+
+    /* Desktop nav links */
+    .nav-link {
+      position: relative;
+      font-size: 0.8125rem;
+      font-weight: 500;
+      color: #636E72;
+      text-decoration: none;
+      padding-bottom: 2px;
+      transition: color 0.18s ease;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background-color: #E07A5F;
+      border-radius: 2px;
+      transform: scaleX(0);
+      transform-origin: left center;
+      transition: transform 0.2s ease;
+    }
+    .nav-link:hover {
+      color: #1E3A5F;
+    }
+    .nav-link:hover::after {
+      transform: scaleX(1);
+    }
+    .nav-link.active {
+      color: #1E3A5F;
+      font-weight: 600;
+    }
+    .nav-link.active::after {
+      transform: scaleX(1);
+    }
+
+    /* CTA button */
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background-color: #E07A5F;
+      color: #fff;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      padding: 0.45rem 1rem;
+      border-radius: 9999px;
+      text-decoration: none;
+      box-shadow: 0 1px 4px rgba(224, 122, 95, 0.35);
+      transition: background-color 0.18s ease, box-shadow 0.18s ease, transform 0.15s ease;
+    }
+    .nav-cta:hover {
+      background-color: #C96A4F;
+      box-shadow: 0 3px 10px rgba(224, 122, 95, 0.4);
+      transform: translateY(-1px);
+    }
+    .nav-cta:active {
+      transform: translateY(0);
+      box-shadow: 0 1px 4px rgba(224, 122, 95, 0.3);
+    }
+
+    /* Mobile menu */
+    #mobileMenu {
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                  opacity 0.25s ease;
+      opacity: 0;
+      border-top: 1px solid rgba(99, 110, 114, 0.1);
+      background-color: #FAF9F7;
+    }
+    #mobileMenu.open {
+      max-height: 320px;
+      opacity: 1;
+    }
+    .mobile-nav-link {
+      display: flex;
+      align-items: center;
+      padding: 0.75rem 1rem;
+      border-radius: 6px;
+      font-size: 0.9375rem;
+      font-weight: 500;
+      color: #636E72;
+      text-decoration: none;
+      min-height: 44px;
+      transition: color 0.15s ease, background-color 0.15s ease;
+      border-left: 2px solid transparent;
+    }
+    .mobile-nav-link:hover {
+      color: #1E3A5F;
+      background-color: rgba(30, 58, 95, 0.04);
+    }
+    .mobile-nav-link.active {
+      color: #1E3A5F;
+      font-weight: 600;
+      background-color: rgba(30, 58, 95, 0.05);
+      border-left-color: #E07A5F;
+    }
+    .mobile-nav-cta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.75rem 1rem;
+      border-radius: 9999px;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: #fff;
+      background-color: #E07A5F;
+      text-decoration: none;
+      min-height: 44px;
+      box-shadow: 0 1px 4px rgba(224, 122, 95, 0.3);
+      transition: background-color 0.15s ease;
+    }
+    .mobile-nav-cta:hover {
+      background-color: #C96A4F;
+    }
+
+    /* Hamburger morph */
+    .hamburger-line {
+      display: block;
+      width: 20px;
+      height: 1.75px;
+      background-color: #1E3A5F;
+      border-radius: 2px;
+      transition: transform 0.25s ease, opacity 0.2s ease;
+      transform-origin: center;
+    }
+    #mobileMenuBtn[aria-expanded="true"] .hamburger-line:nth-child(1) {
+      transform: translateY(5.75px) rotate(45deg);
+    }
+    #mobileMenuBtn[aria-expanded="true"] .hamburger-line:nth-child(2) {
+      opacity: 0;
+      transform: scaleX(0);
+    }
+    #mobileMenuBtn[aria-expanded="true"] .hamburger-line:nth-child(3) {
+      transform: translateY(-5.75px) rotate(-45deg);
+    }
   </style>
 </head>
-<body class="bg-cream text-charcoal antialiased">
+<body class="text-charcoal antialiased">
   <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-[#1E3A5F] focus:text-white focus:px-4 focus:py-2 focus:rounded-sm focus:font-semibold">
     Skip to main content
   </a>
 
-  <nav class="border-b border-stone/20 bg-cream/95 backdrop-blur sticky top-0 z-40">
-    <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
-      <a href="index.html" class="font-sans text-3xl font-bold text-[#1E3A5F] tracking-tight">microve<span class="text-sm text-stone align-top">.ai</span></a>
-      
+  <nav id="site-nav" class="sticky top-0 z-40" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
+
+      <!-- Logo -->
+      <a href="index.html" aria-label="Microve.ai — home" class="nav-logo">
+        microve<span class="nav-logo-tld">.ai</span>
+      </a>
+
       <!-- Desktop Navigation -->
-      <div class="hidden md:flex items-center gap-6 text-sm">
-        <a href="index.html" class="hover:text-[#E07A5F] transition-colors duration-200">Main</a>
-        <a href="what-we-do.html" aria-current="page" class="text-[#1E3A5F] font-semibold">What We Do</a>
-        <a href="calculator.html" class="hover:text-[#E07A5F] transition-colors duration-200">Calculator</a>
-        <a href="contact.html" class="bg-[#E07A5F] text-white px-4 py-2 rounded-sm font-semibold hover:bg-[#C96A4F] transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#E07A5F] focus:ring-offset-2 uppercase tracking-wider text-sm">Book a Call</a>
+      <div class="hidden md:flex items-center gap-7">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="what-we-do.html" aria-current="page" class="nav-link active">What We Do</a>
+        <a href="calculator.html" class="nav-link">Calculator</a>
+        <a href="contact.html" class="nav-cta" aria-label="Book a call with Microve.ai">
+          Book a Call
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+            <path d="M2.5 6h7M6.5 3l3 3-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
       </div>
-      
-      <!-- Mobile Hamburger Button -->
-      <button id="mobileMenuBtn" class="md:hidden p-2 -mr-2 rounded-sm focus:outline-none focus:ring-2 focus:ring-[#1E3A5F] focus:ring-offset-2" aria-label="Toggle menu" aria-expanded="false">
-        <svg id="menuIcon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-        </svg>
-        <svg id="closeIcon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-        </svg>
+
+      <!-- Mobile Hamburger -->
+      <button id="mobileMenuBtn"
+              class="md:hidden flex flex-col justify-center gap-[4.5px] w-9 h-9 -mr-1 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1E3A5F] focus:ring-offset-2"
+              aria-label="Toggle navigation menu"
+              aria-expanded="false"
+              aria-controls="mobileMenu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
       </button>
     </div>
-    
+
     <!-- Mobile Menu -->
-    <div id="mobileMenu" class="hidden md:hidden border-t border-stone/10 bg-cream/98 backdrop-blur">
-      <div class="max-w-5xl mx-auto px-6 py-4 flex flex-col gap-4">
-        <a href="index.html" class="py-3 px-4 text-stone hover:text-[#E07A5F] hover:bg-[#E07A5F]/5 rounded-sm transition-colors duration-200 min-h-[44px] flex items-center">Main</a>
-        <a href="what-we-do.html" aria-current="page" class="py-3 px-4 text-[#1E3A5F] bg-[#1E3A5F]/5 rounded-sm font-semibold min-h-[44px] flex items-center">What We Do</a>
-        <a href="calculator.html" class="py-3 px-4 text-stone hover:text-[#E07A5F] hover:bg-[#E07A5F]/5 rounded-sm transition-colors duration-200 min-h-[44px] flex items-center">Calculator</a>
-        <a href="contact.html" class="py-3 px-4 bg-[#E07A5F] text-white rounded-sm font-semibold text-center hover:bg-[#C96A4F] transition-colors duration-200 min-h-[44px] flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-[#E07A5F] focus:ring-offset-2 uppercase tracking-wider text-sm">Book a Call</a>
+    <div id="mobileMenu" role="region" aria-label="Mobile navigation">
+      <div class="max-w-5xl mx-auto px-4 py-3 flex flex-col gap-1">
+        <a href="index.html" class="mobile-nav-link">Home</a>
+        <a href="what-we-do.html" aria-current="page" class="mobile-nav-link active">What We Do</a>
+        <a href="calculator.html" class="mobile-nav-link">Calculator</a>
+        <div class="pt-2 pb-1">
+          <a href="contact.html" class="mobile-nav-cta">Book a Call</a>
+        </div>
       </div>
     </div>
 
     <script>
-      document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+      (function () {
+        const btn = document.getElementById('mobileMenuBtn');
         const menu = document.getElementById('mobileMenu');
-        const menuIcon = document.getElementById('menuIcon');
-        const closeIcon = document.getElementById('closeIcon');
-        const isExpanded = this.getAttribute('aria-expanded') === 'true';
-        
-        this.setAttribute('aria-expanded', !isExpanded);
-        menu.classList.toggle('hidden');
-        menuIcon.classList.toggle('hidden');
-        closeIcon.classList.toggle('hidden');
-        document.body.classList.toggle('overflow-hidden', !isExpanded);
-      });
+
+        // Scroll-aware nav
+        const nav = document.getElementById('site-nav');
+        window.addEventListener('scroll', function () {
+          nav.classList.toggle('nav-scrolled', window.scrollY > 12);
+        }, { passive: true });
+
+        // Mobile toggle
+        btn.addEventListener('click', function () {
+          const isOpen = this.getAttribute('aria-expanded') === 'true';
+          this.setAttribute('aria-expanded', String(!isOpen));
+          menu.classList.toggle('open', !isOpen);
+          document.body.style.overflow = !isOpen ? 'hidden' : '';
+        });
+
+        // Close on outside click
+        document.addEventListener('click', function (e) {
+          if (!nav.contains(e.target) && menu.classList.contains('open')) {
+            btn.setAttribute('aria-expanded', 'false');
+            menu.classList.remove('open');
+            document.body.style.overflow = '';
+          }
+        });
+
+        // Close on Escape
+        document.addEventListener('keydown', function (e) {
+          if (e.key === 'Escape' && menu.classList.contains('open')) {
+            btn.setAttribute('aria-expanded', 'false');
+            menu.classList.remove('open');
+            document.body.style.overflow = '';
+            btn.focus();
+          }
+        });
+      })();
     </script>
   </nav>
 
   <main id="main-content" class="max-w-4xl mx-auto px-6 pt-24 pb-32 space-y-8">
     <header class="pt-8 pb-8">
-      <!-- Hero SVG Graphic - Full width workflow diagram -->
-      <div class="relative mb-8 w-full overflow-x-auto">
-        <svg class="w-full min-w-[900px] h-[320px]" viewBox="0 0 900 320" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <!-- What We Do Header -- moved above diagram -->
+      <div class="mb-6">
+        <h1 class="font-sans text-5xl md:text-7xl font-bold mb-4 tight-tracking text-center">What we do</h1>
+        <p class="text-lg text-stone max-w-2xl mx-auto text-center">We build micro-automations that remove specific repetitive steps from your workflow.</p>
+      </div>
+      
+      <!-- Hero SVG Graphic — Desktop (hidden on mobile) -->
+      <div class="relative mb-8 w-full overflow-hidden">
+        <svg class="hidden md:block w-full h-auto" viewBox="0 0 960 400" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Workflow diagram: Your team provides input, Microve automates the middle using rule-based or AI systems, your team reviews the output">
           <defs>
-            <marker id="arr-navy" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-              <path d="M 0 0 L 10 5 L 0 10 z" fill="#1E3A5F"/>
-            </marker>
-            <marker id="arr-coral" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-              <path d="M 0 0 L 10 5 L 0 10 z" fill="#E07A5F"/>
-            </marker>
-            <marker id="arr-sage" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-              <path d="M 0 0 L 10 5 L 0 10 z" fill="#7A9E7E"/>
-            </marker>
+            <marker id="d-arr-navy" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#1E3A5F"/></marker>
+            <marker id="d-arr-sage" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#7A9E7E"/></marker>
+            <marker id="d-arr-coral" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#E07A5F"/></marker>
           </defs>
-          
-          <!-- Title -->
-          <text x="450" y="30" text-anchor="middle" font-size="14" font-weight="600" fill="#1E3A5F" letter-spacing="0.1em">SURGICAL AUTOMATION: HUMANS + AI WORKING TOGETHER</text>
-          
-          <!-- STEP 1: Human - Receive Request -->
-          <g transform="translate(60, 80)">
-            <rect x="0" y="0" width="100" height="70" rx="4" fill="white" stroke="#2D3436" stroke-width="1.5"/>
-            <text x="50" y="25" text-anchor="middle" font-size="11" font-weight="600" fill="#2D3436">Step 1</text>
-            <text x="50" y="42" text-anchor="middle" font-size="10" fill="#636E72">Receive</text>
-            <text x="50" y="55" text-anchor="middle" font-size="10" fill="#636E72">Request</text>
-            <!-- Person icon -->
-            <circle cx="50" cy="85" r="10" fill="#1E3A5F" opacity="0.15"/>
-            <text x="50" y="89" text-anchor="middle" font-size="8" fill="#1E3A5F">HUMAN</text>
-            <!-- Time -->
-            <text x="50" y="105" text-anchor="middle" font-size="9" fill="#636E72">~10 min</text>
-          </g>
-          
-          <!-- Arrow 1 -->
-          <path d="M 170 115 L 210 115" stroke="#E07A5F" stroke-width="2" fill="none" marker-end="url(#arr-coral)"/>
-          
-          <!-- STEPS 2-4: AUTOMATED BLOCK -->
-          <g transform="translate(220, 60)">
-            <!-- Automation container -->
-            <rect x="0" y="0" width="280" height="140" rx="6" fill="#1E3A5F"/>
-            <text x="140" y="25" text-anchor="middle" font-size="12" font-weight="700" fill="white" letter-spacing="0.05em">MICROVE AUTOMATES</text>
-            <text x="140" y="40" text-anchor="middle" font-size="10" fill="#7A9E7E">The repetitive bottleneck</text>
-            
-            <!-- Step 2: Pull Data -->
-            <g transform="translate(20, 55)">
-              <rect x="0" y="0" width="70" height="50" rx="3" fill="#3D4E5F" stroke="#7A9E7E" stroke-width="1"/>
-              <text x="35" y="18" text-anchor="middle" font-size="9" font-weight="600" fill="white">Step 2</text>
-              <text x="35" y="32" text-anchor="middle" font-size="8" fill="#B0B8C4">Pull Data</text>
-              <text x="35" y="44" text-anchor="middle" font-size="8" fill="#E07A5F" font-weight="600">~0 min</text>
-            </g>
-            
-            <!-- Arrow inside automation -->
-            <path d="M 100 80 L 110 80" stroke="#7A9E7E" stroke-width="1.5" marker-end="url(#arr-sage)"/>
-            
-            <!-- Step 3: Process & Route -->
-            <g transform="translate(120, 55)">
-              <rect x="0" y="0" width="70" height="50" rx="3" fill="#3D4E5F" stroke="#7A9E7E" stroke-width="1"/>
-              <text x="35" y="18" text-anchor="middle" font-size="9" font-weight="600" fill="white">Step 3</text>
-              <text x="35" y="32" text-anchor="middle" font-size="8" fill="#B0B8C4">Process &</text>
-              <text x="35" y="42" text-anchor="middle" font-size="8" fill="#B0B8C4">Route</text>
-              <text x="35" y="55" text-anchor="middle" font-size="8" fill="#E07A5F" font-weight="600">~0 min</text>
-            </g>
-            
-            <!-- Arrow inside automation -->
-            <path d="M 200 80 L 210 80" stroke="#7A9E7E" stroke-width="1.5" marker-end="url(#arr-sage)"/>
-            
-            <!-- Step 4: Draft Response -->
-            <g transform="translate(220, 55)">
-              <rect x="0" y="0" width="70" height="50" rx="3" fill="#3D4E5F" stroke="#7A9E7E" stroke-width="1"/>
-              <text x="35" y="18" text-anchor="middle" font-size="9" font-weight="600" fill="white">Step 4</text>
-              <text x="35" y="32" text-anchor="middle" font-size="8" fill="#B0B8C4">Draft</text>
-              <text x="35" y="42" text-anchor="middle" font-size="8" fill="#B0B8C4">Response</text>
-              <text x="35" y="55" text-anchor="middle" font-size="8" fill="#E07A5F" font-weight="600">~0 min</text>
-            </g>
-            
-            <!-- Tool icons -->
-            <g transform="translate(20, 115)">
-              <circle cx="10" cy="10" r="8" fill="#E07A5F" opacity="0.3"/>
-              <text x="10" y="13" text-anchor="middle" font-size="6" fill="#E07A5F">CRM</text>
-            </g>
-            <g transform="translate(120, 115)">
-              <circle cx="10" cy="10" r="8" fill="#E07A5F" opacity="0.3"/>
-              <text x="10" y="13" text-anchor="middle" font-size="6" fill="#E07A5F">AI</text>
-            </g>
-            <g transform="translate(220, 115)">
-              <circle cx="10" cy="10" r="8" fill="#E07A5F" opacity="0.3"/>
-              <text x="10" y="13" text-anchor="middle" font-size="6" fill="#E07A5F">Email</text>
-            </g>
-          </g>
-          
-          <!-- Arrow 2 -->
-          <path d="M 510 115 L 550 115" stroke="#E07A5F" stroke-width="2" fill="none" marker-end="url(#arr-coral)"/>
-          
-          <!-- STEP 5: Human - Review & Refine -->
-          <g transform="translate(560, 80)">
-            <rect x="0" y="0" width="100" height="70" rx="4" fill="white" stroke="#2D3436" stroke-width="1.5"/>
-            <text x="50" y="25" text-anchor="middle" font-size="11" font-weight="600" fill="#2D3436">Step 5</text>
-            <text x="50" y="42" text-anchor="middle" font-size="10" fill="#636E72">Review &</text>
-            <text x="50" y="55" text-anchor="middle" font-size="10" fill="#636E72">Refine</text>
-            <!-- Person icon -->
-            <circle cx="50" cy="85" r="10" fill="#1E3A5F" opacity="0.15"/>
-            <text x="50" y="89" text-anchor="middle" font-size="8" fill="#1E3A5F">HUMAN</text>
-            <!-- Time -->
-            <text x="50" y="105" text-anchor="middle" font-size="9" fill="#636E72">~5 min</text>
-          </g>
-          
-          <!-- Arrow 3 -->
-          <path d="M 670 115 L 710 115" stroke="#E07A5F" stroke-width="2" fill="none" marker-end="url(#arr-coral)"/>
-          
-          <!-- STEP 6: Human - Send to Client -->
-          <g transform="translate(720, 80)">
-            <rect x="0" y="0" width="100" height="70" rx="4" fill="white" stroke="#2D3436" stroke-width="1.5"/>
-            <text x="50" y="25" text-anchor="middle" font-size="11" font-weight="600" fill="#2D3436">Step 6</text>
-            <text x="50" y="42" text-anchor="middle" font-size="10" fill="#636E72">Send to</text>
-            <text x="50" y="55" text-anchor="middle" font-size="10" fill="#636E72">Client</text>
-            <!-- Person icon -->
-            <circle cx="50" cy="85" r="10" fill="#1E3A5F" opacity="0.15"/>
-            <text x="50" y="89" text-anchor="middle" font-size="8" fill="#1E3A5F">HUMAN</text>
-            <!-- Time -->
-            <text x="50" y="105" text-anchor="middle" font-size="9" fill="#636E72">~2 min</text>
-          </g>
-          
-          <!-- Bottom label: Time Saved -->
-          <g transform="translate(220, 220)">
-            <rect x="0" y="0" width="280" height="50" rx="4" fill="#E07A5F" opacity="0.1" stroke="#E07A5F" stroke-width="1" stroke-dasharray="4 2"/>
-            <text x="140" y="20" text-anchor="middle" font-size="11" font-weight="600" fill="#E07A5F">3 HOURS SAVED PER DAY</text>
-            <text x="140" y="38" text-anchor="middle" font-size="10" fill="#636E72">Repetitive steps automated → Team focuses on strategy & relationships</text>
-          </g>
-          
-          <!-- Side labels -->
-          <text x="110" y="250" text-anchor="middle" font-size="9" fill="#636E72" font-style="italic">Human judgment</text>
-          <text x="360" y="250" text-anchor="middle" font-size="9" fill="#636E72" font-style="italic">Automated efficiency</text>
-          <text x="690" y="250" text-anchor="middle" font-size="9" fill="#636E72" font-style="italic">Human relationships</text>
+
+          <!-- LEFT: YOUR TEAM (input) -->
+          <rect x="24" y="80" width="164" height="156" rx="6" fill="white" stroke="#1E3A5F" stroke-width="1.2"/>
+          <text x="106" y="110" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#1E3A5F" letter-spacing="0.04em">YOUR TEAM</text>
+          <line x1="56" y1="120" x2="156" y2="120" stroke="#1E3A5F" stroke-width="0.5" opacity="0.2"/>
+          <text x="106" y="142" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#636E72">Receive request</text>
+          <text x="106" y="160" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#636E72">Set context &amp; intent</text>
+          <text x="106" y="186" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#1E3A5F" font-weight="600">Judgment &amp; strategy</text>
+          <!-- Person icon -->
+          <circle cx="106" cy="210" r="5" fill="none" stroke="#1E3A5F" stroke-width="1.2"/>
+          <path d="M96 224 Q106 218 116 224" stroke="#1E3A5F" stroke-width="1.2" fill="none"/>
+
+          <!-- Dashed connector: Left → Center -->
+          <line x1="188" y1="158" x2="250" y2="158" stroke="#1E3A5F" stroke-width="1.5" stroke-dasharray="6 4" marker-end="url(#d-arr-navy)"/>
+
+          <!-- CENTER: MICROVE AUTOMATION ZONE -->
+          <rect x="258" y="24" width="444" height="296" rx="6" fill="#F7FAFC" stroke="#1E3A5F" stroke-width="1.2"/>
+          <text x="480" y="52" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#1E3A5F" letter-spacing="0.05em">MICROVE AUTOMATION ZONE</text>
+          <text x="480" y="70" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#636E72">We choose the right system for each bottleneck</text>
+
+          <!-- Decision diamond -->
+          <polygon points="378,138 428,168 378,198 328,168" fill="white" stroke="#1E3A5F" stroke-width="1.2"/>
+          <text x="378" y="164" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#1E3A5F">Predictable</text>
+          <text x="378" y="178" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#1E3A5F">task?</text>
+
+          <!-- Arrow from left connector into diamond -->
+          <line x1="304" y1="158" x2="326" y2="165" stroke="#1E3A5F" stroke-width="1.2" marker-end="url(#d-arr-navy)"/>
+
+          <!-- TOP PATH: RULE BASED (sage) -->
+          <path d="M 418 143 L 498 110" stroke="#7A9E7E" stroke-width="2" fill="none" marker-end="url(#d-arr-sage)"/>
+          <text x="450" y="118" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="#7A9E7E">Yes</text>
+          <rect x="504" y="84" width="168" height="64" rx="6" fill="white" stroke="#7A9E7E" stroke-width="1.5"/>
+          <text x="588" y="108" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#7A9E7E">RULE BASED</text>
+          <text x="588" y="124" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#636E72">If X → do Y</text>
+          <text x="588" y="140" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#636E72">Fast, reliable, low cost</text>
+
+          <!-- BOTTOM PATH: AI (coral) -->
+          <path d="M 418 193 L 498 226" stroke="#E07A5F" stroke-width="2" fill="none" marker-end="url(#d-arr-coral)"/>
+          <text x="450" y="220" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="#E07A5F">No</text>
+          <rect x="504" y="204" width="168" height="64" rx="6" fill="white" stroke="#E07A5F" stroke-width="1.5"/>
+          <text x="588" y="228" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#E07A5F">AI AUTOMATION</text>
+          <text x="588" y="244" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#636E72">Variable inputs</text>
+          <text x="588" y="260" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#636E72">Needs context &amp; routing</text>
+
+          <!-- MERGE: both paths converge -->
+          <path d="M 672 116 L 688 168" stroke="#7A9E7E" stroke-width="1.5" fill="none"/>
+          <path d="M 672 236 L 688 168" stroke="#E07A5F" stroke-width="1.5" fill="none"/>
+          <circle cx="692" cy="168" r="6" fill="#1E3A5F"/>
+          <circle cx="692" cy="168" r="3" fill="white"/>
+
+          <!-- Dashed connector: Center → Right -->
+          <line x1="700" y1="168" x2="770" y2="158" stroke="#1E3A5F" stroke-width="1.5" stroke-dasharray="6 4" marker-end="url(#d-arr-navy)"/>
+
+          <!-- RIGHT: YOUR TEAM (output) -->
+          <rect x="778" y="80" width="164" height="156" rx="6" fill="white" stroke="#1E3A5F" stroke-width="1.2"/>
+          <text x="860" y="110" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#1E3A5F" letter-spacing="0.04em">YOUR TEAM</text>
+          <line x1="810" y1="120" x2="910" y2="120" stroke="#1E3A5F" stroke-width="0.5" opacity="0.2"/>
+          <text x="860" y="142" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#636E72">Review &amp; approve</text>
+          <text x="860" y="160" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#636E72">Client-ready output</text>
+          <text x="860" y="186" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#1E3A5F" font-weight="600">Relationships &amp; QC</text>
+          <!-- Person icon -->
+          <circle cx="860" cy="210" r="5" fill="none" stroke="#1E3A5F" stroke-width="1.2"/>
+          <path d="M850 224 Q860 218 870 224" stroke="#1E3A5F" stroke-width="1.2" fill="none"/>
+
+          <!-- Zone labels below blocks -->
+          <text x="106" y="258" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#636E72" font-style="italic">Human judgment</text>
+          <text x="480" y="336" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#636E72" font-style="italic">Automated bottleneck removal</text>
+          <text x="860" y="258" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#636E72" font-style="italic">Human quality control</text>
+
+          <!-- BOTTOM STRIP -->
+          <rect x="80" y="354" width="800" height="36" rx="6" fill="#E07A5F" opacity="0.1"/>
+          <rect x="80" y="354" width="800" height="36" rx="6" fill="none" stroke="#E07A5F" stroke-width="0.8"/>
+          <text x="480" y="377" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#E07A5F">Rule Based when predictable.  AI when variable.  Always custom-built for your workflow.</text>
+        </svg>
+
+        <!-- Hero SVG Graphic — Mobile (hidden on desktop, stacks vertically) -->
+        <svg class="block md:hidden w-full h-auto" viewBox="0 0 360 640" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Workflow diagram: Your team provides input, Microve automates the middle using rule-based or AI systems, your team reviews the output">
+          <defs>
+            <marker id="m-arr-navy" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#1E3A5F"/></marker>
+            <marker id="m-arr-sage" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#7A9E7E"/></marker>
+            <marker id="m-arr-coral" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#E07A5F"/></marker>
+          </defs>
+
+          <!-- TOP: YOUR TEAM (input) -->
+          <rect x="60" y="16" width="240" height="76" rx="6" fill="white" stroke="#1E3A5F" stroke-width="1.2"/>
+          <text x="180" y="40" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#1E3A5F" letter-spacing="0.04em">YOUR TEAM</text>
+          <text x="180" y="58" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#636E72">Judgment, context &amp; strategy</text>
+          <text x="180" y="78" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#636E72" font-style="italic">Human input</text>
+
+          <!-- Arrow down -->
+          <line x1="180" y1="92" x2="180" y2="122" stroke="#1E3A5F" stroke-width="1.5" stroke-dasharray="5 3" marker-end="url(#m-arr-navy)"/>
+
+          <!-- CENTER: AUTOMATION ZONE -->
+          <rect x="20" y="130" width="320" height="350" rx="6" fill="#F7FAFC" stroke="#1E3A5F" stroke-width="1.2"/>
+          <text x="180" y="156" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#1E3A5F" letter-spacing="0.05em">MICROVE AUTOMATION</text>
+          <text x="180" y="174" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#636E72">Right system for each bottleneck</text>
+
+          <!-- Decision diamond -->
+          <polygon points="180,196 230,224 180,252 130,224" fill="white" stroke="#1E3A5F" stroke-width="1.2"/>
+          <text x="180" y="228" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#1E3A5F">Predictable?</text>
+
+          <!-- LEFT branch: Rule Based (sage) -->
+          <path d="M 140 230 L 88 274" stroke="#7A9E7E" stroke-width="1.8" fill="none" marker-end="url(#m-arr-sage)"/>
+          <text x="100" y="256" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="#7A9E7E">Yes</text>
+          <rect x="28" y="280" width="140" height="64" rx="6" fill="white" stroke="#7A9E7E" stroke-width="1.5"/>
+          <text x="98" y="302" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#7A9E7E">RULE BASED</text>
+          <text x="98" y="318" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#636E72">If X → do Y</text>
+          <text x="98" y="334" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#636E72">Fast, reliable</text>
+
+          <!-- RIGHT branch: AI (coral) -->
+          <path d="M 220 230 L 272 274" stroke="#E07A5F" stroke-width="1.8" fill="none" marker-end="url(#m-arr-coral)"/>
+          <text x="260" y="256" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="#E07A5F">No</text>
+          <rect x="192" y="280" width="140" height="64" rx="6" fill="white" stroke="#E07A5F" stroke-width="1.5"/>
+          <text x="262" y="302" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#E07A5F">AI AUTOMATION</text>
+          <text x="262" y="318" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#636E72">Variable inputs</text>
+          <text x="262" y="334" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#636E72">Needs context</text>
+
+          <!-- Merge paths -->
+          <path d="M 98 344 L 180 386" stroke="#7A9E7E" stroke-width="1.5" fill="none"/>
+          <path d="M 262 344 L 180 386" stroke="#E07A5F" stroke-width="1.5" fill="none"/>
+          <circle cx="180" cy="390" r="6" fill="#1E3A5F"/>
+          <circle cx="180" cy="390" r="3" fill="white"/>
+
+          <!-- Label under merge -->
+          <text x="180" y="420" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#636E72" font-style="italic">Unified automated output</text>
+
+          <!-- Arrow down from zone -->
+          <line x1="180" y1="480" x2="180" y2="508" stroke="#1E3A5F" stroke-width="1.5" stroke-dasharray="5 3" marker-end="url(#m-arr-navy)"/>
+
+          <!-- BOTTOM: YOUR TEAM (output) -->
+          <rect x="60" y="516" width="240" height="76" rx="6" fill="white" stroke="#1E3A5F" stroke-width="1.2"/>
+          <text x="180" y="540" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#1E3A5F" letter-spacing="0.04em">YOUR TEAM</text>
+          <text x="180" y="558" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#636E72">Review, approve &amp; deliver</text>
+          <text x="180" y="578" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#636E72" font-style="italic">Relationships &amp; quality control</text>
+
+          <!-- BOTTOM STRIP -->
+          <rect x="16" y="604" width="328" height="28" rx="6" fill="#E07A5F" opacity="0.1"/>
+          <rect x="16" y="604" width="328" height="28" rx="6" fill="none" stroke="#E07A5F" stroke-width="0.8"/>
+          <text x="180" y="623" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="#E07A5F">Rule Based when predictable. AI when variable.</text>
         </svg>
       </div>
-      <h1 class="font-sans text-5xl md:text-7xl font-bold mb-4 tight-tracking text-center">What we do</h1>
-      <p class="text-lg text-stone max-w-2xl mx-auto text-center">We build micro-automations that remove specific repetitive steps from your workflow.</p>
     </header>
 
     <div class="max-w-4xl mx-auto px-6 pb-4"><span class="section-label text-[#1E3A5F]/60 text-sm">[<span class="text-[#E07A5F]">CONCEPT</span>]</span></div>
@@ -285,6 +541,70 @@
           <span><strong>Your team keeps control.</strong> They just stop doing the copy-paste grunt work and start focusing on execution and judgment.</span>
         </li>
       </ul>
+    </section>
+
+    <!-- AI Reality Check Section -->
+    <div class="max-w-4xl mx-auto px-6 pb-4"><span class="section-label text-[#E07A5F]/60 text-sm">[<span class="text-[#1E3A5F]">REALITY CHECK</span>]</span></div>
+    <section class="bg-white rounded-sm border-2 border-[#E07A5F]/30 p-7 md:p-10 relative overflow-hidden">
+      <div class="absolute top-0 right-0 w-32 h-32 bg-[#E07A5F]/5 rounded-full -mr-16 -mt-16"></div>
+      
+      <h2 class="font-sans text-3xl md:text-4xl font-bold mb-4 tight-tracking text-[#1E3A5F]">Most AI Projects Fail. Here's Why Ours Don't.</h2>
+      
+      <div class="prose prose-stone max-w-none">
+        <p class="text-lg text-charcoal mb-6 leading-relaxed">
+          Right now, someone's VP just approved a $200,000 "AI transformation" budget because a competitor announced they're "leveraging LLMs." That same someone will quietly sunset the project in eight months when adoption flatlines and ROI never materializes.
+        </p>
+        
+        <p class="text-stone mb-6 leading-relaxed">
+          We've seen it dozens of times. The AI industrial complex has convinced businesses that intelligence is something you buy, not something you build deliberately. So companies purchase enterprise AI licenses like they're hedging bets—spraying machine learning across workflows and hoping something sticks. It doesn't. Because automation without strategy is just expensive chaos, faster.
+        </p>
+        
+        <p class="text-charcoal font-semibold mb-6">
+          We say no to 80% of the AI requests we receive. Not because we can't build them. Because you shouldn't.
+        </p>
+        
+        <div class="bg-[#1E3A5F]/5 border-l-4 border-[#E07A5F] p-5 my-6 rounded-r-sm">
+          <p class="text-stone leading-relaxed italic">
+            A marketing director recently asked us to "add AI" to their lead scoring. We audited their process and discovered their real bottleneck wasn't intelligence—it was that sales and marketing used different CRM fields. A $12,000 integration fixed what a $150,000 AI model would have obscured. They thought they needed an algorithm. They needed visibility.
+          </p>
+        </div>
+        
+        <p class="text-stone mb-6 leading-relaxed">
+          This is the pattern. Businesses arrive wanting neural networks and leave with workflows that actually work. We build custom automation that maps to your actual friction points—not the ones trending on LinkedIn. Sometimes that's AI. Often it's not. The difference is we know before we build.
+        </p>
+      </div>
+      
+      <div class="mt-8 p-6 bg-gradient-to-br from-[#1E3A5F] to-[#2a4a73] text-white rounded-sm">
+        <blockquote class="text-xl md:text-2xl font-medium leading-relaxed mb-4">
+          "If AI were the answer to everything, we wouldn't have jobs. The real advantage isn't artificial intelligence—it's intelligent decisions about where to deploy it."
+        </blockquote>
+      </div>
+      
+      <div class="mt-8 grid md:grid-cols-3 gap-6">
+        <div class="p-4 border border-stone/15 rounded-sm">
+          <div class="w-8 h-8 bg-[#E07A5F]/10 rounded-full flex items-center justify-center mb-3">
+            <svg class="w-4 h-4 text-[#E07A5F]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/></svg>
+          </div>
+          <h4 class="font-semibold text-charcoal mb-2">Diagnostic before deployment</h4>
+          <p class="text-sm text-stone">We map your actual workflow friction before writing a line of code. No solutions looking for problems.</p>
+        </div>
+        
+        <div class="p-4 border border-stone/15 rounded-sm">
+          <div class="w-8 h-8 bg-[#E07A5F]/10 rounded-full flex items-center justify-center mb-3">
+            <svg class="w-4 h-4 text-[#E07A5F]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
+          </div>
+          <h4 class="font-semibold text-charcoal mb-2">Custom-built, not configured</h4>
+          <p class="text-sm text-stone">Your automation isn't pulled from a template library. It's engineered for the specific way your team works.</p>
+        </div>
+        
+        <div class="p-4 border border-stone/15 rounded-sm">
+          <div class="w-8 h-8 bg-[#E07A5F]/10 rounded-full flex items-center justify-center mb-3">
+            <svg class="w-4 h-4 text-[#E07A5F]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          </div>
+          <h4 class="font-semibold text-charcoal mb-2">Surgical, not scattered</h4>
+          <p class="text-sm text-stone">We implement 3 automations that your team actually uses rather than 30 they ignore. Adoption beats aspiration.</p>
+        </div>
+      </div>
     </section>
 
     <div class="max-w-4xl mx-auto px-6 pb-4"><span class="section-label text-[#1E3A5F]/60 text-sm">[<span class="text-[#E07A5F]">COMPARE</span>]</span></div>
@@ -599,20 +919,21 @@
     <div class="max-w-4xl mx-auto px-6 pb-4"><span class="section-label text-[#1E3A5F]/60 text-sm">[<span class="text-[#E07A5F]">STAKES</span>]</span></div>
     <section class="bg-white border-2 border-charcoal/10 rounded-sm p-8 md:p-10 relative">
       <div class="flex flex-col md:flex-row items-center gap-8">
-        <div class="text-center md:text-left">
-          <div class="text-6xl md:text-7xl font-bold text-[#E07A5F] mb-2">67%</div>
-          <p class="text-sm text-stone uppercase tracking-wider">of employees say repetitive tasks drive them to quit</p>
+        <div class="text-center md:text-left shrink-0">
+          <div class="text-6xl md:text-7xl font-bold text-[#E07A5F] mb-2">6 weeks</div>
+          <p class="text-sm text-stone uppercase tracking-wider">lost per employee per year<br>to repetitive manual tasks</p>
+          <p class="text-xs text-stone/60 mt-1">WorkMarket / KRC Research, 2020</p>
         </div>
         <div class="hidden md:block w-px h-20 bg-stone/20"></div>
         <div class="flex-1 text-center md:text-left">
           <h2 class="font-sans text-2xl md:text-3xl font-bold text-charcoal tight-tracking mb-3">
-            Chained to busywork, talent walks
+            Every manual hour is lost revenue.
           </h2>
           <p class="text-stone mb-4">
-            Your best people don't leave because they want to—they leave because they're drowning in copy-paste work a machine could handle. <strong class="text-charcoal">Automation isn't about replacing people. It's about keeping them.</strong>
+            The average employee wastes six full work-weeks per year on tasks a machine could run in seconds. <strong class="text-charcoal">That's capacity you're already paying for — redirected from strategy, relationships, and growth into copy-paste busywork.</strong>
           </p>
           <a href="contact.html" class="inline-block bg-[#E07A5F] text-white px-6 py-3 rounded-sm font-semibold hover:bg-[#C96A4F] transition-colors duration-200 uppercase tracking-wider text-sm">
-            Start With a Free Audit
+            Book a Call
           </a>
         </div>
       </div>
