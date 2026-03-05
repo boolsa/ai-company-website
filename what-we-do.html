@@ -129,61 +129,142 @@
   </nav>
 
   <main id="main-content" class="max-w-4xl mx-auto px-6 pt-24 pb-32 space-y-8">
-    <header class="pt-16 pb-8 text-center">
-      <!-- Hero SVG Graphic - positioned above text -->
-      <div class="relative mb-6">
-        <svg class="w-full max-w-2xl mx-auto h-48 opacity-90" viewBox="0 0 600 200" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <!-- Background circle -->
-          <circle cx="300" cy="100" r="90" fill="#FAF9F7" stroke="#1E3A5F" stroke-width="1" stroke-opacity="0.1"/>
-          
-          <!-- Step 1: Input/Manual -->
-          <g transform="translate(80, 100)">
-            <circle r="35" fill="white" stroke="#1E3A5F" stroke-width="2"/>
-            <text y="5" text-anchor="middle" font-size="12" fill="#1E3A5F" font-weight="600">INPUT</text>
-            <!-- Person icon -->
-            <circle cx="0" cy="-8" r="6" fill="#1E3A5F" opacity="0.8"/>
-            <path d="M -12 15 Q 0 5, 12 15" stroke="#1E3A5F" stroke-width="2" fill="none" opacity="0.8"/>
-          </g>
-          
-          <!-- Arrow 1 -->
-          <path d="M 120 100 L 180 100" stroke="#E07A5F" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
-          
-          <!-- Step 2: Process/Automation -->
-          <g transform="translate(250, 100)">
-            <rect x="-45" y="-35" width="90" height="70" rx="8" fill="white" stroke="#7A9E7E" stroke-width="2"/>
-            <text y="-8" text-anchor="middle" font-size="11" fill="#7A9E7E" font-weight="600">AUTOMATE</text>
-            <!-- Gear icon -->
-            <circle cx="0" cy="12" r="12" fill="none" stroke="#7A9E7E" stroke-width="2"/>
-            <circle cx="0" cy="12" r="4" fill="#7A9E7E"/>
-            <path d="M 0 0 L 0 6 M 0 18 L 0 24 M -12 12 L -6 12 M 6 12 L 12 12" stroke="#7A9E7E" stroke-width="2"/>
-          </g>
-          
-          <!-- Arrow 2 -->
-          <path d="M 300 100 L 360 100" stroke="#E07A5F" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
-          
-          <!-- Step 3: Output/Result -->
-          <g transform="translate(430, 100)">
-            <circle r="35" fill="white" stroke="#E07A5F" stroke-width="2"/>
-            <text y="5" text-anchor="middle" font-size="12" fill="#E07A5F" font-weight="600">OUTPUT</text>
-            <!-- Checkmark -->
-            <path d="M -8 0 L -2 8 L 10 -8" stroke="#E07A5F" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-          </g>
-          
-          <!-- Arrow marker definition -->
+    <header class="pt-8 pb-8">
+      <!-- Hero SVG Graphic - Full width workflow diagram -->
+      <div class="relative mb-8 w-full overflow-x-auto">
+        <svg class="w-full min-w-[900px] h-[320px]" viewBox="0 0 900 320" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <defs>
-            <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
-              <polygon points="0 0, 10 3, 0 6" fill="#E07A5F"/>
+            <marker id="arr-navy" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+              <path d="M 0 0 L 10 5 L 0 10 z" fill="#1E3A5F"/>
+            </marker>
+            <marker id="arr-coral" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+              <path d="M 0 0 L 10 5 L 0 10 z" fill="#E07A5F"/>
+            </marker>
+            <marker id="arr-sage" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+              <path d="M 0 0 L 10 5 L 0 10 z" fill="#7A9E7E"/>
             </marker>
           </defs>
           
-          <!-- Decorative dots -->
-          <circle cx="150" cy="85" r="3" fill="#E07A5F" opacity="0.5"/>
-          <circle cx="330" cy="115" r="3" fill="#E07A5F" opacity="0.5"/>
-          <circle cx="380" cy="90" r="3" fill="#7A9E7E" opacity="0.5"/>
+          <!-- Title -->
+          <text x="450" y="30" text-anchor="middle" font-size="14" font-weight="600" fill="#1E3A5F" letter-spacing="0.1em">SURGICAL AUTOMATION: HUMANS + AI WORKING TOGETHER</text>
+          
+          <!-- STEP 1: Human - Receive Request -->
+          <g transform="translate(60, 80)">
+            <rect x="0" y="0" width="100" height="70" rx="4" fill="white" stroke="#2D3436" stroke-width="1.5"/>
+            <text x="50" y="25" text-anchor="middle" font-size="11" font-weight="600" fill="#2D3436">Step 1</text>
+            <text x="50" y="42" text-anchor="middle" font-size="10" fill="#636E72">Receive</text>
+            <text x="50" y="55" text-anchor="middle" font-size="10" fill="#636E72">Request</text>
+            <!-- Person icon -->
+            <circle cx="50" cy="85" r="10" fill="#1E3A5F" opacity="0.15"/>
+            <text x="50" y="89" text-anchor="middle" font-size="8" fill="#1E3A5F">HUMAN</text>
+            <!-- Time -->
+            <text x="50" y="105" text-anchor="middle" font-size="9" fill="#636E72">~10 min</text>
+          </g>
+          
+          <!-- Arrow 1 -->
+          <path d="M 170 115 L 210 115" stroke="#E07A5F" stroke-width="2" fill="none" marker-end="url(#arr-coral)"/>
+          
+          <!-- STEPS 2-4: AUTOMATED BLOCK -->
+          <g transform="translate(220, 60)">
+            <!-- Automation container -->
+            <rect x="0" y="0" width="280" height="140" rx="6" fill="#1E3A5F"/>
+            <text x="140" y="25" text-anchor="middle" font-size="12" font-weight="700" fill="white" letter-spacing="0.05em">MICROVE AUTOMATES</text>
+            <text x="140" y="40" text-anchor="middle" font-size="10" fill="#7A9E7E">The repetitive bottleneck</text>
+            
+            <!-- Step 2: Pull Data -->
+            <g transform="translate(20, 55)">
+              <rect x="0" y="0" width="70" height="50" rx="3" fill="#3D4E5F" stroke="#7A9E7E" stroke-width="1"/>
+              <text x="35" y="18" text-anchor="middle" font-size="9" font-weight="600" fill="white">Step 2</text>
+              <text x="35" y="32" text-anchor="middle" font-size="8" fill="#B0B8C4">Pull Data</text>
+              <text x="35" y="44" text-anchor="middle" font-size="8" fill="#E07A5F" font-weight="600">~0 min</text>
+            </g>
+            
+            <!-- Arrow inside automation -->
+            <path d="M 100 80 L 110 80" stroke="#7A9E7E" stroke-width="1.5" marker-end="url(#arr-sage)"/>
+            
+            <!-- Step 3: Process & Route -->
+            <g transform="translate(120, 55)">
+              <rect x="0" y="0" width="70" height="50" rx="3" fill="#3D4E5F" stroke="#7A9E7E" stroke-width="1"/>
+              <text x="35" y="18" text-anchor="middle" font-size="9" font-weight="600" fill="white">Step 3</text>
+              <text x="35" y="32" text-anchor="middle" font-size="8" fill="#B0B8C4">Process &</text>
+              <text x="35" y="42" text-anchor="middle" font-size="8" fill="#B0B8C4">Route</text>
+              <text x="35" y="55" text-anchor="middle" font-size="8" fill="#E07A5F" font-weight="600">~0 min</text>
+            </g>
+            
+            <!-- Arrow inside automation -->
+            <path d="M 200 80 L 210 80" stroke="#7A9E7E" stroke-width="1.5" marker-end="url(#arr-sage)"/>
+            
+            <!-- Step 4: Draft Response -->
+            <g transform="translate(220, 55)">
+              <rect x="0" y="0" width="70" height="50" rx="3" fill="#3D4E5F" stroke="#7A9E7E" stroke-width="1"/>
+              <text x="35" y="18" text-anchor="middle" font-size="9" font-weight="600" fill="white">Step 4</text>
+              <text x="35" y="32" text-anchor="middle" font-size="8" fill="#B0B8C4">Draft</text>
+              <text x="35" y="42" text-anchor="middle" font-size="8" fill="#B0B8C4">Response</text>
+              <text x="35" y="55" text-anchor="middle" font-size="8" fill="#E07A5F" font-weight="600">~0 min</text>
+            </g>
+            
+            <!-- Tool icons -->
+            <g transform="translate(20, 115)">
+              <circle cx="10" cy="10" r="8" fill="#E07A5F" opacity="0.3"/>
+              <text x="10" y="13" text-anchor="middle" font-size="6" fill="#E07A5F">CRM</text>
+            </g>
+            <g transform="translate(120, 115)">
+              <circle cx="10" cy="10" r="8" fill="#E07A5F" opacity="0.3"/>
+              <text x="10" y="13" text-anchor="middle" font-size="6" fill="#E07A5F">AI</text>
+            </g>
+            <g transform="translate(220, 115)">
+              <circle cx="10" cy="10" r="8" fill="#E07A5F" opacity="0.3"/>
+              <text x="10" y="13" text-anchor="middle" font-size="6" fill="#E07A5F">Email</text>
+            </g>
+          </g>
+          
+          <!-- Arrow 2 -->
+          <path d="M 510 115 L 550 115" stroke="#E07A5F" stroke-width="2" fill="none" marker-end="url(#arr-coral)"/>
+          
+          <!-- STEP 5: Human - Review & Refine -->
+          <g transform="translate(560, 80)">
+            <rect x="0" y="0" width="100" height="70" rx="4" fill="white" stroke="#2D3436" stroke-width="1.5"/>
+            <text x="50" y="25" text-anchor="middle" font-size="11" font-weight="600" fill="#2D3436">Step 5</text>
+            <text x="50" y="42" text-anchor="middle" font-size="10" fill="#636E72">Review &</text>
+            <text x="50" y="55" text-anchor="middle" font-size="10" fill="#636E72">Refine</text>
+            <!-- Person icon -->
+            <circle cx="50" cy="85" r="10" fill="#1E3A5F" opacity="0.15"/>
+            <text x="50" y="89" text-anchor="middle" font-size="8" fill="#1E3A5F">HUMAN</text>
+            <!-- Time -->
+            <text x="50" y="105" text-anchor="middle" font-size="9" fill="#636E72">~5 min</text>
+          </g>
+          
+          <!-- Arrow 3 -->
+          <path d="M 670 115 L 710 115" stroke="#E07A5F" stroke-width="2" fill="none" marker-end="url(#arr-coral)"/>
+          
+          <!-- STEP 6: Human - Send to Client -->
+          <g transform="translate(720, 80)">
+            <rect x="0" y="0" width="100" height="70" rx="4" fill="white" stroke="#2D3436" stroke-width="1.5"/>
+            <text x="50" y="25" text-anchor="middle" font-size="11" font-weight="600" fill="#2D3436">Step 6</text>
+            <text x="50" y="42" text-anchor="middle" font-size="10" fill="#636E72">Send to</text>
+            <text x="50" y="55" text-anchor="middle" font-size="10" fill="#636E72">Client</text>
+            <!-- Person icon -->
+            <circle cx="50" cy="85" r="10" fill="#1E3A5F" opacity="0.15"/>
+            <text x="50" y="89" text-anchor="middle" font-size="8" fill="#1E3A5F">HUMAN</text>
+            <!-- Time -->
+            <text x="50" y="105" text-anchor="middle" font-size="9" fill="#636E72">~2 min</text>
+          </g>
+          
+          <!-- Bottom label: Time Saved -->
+          <g transform="translate(220, 220)">
+            <rect x="0" y="0" width="280" height="50" rx="4" fill="#E07A5F" opacity="0.1" stroke="#E07A5F" stroke-width="1" stroke-dasharray="4 2"/>
+            <text x="140" y="20" text-anchor="middle" font-size="11" font-weight="600" fill="#E07A5F">3 HOURS SAVED PER DAY</text>
+            <text x="140" y="38" text-anchor="middle" font-size="10" fill="#636E72">Repetitive steps automated → Team focuses on strategy & relationships</text>
+          </g>
+          
+          <!-- Side labels -->
+          <text x="110" y="250" text-anchor="middle" font-size="9" fill="#636E72" font-style="italic">Human judgment</text>
+          <text x="360" y="250" text-anchor="middle" font-size="9" fill="#636E72" font-style="italic">Automated efficiency</text>
+          <text x="690" y="250" text-anchor="middle" font-size="9" fill="#636E72" font-style="italic">Human relationships</text>
         </svg>
       </div>
-      <h1 class="font-sans text-5xl md:text-7xl font-bold mb-4 tight-tracking">What we do</h1>
-      <p class="text-lg text-stone max-w-2xl mx-auto">We build micro-automations that remove specific repetitive steps from your workflow.</p>
+      <h1 class="font-sans text-5xl md:text-7xl font-bold mb-4 tight-tracking text-center">What we do</h1>
+      <p class="text-lg text-stone max-w-2xl mx-auto text-center">We build micro-automations that remove specific repetitive steps from your workflow.</p>
     </header>
 
     <div class="max-w-4xl mx-auto px-6 pb-4"><span class="section-label text-[#1E3A5F]/60 text-sm">[<span class="text-[#E07A5F]">CONCEPT</span>]</span></div>
