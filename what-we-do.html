@@ -129,9 +129,59 @@
   </nav>
 
   <main id="main-content" class="max-w-4xl mx-auto px-6 pt-24 pb-32 space-y-8">
-    <header class="pt-32">
-      <h1 class="font-sans text-5xl md:text-7xl font-bold mb-4 tight-tracking">What we do</h1>
-      <p class="text-lg text-stone">We build micro-automations that remove specific repetitive steps from your workflow.</p>
+    <header class="pt-32 relative">
+      <!-- Hero SVG Graphic -->
+      <svg class="absolute -top-16 right-0 w-96 h-64 opacity-[0.08] pointer-events-none" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs>
+          <linearGradient id="flow-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#1E3A5F" stop-opacity="0.8"/>
+            <stop offset="50%" stop-color="#7A9E7E" stop-opacity="0.6"/>
+            <stop offset="100%" stop-color="#E07A5F" stop-opacity="0.4"/>
+          </linearGradient>
+          <linearGradient id="node-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#1E3A5F"/>
+            <stop offset="100%" stop-color="#E07A5F"/>
+          </linearGradient>
+        </defs>
+        <g fill="none" stroke-width="2" stroke-linecap="round">
+          <path d="M 50 500 Q 150 450, 200 350 T 350 250 T 500 200 T 750 100" stroke="#1E3A5F" stroke-opacity="0.3"/>
+          <path d="M 100 550 Q 200 500, 250 400 T 400 300 T 550 250 T 800 150" stroke="#7A9E7E" stroke-opacity="0.25"/>
+          <path d="M 0 450 Q 100 400, 150 300 T 300 200 T 450 150 T 700 50" stroke="#E07A5F" stroke-opacity="0.2"/>
+        </g>
+        <g transform="translate(150, 350)">
+          <circle r="25" fill="none" stroke="#1E3A5F" stroke-width="2" stroke-opacity="0.3"/>
+          <circle r="12" fill="#1E3A5F" fill-opacity="0.15"/>
+          <circle cx="0" cy="-4" r="4" fill="#1E3A5F" fill-opacity="0.4"/>
+          <path d="M -8 8 Q 0 0, 8 8" fill="none" stroke="#1E3A5F" stroke-width="1.5" stroke-opacity="0.4" stroke-linecap="round"/>
+        </g>
+        <g transform="translate(400, 250)">
+          <circle r="40" fill="none" stroke="#7A9E7E" stroke-width="1.5" stroke-opacity="0.25"/>
+          <circle r="28" fill="none" stroke="#7A9E7E" stroke-width="1" stroke-opacity="0.35"/>
+          <circle r="16" fill="#7A9E7E" fill-opacity="0.15"/>
+          <circle cx="-35" cy="0" r="3" fill="#E07A5F" fill-opacity="0.4"/>
+          <circle cx="35" cy="0" r="3" fill="#E07A5F" fill-opacity="0.4"/>
+          <circle cx="0" cy="-35" r="3" fill="#E07A5F" fill-opacity="0.4"/>
+        </g>
+        <g transform="translate(650, 150)">
+          <rect x="-20" y="-20" width="40" height="40" rx="8" fill="none" stroke="#E07A5F" stroke-width="2" stroke-opacity="0.25"/>
+          <rect x="-12" y="-12" width="24" height="24" rx="4" fill="#E07A5F" fill-opacity="0.12"/>
+          <rect x="-8" y="-4" width="16" height="2" rx="1" fill="#E07A5F" fill-opacity="0.35"/>
+          <rect x="-8" y="2" width="10" height="2" rx="1" fill="#E07A5F" fill-opacity="0.25"/>
+        </g>
+        <g fill="none" stroke-width="1.5" stroke-linecap="round">
+          <path d="M 175 350 Q 280 310, 360 260" stroke="url(#flow-gradient)" stroke-opacity="0.4"/>
+          <path d="M 440 240 Q 540 195, 630 165" stroke="url(#flow-gradient)" stroke-opacity="0.4"/>
+        </g>
+        <g fill="#E07A5F" fill-opacity="0.4">
+          <circle cx="250" cy="320" r="2"/>
+          <circle cx="320" cy="285" r="2.5"/>
+          <circle cx="480" cy="220" r="2"/>
+          <circle cx="550" cy="185" r="2.5"/>
+          <circle cx="600" cy="165" r="2"/>
+        </g>
+      </svg>
+      <h1 class="font-sans text-5xl md:text-7xl font-bold mb-4 tight-tracking relative z-10">What we do</h1>
+      <p class="text-lg text-stone relative z-10">We build micro-automations that remove specific repetitive steps from your workflow.</p>
     </header>
 
     <div class="max-w-4xl mx-auto px-6 pb-4"><span class="section-label text-[#1E3A5F]/60 text-sm">[<span class="text-[#E07A5F]">CONCEPT</span>]</span></div>
@@ -156,160 +206,291 @@
 
     <div class="max-w-4xl mx-auto px-6 pb-4"><span class="section-label text-[#1E3A5F]/60 text-sm">[<span class="text-[#E07A5F]">COMPARE</span>]</span></div>
     <section class="bg-white rounded-sm border border-stone/15 p-7 md:p-10 pt-32">
-      <h2 class="font-sans text-3xl md:text-4xl font-bold mb-4 tight-tracking">Why this beats generic AI</h2>
-      <p class="text-lg text-charcoal mb-6">General LLMs (like ChatGPT) are great at answering questions. But businesses need actions.</p>
-      <ul class="space-y-4 text-stone">
-        <li class="flex items-start gap-3">
-          <svg class="w-6 h-6 text-[#E07A5F] shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-          <span><strong>It runs in the background.</strong> You don't have to open a browser window and type a prompt every time you want work done.</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <svg class="w-6 h-6 text-[#E07A5F] shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-          <span><strong>It integrates with your tools.</strong> We connect directly to your CRM, Slack, Email, and internal databases.</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <svg class="w-6 h-6 text-[#E07A5F] shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-          <span><strong>It executes on its own.</strong> Instead of telling you <em>how</em> to do a task, the automation simply does it for you.</span>
-        </li>
-      </ul>
+      <h2 class="font-sans text-3xl md:text-4xl font-bold mb-4 tight-tracking">The practical middle ground</h2>
+      <p class="text-lg text-charcoal mb-8">Most businesses don't need AI hype. They need automation that works without the complexity.</p>
+      
+      <!-- Three-way comparison cards -->
+      <div class="grid md:grid-cols-3 gap-5 mb-8">
+        <!-- Generic LLMs -->
+        <div class="rounded-sm border border-stone/15 p-5 bg-cream/30">
+          <div class="flex items-center gap-2 mb-4">
+            <div class="w-8 h-8 rounded-sm bg-stone/20 flex items-center justify-center">
+              <svg class="w-4 h-4 text-stone" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+              </svg>
+            </div>
+            <h3 class="font-semibold text-charcoal">Generic LLMs</h3>
+          </div>
+          <p class="text-sm text-stone mb-4">ChatGPT, Claude, Gemini</p>
+          <ul class="space-y-2 text-sm">
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-[#7A9E7E] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span class="text-stone">Great for content & brainstorming</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-[#7A9E7E] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span class="text-stone">Instant answers to questions</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-[#E07A5F] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+              </svg>
+              <span class="text-stone"><strong>Requires manual prompting</strong></span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-[#E07A5F] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+              </svg>
+              <span class="text-stone"><strong>No workflow integration</strong></span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-[#E07A5F] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+              </svg>
+              <span class="text-stone"><strong>Copy-paste overhead</strong></span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Agentic Platforms -->
+        <div class="rounded-sm border border-stone/15 p-5 bg-cream/30">
+          <div class="flex items-center gap-2 mb-4">
+            <div class="w-8 h-8 rounded-sm bg-stone/20 flex items-center justify-center">
+              <svg class="w-4 h-4 text-stone" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
+              </svg>
+            </div>
+            <h3 class="font-semibold text-charcoal">Agentic Platforms</h3>
+          </div>
+          <p class="text-sm text-stone mb-4">LangChain, AutoGPT, CrewAI</p>
+          <ul class="space-y-2 text-sm">
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-[#7A9E7E] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span class="text-stone">Powerful & extensible</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-[#7A9E7E] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span class="text-stone">Handles complex logic</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-[#E07A5F] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+              </svg>
+              <span class="text-stone"><strong>Complex configuration</strong></span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-[#E07A5F] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+              </svg>
+              <span class="text-stone"><strong>Requires technical expertise</strong></span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-[#E07A5F] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+              </svg>
+              <span class="text-stone"><strong>Overkill for most SMBs</strong></span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Microve.ai - Highlighted -->
+        <div class="rounded-sm border-2 border-[#1E3A5F] p-5 bg-[#1E3A5F]/5 relative">
+          <div class="absolute -top-3 left-4 bg-[#E07A5F] text-white text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-sm">
+            Microve
+          </div>
+          <div class="flex items-center gap-2 mb-4 mt-2">
+            <div class="w-8 h-8 rounded-sm bg-[#1E3A5F] flex items-center justify-center">
+              <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+              </svg>
+            </div>
+            <h3 class="font-semibold text-charcoal">Custom Micro-Automations</h3>
+          </div>
+          <p class="text-sm text-stone mb-4">Built for your workflow</p>
+          <ul class="space-y-2 text-sm">
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-[#1E3A5F] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span class="text-stone"><strong>Zero configuration</strong> by you</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-[#1E3A5F] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span class="text-stone"><strong>Integrates with your tools</strong></span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-[#1E3A5F] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span class="text-stone"><strong>Runs automatically</strong> in background</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-[#1E3A5F] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span class="text-stone"><strong>Surgical fixes</strong> for specific steps</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-[#1E3A5F] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span class="text-stone"><strong>No technical expertise needed</strong></span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Key insight -->
+      <div class="bg-cream rounded-sm border border-stone/15 p-5">
+        <p class="text-charcoal leading-relaxed">
+          <strong>The sweet spot:</strong> Generic AI is too manual. Agentic platforms are too complex. 
+          Microve builds automations that just work — custom-designed for your specific bottlenecks, 
+          deployed without you touching a config file.
+        </p>
+      </div>
     </section>
 
     <div class="max-w-4xl mx-auto px-6 pb-4"><span class="section-label text-[#1E3A5F]/60 text-sm">[<span class="text-[#E07A5F]">SYSTEMS</span>]</span></div>
-    <section class="bg-white rounded-sm border border-stone/15 p-7 pt-32">
-      <h2 class="font-sans text-3xl md:text-4xl font-bold mb-4 tight-tracking">Rules Based Automation vs AI Automation vs ChatGPT/Gemini</h2>
-      
-      <!-- Visual diagram of the 3 paradigms -->
-      <div class="mb-8 p-6 bg-cream rounded-sm border border-stone/10 overflow-hidden">
-        <svg viewBox="0 0 800 200" class="w-full h-auto max-w-full" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-              <path d="M 0 0 L 10 5 L 0 10 z" fill="#78716c"/>
-            </marker>
-          </defs>
+    <section class="bg-white rounded-sm border border-stone/15 p-7 md:p-10 pt-32">
+      <h2 class="font-sans text-3xl md:text-4xl font-bold mb-4 tight-tracking">The right tool for the right bottleneck</h2>
+      <p class="text-lg text-charcoal mb-8">We use both rule-based automation and AI automation. We choose whatever your specific workflow actually needs—not what's trending.</p>
 
-          <!-- 1. Rules Based: Linear / Rigid -->
-          <g transform="translate(0, 0)">
-            <text x="130" y="30" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#2D3436" text-anchor="middle">1. Rules Based</text>
-            <text x="130" y="45" font-family="Inter, sans-serif" font-size="10" fill="#636E72" text-anchor="middle">Fixed rules</text>
-            <!-- Flow -->
-            <rect x="50" y="70" width="40" height="40" rx="4" fill="#ffffff" stroke="#2D3436" stroke-width="1.5" />
-            <text x="70" y="94" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="#2D3436" text-anchor="middle">A</text>
-            
-            <path d="M 90 90 L 120 90" fill="none" stroke="#636E72" stroke-width="1.5" marker-end="url(#arrow)"/>
-            
-            <rect x="130" y="70" width="40" height="40" rx="4" fill="#ffffff" stroke="#2D3436" stroke-width="1.5" />
-            <text x="150" y="94" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="#2D3436" text-anchor="middle">B</text>
-            
-            <path d="M 170 90 L 200 90" fill="none" stroke="#636E72" stroke-width="1.5" marker-end="url(#arrow)"/>
-            
-            <rect x="210" y="70" width="40" height="40" rx="4" fill="#1E3A5F" />
-            <text x="230" y="94" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="#ffffff" text-anchor="middle">C</text>
-            
-            <text x="130" y="140" font-family="Inter, sans-serif" font-size="9" fill="#636E72" text-anchor="middle">Always A &rarr; B &rarr; C</text>
-          </g>
-
-          <!-- Divider -->
-          <line x1="280" y1="20" x2="280" y2="150" stroke="#2D3436" stroke-width="1" stroke-dasharray="4 4" opacity="0.1"/>
-
-          <!-- 2. AI Automation: Branching / Contextual -->
-          <g transform="translate(280, 0)">
-            <text x="120" y="30" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#1E3A5F" text-anchor="middle">2. AI Automation</text>
-            <text x="120" y="45" font-family="Inter, sans-serif" font-size="10" fill="#636E72" text-anchor="middle">Contextual routing</text>
-
-            <rect x="20" y="70" width="40" height="40" rx="4" fill="#ffffff" stroke="#1E3A5F" stroke-width="1.5" />
-            <text x="40" y="94" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="#1E3A5F" text-anchor="middle">?</text>
-
-            <path d="M 60 90 L 90 90" fill="none" stroke="#636E72" stroke-width="1.5" marker-end="url(#arrow)"/>
-
-            <!-- AI Brain Node -->
-            <rect x="100" y="70" width="40" height="40" rx="20" fill="#2D3436" />
-            <circle cx="120" cy="90" r="8" fill="none" stroke="#ffffff" stroke-width="1.5"/>
-            <circle cx="120" cy="90" r="3" fill="#ffffff"/>
-            
-            <path d="M 140 85 C 160 80, 160 60, 180 60" fill="none" stroke="#636E72" stroke-width="1.5" marker-end="url(#arrow)"/>
-            <path d="M 140 95 C 160 100, 160 120, 180 120" fill="none" stroke="#636E72" stroke-width="1.5" marker-end="url(#arrow)"/>
-
-            <rect x="190" y="40" width="40" height="40" rx="4" fill="#1E3A5F" opacity="0.4"/>
-            <text x="210" y="64" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="#2D3436" text-anchor="middle">X</text>
-
-            <rect x="190" y="100" width="40" height="40" rx="4" fill="#1E3A5F" />
-            <text x="210" y="124" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="#ffffff" text-anchor="middle">Y</text>
-
-            <text x="120" y="150" font-family="Inter, sans-serif" font-size="9" fill="#636E72" text-anchor="middle">Reads context, executes X or Y</text>
-          </g>
-
-          <!-- Divider -->
-          <line x1="540" y1="20" x2="540" y2="150" stroke="#2D3436" stroke-width="1" stroke-dasharray="4 4" opacity="0.1"/>
-
-          <!-- 3. ChatGPT: Manual Loop -->
-          <g transform="translate(540, 0)">
-            <text x="130" y="30" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#2D3436" text-anchor="middle">3. ChatGPT / Gemini</text>
-            <text x="130" y="45" font-family="Inter, sans-serif" font-size="10" fill="#636E72" text-anchor="middle">Manual assistant</text>
-
-            <!-- User -->
-            <circle cx="60" cy="90" r="15" fill="#ffffff" stroke="#2D3436" stroke-width="1.5"/>
-            <path d="M 50 110 C 50 100, 70 100, 70 110" fill="none" stroke="#2D3436" stroke-width="1.5"/>
-
-            <!-- AI interface -->
-            <rect x="150" y="60" width="60" height="60" rx="8" fill="#ffffff" stroke="#636E72" stroke-width="1.5" stroke-dasharray="2 2"/>
-            <rect x="160" y="70" width="40" height="6" rx="3" fill="#2D3436" opacity="0.1"/>
-            <rect x="160" y="85" width="30" height="6" rx="3" fill="#2D3436" opacity="0.1"/>
-            
-            <!-- Loops -->
-            <path d="M 80 80 C 100 70, 120 70, 140 80" fill="none" stroke="#1E3A5F" stroke-width="1.5" marker-end="url(#arrow)"/>
-            <text x="110" y="65" font-family="Inter, sans-serif" font-size="8" fill="#1E3A5F" text-anchor="middle">Prompt</text>
-
-            <path d="M 140 100 C 120 110, 100 110, 80 100" fill="none" stroke="#636E72" stroke-width="1.5" marker-end="url(#arrow)"/>
-            <text x="110" y="125" font-family="Inter, sans-serif" font-size="8" fill="#636E72" text-anchor="middle">Copy-paste</text>
-
-            <text x="130" y="150" font-family="Inter, sans-serif" font-size="9" fill="#636E72" text-anchor="middle">Requires human driving</text>
-          </g>
-        </svg>
+      <!-- Simple visual: Two paths converging to result -->
+      <div class="mb-10 p-6 bg-cream rounded-sm border border-stone/10">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-6 text-center">
+          <div class="flex-1">
+            <div class="w-16 h-16 mx-auto mb-3 bg-white rounded-full border-2 border-[#1E3A5F] flex items-center justify-center">
+              <svg class="w-8 h-8 text-[#1E3A5F]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
+              </svg>
+            </div>
+            <h3 class="font-semibold text-charcoal mb-1">Rules-Based</h3>
+            <p class="text-sm text-stone">Predictable &amp; cost-effective</p>
+          </div>
+          <div class="text-stone/40 font-mono text-2xl">+</div>
+          <div class="flex-1">
+            <div class="w-16 h-16 mx-auto mb-3 bg-white rounded-full border-2 border-[#1E3A5F] flex items-center justify-center">
+              <svg class="w-8 h-8 text-[#1E3A5F]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+              </svg>
+            </div>
+            <h3 class="font-semibold text-charcoal mb-1">AI Automation</h3>
+            <p class="text-sm text-stone">Adaptive &amp; intelligent</p>
+          </div>
+          <div class="text-stone/40 font-mono text-2xl">=</div>
+          <div class="flex-1">
+            <div class="w-16 h-16 mx-auto mb-3 bg-[#E07A5F] rounded-full flex items-center justify-center">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+              </svg>
+            </div>
+            <h3 class="font-semibold text-charcoal mb-1">Measurable Results</h3>
+            <p class="text-sm text-stone">Cost savings &amp; revenue growth</p>
+          </div>
+        </div>
       </div>
 
-      <div class="overflow-x-auto rounded-sm border border-stone/15 shadow-sm">
-        <table class="w-full text-left text-sm">
-          <thead class="bg-cream border-b border-stone/15">
-            <tr>
-              <th class="px-4 py-3 font-semibold">Rules Based Automation</th>
-              <th class="px-4 py-3 font-semibold">AI Automation</th>
-              <th class="px-4 py-3 font-semibold">ChatGPT / Google Gemini</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr class="border-b border-stone/10 even:bg-cream/30">
-              <td class="px-4 py-5 text-stone">Best for fixed repeat steps</td>
-              <td class="px-4 py-5 text-stone">Best for variable inputs and edge cases</td>
-              <td class="px-4 py-5 text-stone">Best for answers, brainstorming, writing</td>
-            </tr>
-            <tr class="border-b border-stone/10 even:bg-cream/30">
-              <td class="px-4 py-5 text-stone">If X happens, do Y</td>
-              <td class="px-4 py-5 text-stone">Reads context and decides next action</td>
-              <td class="px-4 py-5 text-stone">Needs prompts and manual follow-up</td>
-            </tr>
-            <tr class="border-b-2 border-stone/20 even:bg-cream/30">
-              <td class="px-4 py-5 text-stone">Reliable, fast, low maintenance</td>
-              <td class="px-4 py-5 text-stone">Flexible, adaptive, handles ambiguity</td>
-              <td class="px-4 py-5 text-stone">Useful assistant, but not an automation layer</td>
-            </tr>
-            <tr class="bg-cream/50">
-              <td class="px-4 py-5">
-                <div class="font-semibold text-charcoal text-xs uppercase tracking-wide mb-1">Example</div>
-                <span class="text-stone">New row in CRM &rarr; auto-create folder in Google Drive, send Slack notification, add to project tracker</span>
-              </td>
-              <td class="px-4 py-5">
-                <div class="font-semibold text-charcoal text-xs uppercase tracking-wide mb-1">Example</div>
-                <span class="text-stone">Incoming support email &rarr; AI reads it, classifies urgency, drafts a reply, routes to the right team member</span>
-              </td>
-              <td class="px-4 py-5">
-                <div class="font-semibold text-charcoal text-xs uppercase tracking-wide mb-1">Example</div>
-                <span class="text-stone">You open ChatGPT, paste an email, ask it to draft a reply, copy the output, paste it back into your inbox</span>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+      <div class="grid md:grid-cols-2 gap-8 mb-8">
+        <div class="p-6 bg-cream/50 rounded-sm border border-stone/10">
+          <h3 class="font-semibold text-lg text-charcoal mb-4 flex items-center gap-2">
+            <span class="w-2 h-2 bg-[#1E3A5F] rounded-full"></span>
+            When we use rules-based automation
+          </h3>
+          <ul class="space-y-3 text-stone">
+            <li class="flex items-start gap-3">
+              <span class="text-[#E07A5F] mt-1">&bull;</span>
+              <span><strong>Predictable, repetitive tasks.</strong> When the same action happens every time—like copying data from a form to a spreadsheet.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-[#E07A5F] mt-1">&bull;</span>
+              <span><strong>Cost-effective implementation.</strong> Simple triggers cost less to build and almost nothing to run month after month.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-[#E07A5F] mt-1">&bull;</span>
+              <span><strong>Reliable outcomes.</strong> No surprises. The automation does exactly what you programmed it to do, every single time.</span>
+            </li>
+          </ul>
+          <p class="mt-4 text-sm text-stone italic border-t border-stone/10 pt-3">
+            Example: New client signs contract &rarr; folder auto-created in Drive, Slack notification sent, task added to Asana.
+          </p>
+        </div>
+
+        <div class="p-6 bg-cream/50 rounded-sm border border-stone/10">
+          <h3 class="font-semibold text-lg text-charcoal mb-4 flex items-center gap-2">
+            <span class="w-2 h-2 bg-[#E07A5F] rounded-full"></span>
+            When we use AI automation
+          </h3>
+          <ul class="space-y-3 text-stone">
+            <li class="flex items-start gap-3">
+              <span class="text-[#E07A5F] mt-1">&bull;</span>
+              <span><strong>Variable inputs requiring decisions.</strong> When each situation is slightly different and needs judgment—like classifying support tickets by urgency.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-[#E07A5F] mt-1">&bull;</span>
+              <span><strong>Complex patterns.</strong> When the automation needs to read context, extract meaning, or route work intelligently.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-[#E07A5F] mt-1">&bull;</span>
+              <span><strong>Natural language understanding.</strong> When inputs are unstructured—emails, documents, customer messages—that need interpretation.</span>
+            </li>
+          </ul>
+          <p class="mt-4 text-sm text-stone italic border-t border-stone/10 pt-3">
+            Example: Customer email arrives &rarr; AI reads sentiment, drafts personalized response, routes to the right team member.
+          </p>
+        </div>
       </div>
-      <p class="text-stone leading-relaxed mt-4">We design both rules-based and AI automation depending on the actual bottleneck. We choose based on business need, not hype.</p>
+
+      <div class="p-6 bg-[#1E3A5F]/5 rounded-sm border-l-4 border-[#1E3A5F] mb-8">
+        <h3 class="font-semibold text-lg text-charcoal mb-3">How we decide which to use</h3>
+        <p class="text-stone leading-relaxed mb-4">
+          We don't sell AI for the sake of AI. We look at your actual bottleneck—the specific step where work stalls, costs pile up, or people get frustrated.
+        </p>
+        <ul class="space-y-2 text-stone">
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-[#E07A5F] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+            </svg>
+            <span>If the problem is <strong>volume of identical tasks</strong>, rules-based automation is usually faster and cheaper.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-[#E07A5F] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+            </svg>
+            <span>If the problem is <strong>variability and judgment</strong>, AI automation handles what rules can't.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-[#E07A5F] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+            </svg>
+            <span>Sometimes <strong>both work together</strong>—rules handle the predictable parts, AI handles the exceptions.</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6 text-center">
+        <div class="p-5 border border-stone/10 rounded-sm">
+          <div class="text-3xl font-bold text-[#E07A5F] mb-2">Cost Savings</div>
+          <p class="text-stone text-sm">Automations typically pay for themselves within weeks by eliminating hours of manual work.</p>
+        </div>
+        <div class="p-5 border border-stone/10 rounded-sm">
+          <div class="text-3xl font-bold text-[#E07A5F] mb-2">Productivity Gains</div>
+          <p class="text-stone text-sm">Your team stops doing grunt work and focuses on strategy, relationships, and growth.</p>
+        </div>
+        <div class="p-5 border border-stone/10 rounded-sm">
+          <div class="text-3xl font-bold text-[#E07A5F] mb-2">Revenue Impact</div>
+          <p class="text-stone text-sm">Faster response times, fewer errors, and scalable operations mean more closed deals.</p>
+        </div>
+      </div>
     </section>
 
     <div class="max-w-4xl mx-auto px-6 pb-4"><span class="section-label text-[#1E3A5F]/60 text-sm">[<span class="text-[#E07A5F]">APPROACH</span>]</span></div>
@@ -333,70 +514,24 @@
     </section>
 
     <div class="max-w-4xl mx-auto px-6 pb-4"><span class="section-label text-[#1E3A5F]/60 text-sm">[<span class="text-[#E07A5F]">STAKES</span>]</span></div>
-    <!-- The Hidden Exit Section - Consumer Psychology -->
-    <section class="bg-white border-2 border-charcoal/10 rounded-sm p-10 md:p-14 relative pt-32">
-      <!-- Decorative element -->
-      <div class="absolute -top-3 left-10 bg-[#E07A5F] text-white text-xs font-bold uppercase tracking-wider px-4 py-1 rounded-sm">
-        The Hidden Cost
-      </div>
-      
-      <h2 class="font-sans text-4xl md:text-5xl font-bold text-charcoal mb-6 mt-2 tight-tracking">
-        Your best people are watching—and leaving
-      </h2>
-      
-      <div class="grid md:grid-cols-[1fr_1px_1fr] gap-8">
-        <!-- Left: The Problem -->
-        <div>
-          <h3 class="font-semibold text-lg text-charcoal mb-4">The tragedy of manual work</h3>
-          <p class="text-stone leading-relaxed mb-4">
-            Smart people don't leave because they want to. They leave because they're drowning in 
-            repetitive tasks that a machine could handle.
-          </p>
-          <ul class="space-y-3 text-stone">
-            <li class="flex items-start gap-2">
-              <span class="text-[#E07A5F] mt-1">&rarr;</span>
-              <span>Top performers <strong>quietly disengage</strong> when their days are filled with admin</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-[#E07A5F] mt-1">&rarr;</span>
-              <span>Talent exits for companies where they can <strong>focus on meaningful work</strong></span>
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-[#E07A5F] mt-1">&rarr;</span>
-              <span>Businesses that don't automate <strong>cap their own growth</strong>—by design</span>
-            </li>
-          </ul>
+    <section class="bg-white border-2 border-charcoal/10 rounded-sm p-8 md:p-10 relative">
+      <div class="flex flex-col md:flex-row items-center gap-8">
+        <div class="text-center md:text-left">
+          <div class="text-6xl md:text-7xl font-bold text-[#E07A5F] mb-2">67%</div>
+          <p class="text-sm text-stone uppercase tracking-wider">of employees say repetitive tasks drive them to quit</p>
         </div>
-        
-        <!-- Divider -->
-        <div class="hidden md:block bg-stone/20"></div>
-        
-        <!-- Right: The Opportunity -->
-        <div>
-          <h3 class="font-semibold text-lg text-charcoal mb-4">Automation as competitive weapon</h3>
-          <p class="text-stone leading-relaxed mb-4">
-            The companies winning right now aren't working harder. They're removing friction 
-            so their people can focus on what humans do best.
+        <div class="hidden md:block w-px h-20 bg-stone/20"></div>
+        <div class="flex-1 text-center md:text-left">
+          <h2 class="font-sans text-2xl md:text-3xl font-bold text-charcoal tight-tracking mb-3">
+            Chained to busywork, talent walks
+          </h2>
+          <p class="text-stone mb-4">
+            Your best people don't leave because they want to—they leave because they're drowning in copy-paste work a machine could handle. <strong class="text-charcoal">Automation isn't about replacing people. It's about keeping them.</strong>
           </p>
-          <div class="bg-cream rounded-sm p-5 border border-[#E07A5F]/20">
-            <p class="text-charcoal font-medium mb-2">
-              "Automation isn't about replacing people. It's about retaining them."
-            </p>
-            <p class="text-stone text-sm">
-              When you automate the repetitive, your team focuses on strategy, 
-              relationships, and growth—work that actually moves the needle.
-            </p>
-          </div>
+          <a href="contact.html" class="inline-block bg-[#E07A5F] text-white px-6 py-3 rounded-sm font-semibold hover:bg-[#C96A4F] transition-colors duration-200 uppercase tracking-wider text-sm">
+            Start With a Free Audit
+          </a>
         </div>
-      </div>
-      
-      <div class="mt-8 pt-8 border-t border-stone/10 flex flex-col md:flex-row items-center justify-between gap-4">
-        <p class="text-stone italic">
-          "The businesses that automate now are building advantages that compound daily."
-        </p>
-        <a href="contact.html" class="shrink-0 bg-[#E07A5F] text-white px-8 py-3 rounded-sm font-semibold hover:bg-[#C96A4F] transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#E07A5F] focus:ring-offset-2 uppercase tracking-wider text-sm">
-          Start With a Free Audit
-        </a>
       </div>
     </section>
 
