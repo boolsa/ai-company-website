@@ -290,9 +290,8 @@
       <div class="hidden md:flex items-center gap-7">
         <a href="index.html" class="nav-link">Home</a>
         <a href="what-we-do.html" aria-current="page" class="nav-link active">What We Do</a>
-        <a href="success.html" class="nav-link">Success Stories</a>
+        <a href="cases.html" class="nav-link">Cases</a>
         <a href="blog.html" class="nav-link">Blog</a>
-        <a href="calculator.html" class="nav-link">Calculator</a>
         <a href="about.html" class="nav-link">About</a>
         <a href="contact.html" class="nav-cta" aria-label="Book a call with Microve.ai">
           Book a Call
@@ -319,9 +318,8 @@
       <div class="max-w-5xl mx-auto px-4 py-3 flex flex-col gap-1">
         <a href="index.html" class="mobile-nav-link">Home</a>
         <a href="what-we-do.html" aria-current="page" class="mobile-nav-link active">What We Do</a>
-        <a href="success.html" class="mobile-nav-link">Success Stories</a>
+        <a href="cases.html" class="mobile-nav-link">Cases</a>
         <a href="blog.html" class="mobile-nav-link">Blog</a>
-        <a href="calculator.html" class="mobile-nav-link">Calculator</a>
         <a href="about.html" class="mobile-nav-link">About</a>
         <div class="pt-2 pb-1">
           <a href="contact.html" class="mobile-nav-cta">Book a Call</a>
@@ -380,239 +378,189 @@
       </div>
 
       <!-- Hero SVG Graphic — Desktop (hidden on mobile) -->
-      <div class="relative mb-8 w-full overflow-hidden">
-        <svg class="hidden md:block w-full h-auto" viewBox="0 0 960 400" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Workflow diagram: Your team provides input, Microve automates the middle using rule-based or AI systems, your team reviews the output">
+      <div class="relative mb-12 w-full overflow-hidden">
+        <svg class="hidden md:block w-full h-auto" viewBox="0 0 960 400" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Workflow diagram: Microve plugs custom micro-tools directly into your existing workflow bottlenecks">
           <defs>
-            <marker id="d-arr-navy" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#1E3A5F"/></marker>
-            <marker id="d-arr-sage" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#7A9E7E"/></marker>
-            <marker id="d-arr-coral" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#E07A5F"/></marker>
+            <marker id="d-arr-gray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#CBD5E1"/></marker>
+            <marker id="d-arr-sage" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#7A9E7E"/></marker>
+            <marker id="d-arr-coral" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#E07A5F"/></marker>
+            <filter id="d-glow" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="3" result="blur" /><feComposite in="SourceGraphic" in2="blur" operator="over" /></filter>
           </defs>
 
-          <!-- LEFT: YOUR TEAM (input) -->
-          <rect x="24" y="80" width="164" height="156" rx="6" fill="white" stroke="#1E3A5F" stroke-width="1.2"/>
-          <text x="106" y="110" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#1E3A5F" letter-spacing="0.04em">YOUR TEAM</text>
-          <line x1="56" y1="120" x2="156" y2="120" stroke="#1E3A5F" stroke-width="0.5" opacity="0.2"/>
-          <text x="106" y="142" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#636E72">Receive request</text>
-          <text x="106" y="160" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#636E72">Set context &amp; intent</text>
-          <text x="106" y="186" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#1E3A5F" font-weight="600">Judgment &amp; strategy</text>
-          <!-- Person icon -->
-          <circle cx="106" cy="210" r="5" fill="none" stroke="#1E3A5F" stroke-width="1.2"/>
-          <path d="M96 224 Q106 218 116 224" stroke="#1E3A5F" stroke-width="1.2" fill="none"/>
+          <!-- Background Zones -->
+          <rect x="20" y="40" width="920" height="150" rx="8" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1.5" stroke-dasharray="6 4"/>
+          <text x="44" y="66" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#64748B" letter-spacing="0.06em">YOUR EXISTING WORKFLOW</text>
+          <text x="824" y="66" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#94A3B8" font-style="italic">Unchanged steps</text>
 
-          <!-- Dashed connector: Left → Center -->
-          <line x1="188" y1="158" x2="250" y2="158" stroke="#1E3A5F" stroke-width="1.5" stroke-dasharray="6 4" marker-end="url(#d-arr-navy)"/>
+          <!-- Workflow Nodes -->
+          <!-- Node 1: Intake -->
+          <circle cx="100" cy="120" r="32" fill="white" stroke="#94A3B8" stroke-width="2"/>
+          <text x="100" y="176" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#475569">Client Intake</text>
+          <text x="100" y="194" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#64748B">Human judgment</text>
+          
+          <line x1="132" y1="120" x2="256" y2="120" stroke="#CBD5E1" stroke-width="2.5" marker-end="url(#d-arr-gray)"/>
 
-          <!-- CENTER: MICROVE AUTOMATION ZONE -->
-          <rect x="258" y="24" width="444" height="296" rx="6" fill="#F7FAFC" stroke="#1E3A5F" stroke-width="1.2"/>
-          <text x="480" y="52" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#1E3A5F" letter-spacing="0.05em">MICROVE AUTOMATION ZONE</text>
-          <text x="480" y="70" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#636E72">We choose the right system for each bottleneck</text>
+          <!-- Node 2: Bottleneck 1 -->
+          <circle cx="290" cy="120" r="32" fill="#FEF2F2" stroke="#EF4444" stroke-width="2.5" stroke-dasharray="6 3"/>
+          <text x="290" y="176" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#EF4444">Manual Data Entry</text>
+          <text x="290" y="194" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#EF4444" font-style="italic">(Bottleneck)</text>
 
-          <!-- Decision diamond -->
-          <polygon points="378,138 428,168 378,198 328,168" fill="white" stroke="#1E3A5F" stroke-width="1.2"/>
-          <text x="378" y="164" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#1E3A5F">Predictable</text>
-          <text x="378" y="178" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#1E3A5F">task?</text>
+          <line x1="322" y1="120" x2="446" y2="120" stroke="#CBD5E1" stroke-width="2.5" marker-end="url(#d-arr-gray)"/>
 
-          <!-- Arrow from left connector into diamond -->
-          <line x1="304" y1="158" x2="326" y2="165" stroke="#1E3A5F" stroke-width="1.2" marker-end="url(#d-arr-navy)"/>
+          <!-- Node 3: Strategy -->
+          <circle cx="480" cy="120" r="32" fill="white" stroke="#94A3B8" stroke-width="2"/>
+          <text x="480" y="176" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#475569">Strategy & Logic</text>
+          <text x="480" y="194" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#64748B">Expertise required</text>
 
-          <!-- TOP PATH: RULE BASED (sage) -->
-          <path d="M 418 143 L 498 110" stroke="#7A9E7E" stroke-width="2" fill="none" marker-end="url(#d-arr-sage)"/>
-          <text x="450" y="118" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="#7A9E7E">Yes</text>
-          <rect x="504" y="84" width="168" height="64" rx="6" fill="white" stroke="#7A9E7E" stroke-width="1.5"/>
-          <text x="588" y="108" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#7A9E7E">RULE BASED</text>
-          <text x="588" y="124" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#636E72">If X → do Y</text>
-          <text x="588" y="140" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#636E72">Fast, reliable, low cost</text>
+          <line x1="512" y1="120" x2="636" y2="120" stroke="#CBD5E1" stroke-width="2.5" marker-end="url(#d-arr-gray)"/>
 
-          <!-- BOTTOM PATH: AI (coral) -->
-          <path d="M 418 193 L 498 226" stroke="#E07A5F" stroke-width="2" fill="none" marker-end="url(#d-arr-coral)"/>
-          <text x="450" y="220" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="#E07A5F">No</text>
-          <rect x="504" y="204" width="168" height="64" rx="6" fill="white" stroke="#E07A5F" stroke-width="1.5"/>
-          <text x="588" y="228" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#E07A5F">AI AUTOMATION</text>
-          <text x="588" y="244" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#636E72">Variable inputs</text>
-          <text x="588" y="260" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#636E72">Needs context &amp; routing</text>
+          <!-- Node 4: Bottleneck 2 -->
+          <circle cx="670" cy="120" r="32" fill="#FEF2F2" stroke="#EF4444" stroke-width="2.5" stroke-dasharray="6 3"/>
+          <text x="670" y="176" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#EF4444">Document Drafting</text>
+          <text x="670" y="194" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#EF4444" font-style="italic">(Bottleneck)</text>
 
-          <!-- MERGE: both paths converge -->
-          <path d="M 672 116 L 688 168" stroke="#7A9E7E" stroke-width="1.5" fill="none"/>
-          <path d="M 672 236 L 688 168" stroke="#E07A5F" stroke-width="1.5" fill="none"/>
-          <circle cx="692" cy="168" r="6" fill="#1E3A5F"/>
-          <circle cx="692" cy="168" r="3" fill="white"/>
+          <line x1="702" y1="120" x2="826" y2="120" stroke="#CBD5E1" stroke-width="2.5" marker-end="url(#d-arr-gray)"/>
 
-          <!-- Dashed connector: Center → Right -->
-          <line x1="700" y1="168" x2="770" y2="158" stroke="#1E3A5F" stroke-width="1.5" stroke-dasharray="6 4" marker-end="url(#d-arr-navy)"/>
+          <!-- Node 5: Delivery -->
+          <circle cx="860" cy="120" r="32" fill="white" stroke="#94A3B8" stroke-width="2"/>
+          <text x="860" y="176" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#475569">Review & Send</text>
+          <text x="860" y="194" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#64748B">Quality control</text>
 
-          <!-- RIGHT: YOUR TEAM (output) -->
-          <rect x="778" y="80" width="164" height="156" rx="6" fill="white" stroke="#1E3A5F" stroke-width="1.2"/>
-          <text x="860" y="110" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#1E3A5F" letter-spacing="0.04em">YOUR TEAM</text>
-          <line x1="810" y1="120" x2="910" y2="120" stroke="#1E3A5F" stroke-width="0.5" opacity="0.2"/>
-          <text x="860" y="142" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#636E72">Review &amp; approve</text>
-          <text x="860" y="160" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#636E72">Client-ready output</text>
-          <text x="860" y="186" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#1E3A5F" font-weight="600">Relationships &amp; QC</text>
-          <!-- Person icon -->
-          <circle cx="860" cy="210" r="5" fill="none" stroke="#1E3A5F" stroke-width="1.2"/>
-          <path d="M850 224 Q860 218 870 224" stroke="#1E3A5F" stroke-width="1.2" fill="none"/>
 
-          <!-- Zone labels below blocks -->
-          <text x="106" y="258" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#636E72" font-style="italic">Human judgment</text>
-          <text x="480" y="336" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#636E72" font-style="italic">Automated bottleneck removal</text>
-          <text x="860" y="258" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#636E72" font-style="italic">Human quality control</text>
+          <!-- Microve Interventions Zone -->
+          <rect x="20" y="240" width="920" height="140" rx="8" fill="#1E3A5F" fill-opacity="0.04" stroke="#1E3A5F" stroke-width="1.5" stroke-dasharray="6 4"/>
+          <text x="44" y="266" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#1E3A5F" letter-spacing="0.06em">MICROVE INTERVENTIONS</text>
+          <text x="734" y="266" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#1E3A5F" font-style="italic">Targeted fixes, no overhauls</text>
 
-          <!-- BOTTOM STRIP -->
-          <rect x="80" y="354" width="800" height="36" rx="6" fill="#E07A5F" opacity="0.1"/>
-          <rect x="80" y="354" width="800" height="36" rx="6" fill="none" stroke="#E07A5F" stroke-width="0.8"/>
-          <text x="480" y="377" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#E07A5F">Rule Based when predictable.  AI when variable.  Always custom-built for your workflow.</text>
+          <!-- Tool 1 (Plugging into Node 2) -->
+          <path d="M 290 280 L 290 156" stroke="#7A9E7E" stroke-width="4" stroke-dasharray="6 4" marker-end="url(#d-arr-sage)"/>
+          <rect x="200" y="280" width="180" height="80" rx="6" fill="white" stroke="#7A9E7E" stroke-width="2" filter="url(#d-glow)"/>
+          <text x="290" y="310" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#7A9E7E">RULE-BASED TOOL</text>
+          <text x="290" y="330" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#636E72">Auto-syncs data</text>
+          <text x="290" y="346" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#636E72">across CRMs</text>
+
+          <!-- Tool 2 (Plugging into Node 4) -->
+          <path d="M 670 280 L 670 156" stroke="#E07A5F" stroke-width="4" stroke-dasharray="6 4" marker-end="url(#d-arr-coral)"/>
+          <rect x="580" y="280" width="180" height="80" rx="6" fill="white" stroke="#E07A5F" stroke-width="2" filter="url(#d-glow)"/>
+          <text x="670" y="310" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#E07A5F">AI MICRO-TOOL</text>
+          <text x="670" y="330" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#636E72">Reads context &</text>
+          <text x="670" y="346" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#636E72">generates draft</text>
+
         </svg>
 
         <!-- Hero SVG Graphic — Mobile (hidden on desktop, stacks vertically) -->
-        <svg class="block md:hidden w-full h-auto" viewBox="0 0 360 640" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Workflow diagram: Your team provides input, Microve automates the middle using rule-based or AI systems, your team reviews the output">
+        <svg class="block md:hidden w-full h-auto" viewBox="0 0 360 640" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Workflow diagram: Microve plugs custom micro-tools directly into your existing workflow bottlenecks">
           <defs>
-            <marker id="m-arr-navy" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#1E3A5F"/></marker>
-            <marker id="m-arr-sage" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#7A9E7E"/></marker>
-            <marker id="m-arr-coral" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#E07A5F"/></marker>
+            <marker id="m-arr-gray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#CBD5E1"/></marker>
+            <marker id="m-arr-sage" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#7A9E7E"/></marker>
+            <marker id="m-arr-coral" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#E07A5F"/></marker>
+            <filter id="m-glow" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="3" result="blur" /><feComposite in="SourceGraphic" in2="blur" operator="over" /></filter>
           </defs>
 
-          <!-- TOP: YOUR TEAM (input) -->
-          <rect x="60" y="16" width="240" height="76" rx="6" fill="white" stroke="#1E3A5F" stroke-width="1.2"/>
-          <text x="180" y="40" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#1E3A5F" letter-spacing="0.04em">YOUR TEAM</text>
-          <text x="180" y="58" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#636E72">Judgment, context &amp; strategy</text>
-          <text x="180" y="78" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#636E72" font-style="italic">Human input</text>
+          <!-- Background Zones -->
+          <!-- Left: Existing Workflow -->
+          <rect x="10" y="10" width="160" height="620" rx="8" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1.5" stroke-dasharray="4 4"/>
+          <text x="90" y="36" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#64748B" letter-spacing="0.04em">YOUR WORKFLOW</text>
 
-          <!-- Arrow down -->
-          <line x1="180" y1="92" x2="180" y2="122" stroke="#1E3A5F" stroke-width="1.5" stroke-dasharray="5 3" marker-end="url(#m-arr-navy)"/>
+          <!-- Right: Interventions -->
+          <rect x="180" y="10" width="170" height="620" rx="8" fill="#1E3A5F" fill-opacity="0.04" stroke="#1E3A5F" stroke-width="1.5" stroke-dasharray="4 4"/>
+          <text x="265" y="36" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#1E3A5F" letter-spacing="0.04em">MICROVE TOOLS</text>
 
-          <!-- CENTER: AUTOMATION ZONE -->
-          <rect x="20" y="130" width="320" height="350" rx="6" fill="#F7FAFC" stroke="#1E3A5F" stroke-width="1.2"/>
-          <text x="180" y="156" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#1E3A5F" letter-spacing="0.05em">MICROVE AUTOMATION</text>
-          <text x="180" y="174" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#636E72">Right system for each bottleneck</text>
+          <!-- Vertical Timeline Nodes -->
+          
+          <!-- Node 1 -->
+          <circle cx="90" cy="80" r="22" fill="white" stroke="#94A3B8" stroke-width="2"/>
+          <text x="90" y="120" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#475569">Client Intake</text>
+          
+          <line x1="90" y1="102" x2="90" y2="158" stroke="#CBD5E1" stroke-width="2" marker-end="url(#m-arr-gray)"/>
 
-          <!-- Decision diamond -->
-          <polygon points="180,196 230,224 180,252 130,224" fill="white" stroke="#1E3A5F" stroke-width="1.2"/>
-          <text x="180" y="228" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#1E3A5F">Predictable?</text>
+          <!-- Node 2 (Bottleneck) -->
+          <circle cx="90" cy="180" r="22" fill="#FEF2F2" stroke="#EF4444" stroke-width="2.5" stroke-dasharray="4 2"/>
+          <text x="90" y="220" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#EF4444">Manual Entry</text>
+          <text x="90" y="234" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#EF4444" font-style="italic">(Bottleneck)</text>
 
-          <!-- LEFT branch: Rule Based (sage) -->
-          <path d="M 140 230 L 88 274" stroke="#7A9E7E" stroke-width="1.8" fill="none" marker-end="url(#m-arr-sage)"/>
-          <text x="100" y="256" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="#7A9E7E">Yes</text>
-          <rect x="28" y="280" width="140" height="64" rx="6" fill="white" stroke="#7A9E7E" stroke-width="1.5"/>
-          <text x="98" y="302" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#7A9E7E">RULE BASED</text>
-          <text x="98" y="318" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#636E72">If X → do Y</text>
-          <text x="98" y="334" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#636E72">Fast, reliable</text>
+          <line x1="90" y1="202" x2="90" y2="258" stroke="#CBD5E1" stroke-width="2" marker-end="url(#m-arr-gray)"/>
 
-          <!-- RIGHT branch: AI (coral) -->
-          <path d="M 220 230 L 272 274" stroke="#E07A5F" stroke-width="1.8" fill="none" marker-end="url(#m-arr-coral)"/>
-          <text x="260" y="256" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="#E07A5F">No</text>
-          <rect x="192" y="280" width="140" height="64" rx="6" fill="white" stroke="#E07A5F" stroke-width="1.5"/>
-          <text x="262" y="302" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#E07A5F">AI AUTOMATION</text>
-          <text x="262" y="318" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#636E72">Variable inputs</text>
-          <text x="262" y="334" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#636E72">Needs context</text>
+          <!-- Node 3 -->
+          <circle cx="90" cy="280" r="22" fill="white" stroke="#94A3B8" stroke-width="2"/>
+          <text x="90" y="320" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#475569">Strategy & Logic</text>
 
-          <!-- Merge paths -->
-          <path d="M 98 344 L 180 386" stroke="#7A9E7E" stroke-width="1.5" fill="none"/>
-          <path d="M 262 344 L 180 386" stroke="#E07A5F" stroke-width="1.5" fill="none"/>
-          <circle cx="180" cy="390" r="6" fill="#1E3A5F"/>
-          <circle cx="180" cy="390" r="3" fill="white"/>
+          <line x1="90" y1="302" x2="90" y2="358" stroke="#CBD5E1" stroke-width="2" marker-end="url(#m-arr-gray)"/>
 
-          <!-- Label under merge -->
-          <text x="180" y="420" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#636E72" font-style="italic">Unified automated output</text>
+          <!-- Node 4 (Bottleneck) -->
+          <circle cx="90" cy="380" r="22" fill="#FEF2F2" stroke="#EF4444" stroke-width="2.5" stroke-dasharray="4 2"/>
+          <text x="90" y="420" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#EF4444">Doc Drafting</text>
+          <text x="90" y="434" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#EF4444" font-style="italic">(Bottleneck)</text>
 
-          <!-- Arrow down from zone -->
-          <line x1="180" y1="480" x2="180" y2="508" stroke="#1E3A5F" stroke-width="1.5" stroke-dasharray="5 3" marker-end="url(#m-arr-navy)"/>
+          <line x1="90" y1="402" x2="90" y2="458" stroke="#CBD5E1" stroke-width="2" marker-end="url(#m-arr-gray)"/>
 
-          <!-- BOTTOM: YOUR TEAM (output) -->
-          <rect x="60" y="516" width="240" height="76" rx="6" fill="white" stroke="#1E3A5F" stroke-width="1.2"/>
-          <text x="180" y="540" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#1E3A5F" letter-spacing="0.04em">YOUR TEAM</text>
-          <text x="180" y="558" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#636E72">Review, approve &amp; deliver</text>
-          <text x="180" y="578" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#636E72" font-style="italic">Relationships &amp; quality control</text>
+          <!-- Node 5 -->
+          <circle cx="90" cy="480" r="22" fill="white" stroke="#94A3B8" stroke-width="2"/>
+          <text x="90" y="520" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#475569">Review & Send</text>
 
-          <!-- BOTTOM STRIP -->
-          <rect x="16" y="604" width="328" height="28" rx="6" fill="#E07A5F" opacity="0.1"/>
-          <rect x="16" y="604" width="328" height="28" rx="6" fill="none" stroke="#E07A5F" stroke-width="0.8"/>
-          <text x="180" y="623" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="#E07A5F">Rule Based when predictable. AI when variable.</text>
+          <!-- Interventions (Right side) -->
+          
+          <!-- Tool 1 (Plugs into Node 2) -->
+          <path d="M 200 180 L 116 180" stroke="#7A9E7E" stroke-width="3" stroke-dasharray="5 3" marker-end="url(#m-arr-sage)"/>
+          <rect x="200" y="150" width="130" height="60" rx="4" fill="white" stroke="#7A9E7E" stroke-width="1.5" filter="url(#m-glow)"/>
+          <text x="265" y="174" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#7A9E7E">RULE-BASED TOOL</text>
+          <text x="265" y="190" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#636E72">Auto-syncs data</text>
+          <text x="265" y="202" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#636E72">across CRMs</text>
+
+          <!-- Tool 2 (Plugs into Node 4) -->
+          <path d="M 200 380 L 116 380" stroke="#E07A5F" stroke-width="3" stroke-dasharray="5 3" marker-end="url(#m-arr-coral)"/>
+          <rect x="200" y="350" width="130" height="60" rx="4" fill="white" stroke="#E07A5F" stroke-width="1.5" filter="url(#m-glow)"/>
+          <text x="265" y="374" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#E07A5F">AI MICRO-TOOL</text>
+          <text x="265" y="390" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#636E72">Reads context &</text>
+          <text x="265" y="402" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#636E72">generates draft</text>
+
         </svg>
       </div>
     </header>
 
-    <!-- AI Reality Check — kill the objection first -->
-    <div class="max-w-4xl mx-auto px-6 pb-4"><p class="section-label text-[#1E3A5F]/50 text-xs tracking-widest">Why we're different</p></div>
-    <section class="bg-white rounded-sm border-2 border-[#E07A5F]/30 p-7 md:p-10 relative overflow-hidden">
-      <div class="absolute top-0 right-0 w-32 h-32 bg-[#E07A5F]/5 rounded-full -mr-16 -mt-16"></div>
+    <!-- Micro-Automations Definition -->
+    <div class="max-w-4xl mx-auto px-6 pb-4">
+      <p class="section-label text-[#1E3A5F] text-sm tracking-widest">[DEFINITION]</p>
+    </div>
+    <section class="bg-white rounded-sm border border-stone/15 p-8 md:p-10 mb-8">
+      <h2 class="font-sans text-3xl md:text-4xl font-bold mb-4 tight-tracking">Micro-automations: A lot of small fixes.<br class="hidden md:block"> Real compounding results.</h2>
+      <p class="text-lg text-charcoal mb-10 max-w-3xl leading-relaxed">We're not going to promise you a digital employee that runs your business while you sleep. What we will do is pinpoint the specific tasks draining your team's time — and eliminate them one by one. Some get automated. Some get handed off to AI. All of them make your people faster, sharper, and more profitable.</p>
       
-      <h2 class="font-sans text-3xl md:text-4xl font-bold mb-4 tight-tracking text-[#1E3A5F]">Most AI Projects Fail. Here's Why Ours Don't.</h2>
-      
-      <div class="prose prose-stone max-w-none">
-        <p class="text-lg text-charcoal mb-6 leading-relaxed">
-          Right now, someone's VP just approved a $200,000 "AI transformation" budget because a competitor announced they're "leveraging LLMs." That same someone will quietly sunset the project in eight months when adoption flatlines and ROI never materializes.
-        </p>
-        
-        <p class="text-stone mb-6 leading-relaxed">
-          We've seen it dozens of times. The AI industrial complex has convinced businesses that intelligence is something you buy, not something you build deliberately. So companies purchase enterprise AI licenses like they're hedging bets—spraying machine learning across workflows and hoping something sticks. It doesn't. Because automation without strategy is just expensive chaos, faster.
-        </p>
-        
-        <p class="text-charcoal font-semibold mb-6">
-          We say no to 80% of the AI requests we receive. Not because we can't build them. Because you shouldn't.
-        </p>
-        
-        <div class="bg-[#1E3A5F]/5 border-l-4 border-[#E07A5F] p-5 my-6 rounded-r-sm">
-          <p class="text-stone leading-relaxed italic">
-            A marketing director recently asked us to "add AI" to their lead scoring. We audited their process and discovered their real bottleneck wasn't intelligence—it was that sales and marketing used different CRM fields. A $12,000 integration fixed what a $150,000 AI model would have obscured. They thought they needed an algorithm. They needed visibility.
-          </p>
-        </div>
-        
-        <p class="text-stone mb-6 leading-relaxed">
-          This is the pattern. Businesses arrive wanting neural networks and leave with workflows that actually work. We build custom automation that maps to your actual friction points—not the ones trending on LinkedIn. Sometimes that's AI. Often it's not. The difference is we know before we build.
-        </p>
-      </div>
-      
-      <div class="mt-8 p-6 bg-gradient-to-br from-[#1E3A5F] to-[#2a4a73] text-white rounded-sm">
-        <blockquote class="text-xl md:text-2xl font-medium leading-relaxed mb-4">
-          "If AI were the answer to everything, we wouldn't have jobs. The real advantage isn't artificial intelligence—it's intelligent decisions about where to deploy it."
-        </blockquote>
-      </div>
-      
-      <div class="mt-8 grid md:grid-cols-3 gap-6">
-        <div class="p-4 border border-stone/15 rounded-sm">
-          <div class="w-8 h-8 bg-[#E07A5F]/10 rounded-full flex items-center justify-center mb-3">
-            <svg class="w-4 h-4 text-[#E07A5F]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/></svg>
+      <div class="grid md:grid-cols-3 gap-5 mb-10">
+        <!-- Card 1: Pinpoint -->
+        <div class="group relative bg-[#FAF9F7] rounded-sm border border-stone/12 p-6 transition-all duration-200 hover:border-[#1E3A5F]/25 hover:shadow-sm">
+          <div class="w-10 h-10 rounded-full bg-[#1E3A5F]/8 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-[#1E3A5F]" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/>
+            </svg>
           </div>
-          <h4 class="font-semibold text-charcoal mb-2">Diagnostic before deployment</h4>
-          <p class="text-sm text-stone">We map your actual workflow friction before writing a line of code. No solutions looking for problems.</p>
+          <h3 class="font-semibold text-charcoal text-lg mb-2">Pinpoint, don't overhaul.</h3>
+          <p class="text-stone text-sm leading-relaxed">We identify the exact manual steps slowing your team down — data entry, follow-ups, formatting, approvals — and build targeted fixes for each one.</p>
         </div>
-        
-        <div class="p-4 border border-stone/15 rounded-sm">
-          <div class="w-8 h-8 bg-[#E07A5F]/10 rounded-full flex items-center justify-center mb-3">
-            <svg class="w-4 h-4 text-[#E07A5F]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
-          </div>
-          <h4 class="font-semibold text-charcoal mb-2">Custom-built, not configured</h4>
-          <p class="text-sm text-stone">Your automation isn't pulled from a template library. It's engineered for the specific way your team works.</p>
-        </div>
-        
-        <div class="p-4 border border-stone/15 rounded-sm">
-          <div class="w-8 h-8 bg-[#E07A5F]/10 rounded-full flex items-center justify-center mb-3">
-            <svg class="w-4 h-4 text-[#E07A5F]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-          </div>
-          <h4 class="font-semibold text-charcoal mb-2">Surgical, not scattered</h4>
-          <p class="text-sm text-stone">We implement 3 automations that your team actually uses rather than 30 they ignore. Adoption beats aspiration.</p>
-        </div>
-      </div>
-    </section>
 
-    <!-- What micro-automation actually means — now after the objection is cleared -->
-    <div class="max-w-4xl mx-auto px-6 pb-4"><p class="section-label text-[#1E3A5F]/50 text-xs tracking-widest">What this actually is</p></div>
-    <section class="bg-white rounded-sm border border-stone/15 p-7 md:p-10">
-      <h2 class="font-sans text-3xl md:text-4xl font-bold mb-4 tight-tracking">Not AI hype. Just friction removal.</h2>
-      <p class="text-lg text-charcoal mb-6">This is not about "replacing your team with AI." It's about removing the tasks that shouldn't require a human in the first place.</p>
-      <ul class="space-y-4 text-stone">
-        <li class="flex items-start gap-3">
-          <svg class="w-6 h-6 text-[#7A9E7E] shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-          <span><strong>We target specific bottlenecks.</strong> When a task repeats — moving data, generating updates, routing information — we make it run automatically.</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <svg class="w-6 h-6 text-[#7A9E7E] shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-          <span><strong>Surgical implementation.</strong> We don't overhaul your entire company. We fix the 3 steps that take up 40% of your week.</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <svg class="w-6 h-6 text-[#7A9E7E] shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-          <span><strong>Your team keeps control.</strong> They stop doing copy-paste grunt work and start focusing on the execution and judgment only they can provide.</span>
-        </li>
-      </ul>
+        <!-- Card 2: Right tool -->
+        <div class="group relative bg-[#FAF9F7] rounded-sm border border-stone/12 p-6 transition-all duration-200 hover:border-[#1E3A5F]/25 hover:shadow-sm">
+          <div class="w-10 h-10 rounded-full bg-[#E07A5F]/10 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-[#E07A5F]" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17l-5.71 3.28a1 1 0 01-1.46-1.06l1.09-6.36L.66 6.57a1 1 0 01.56-1.71l6.38-.93L10.45.37a1 1 0 011.1 0l2.85 3.56 6.38.93a1 1 0 01.56 1.71l-4.68 4.46 1.09 6.36a1 1 0 01-1.46 1.06l-5.71-3.28z"/>
+            </svg>
+          </div>
+          <h3 class="font-semibold text-charcoal text-lg mb-2">The right tool for each task.</h3>
+          <p class="text-stone text-sm leading-relaxed">We build custom micro-tools using rule-based automation, AI, or both — whatever the problem requires. We don't care about the hype — we care that it works.</p>
+        </div>
+
+        <!-- Card 3: Team gets better -->
+        <div class="group relative bg-[#FAF9F7] rounded-sm border border-stone/12 p-6 transition-all duration-200 hover:border-[#1E3A5F]/25 hover:shadow-sm">
+          <div class="w-10 h-10 rounded-full bg-[#7A9E7E]/15 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-[#7A9E7E]" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z"/>
+            </svg>
+          </div>
+          <h3 class="font-semibold text-charcoal text-lg mb-2">Your team gets better, not replaced.</h3>
+          <p class="text-stone text-sm leading-relaxed">Every micro-automation gives your people back hours they can spend on work that actually grows revenue — strategy, relationships, closing deals.</p>
+        </div>
+      </div>
     </section>
 
     <!-- Your alternatives — with customer-language headers -->
@@ -765,183 +713,664 @@
       <!-- Key insight -->
       <div class="bg-[#FAF9F7] rounded-sm border border-stone/15 p-5">
         <p class="text-charcoal leading-relaxed">
-          <strong>The real answer:</strong> Off-the-shelf AI still needs you to do the work. Hiring in-house costs $80K+ before they ship anything. Microve builds automations that run without you — custom-designed for your stack, deployed in weeks.
+          <strong>The real answer:</strong> Off-the-shelf AI still needs you to do the work. Hiring in-house costs $100K+/person/year before they ship anything. Microve builds automations that run without you — custom-designed for your stack, deployed in weeks.
         </p>
       </div>
     </section>
 
-    <!-- How we choose what to build -->
-    <div class="max-w-4xl mx-auto px-6 pb-4"><p class="section-label text-[#1E3A5F]/50 text-xs tracking-widest">How we choose what to build</p></div>
-    <section class="bg-white rounded-sm border border-stone/15 p-7 md:p-10">
-      <h2 class="font-sans text-3xl md:text-4xl font-bold mb-4 tight-tracking">The right tool for the right bottleneck</h2>
-      <p class="text-lg text-charcoal mb-8">We use both rule-based automation and AI automation. We choose whatever your specific workflow actually needs—not what's trending.</p>
+    <!-- ── THE 15-STEP PROCESS ── -->
 
-      <!-- Simple visual: Two paths converging to result -->
-      <div class="mb-10 p-6 bg-cream rounded-sm border border-stone/10">
-        <div class="flex flex-col md:flex-row items-center justify-between gap-6 text-center">
-          <div class="flex-1">
-            <div class="w-16 h-16 mx-auto mb-3 bg-white rounded-full border-2 border-[#1E3A5F] flex items-center justify-center">
-              <svg class="w-8 h-8 text-[#1E3A5F]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
-              </svg>
+    <!-- ── THE 15-STEP PROCESS ── -->
+    <div class="max-w-4xl mx-auto px-6 pb-4">
+      <p class="section-label text-[#1E3A5F] text-sm tracking-widest">[PROCESS]</p>
+    </div>
+    <section class="bg-white rounded-sm border border-stone/15 p-8 md:p-10">
+      <div class="text-center mb-10">
+        <h2 class="font-sans text-3xl md:text-4xl font-bold mb-4 tight-tracking">From bottleneck to automation in 15 steps</h2>
+        <p class="text-stone text-lg max-w-2xl mx-auto">Every workflow is different, but our process is proven. We listen to your pain points, deploy custom micro-tools to eliminate manual bottlenecks, and hand you a solution that runs itself.</p>
+      </div>
+
+      <!-- Tab Navigation -->
+      <div class="mb-8">
+        <div class="flex flex-wrap justify-center gap-2 mb-6" role="tablist" aria-label="Workflow examples">
+          <button class="workflow-tab active px-6 py-3 rounded-sm font-semibold transition-all duration-200 border-2 border-[#1E3A5F] bg-[#1E3A5F] text-white" data-tab="intake" role="tab" aria-selected="true" aria-controls="panel-intake">
+            Client Intake
+          </button>
+          <button class="workflow-tab px-6 py-3 rounded-sm font-semibold transition-all duration-200 border-2 border-stone/20 text-stone hover:border-[#E07A5F] hover:text-[#E07A5F]" data-tab="leads" role="tab" aria-selected="false" aria-controls="panel-leads">
+            Lead Routing
+          </button>
+          <button class="workflow-tab px-6 py-3 rounded-sm font-semibold transition-all duration-200 border-2 border-stone/20 text-stone hover:border-[#7A9E7E] hover:text-[#7A9E7E]" data-tab="custom" role="tab" aria-selected="false" aria-controls="panel-custom">
+            Your Workflow
+          </button>
+        </div>
+
+        <!-- Tab Panels -->
+        <div class="tab-panels">
+          <!-- Client Intake Panel -->
+          <div id="panel-intake" class="tab-panel active" role="tabpanel" aria-labelledby="tab-intake">
+            <div class="bg-[#1E3A5F]/5 rounded-sm p-6 mb-8 border-l-4 border-[#1E3A5F]">
+              <p class="text-charcoal font-medium mb-2">Real Client: Law Firm</p>
+              <p class="text-stone">A law firm drowning in manual client onboarding—prospect calls, manual CRM entry, document drafting, and follow-up tracking. We built a system that turns prospects into onboarded clients in hours, not days.</p>
             </div>
-            <h3 class="font-semibold text-charcoal mb-1">Rules-Based</h3>
-            <p class="text-sm text-stone">Predictable &amp; cost-effective</p>
-          </div>
-          <div class="text-stone/40 font-mono text-2xl">+</div>
-          <div class="flex-1">
-            <div class="w-16 h-16 mx-auto mb-3 bg-white rounded-full border-2 border-[#1E3A5F] flex items-center justify-center">
-              <svg class="w-8 h-8 text-[#1E3A5F]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
-              </svg>
+
+            <!-- Phase 1 -->
+            <div class="mb-10">
+              <div class="flex items-center gap-3 mb-6">
+                <div class="w-10 h-10 rounded-sm bg-[#1E3A5F] flex items-center justify-center text-white font-bold text-lg">1</div>
+                <div>
+                  <h3 class="font-sans text-xl font-bold text-[#1E3A5F]">Phase 1: Discovery</h3>
+                  <p class="text-stone text-sm">Understanding your bottleneck</p>
+                </div>
+              </div>
+              <div class="grid md:grid-cols-2 gap-4 pl-4 md:pl-14">
+                <div class="p-4 border border-stone/10 rounded-sm">
+                  <div class="flex items-center gap-2 mb-2">
+                    <span class="w-6 h-6 rounded-full bg-[#1E3A5F]/10 text-[#1E3A5F] text-xs font-bold flex items-center justify-center">1</span>
+                    <span class="text-xs text-stone section-label">MAP</span>
+                  </div>
+                  <p class="text-charcoal font-medium">Map current workflow</p>
+                  <p class="text-stone text-sm mt-1">Document the journey from prospect call → consultation → contract → case file creation. Identify every manual handoff and delay.</p>
+                </div>
+                <div class="p-4 border border-stone/10 rounded-sm">
+                  <div class="flex items-center gap-2 mb-2">
+                    <span class="w-6 h-6 rounded-full bg-[#1E3A5F]/10 text-[#1E3A5F] text-xs font-bold flex items-center justify-center">2</span>
+                    <span class="text-xs text-stone section-label">IDENTIFY</span>
+                  </div>
+                  <p class="text-charcoal font-medium">Identify automation candidates</p>
+                  <p class="text-stone text-sm mt-1">Pinpoint repetitive tasks: data entry, document generation, email sequences, calendar scheduling.</p>
+                </div>
+                <div class="p-4 border border-stone/10 rounded-sm">
+                  <div class="flex items-center gap-2 mb-2">
+                    <span class="w-6 h-6 rounded-full bg-[#1E3A5F]/10 text-[#1E3A5F] text-xs font-bold flex items-center justify-center">3</span>
+                    <span class="text-xs text-stone section-label">PRIORITIZE</span>
+                  </div>
+                  <p class="text-charcoal font-medium">Prioritize by impact</p>
+                  <p class="text-stone text-sm mt-1">Focus on the steps eating the most time: contract drafting (2 hrs), document collection (3 hrs), follow-up tracking (1 hr daily).</p>
+                </div>
+                <div class="p-4 border border-stone/10 rounded-sm">
+                  <div class="flex items-center gap-2 mb-2">
+                    <span class="w-6 h-6 rounded-full bg-[#1E3A5F]/10 text-[#1E3A5F] text-xs font-bold flex items-center justify-center">4</span>
+                    <span class="text-xs text-stone section-label">VALIDATE</span>
+                  </div>
+                  <p class="text-charcoal font-medium">Validate with your team</p>
+                  <p class="text-stone text-sm mt-1">Review findings with paralegals and partners. Confirm pain points and get buy-in before building.</p>
+                </div>
+              </div>
             </div>
-            <h3 class="font-semibold text-charcoal mb-1">AI Automation</h3>
-            <p class="text-sm text-stone">Adaptive &amp; intelligent</p>
-          </div>
-          <div class="text-stone/40 font-mono text-2xl">=</div>
-          <div class="flex-1">
-            <div class="w-16 h-16 mx-auto mb-3 bg-[#E07A5F] rounded-full flex items-center justify-center">
-              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
-              </svg>
+
+            <!-- Phase 2 -->
+            <div class="mb-10">
+              <div class="flex items-center gap-3 mb-6">
+                <div class="w-10 h-10 rounded-sm bg-[#7A9E7E] flex items-center justify-center text-white font-bold text-lg">2</div>
+                <div>
+                  <h3 class="font-sans text-xl font-bold text-[#1E3A5F]">Phase 2: Design</h3>
+                  <p class="text-stone text-sm">Planning the solution</p>
+                </div>
+              </div>
+              <div class="grid md:grid-cols-2 gap-4 pl-4 md:pl-14">
+                <div class="p-4 border border-stone/10 rounded-sm">
+                  <div class="flex items-center gap-2 mb-2">
+                    <span class="w-6 h-6 rounded-full bg-[#7A9E7E]/10 text-[#7A9E7E] text-xs font-bold flex items-center justify-center">5</span>
+                    <span class="text-xs text-stone section-label">ARCHITECT</span>
+                  </div>
+                  <p class="text-charcoal font-medium">Design the automation architecture</p>
+                  <p class="text-stone text-sm mt-1">Choose the right mix: Zapier for triggers, custom tool for document generation, AI for data extraction.</p>
+                </div>
+                <div class="p-4 border border-stone/10 rounded-sm">
+                  <div class="flex items-center gap-2 mb-2">
+                    <span class="w-6 h-6 rounded-full bg-[#7A9E7E]/10 text-[#7A9E7E] text-xs font-bold flex items-center justify-center">6</span>
+                    <span class="text-xs text-stone section-label">INTEGRATE</span>
+                  </div>
+                  <p class="text-charcoal font-medium">Map integrations</p>
+                  <p class="text-stone text-sm mt-1">Connect systems: Phone → CRM (Clio) → Document tool → Email → Calendar. Ensure data flows seamlessly.</p>
+                </div>
+                <div class="p-4 border border-stone/10 rounded-sm">
+                  <div class="flex items-center gap-2 mb-2">
+                    <span class="w-6 h-6 rounded-full bg-[#7A9E7E]/10 text-[#7A9E7E] text-xs font-bold flex items-center justify-center">7</span>
+                    <span class="text-xs text-stone section-label">CUSTOMIZE</span>
+                  </div>
+                  <p class="text-charcoal font-medium">Build custom tools</p>
+                  <p class="text-stone text-sm mt-1">Create custom document templates, intake forms, and approval workflows tailored to the firm's practice areas.</p>
+                </div>
+                <div class="p-4 border border-stone/10 rounded-sm">
+                  <div class="flex items-center gap-2 mb-2">
+                    <span class="w-6 h-6 rounded-full bg-[#7A9E7E]/10 text-[#7A9E7E] text-xs font-bold flex items-center justify-center">8</span>
+                    <span class="text-xs text-stone section-label">PLAN</span>
+                  </div>
+                  <p class="text-charcoal font-medium">Plan testing & rollout</p>
+                  <p class="text-stone text-sm mt-1">Design pilot with 5 test clients, define success metrics (time saved, error reduction), plan training schedule.</p>
+                </div>
+              </div>
             </div>
-            <h3 class="font-semibold text-charcoal mb-1">Measurable Results</h3>
-            <p class="text-sm text-stone">Cost savings &amp; revenue growth</p>
+
+            <!-- Phase 3 -->
+            <div class="mb-10">
+              <div class="flex items-center gap-3 mb-6">
+                <div class="w-10 h-10 rounded-sm bg-[#E07A5F] flex items-center justify-center text-white font-bold text-lg">3</div>
+                <div>
+                  <h3 class="font-sans text-xl font-bold text-[#1E3A5F]">Phase 3: Build</h3>
+                  <p class="text-stone text-sm">Creating the automation</p>
+                </div>
+              </div>
+              <div class="grid md:grid-cols-2 gap-4 pl-4 md:pl-14">
+                <div class="p-4 border border-stone/10 rounded-sm">
+                  <div class="flex items-center gap-2 mb-2">
+                    <span class="w-6 h-6 rounded-full bg-[#E07A5F]/10 text-[#E07A5F] text-xs font-bold flex items-center justify-center">9</span>
+                    <span class="text-xs text-stone section-label">DEVELOP</span>
+                  </div>
+                  <p class="text-charcoal font-medium">Develop automation workflows</p>
+                  <p class="text-stone text-sm mt-1">Build the triggers: New call logged → Auto-create case file → Generate retainer agreement → Schedule follow-up.</p>
+                </div>
+                <div class="p-4 border border-stone/10 rounded-sm">
+                  <div class="flex items-center gap-2 mb-2">
+                    <span class="w-6 h-6 rounded-full bg-[#E07A5F]/10 text-[#E07A5F] text-xs font-bold flex items-center justify-center">10</span>
+                    <span class="text-xs text-stone section-label">CODE</span>
+                  </div>
+                  <p class="text-charcoal font-medium">Code custom tools</p>
+                  <p class="text-stone text-sm mt-1">Build custom document generator, intake form with conditional logic, client portal for document upload.</p>
+                </div>
+                <div class="p-4 border border-stone/10 rounded-sm">
+                  <div class="flex items-center gap-2 mb-2">
+                    <span class="w-6 h-6 rounded-full bg-[#E07A5F]/10 text-[#E07A5F] text-xs font-bold flex items-center justify-center">11</span>
+                    <span class="text-xs text-stone section-label">TEST</span>
+                  </div>
+                  <p class="text-charcoal font-medium">Test with real data</p>
+                  <p class="text-stone text-sm mt-1">Run 10 test cases end-to-end. Check document accuracy, data field mapping, email deliverability.</p>
+                </div>
+                <div class="p-4 border border-stone/10 rounded-sm">
+                  <div class="flex items-center gap-2 mb-2">
+                    <span class="w-6 h-6 rounded-full bg-[#E07A5F]/10 text-[#E07A5F] text-xs font-bold flex items-center justify-center">12</span>
+                    <span class="text-xs text-stone section-label">REFINE</span>
+                  </div>
+                  <p class="text-charcoal font-medium">Refine based on feedback</p>
+                  <p class="text-stone text-sm mt-1">Adjust workflows based on paralegal input. Fix edge cases. Add approval checkpoints where needed.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Phase 4 -->
+            <div class="mb-8">
+              <div class="flex items-center gap-3 mb-6">
+                <div class="w-10 h-10 rounded-sm bg-[#1E3A5F] flex items-center justify-center text-white font-bold text-lg">4</div>
+                <div>
+                  <h3 class="font-sans text-xl font-bold text-[#1E3A5F]">Phase 4: Deploy</h3>
+                  <p class="text-stone text-sm">Implementation & handoff</p>
+                </div>
+              </div>
+              <div class="grid md:grid-cols-2 gap-4 pl-4 md:pl-14">
+                <div class="p-4 border border-stone/10 rounded-sm">
+                  <div class="flex items-center gap-2 mb-2">
+                    <span class="w-6 h-6 rounded-full bg-[#1E3A5F]/10 text-[#1E3A5F] text-xs font-bold flex items-center justify-center">13</span>
+                    <span class="text-xs text-stone section-label">PILOT</span>
+                  </div>
+                  <p class="text-charcoal font-medium">Pilot with select cases</p>
+                  <p class="text-stone text-sm mt-1">Run live pilot with 5 real clients. Monitor closely. Gather feedback daily. Adjust in real-time.</p>
+                </div>
+                <div class="p-4 border border-stone/10 rounded-sm">
+                  <div class="flex items-center gap-2 mb-2">
+                    <span class="w-6 h-6 rounded-full bg-[#1E3A5F]/10 text-[#1E3A5F] text-xs font-bold flex items-center justify-center">14</span>
+                    <span class="text-xs text-stone section-label">TRAIN</span>
+                  </div>
+                  <p class="text-charcoal font-medium">Train your team</p>
+                  <p class="text-stone text-sm mt-1">Hands-on training for all users. Video recordings, documentation, live Q&A. Ensure everyone's confident.</p>
+                </div>
+                <div class="p-4 border border-stone/10 rounded-sm md:col-span-2">
+                  <div class="flex items-center gap-2 mb-2">
+                    <span class="w-6 h-6 rounded-full bg-[#1E3A5F]/10 text-[#1E3A5F] text-xs font-bold flex items-center justify-center">15</span>
+                    <span class="text-xs text-stone section-label">HANDOFF</span>
+                  </div>
+                  <p class="text-charcoal font-medium">Handoff & ongoing support</p>
+                  <p class="text-stone text-sm mt-1">Full system documentation, monitoring dashboard, 30-day support included. You're autonomous but never alone.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Result -->
+            <div class="bg-[#7A9E7E]/10 border border-[#7A9E7E]/20 rounded-sm p-6 mt-8">
+              <div class="flex items-start gap-4">
+                <div class="w-12 h-12 rounded-sm bg-[#7A9E7E] flex items-center justify-center shrink-0">
+                  <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                </div>
+                <div>
+                  <p class="font-semibold text-[#7A9E7E] mb-2">Result: Intake time reduced from 2 days to 2 hours</p>
+                  <p class="text-stone">Prospects now move seamlessly from call to onboarded client. Paralegals spend time on legal work, not paperwork. The firm can handle 3x more clients without hiring.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Lead Routing Panel -->
+          <div id="panel-leads" class="tab-panel hidden" role="tabpanel" aria-labelledby="tab-leads">
+            <div class="bg-[#E07A5F]/5 rounded-sm p-6 mb-8 border-l-4 border-[#E07A5F]">
+              <p class="text-charcoal font-medium mb-2">Common Challenge: Sales Teams</p>
+              <p class="text-stone">Leads come in from multiple sources—website forms, LinkedIn, referrals—but sit in an inbox for hours or days before anyone responds. By then, they've gone cold. We built a system that routes leads instantly and ensures immediate follow-up.</p>
+            </div>
+
+            <!-- Phase 1 -->
+            <div class="mb-10">
+              <div class="flex items-center gap-3 mb-6">
+                <div class="w-10 h-10 rounded-sm bg-[#1E3A5F] flex items-center justify-center text-white font-bold text-lg">1</div>
+                <div>
+                  <h3 class="font-sans text-xl font-bold text-[#1E3A5F]">Phase 1: Discovery</h3>
+                  <p class="text-stone text-sm">Understanding your bottleneck</p>
+                </div>
+              </div>
+              <div class="grid md:grid-cols-2 gap-4 pl-4 md:pl-14">
+                <div class="p-4 border border-stone/10 rounded-sm">
+                  <div class="flex items-center gap-2 mb-2">
+                    <span class="w-6 h-6 rounded-full bg-[#1E3A5F]/10 text-[#1E3A5F] text-xs font-bold flex items-center justify-center">1</span>
+                    <span class="text-xs text-stone section-label">MAP</span>
+                  </div>
+                  <p class="text-charcoal font-medium">Map lead sources & flow</p>
+                  <p class="text-stone text-sm mt-1">Document every entry point: website forms, LinkedIn messages, email, phone. Track where leads go and how long they wait.</p>
+                </div>
+                <div class="p-4 border border-stone/10 rounded-sm">
+                  <div class="flex items-center gap-2 mb-2">
+                    <span class="w-6 h-6 rounded-full bg-[#1E3A5F]/10 text-[#1E3A5F] text-xs font-bold flex items-center justify-center">2</span>
+                    <span class="text-xs text-stone section-label">IDENTIFY</span>
+                  </div>
+                  <p class="text-charcoal font-medium">Find the delays</p>
+                  <p class="text-stone text-sm mt-1">Identify bottlenecks: Leads sit in inbox for 6 hours. Manual assignment takes 2 hours. No visibility into follow-up.</p>
+                </div>
+                <div class="p-4 border border-stone/10 rounded-sm">
+                  <div class="flex items-center gap-2 mb-2">
+                    <span class="w-6 h-6 rounded-full bg-[#1E3A5F]/10 text-[#1E3A5F] text-xs font-bold flex items-center justify-center">3</span>
+                    <span class="text-xs text-stone section-label">PRIORITIZE</span>
+                  </div>
+                  <p class="text-charcoal font-medium">Prioritize high-value fixes</p>
+                  <p class="text-stone text-sm mt-1">Focus on speed-to-lead: Auto-response within 5 minutes, intelligent routing, instant CRM entry.</p>
+                </div>
+                <div class="p-4 border border-stone/10 rounded-sm">
+                  <div class="flex items-center gap-2 mb-2">
+                    <span class="w-6 h-6 rounded-full bg-[#1E3A5F]/10 text-[#1E3A5F] text-xs font-bold flex items-center justify-center">4</span>
+                    <span class="text-xs text-stone section-label">VALIDATE</span>
+                  </div>
+                  <p class="text-charcoal font-medium">Validate with sales team</p>
+                  <p class="text-stone text-sm mt-1">Get input from sales reps on routing rules, territory assignments, and follow-up preferences.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Phase 2 -->
+            <div class="mb-10">
+              <div class="flex items-center gap-3 mb-6">
+                <div class="w-10 h-10 rounded-sm bg-[#7A9E7E] flex items-center justify-center text-white font-bold text-lg">2</div>
+                <div>
+                  <h3 class="font-sans text-xl font-bold text-[#1E3A5F]">Phase 2: Design</h3>
+                  <p class="text-stone text-sm">Planning the solution</p>
+                </div>
+              </div>
+              <div class="grid md:grid-cols-2 gap-4 pl-4 md:pl-14">
+                <div class="p-4 border border-stone/10 rounded-sm">
+                  <div class="flex items-center gap-2 mb-2">
+                    <span class="w-6 h-6 rounded-full bg-[#7A9E7E]/10 text-[#7A9E7E] text-xs font-bold flex items-center justify-center">5</span>
+                    <span class="text-xs text-stone section-label">ARCHITECT</span>
+                  </div>
+                  <p class="text-charcoal font-medium">Design intelligent routing</p>
+                  <p class="text-stone text-sm mt-1">Create rules: Enterprise leads → Senior AE, SMB leads → Junior rep, by territory, by product interest.</p>
+                </div>
+                <div class="p-4 border border-stone/10 rounded-sm">
+                  <div class="flex items-center gap-2 mb-2">
+                    <span class="w-6 h-6 rounded-full bg-[#7A9E7E]/10 text-[#7A9E7E] text-xs font-bold flex items-center justify-center">6</span>
+                    <span class="text-xs text-stone section-label">INTEGRATE</span>
+                  </div>
+                  <p class="text-charcoal font-medium">Connect all lead sources</p>
+                  <p class="text-stone text-sm mt-1">Integrate: Website → CRM (HubSpot/Salesforce) → Slack → Email. One unified pipeline.</p>
+                </div>
+                <div class="p-4 border border-stone/10 rounded-sm">
+                  <div class="flex items-center gap-2 mb-2">
+                    <span class="w-6 h-6 rounded-full bg-[#7A9E7E]/10 text-[#7A9E7E] text-xs font-bold flex items-center justify-center">7</span>
+                    <span class="text-xs text-stone section-label">CUSTOMIZE</span>
+                  </div>
+                  <p class="text-charcoal font-medium">Build enrichment tools</p>
+                  <p class="text-stone text-sm mt-1">Create tools that auto-enrich leads (LinkedIn lookup, company data, scoring) before routing.</p>
+                </div>
+                <div class="p-4 border border-stone/10 rounded-sm">
+                  <div class="flex items-center gap-2 mb-2">
+                    <span class="w-6 h-6 rounded-full bg-[#7A9E7E]/10 text-[#7A9E7E] text-xs font-bold flex items-center justify-center">8</span>
+                    <span class="text-xs text-stone section-label">PLAN</span>
+                  </div>
+                  <p class="text-charcoal font-medium">Plan escalation & fallback</p>
+                  <p class="text-stone text-sm mt-1">Design backup rules: If rep doesn't respond in 15 min → escalate to manager. After hours → assign to on-call.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Phase 3 -->
+            <div class="mb-10">
+              <div class="flex items-center gap-3 mb-6">
+                <div class="w-10 h-10 rounded-sm bg-[#E07A5F] flex items-center justify-center text-white font-bold text-lg">3</div>
+                <div>
+                  <h3 class="font-sans text-xl font-bold text-[#1E3A5F]">Phase 3: Build</h3>
+                  <p class="text-stone text-sm">Creating the automation</p>
+                </div>
+              </div>
+              <div class="grid md:grid-cols-2 gap-4 pl-4 md:pl-14">
+                <div class="p-4 border border-stone/10 rounded-sm">
+                  <div class="flex items-center gap-2 mb-2">
+                    <span class="w-6 h-6 rounded-full bg-[#E07A5F]/10 text-[#E07A5F] text-xs font-bold flex items-center justify-center">9</span>
+                    <span class="text-xs text-stone section-label">DEVELOP</span>
+                  </div>
+                  <p class="text-charcoal font-medium">Build routing workflows</p>
+                  <p class="text-stone text-sm mt-1">Create automation: Form submitted → Score lead → Route to rep → Send Slack alert → Auto-response email.</p>
+                </div>
+                <div class="p-4 border border-stone/10 rounded-sm">
+                  <div class="flex items-center gap-2 mb-2">
+                    <span class="w-6 h-6 rounded-full bg-[#E07A5F]/10 text-[#E07A5F] text-xs font-bold flex items-center justify-center">10</span>
+                    <span class="text-xs text-stone section-label">CODE</span>
+                  </div>
+                  <p class="text-charcoal font-medium">Code custom scoring tool</p>
+                  <p class="text-stone text-sm mt-1">Build lead scoring algorithm based on your criteria: company size, job title, behavior, source quality.</p>
+                </div>
+                <div class="p-4 border border-stone/10 rounded-sm">
+                  <div class="flex items-center gap-2 mb-2">
+                    <span class="w-6 h-6 rounded-full bg-[#E07A5F]/10 text-[#E07A5F] text-xs font-bold flex items-center justify-center">11</span>
+                    <span class="text-xs text-stone section-label">TEST</span>
+                  </div>
+                  <p class="text-charcoal font-medium">Test routing logic</p>
+                  <p class="text-stone text-sm mt-1">Test 50 sample leads through the system. Verify routing accuracy, response times, notification delivery.</p>
+                </div>
+                <div class="p-4 border border-stone/10 rounded-sm">
+                  <div class="flex items-center gap-2 mb-2">
+                    <span class="w-6 h-6 rounded-full bg-[#E07A5F]/10 text-[#E07A5F] text-xs font-bold flex items-center justify-center">12</span>
+                    <span class="text-xs text-stone section-label">REFINE</span>
+                  </div>
+                  <p class="text-charcoal font-medium">Refine based on feedback</p>
+                  <p class="text-stone text-sm mt-1">Adjust routing rules based on rep feedback. Fix scoring weights. Optimize response templates.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Phase 4 -->
+            <div class="mb-8">
+              <div class="flex items-center gap-3 mb-6">
+                <div class="w-10 h-10 rounded-sm bg-[#1E3A5F] flex items-center justify-center text-white font-bold text-lg">4</div>
+                <div>
+                  <h3 class="font-sans text-xl font-bold text-[#1E3A5F]">Phase 4: Deploy</h3>
+                  <p class="text-stone text-sm">Implementation & handoff</p>
+                </div>
+              </div>
+              <div class="grid md:grid-cols-2 gap-4 pl-4 md:pl-14">
+                <div class="p-4 border border-stone/10 rounded-sm">
+                  <div class="flex items-center gap-2 mb-2">
+                    <span class="w-6 h-6 rounded-full bg-[#1E3A5F]/10 text-[#1E3A5F] text-xs font-bold flex items-center justify-center">13</span>
+                    <span class="text-xs text-stone section-label">PILOT</span>
+                  </div>
+                  <p class="text-charcoal font-medium">Pilot with live leads</p>
+                  <p class="text-stone text-sm mt-1">Run parallel for 1 week: Old system vs new automation. Compare response times, conversion rates, rep satisfaction.</p>
+                </div>
+                <div class="p-4 border border-stone/10 rounded-sm">
+                  <div class="flex items-center gap-2 mb-2">
+                    <span class="w-6 h-6 rounded-full bg-[#1E3A5F]/10 text-[#1E3A5F] text-xs font-bold flex items-center justify-center">14</span>
+                    <span class="text-xs text-stone section-label">TRAIN</span>
+                  </div>
+                  <p class="text-charcoal font-medium">Train sales team</p>
+                  <p class="text-stone text-sm mt-1">Show reps how to use the new system. Set expectations for response times. Provide mobile app training.</p>
+                </div>
+                <div class="p-4 border border-stone/10 rounded-sm md:col-span-2">
+                  <div class="flex items-center gap-2 mb-2">
+                    <span class="w-6 h-6 rounded-full bg-[#1E3A5F]/10 text-[#1E3A5F] text-xs font-bold flex items-center justify-center">15</span>
+                    <span class="text-xs text-stone section-label">HANDOFF</span>
+                  </div>
+                  <p class="text-charcoal font-medium">Handoff & optimize</p>
+                  <p class="text-stone text-sm mt-1">Full system live. Dashboard for managers to monitor response times. Monthly optimization calls. 30-day support.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Result -->
+            <div class="bg-[#7A9E7E]/10 border border-[#7A9E7E]/20 rounded-sm p-6 mt-8">
+              <div class="flex items-start gap-4">
+                <div class="w-12 h-12 rounded-sm bg-[#7A9E7E] flex items-center justify-center shrink-0">
+                  <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                </div>
+                <div>
+                  <p class="font-semibold text-[#7A9E7E] mb-2">Result: Every lead contacted within 5 minutes, 24/7</p>
+                  <p class="text-stone">No more leads sitting in inboxes. No more manual assignment. Sales reps get notified instantly with full context. Conversion rates increase 40% just from speed-to-lead alone.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Your Workflow Panel -->
+          <div id="panel-custom" class="tab-panel hidden" role="tabpanel" aria-labelledby="tab-custom">
+            <div class="bg-gradient-to-br from-[#1E3A5F]/5 to-[#7A9E7E]/5 rounded-sm p-8 mb-8 border border-[#1E3A5F]/20">
+              <div class="text-center">
+                <div class="w-16 h-16 rounded-full bg-[#1E3A5F] flex items-center justify-center mx-auto mb-4">
+                  <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                  </svg>
+                </div>
+                <h3 class="font-sans text-2xl font-bold text-[#1E3A5F] mb-3">Your Unique Workflow</h3>
+                <p class="text-stone text-lg mb-6 max-w-xl mx-auto">Every business has different pain points. We apply this same 15-step process to any workflow—whether it's invoice processing, document approvals, customer onboarding, inventory management, or something entirely unique to your operations.</p>
+                
+                <div class="grid md:grid-cols-3 gap-4 max-w-2xl mx-auto mb-6">
+                  <div class="p-4 bg-white rounded-sm border border-stone/10">
+                    <p class="text-[#E07A5F] font-semibold mb-1">We Listen</p>
+                    <p class="text-stone text-sm">You describe your pain points and current process</p>
+                  </div>
+                  <div class="p-4 bg-white rounded-sm border border-stone/10">
+                    <p class="text-[#7A9E7E] font-semibold mb-1">We Design</p>
+                    <p class="text-stone text-sm">Custom solution built for your exact needs</p>
+                  </div>
+                  <div class="p-4 bg-white rounded-sm border border-stone/10">
+                    <p class="text-[#1E3A5F] font-semibold mb-1">You Thrive</p>
+                    <p class="text-stone text-sm">Automated workflow that saves hours weekly</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6 mb-8">
+              <div class="p-6 border border-stone/10 rounded-sm">
+                <h4 class="font-semibold text-charcoal mb-3 flex items-center gap-2">
+                  <span class="w-2 h-2 bg-[#E07A5F] rounded-full"></span>
+                  Common Workflows We Automate
+                </h4>
+                <ul class="space-y-2 text-stone">
+                  <li class="flex items-start gap-2">
+                    <span class="text-[#E07A5F]">→</span>
+                    <span>Invoice processing & approval</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span class="text-[#E07A5F]">→</span>
+                    <span>Customer onboarding sequences</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span class="text-[#E07A5F]">→</span>
+                    <span>Document routing & approvals</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span class="text-[#E07A5F]">→</span>
+                    <span>Data entry & system syncing</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span class="text-[#E07A5F]">→</span>
+                    <span>Email & communication workflows</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span class="text-[#E07A5F]">→</span>
+                    <span>Custom internal tools & dashboards</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="p-6 border border-stone/10 rounded-sm">
+                <h4 class="font-semibold text-charcoal mb-3 flex items-center gap-2">
+                  <span class="w-2 h-2 bg-[#7A9E7E] rounded-full"></span>
+                  What Makes Us Different
+                </h4>
+                <ul class="space-y-2 text-stone">
+                  <li class="flex items-start gap-2">
+                    <svg class="w-5 h-5 text-[#7A9E7E] shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                    <span><strong>No templates.</strong> Every solution is custom-built</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <svg class="w-5 h-5 text-[#7A9E7E] shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                    <span><strong>We build tools.</strong> Not just connections</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <svg class="w-5 h-5 text-[#7A9E7E] shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                    <span><strong>Right tech.</strong> Rules, AI, or custom code</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <svg class="w-5 h-5 text-[#7A9E7E] shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                    <span><strong>Transparent process.</strong> No black boxes</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <svg class="w-5 h-5 text-[#7A9E7E] shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                    <span><strong>Real partnership.</strong> We train your team</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="bg-[#1E3A5F] text-white rounded-sm p-8 text-center">
+              <h4 class="font-sans text-2xl font-bold mb-3">Ready to eliminate your bottleneck?</h4>
+              <p class="text-white/80 mb-6 max-w-xl mx-auto">Describe your workflow to us. In one conversation, we'll tell you if we can automate it—and exactly how we'd approach it using our 15-step process.</p>
+              <a href="contact.html" class="inline-flex items-center gap-2 bg-[#E07A5F] hover:bg-[#C96A4F] transition-colors text-white px-8 py-4 rounded-sm font-bold">
+                Tell us about your workflow
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+              </a>
+            </div>
           </div>
         </div>
       </div>
 
-      <div class="grid md:grid-cols-2 gap-8 mb-8">
-        <div class="p-6 bg-cream/50 rounded-sm border border-stone/10">
-          <h3 class="font-semibold text-lg text-charcoal mb-4 flex items-center gap-2">
-            <span class="w-2 h-2 bg-[#1E3A5F] rounded-full"></span>
-            When we use rules-based automation
-          </h3>
-          <ul class="space-y-3 text-stone">
-            <li class="flex items-start gap-3">
-              <span class="text-[#E07A5F] mt-1">&bull;</span>
-              <span><strong>Predictable, repetitive tasks.</strong> When the same action happens every time—like copying data from a form to a spreadsheet.</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="text-[#E07A5F] mt-1">&bull;</span>
-              <span><strong>Cost-effective implementation.</strong> Simple triggers cost less to build and almost nothing to run month after month.</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="text-[#E07A5F] mt-1">&bull;</span>
-              <span><strong>Reliable outcomes.</strong> No surprises. The automation does exactly what you programmed it to do, every single time.</span>
-            </li>
-          </ul>
-          <p class="mt-4 text-sm text-stone italic border-t border-stone/10 pt-3">
-            Example: New client signs contract &rarr; folder auto-created in Drive, Slack notification sent, task added to Asana.
-          </p>
-        </div>
+      <script>
+        // Tab switching functionality
+        (function() {
+          const tabs = document.querySelectorAll('.workflow-tab');
+          const panels = document.querySelectorAll('.tab-panel');
 
-        <div class="p-6 bg-cream/50 rounded-sm border border-stone/10">
-          <h3 class="font-semibold text-lg text-charcoal mb-4 flex items-center gap-2">
-            <span class="w-2 h-2 bg-[#E07A5F] rounded-full"></span>
-            When we use AI automation
-          </h3>
-          <ul class="space-y-3 text-stone">
-            <li class="flex items-start gap-3">
-              <span class="text-[#E07A5F] mt-1">&bull;</span>
-              <span><strong>Variable inputs requiring decisions.</strong> When each situation is slightly different and needs judgment—like classifying support tickets by urgency.</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="text-[#E07A5F] mt-1">&bull;</span>
-              <span><strong>Complex patterns.</strong> When the automation needs to read context, extract meaning, or route work intelligently.</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="text-[#E07A5F] mt-1">&bull;</span>
-              <span><strong>Natural language understanding.</strong> When inputs are unstructured—emails, documents, customer messages—that need interpretation.</span>
-            </li>
-          </ul>
-          <p class="mt-4 text-sm text-stone italic border-t border-stone/10 pt-3">
-            Example: Customer email arrives &rarr; AI reads sentiment, drafts personalized response, routes to the right team member.
-          </p>
-        </div>
-      </div>
+          tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+              // Deactivate all tabs
+              tabs.forEach(t => {
+                t.classList.remove('active', 'bg-[#1E3A5F]', 'text-white', 'border-[#1E3A5F]');
+                t.classList.add('text-stone', 'border-stone/20');
+                t.setAttribute('aria-selected', 'false');
+              });
 
-      <div class="p-6 bg-[#1E3A5F]/5 rounded-sm border-l-4 border-[#1E3A5F] mb-8">
-        <h3 class="font-semibold text-lg text-charcoal mb-3">How we decide which to use</h3>
-        <p class="text-stone leading-relaxed mb-4">
-          We don't sell AI for the sake of AI. We look at your actual bottleneck—the specific step where work stalls, costs pile up, or people get frustrated.
-        </p>
-        <ul class="space-y-2 text-stone">
-          <li class="flex items-start gap-3">
-            <svg class="w-5 h-5 text-[#E07A5F] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
-            </svg>
-            <span>If the problem is <strong>volume of identical tasks</strong>, rules-based automation is usually faster and cheaper.</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <svg class="w-5 h-5 text-[#E07A5F] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
-            </svg>
-            <span>If the problem is <strong>variability and judgment</strong>, AI automation handles what rules can't.</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <svg class="w-5 h-5 text-[#E07A5F] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
-            </svg>
-            <span>Sometimes <strong>both work together</strong>—rules handle the predictable parts, AI handles the exceptions.</span>
-          </li>
-        </ul>
-      </div>
+              // Hide all panels
+              panels.forEach(p => {
+                p.classList.add('hidden');
+                p.classList.remove('active');
+              });
 
-      <div class="grid md:grid-cols-3 gap-6 text-center">
-        <div class="p-5 border border-stone/10 rounded-sm">
-          <div class="text-3xl font-bold text-[#E07A5F] mb-2">Cost Savings</div>
-          <p class="text-stone text-sm">Automations typically pay for themselves within weeks by eliminating hours of manual work.</p>
-        </div>
-        <div class="p-5 border border-stone/10 rounded-sm">
-          <div class="text-3xl font-bold text-[#E07A5F] mb-2">Productivity Gains</div>
-          <p class="text-stone text-sm">Your team stops doing grunt work and focuses on strategy, relationships, and growth.</p>
-        </div>
-        <div class="p-5 border border-stone/10 rounded-sm">
-          <div class="text-3xl font-bold text-[#E07A5F] mb-2">Revenue Impact</div>
-          <p class="text-stone text-sm">Faster response times, fewer errors, and scalable operations mean more closed deals.</p>
-        </div>
-      </div>
+              // Activate clicked tab
+              tab.classList.add('active', 'bg-[#1E3A5F]', 'text-white', 'border-[#1E3A5F]');
+              tab.classList.remove('text-stone', 'border-stone/20');
+              tab.setAttribute('aria-selected', 'true');
+
+              // Show corresponding panel
+              const targetId = tab.getAttribute('data-tab');
+              const targetPanel = document.getElementById('panel-' + targetId);
+              if (targetPanel) {
+                targetPanel.classList.remove('hidden');
+                targetPanel.classList.add('active');
+              }
+            });
+          });
+        })();
+      </script>
     </section>
 
-    <div class="max-w-4xl mx-auto px-6 pb-4"><p class="section-label text-[#1E3A5F]/50 text-xs tracking-widest">Why trust us</p></div>
-    <section class="bg-white rounded-sm border border-stone/15 p-7 md:p-10">
-      <h2 class="font-sans text-3xl md:text-4xl font-bold mb-4 tight-tracking">We don't sell automation. We use it.</h2>
-      <p class="text-lg text-charcoal mb-6">We run our own businesses on the same automations we build for clients. We aren't consultants who read white papers — we're operators who got tired of manual work.</p>
-      <ul class="space-y-4 text-stone">
-        <li class="flex items-start gap-3">
-          <svg class="w-6 h-6 text-[#E07A5F] shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-          <span><strong>We are entrepreneurs and investors.</strong> We understand how operational friction slows down scaling and eats profit margins.</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <svg class="w-6 h-6 text-[#E07A5F] shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-          <span><strong>We eat our own cooking.</strong> We rely on the exact same micro-automations we build for you to run our own internal businesses.</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <svg class="w-6 h-6 text-[#E07A5F] shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-          <span><strong>We solve the actual problem.</strong> If a $20 Zapier integration solves it, we tell you. If you need a custom AI layer, we build it.</span>
-        </li>
-      </ul>
-    </section>
-
-    <div class="max-w-4xl mx-auto px-6 pb-4"><p class="section-label text-[#1E3A5F]/50 text-xs tracking-widest">The numbers</p></div>
-    <section class="bg-white border-2 border-charcoal/10 rounded-sm p-8 md:p-10 relative">
-      <div class="flex flex-col md:flex-row items-center gap-8">
-        <div class="text-center md:text-left shrink-0">
-          <div class="text-6xl md:text-7xl font-bold text-[#E07A5F] mb-2">6 weeks</div>
-          <p class="text-sm text-stone uppercase tracking-wider">lost per employee per year<br>to repetitive manual tasks</p>
-          <p class="text-xs text-stone/60 mt-1">WorkMarket / KRC Research, 2020</p>
+    <!-- ── TOOLS WE WORK WITH ── -->
+    <div class="max-w-4xl mx-auto px-6 pb-4">
+      <p class="section-label text-[#1E3A5F] text-sm tracking-widest">[INTEGRATIONS]</p>
+    </div>
+    <section class="max-w-5xl mx-auto px-6 pb-16">
+      <div class="bg-white border border-stone/15 rounded-sm p-8 md:p-10">
+        <div class="text-center mb-8">
+          <h2 class="font-sans text-3xl md:text-4xl font-bold mb-3 tight-tracking text-[#1E3A5F]">Works with the tools you already use</h2>
+          <p class="text-stone text-lg max-w-2xl mx-auto">No rip-and-replace. We integrate with your existing stack. If you use it, we can connect to it.</p>
         </div>
-        <div class="hidden md:block w-px h-20 bg-stone/20"></div>
-        <div class="flex-1 text-center md:text-left">
-          <h2 class="font-sans text-2xl md:text-3xl font-bold text-charcoal tight-tracking mb-3">
-            Every manual hour is lost revenue.
-          </h2>
-          <p class="text-stone mb-4">
-            The average employee wastes six full work-weeks per year on tasks a machine could run in seconds. <strong class="text-charcoal">That's capacity you're already paying for — redirected from strategy, relationships, and growth into copy-paste busywork.</strong>
-          </p>
-          <a href="contact.html" class="inline-block bg-[#E07A5F] text-white px-6 py-3 rounded-sm font-semibold hover:bg-[#C96A4F] transition-colors duration-200 uppercase tracking-wider text-sm">
-            Book a Call
+        
+        <div class="border-t border-stone/10 pt-8">
+          <p class="text-xs text-stone uppercase tracking-widest mb-6 section-label text-center">Popular integrations</p>
+          <div class="flex flex-wrap items-center justify-center gap-x-8 gap-y-6">
+            <!-- HubSpot -->
+            <div class="flex items-center gap-2 text-stone/70 hover:text-stone transition-colors">
+              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M18.164 7.93V5.084a2.198 2.198 0 001.267-1.984 2.21 2.21 0 00-4.42 0c0 .852.488 1.59 1.198 1.955v2.876c-.954.218-1.813.62-2.547 1.16l-7.24-5.63a2.166 2.166 0 00.086-.522 2.21 2.21 0 00-4.42 0c0 1.18.928 2.144 2.09 2.2v7.98c-1.162.056-2.09 1.02-2.09 2.2a2.21 2.21 0 004.42 0 2.198 2.198 0 00-1.267-1.984v-7.98c.486-.236 1.02-.368 1.584-.38l7.174 5.58a4.386 4.386 0 00-.1.937c0 2.425 1.975 4.4 4.4 4.4s4.4-1.975 4.4-4.4-1.975-4.388-4.4-4.388c-.378 0-.742.05-1.09.14l-.01.002z"/></svg>
+              <span class="text-sm font-semibold">HubSpot</span>
+            </div>
+            <span class="text-stone/20">·</span>
+            <!-- Salesforce -->
+            <div class="flex items-center gap-2 text-stone/70 hover:text-stone transition-colors">
+              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M10.006 5.415a4.195 4.195 0 013.045-1.306c1.56 0 2.954.9 3.655 2.24a5.11 5.11 0 012.94-.925 5.155 5.155 0 015.155 5.156c0 .427-.054.84-.154 1.237a4.2 4.2 0 01-.087 8.386H5.988a3.96 3.96 0 01-.488-7.88 4.198 4.198 0 014.506-6.908z"/></svg>
+              <span class="text-sm font-semibold">Salesforce</span>
+            </div>
+            <span class="text-stone/20">·</span>
+            <!-- Notion -->
+            <div class="flex items-center gap-2 text-stone/70 hover:text-stone transition-colors">
+              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M4.459 4.208c.746.606 1.026.56 2.428.466l13.215-.793c.28 0 .047-.28-.046-.326L17.86 2.022c-.42-.326-.98-.7-2.055-.607L3.01 2.722c-.466.046-.56.28-.374.466l1.823 1.02zm.793 3.08v13.904c0 .747.373 1.027 1.213.98l14.523-.84c.84-.046.933-.56.933-1.167V6.354c0-.606-.233-.933-.746-.886l-15.177.887c-.56.047-.746.327-.746.933zm14.337.745c.093.42 0 .84-.42.888l-.7.14v10.264c-.608.327-1.166.514-1.633.514-.746 0-.933-.234-1.493-.934l-4.577-7.186v6.952l1.446.327s0 .84-1.166.84l-3.22.186c-.093-.186 0-.653.327-.746l.84-.233V9.854L7.822 9.76c-.094-.42.14-1.026.793-1.073l3.453-.233 4.764 7.279v-6.44l-1.213-.14c-.093-.514.28-.886.747-.933l3.24-.186z"/></svg>
+              <span class="text-sm font-semibold">Notion</span>
+            </div>
+            <span class="text-stone/20">·</span>
+            <!-- Airtable -->
+            <div class="flex items-center gap-2 text-stone/70 hover:text-stone transition-colors">
+              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M11.992.398L.747 4.914a.754.754 0 00.013.02l11.232 4.513 11.234-4.513a.767.767 0 00.013-.02L12.008.398a.496.496 0 00-.016 0zM.027 17.367L.024 6.53c0-.015.006-.028.013-.04l7.798 3.137v7.88l-7.79-3.136a.022.022 0 01-.018-.003zm23.947.003l-7.79 3.136v-7.88l7.798-3.137c.007.012.013.025.013.04l-.003 10.838c0 .015-.007.028-.018.003zM10.047 18.25v-7.98L0 5.845v.03l.024 10.772c0 .41.258.778.644.924l9.38 3.79v-.11zm3.906 0v.11l9.38-3.79a.998.998 0 00.644-.924L24 5.875v-.03l-10.047 4.425v7.98z"/></svg>
+              <span class="text-sm font-semibold">Airtable</span>
+            </div>
+            <span class="text-stone/20">·</span>
+            <!-- Slack -->
+            <div class="flex items-center gap-2 text-stone/70 hover:text-stone transition-colors">
+              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M5.042 15.165a2.528 2.528 0 01-2.52 2.523A2.528 2.528 0 010 15.165a2.527 2.527 0 012.522-2.52h2.52v2.52zM6.313 15.165a2.527 2.527 0 012.521-2.52 2.527 2.527 0 012.521 2.52v6.313A2.528 2.528 0 018.834 24a2.528 2.528 0 01-2.521-2.522v-6.313zM8.834 5.042a2.528 2.528 0 01-2.521-2.52A2.528 2.528 0 018.834 0a2.528 2.528 0 012.521 2.522v2.52H8.834zM8.834 6.313a2.528 2.528 0 012.521 2.521 2.528 2.528 0 01-2.521 2.521H2.522A2.528 2.528 0 010 8.834a2.528 2.528 0 012.522-2.521h6.312zM18.956 8.834a2.528 2.528 0 012.522-2.521A2.528 2.528 0 0124 8.834a2.528 2.528 0 01-2.522 2.521h-2.522V8.834zM17.688 8.834a2.528 2.528 0 01-2.523 2.521 2.527 2.527 0 01-2.52-2.521V2.522A2.527 2.527 0 0115.165 0a2.528 2.528 0 012.523 2.522v6.312zM15.165 18.956a2.528 2.528 0 012.523 2.522A2.528 2.528 0 0115.165 24a2.527 2.527 0 01-2.52-2.522v-2.522h2.52zM15.165 17.688a2.527 2.527 0 01-2.52-2.523 2.526 2.526 0 012.52-2.52h6.313A2.527 2.527 0 0124 15.165a2.528 2.528 0 01-2.522 2.523h-6.313z"/></svg>
+              <span class="text-sm font-semibold">Slack</span>
+            </div>
+            <span class="text-stone/20">·</span>
+            <!-- Zapier -->
+            <div class="flex items-center gap-2 text-stone/70 hover:text-stone transition-colors">
+              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M15.67 7.624l-.001.001h-3.142v-3.14l3.141-.002c.865 0 1.57.704 1.57 1.57 0 .868-.705 1.571-1.57 1.571zm-4.712 0v.001H4.713c-.868 0-1.571-.703-1.571-1.57 0-.867.703-1.57 1.57-1.57h6.247v3.14-.001zm0 4.712H7.85v3.142h3.108v-3.142zm0 4.713v.001H4.713c-.868 0-1.571-.704-1.571-1.571 0-.867.703-1.57 1.57-1.57h6.247v3.14zm4.711-4.713h6.248c.867 0 1.57.703 1.57 1.57 0 .868-.703 1.571-1.57 1.571h-6.248v-3.141zm0-4.712h.001v3.141h3.142c.866 0 1.57-.704 1.57-1.571 0-.867-.704-1.57-1.57-1.57h-3.143zm-4.711 0v.001h3.108v-3.14h-3.108v3.14z"/></svg>
+              <span class="text-sm font-semibold">Zapier</span>
+            </div>
+            <span class="text-stone/20">·</span>
+            <!-- Make -->
+            <div class="flex items-center gap-2 text-stone/70 hover:text-stone transition-colors">
+              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.2 3.2.8-1.3-4.5-2.7V7z"/></svg>
+              <span class="text-sm font-semibold">Make</span>
+            </div>
+            <span class="text-stone/20">·</span>
+            <!-- Google Workspace -->
+            <div class="flex items-center gap-2 text-stone/70 hover:text-stone transition-colors">
+              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg>
+              <span class="text-sm font-semibold">Google Workspace</span>
+            </div>
+            <span class="text-stone/20">·</span>
+            <!-- Monday.com -->
+            <div class="flex items-center gap-2 text-stone/70 hover:text-stone transition-colors">
+              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M3 3v18h18V3H3zm16 16H5V5h14v14zM7 7h10v2H7V7zm0 4h10v2H7v-2zm0 4h10v2H7v-2z"/></svg>
+              <span class="text-sm font-semibold">Monday.com</span>
+            </div>
+            <span class="text-stone/20">·</span>
+            <!-- Asana -->
+            <div class="flex items-center gap-2 text-stone/70 hover:text-stone transition-colors">
+              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8-8 8zm1-13h-2v6h2V7zm0 8h-2v2h2v-2z"/></svg>
+              <span class="text-sm font-semibold">Asana</span>
+            </div>
+<span class="text-stone/20">·</span>
+              <!-- Pipedrive -->
+              <div class="flex items-center gap-2 text-stone/70 hover:text-stone transition-colors">
+                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M13 2v2c4.4 0 8 3.6 8 8h2c0-5.5-4.5-10-10-10zM13 6v2c2.2 0 4 1.8 4 4h2c0-3.3-2.7-6-6-6zm0 4v4h4c0-2.2-1.8-4-4-4zM3 3v18h10.1c-.1-.3-.1-.7-.1-1 0-3.9 3.1-7 7-7 .3 0 .7 0 1 .1V3H3z"/></svg>
+                <span class="text-sm font-semibold">Pipedrive</span>
+              </div>
+              <span class="text-stone/20">·</span>
+              <!-- Microsoft -->
+              <div class="flex items-center gap-2 text-stone/70 hover:text-stone transition-colors">
+                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M3 3v18h18V3H3zm16 16H5V5h14v14zM7 7h10v2H7V7zm0 4h10v2H7v-2zm0 4h10v2H7v-2z"/></svg>
+                <span class="text-sm font-semibold">Microsoft</span>
+              </div>
+              <span class="text-stone/20">·</span>
+              <span class="text-stone/40 text-sm italic">and more</span>
+          </div>
+        </div>
+
+        <div class="mt-8 pt-6 border-t border-stone/10 text-center">
+ <p class="text-stone mb-4">Don't see your tool? We integrate with 5000+ apps and can build custom connections for proprietary systems.</p>
+          <a href="contact.html" class="inline-flex items-center gap-2 text-[#E07A5F] font-semibold hover:gap-3 transition-all">
+            Ask about your specific tools
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
           </a>
         </div>
       </div>
