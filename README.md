@@ -1,6 +1,14 @@
 # Microve.ai
 
+> **"We fit tools to your problems. We never fit your problems into tools."**
+
 A static website for Microve.ai, a consulting business specializing in practical micro-automations for small-to-medium businesses.
+
+## Core Philosophy
+
+- **Diagnostic-First:** We start by listening and analyzing workflows, not pitching products. 
+- **Custom Micro-Tools:** We build targeted fixes using rule-based automation, AI, or both. We don't sell monolithic "AI dreams."
+- **Targeted Intervention:** We plug solutions directly into workflow bottlenecks without overhauling a company's entire operation.
 
 ## Overview
 
@@ -91,6 +99,35 @@ A refined palette balancing trust with energy:
 - **Performance:** Minimal external dependencies (Tailwind CDN, Google Fonts)
 
 ## Recent Major Updates
+
+### v5.0 - Diagnostic-First & Custom Micro-Tools Architecture
+
+Complete messaging alignment reflecting the updated mission statement: "We fit tools to your problems. We never fit your problems into tools."
+
+#### Sitewide Language Updates
+- Replaced all binary "Rules vs AI" phrasing with a unified approach: "Custom micro-tools using rule-based automation, AI, or both."
+- Shifted positioning away from general "AI adoption" toward solving the hype-vs-reality gap.
+
+#### Homepage (`index.html`)
+- **"Why it's urgent now" redesign:** Replaced generic AI urgency with a 4-card breakdown:
+  1. *The hype* (Magic AI platforms)
+  2. *The chatbot gap* (Surface-level LLM usage)
+  3. *The platform trap* (Rigid no-code tools)
+  4. *What actually works* (Custom micro-tools)
+- Updated "How it works" timeline to reflect the micro-tools approach.
+- Updated eyebrow text to: `CUSTOM WORKFLOW AUTOMATION · PRACTICAL A.I. IMPLEMENTATION · FLEXIBLE TOOLS`
+
+#### What We Do (`what-we-do.html`)
+- **Redesigned "Targeted Intervention" SVG Diagrams:** Threw out the linear "factory line" flowchart. Both desktop and mobile SVGs now depict a continuous client workflow with specific "bottlenecks" highlighted, showing Microve plugging targeted micro-tools directly into those broken spots.
+- Removed outdated "compounding statement" to streamline the page flow.
+
+#### Contact & About Pages
+- **Trust Panel (`contact.html`):** Added a 2-column layout to house a "diagnostic-first" trust panel next to the form (We listen → We analyze → We build).
+- **Operator Credibility (`about.html`):** Wove the diagnostic methodology into the founder story ("We diagnose before we build").
+
+#### Blog Architecture
+- Replaced the standalone `calculator.html` and `success.html` with a new `cases.html` and blog infrastructure.
+- Updated blog excerpts and meta descriptions to match the "micro-tools" language.
 
 ### v4.0 - Navigation Overhaul + Background + AI Reality Messaging
 
@@ -201,10 +238,14 @@ tailwind.config = {
 ```
 microve-ai/
 ├── index.html          # Homepage
-├── what-we-do.html     # Services page
-├── calculator.html     # Cost calculator
+├── what-we-do.html     # Services & Workflow diagram
+├── cases.html          # Case studies
+├── pricing.html        # Pricing
+├── blog.html           # Blog index
+├── blog-*.html         # Individual blog posts
+├── about.html          # About/Founder story
 ├── contact.html        # Contact form
-└── README.md          # This file
+└── README.md           # This file
 ```
 
 ## Navigation Structure
@@ -212,7 +253,9 @@ microve-ai/
 **Desktop & Mobile:**
 - Home → Homepage
 - What We Do → Services explanation
-- Calculator → Cost savings calculator
+- Cases → Case studies
+- Blog → Insights & methodology
+- About → Founder credibility
 - Book a Call → Contact form
 
 ## Notes
