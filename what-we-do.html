@@ -93,16 +93,46 @@
 
     /* ── Nav ── */
     #site-nav {
-      background-color: #F4F1E8;
-      border-bottom: 1px solid rgba(99, 110, 114, 0.15);
-      transition: box-shadow 0.25s ease, border-color 0.25s ease;
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      isolation: isolate;
+      background: linear-gradient(180deg, rgba(249, 246, 240, 0.88) 0%, rgba(240, 234, 223, 0.9) 100%);
+      border-bottom: 1px solid rgba(23, 33, 43, 0.08);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.65);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      transition: background-color 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+    }
+    #site-nav::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: min(1100px, calc(100% - 48px));
+      height: 1px;
+      transform: translateX(-50%);
+      background: linear-gradient(90deg, rgba(201, 107, 59, 0), rgba(201, 107, 59, 0.3) 18%, rgba(31, 78, 121, 0.25) 50%, rgba(201, 107, 59, 0.3) 82%, rgba(201, 107, 59, 0));
+      pointer-events: none;
+    }
+    #site-nav::after {
+      content: '';
+      position: absolute;
+      inset: auto 0 -22px 0;
+      height: 40px;
+      background: radial-gradient(circle at 50% 0%, rgba(31, 78, 121, 0.08), transparent 68%);
+      pointer-events: none;
+      opacity: 0.7;
     }
     #site-nav.nav-scrolled {
-      box-shadow: 0 1px 16px rgba(31, 78, 121, 0.08), 0 1px 3px rgba(31, 78, 121, 0.06);
-      border-bottom-color: rgba(99, 110, 114, 0.22);
+      background: linear-gradient(180deg, rgba(247, 243, 236, 0.97) 0%, rgba(237, 231, 220, 0.96) 100%);
+      box-shadow: 0 14px 38px rgba(23, 33, 43, 0.1), 0 4px 12px rgba(31, 78, 121, 0.07), inset 0 1px 0 rgba(255, 255, 255, 0.7);
+      border-bottom-color: rgba(23, 33, 43, 0.14);
     }
     #site-nav .nav-inner {
-      transition: padding-top 0.25s ease, padding-bottom 0.25s ease;
+      position: relative;
+      z-index: 1;
+      transition: padding-top 0.25s ease, padding-bottom 0.25s ease, gap 0.25s ease;
     }
     #site-nav.nav-scrolled .nav-inner {
       padding-top: 0.625rem;
@@ -110,38 +140,85 @@
     }
 
     /* Logo */
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.875rem;
+      min-width: 0;
+    }
     .nav-logo {
       font-family: 'Inter', sans-serif;
       font-size: 1.5rem;
       font-weight: 700;
-      color: #1F4E79;
+      color: #17212B;
       letter-spacing: -0.03em;
       line-height: 1;
       display: flex;
       align-items: baseline;
       gap: 0;
       text-decoration: none;
+      white-space: nowrap;
+      transition: color 0.18s ease, opacity 0.18s ease;
+    }
+    .nav-badge {
+      display: none;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.4rem 0.7rem;
+      border: 1px solid rgba(31, 78, 121, 0.1);
+      border-radius: 9999px;
+      background: rgba(255, 255, 255, 0.42);
+      color: rgba(23, 33, 43, 0.72);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .nav-badge::before {
+      content: '';
+      width: 0.42rem;
+      height: 0.42rem;
+      border-radius: 9999px;
+      background: linear-gradient(135deg, #C96B3B, #1F4E79);
+      box-shadow: 0 0 0 4px rgba(201, 107, 59, 0.08);
+      flex: none;
+    }
+    @media (min-width: 1024px) {
+      .nav-badge {
+        display: inline-flex;
+      }
     }
     .nav-logo-tld {
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.6875rem;
       font-weight: 500;
-      color: #636E72;
-      letter-spacing: 0;
-      margin-left: 1px;
+      color: rgba(99, 110, 114, 0.88);
+      letter-spacing: 0.04em;
+      margin-left: 2px;
       position: relative;
       top: -5px;
     }
 
     /* Desktop nav links */
+    .nav-desktop {
+      display: flex;
+      align-items: center;
+      gap: 1.4rem;
+      padding: 0.6rem 1rem;
+      border: 1px solid rgba(23, 33, 43, 0.08);
+      border-radius: 9999px;
+      background: rgba(255, 255, 255, 0.38);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.55);
+    }
     .nav-link {
       position: relative;
-      font-size: 0.8125rem;
+      font-size: 0.79rem;
       font-weight: 500;
-      color: #636E72;
+      color: rgba(23, 33, 43, 0.68);
       text-decoration: none;
-      padding-bottom: 2px;
-      transition: color 0.18s ease;
+      padding-bottom: 3px;
+      transition: color 0.18s ease, opacity 0.18s ease;
     }
     .nav-link::after {
       content: '';
@@ -150,20 +227,20 @@
       left: 0;
       right: 0;
       height: 2px;
-      background-color: #C96B3B;
+      background: linear-gradient(90deg, rgba(201, 107, 59, 0.92), rgba(31, 78, 121, 0.85));
       border-radius: 2px;
       transform: scaleX(0);
-      transform-origin: left center;
-      transition: transform 0.2s ease;
+      transform-origin: center;
+      transition: transform 0.22s ease;
     }
     .nav-link:hover {
-      color: #1F4E79;
+      color: #17212B;
     }
     .nav-link:hover::after {
       transform: scaleX(1);
     }
     .nav-link.active {
-      color: #1F4E79;
+      color: #17212B;
       font-weight: 600;
     }
     .nav-link.active::after {
@@ -171,29 +248,6 @@
     }
 
     /* CTA button */
-    .nav-cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background-color: #C96B3B;
-      color: #fff;
-      font-size: 0.8125rem;
-      font-weight: 600;
-      padding: 0.45rem 1rem;
-      border-radius: 9999px;
-      text-decoration: none;
-      box-shadow: 0 1px 4px rgba(201, 107, 59, 0.35);
-      transition: background-color 0.18s ease, box-shadow 0.18s ease, transform 0.15s ease;
-    }
-    .nav-cta:hover {
-      background-color: #A6552B;
-      box-shadow: 0 3px 10px rgba(201, 107, 59, 0.4);
-      transform: translateY(-1px);
-    }
-    .nav-cta:active {
-      transform: translateY(0);
-      box-shadow: 0 1px 4px rgba(201, 107, 59, 0.3);
-    }
 
     /* Mobile menu */
     #mobileMenu {
@@ -202,8 +256,11 @@
       transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1),
                   opacity 0.25s ease;
       opacity: 0;
-      border-top: 1px solid rgba(99, 110, 114, 0.1);
-      background-color: #F4F1E8;
+      border-top: 1px solid rgba(23, 33, 43, 0.08);
+      background: linear-gradient(180deg, rgba(249, 246, 240, 0.97) 0%, rgba(240, 234, 223, 0.96) 100%);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.65);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
     }
     #mobileMenu.open {
       max-height: 480px;
@@ -212,51 +269,46 @@
     .mobile-nav-link {
       display: flex;
       align-items: center;
-      padding: 0.75rem 1rem;
-      border-radius: 6px;
+      padding: 0.85rem 1rem;
+      border-radius: 10px;
       font-size: 0.9375rem;
       font-weight: 500;
-      color: #636E72;
+      color: rgba(23, 33, 43, 0.82);
       text-decoration: none;
       min-height: 44px;
-      transition: color 0.15s ease, background-color 0.15s ease;
-      border-left: 2px solid transparent;
+      transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease;
+      border: 1px solid transparent;
     }
     .mobile-nav-link:hover {
-      color: #1F4E79;
-      background-color: rgba(31, 78, 121, 0.04);
+      color: #17212B;
+      border-color: rgba(23, 33, 43, 0.08);
+      background-color: rgba(255, 255, 255, 0.46);
     }
     .mobile-nav-link.active {
-      color: #1F4E79;
+      color: #17212B;
       font-weight: 600;
-      background-color: rgba(31, 78, 121, 0.05);
-      border-left-color: #C96B3B;
-    }
-    .mobile-nav-cta {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0.75rem 1rem;
-      border-radius: 9999px;
-      font-size: 0.9375rem;
-      font-weight: 600;
-      color: #fff;
-      background-color: #C96B3B;
-      text-decoration: none;
-      min-height: 44px;
-      box-shadow: 0 1px 4px rgba(201, 107, 59, 0.3);
-      transition: background-color 0.15s ease;
-    }
-    .mobile-nav-cta:hover {
-      background-color: #A6552B;
+      border-color: rgba(23, 33, 43, 0.08);
+      background-color: rgba(255, 255, 255, 0.56);
+      box-shadow: inset 3px 0 0 rgba(201, 107, 59, 0.82);
     }
 
     /* Hamburger morph */
+    #mobileMenuBtn {
+      border: 1px solid rgba(23, 33, 43, 0.08);
+      background: rgba(255, 255, 255, 0.42);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.55);
+      transition: background-color 0.18s ease, border-color 0.18s ease, transform 0.18s ease;
+    }
+    #mobileMenuBtn:hover {
+      background: rgba(255, 255, 255, 0.62);
+      border-color: rgba(31, 78, 121, 0.14);
+      transform: translateY(-1px);
+    }
     .hamburger-line {
       display: block;
       width: 20px;
       height: 1.75px;
-      background-color: #1F4E79;
+      background-color: #17212B;
       border-radius: 2px;
       transition: transform 0.25s ease, opacity 0.2s ease;
       transform-origin: center;
@@ -280,20 +332,21 @@
 
   <nav id="site-nav" class="sticky top-0 z-40" role="navigation" aria-label="Main navigation">
     <div class="nav-inner max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
-
-      <!-- Logo -->
-      <a href="index.html" aria-label="Microve.ai — home" class="nav-logo">
-        microve<span class="nav-logo-tld">.ai</span>
-      </a>
+      <div class="nav-brand">
+        <a href="index.html" aria-label="Microve.ai — home" class="nav-logo">microve<span class="nav-logo-tld">.ai</span></a>
+        <span class="nav-badge">Micro automation</span>
+      </div>
 
       <!-- Desktop Navigation -->
-      <div class="hidden md:flex items-center gap-7">
-        <a href="index.html" class="nav-link">Home</a>
+      <div class="hidden md:flex items-center"><div class="nav-desktop">
+<a href="index.html" class="nav-link">Home</a>
         <a href="what-we-do.html" aria-current="page" class="nav-link active">What We Do</a>
         <a href="cases.html" class="nav-link">Cases</a>
         <a href="blog.html" class="nav-link">Blog</a>
         <a href="about.html" class="nav-link">About</a>
+        <a href="pricing.html" class="nav-link">Pricing</a>
         <a href="contact.html" class="nav-link">Contact</a>
+        </div>
       </div>
 
       <!-- Mobile Hamburger -->
@@ -310,12 +363,13 @@
 
     <!-- Mobile Menu -->
     <div id="mobileMenu" role="region" aria-label="Mobile navigation">
-      <div class="max-w-5xl mx-auto px-4 py-3 flex flex-col gap-1">
-        <a href="index.html" class="mobile-nav-link">Home</a>
+      <div class="max-w-5xl mx-auto px-4 py-4 flex flex-col gap-2">
+<a href="index.html" class="mobile-nav-link">Home</a>
         <a href="what-we-do.html" aria-current="page" class="mobile-nav-link active">What We Do</a>
         <a href="cases.html" class="mobile-nav-link">Cases</a>
         <a href="blog.html" class="mobile-nav-link">Blog</a>
         <a href="about.html" class="mobile-nav-link">About</a>
+        <a href="pricing.html" class="mobile-nav-link">Pricing</a>
         <a href="contact.html" class="mobile-nav-link">Contact</a>
       </div>
     </div>
@@ -365,7 +419,7 @@
     <header class="pt-8 pb-8">
       <!-- Plain-language open: what Microve does in one sentence -->
       <div class="mb-10 text-center">
-        <p class="section-label text-xs text-[#C96B3B] tracking-widest mb-4">What we do</p>
+        <p class="section-label text-xs text-[#A6552B] tracking-widest mb-4">What we do</p>
         <h1 class="font-sans text-5xl md:text-7xl font-bold mb-5 tight-tracking">What we do</h1>
         <p class="text-xl text-stone max-w-2xl mx-auto leading-relaxed">We look at your workflows, find the tasks that are draining your team, and build custom automations that run without you — inside the tools you already use.</p>
       </div>
@@ -513,7 +567,7 @@
 
     <!-- Micro-Automations Definition -->
     <div class="max-w-4xl mx-auto px-6 pb-4">
-      <p class="section-label text-[#1F4E79] text-sm tracking-widest">[DEFINITION]</p>
+      <p class="section-label text-[#A6552B] text-sm tracking-widest">[DEFINITION]</p>
     </div>
     <section class="bg-white rounded-sm border border-stone/15 p-8 md:p-10 mb-8">
       <h2 class="font-sans text-3xl md:text-4xl font-bold mb-4 tight-tracking">Micro-automations: A lot of small fixes.<br class="hidden md:block"> Real compounding results.</h2>
@@ -535,7 +589,7 @@
         <!-- Card 2: Right tool -->
         <div class="group relative bg-[#F4F1E8] rounded-sm border border-stone/12 p-6 transition-all duration-200 hover:border-[#1F4E79]/25 hover:shadow-sm">
           <div class="w-10 h-10 rounded-full bg-[#C96B3B]/10 flex items-center justify-center mb-4">
-            <svg class="w-5 h-5 text-[#C96B3B]" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24">
+            <svg class="w-5 h-5 text-[#A6552B]" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17l-5.71 3.28a1 1 0 01-1.46-1.06l1.09-6.36L.66 6.57a1 1 0 01.56-1.71l6.38-.93L10.45.37a1 1 0 011.1 0l2.85 3.56 6.38.93a1 1 0 01.56 1.71l-4.68 4.46 1.09 6.36a1 1 0 01-1.46 1.06l-5.71-3.28z"/>
             </svg>
           </div>
@@ -556,8 +610,136 @@
       </div>
     </section>
 
+    <!-- ── THE 15-STEP PROCESS ── -->
+    <div class="max-w-4xl mx-auto px-6 pb-4">
+      <p class="section-label text-[#A6552B] text-sm tracking-widest">[PROCESS]</p>
+    </div>
+    <section class="bg-white rounded-sm border border-stone/15 p-8 md:p-10">
+      <div class="text-center mb-10">
+        <h2 class="font-sans text-3xl md:text-4xl font-bold mb-4 tight-tracking">One process, adapted to the workflow in front of us</h2>
+        <p class="text-stone text-lg max-w-3xl mx-auto">The details change from team to team, but the structure does not. We diagnose the bottleneck, design the right system around it, build the automation, and hand it over in a way your team can actually use.</p>
+      </div>
+
+      <div class="grid md:grid-cols-4 gap-4 mb-10">
+        <div class="rounded-sm border border-stone/10 bg-[#1F4E79]/4 p-4 text-left">
+          <p class="section-label text-xs text-[#A6552B] mb-2">Phase 1</p>
+          <p class="font-semibold text-charcoal mb-1">Diagnose</p>
+          <p class="text-sm text-stone">Map the workflow, find the delays, and confirm what is worth automating.</p>
+        </div>
+        <div class="rounded-sm border border-stone/10 bg-[#6C8261]/6 p-4 text-left">
+          <p class="section-label text-xs text-[#A6552B] mb-2">Phase 2</p>
+          <p class="font-semibold text-charcoal mb-1">Design</p>
+          <p class="text-sm text-stone">Choose the tools, integrations, and logic that fit the workflow as it already exists.</p>
+        </div>
+        <div class="rounded-sm border border-stone/10 bg-[#C96B3B]/6 p-4 text-left">
+          <p class="section-label text-xs text-[#A6552B] mb-2">Phase 3</p>
+          <p class="font-semibold text-charcoal mb-1">Build</p>
+          <p class="text-sm text-stone">Create the automation, test it with real cases, and refine the edge conditions.</p>
+        </div>
+        <div class="rounded-sm border border-stone/10 bg-stone/5 p-4 text-left">
+          <p class="section-label text-xs text-[#A6552B] mb-2">Phase 4</p>
+          <p class="font-semibold text-charcoal mb-1">Deploy</p>
+          <p class="text-sm text-stone">Roll it out carefully, train the team, and leave behind a system people can trust.</p>
+        </div>
+      </div>
+
+      <!-- Your Workflow -->
+      <div class="bg-gradient-to-br from-[#1F4E79]/5 to-[#6C8261]/5 rounded-sm p-8 mb-8 border border-[#1F4E79]/20">
+        <div class="text-center">
+          <div class="w-16 h-16 rounded-full bg-[#1F4E79] flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+            </svg>
+          </div>
+          <h3 class="font-sans text-2xl font-bold text-[#1F4E79] mb-3">Your Unique Workflow</h3>
+          <p class="text-stone text-lg mb-6 max-w-xl mx-auto">Every business has different pain points. We apply this same 15-step process to any workflow—whether it's invoice processing, document approvals, customer onboarding, inventory management, or something entirely unique to your operations.</p>
+          
+          <div class="grid md:grid-cols-3 gap-4 max-w-2xl mx-auto mb-6">
+            <div class="p-4 bg-white rounded-sm border border-stone/10">
+              <p class="text-[#A6552B] font-semibold mb-1">We Listen</p>
+              <p class="text-stone text-sm">You describe your pain points and current process</p>
+            </div>
+            <div class="p-4 bg-white rounded-sm border border-stone/10">
+              <p class="text-[#6C8261] font-semibold mb-1">We Design</p>
+              <p class="text-stone text-sm">Custom solution built for your exact needs</p>
+            </div>
+            <div class="p-4 bg-white rounded-sm border border-stone/10">
+              <p class="text-[#1F4E79] font-semibold mb-1">You Thrive</p>
+              <p class="text-stone text-sm">Automated workflow that saves hours weekly</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6 mb-8">
+        <div class="p-6 border border-stone/10 rounded-sm">
+          <h4 class="font-semibold text-charcoal mb-3 flex items-center gap-2">
+            <span class="w-2 h-2 bg-[#C96B3B] rounded-full"></span>
+            Common Workflows We Automate
+          </h4>
+          <ul class="space-y-2 text-stone">
+            <li class="flex items-start gap-2">
+              <span class="text-[#A6552B]">→</span>
+              <span>Invoice processing & approval</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-[#A6552B]">→</span>
+              <span>Customer onboarding sequences</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-[#A6552B]">→</span>
+              <span>Document routing & approvals</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-[#A6552B]">→</span>
+              <span>Data entry & system syncing</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-[#A6552B]">→</span>
+              <span>Email & communication workflows</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-[#A6552B]">→</span>
+              <span>Custom internal tools & dashboards</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="p-6 border border-stone/10 rounded-sm">
+          <h4 class="font-semibold text-charcoal mb-3 flex items-center gap-2">
+            <span class="w-2 h-2 bg-[#6C8261] rounded-full"></span>
+            What Makes Us Different
+          </h4>
+          <ul class="space-y-2 text-stone">
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-[#6C8261] shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+              <span><strong>No templates.</strong> Every solution is custom-built</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-[#6C8261] shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+              <span><strong>We build tools.</strong> Not just connections</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-[#6C8261] shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+              <span><strong>Right tech.</strong> Rules, AI, or custom code</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-[#6C8261] shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+              <span><strong>Transparent process.</strong> No black boxes</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-[#6C8261] shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+              <span><strong>Real partnership.</strong> We train your team</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+
+    </section>
+
     <!-- Your alternatives — with customer-language headers -->
-    <div class="max-w-4xl mx-auto px-6 pb-4"><p class="section-label text-[#1F4E79]/50 text-xs tracking-widest">The Landscape</p></div>
+    <div class="max-w-4xl mx-auto px-6 pb-4"><p class="section-label text-[#A6552B] text-xs tracking-widest">The Landscape</p></div>
     <section class="bg-white rounded-sm border border-stone/15 p-7 md:p-10">
       <h2 class="font-sans text-3xl md:text-4xl font-bold mb-4 tight-tracking">How micro-tools differ from the alternatives</h2>
       <p class="text-lg text-charcoal mb-8">When a workflow breaks, businesses typically choose one of three paths.</p>
@@ -589,19 +771,19 @@
               <span class="text-stone">Instant answers to questions</span>
             </li>
             <li class="flex items-start gap-2">
-              <svg class="w-4 h-4 text-[#C96B3B] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <svg class="w-4 h-4 text-[#A6552B] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
               </svg>
               <span class="text-stone"><strong>Requires manual prompting</strong></span>
             </li>
             <li class="flex items-start gap-2">
-              <svg class="w-4 h-4 text-[#C96B3B] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <svg class="w-4 h-4 text-[#A6552B] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
               </svg>
               <span class="text-stone"><strong>No workflow integration</strong></span>
             </li>
             <li class="flex items-start gap-2">
-              <svg class="w-4 h-4 text-[#C96B3B] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <svg class="w-4 h-4 text-[#A6552B] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
               </svg>
               <span class="text-stone"><strong>Copy-paste overhead</strong></span>
@@ -634,19 +816,19 @@
               <span class="text-stone">Handles complex logic</span>
             </li>
             <li class="flex items-start gap-2">
-              <svg class="w-4 h-4 text-[#C96B3B] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <svg class="w-4 h-4 text-[#A6552B] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
               </svg>
               <span class="text-stone"><strong>Complex configuration</strong></span>
             </li>
             <li class="flex items-start gap-2">
-              <svg class="w-4 h-4 text-[#C96B3B] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <svg class="w-4 h-4 text-[#A6552B] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
               </svg>
               <span class="text-stone"><strong>Requires technical expertise</strong></span>
             </li>
             <li class="flex items-start gap-2">
-              <svg class="w-4 h-4 text-[#C96B3B] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <svg class="w-4 h-4 text-[#A6552B] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
               </svg>
               <span class="text-stone"><strong>Overkill for most SMBs</strong></span>
@@ -708,567 +890,9 @@
       </div>
     </section>
 
-    <!-- ── THE 15-STEP PROCESS ── -->
-
-    <!-- ── THE 15-STEP PROCESS ── -->
-    <div class="max-w-4xl mx-auto px-6 pb-4">
-      <p class="section-label text-[#1F4E79] text-sm tracking-widest">[PROCESS]</p>
-    </div>
-    <section class="bg-white rounded-sm border border-stone/15 p-8 md:p-10">
-      <div class="text-center mb-10">
-        <h2 class="font-sans text-3xl md:text-4xl font-bold mb-4 tight-tracking">From bottleneck to automation in 15 steps</h2>
-        <p class="text-stone text-lg max-w-2xl mx-auto">Every workflow is different, but our process is proven. We listen to your pain points, deploy custom micro-tools to eliminate manual bottlenecks, and hand you a solution that runs itself.</p>
-      </div>
-
-      <!-- Tab Navigation -->
-      <div class="mb-8">
-        <div class="flex flex-wrap justify-center gap-2 mb-6" role="tablist" aria-label="Workflow examples">
-          <button class="workflow-tab active px-6 py-3 rounded-sm font-semibold transition-all duration-200 border-2 border-[#1F4E79] bg-[#1F4E79] text-white" data-tab="intake" role="tab" aria-selected="true" aria-controls="panel-intake">
-            Client Intake
-          </button>
-          <button class="workflow-tab px-6 py-3 rounded-sm font-semibold transition-all duration-200 border-2 border-stone/20 text-stone hover:border-[#C96B3B] hover:text-[#C96B3B]" data-tab="leads" role="tab" aria-selected="false" aria-controls="panel-leads">
-            Lead Routing
-          </button>
-          <button class="workflow-tab px-6 py-3 rounded-sm font-semibold transition-all duration-200 border-2 border-stone/20 text-stone hover:border-[#6C8261] hover:text-[#6C8261]" data-tab="custom" role="tab" aria-selected="false" aria-controls="panel-custom">
-            Your Workflow
-          </button>
-        </div>
-
-        <!-- Tab Panels -->
-        <div class="tab-panels">
-          <!-- Client Intake Panel -->
-          <div id="panel-intake" class="tab-panel active" role="tabpanel" aria-labelledby="tab-intake">
-            <div class="bg-[#1F4E79]/5 rounded-sm p-6 mb-8 border-l-4 border-[#1F4E79]">
-              <p class="text-charcoal font-medium mb-2">Real Client: Law Firm</p>
-              <p class="text-stone">A law firm drowning in manual client onboarding—prospect calls, manual CRM entry, document drafting, and follow-up tracking. We built a system that turns prospects into onboarded clients in hours, not days.</p>
-            </div>
-
-            <!-- Phase 1 -->
-            <div class="mb-10">
-              <div class="flex items-center gap-3 mb-6">
-                <div class="w-10 h-10 rounded-sm bg-[#1F4E79] flex items-center justify-center text-white font-bold text-lg">1</div>
-                <div>
-                  <h3 class="font-sans text-xl font-bold text-[#1F4E79]">Phase 1: Discovery</h3>
-                  <p class="text-stone text-sm">Understanding your bottleneck</p>
-                </div>
-              </div>
-              <div class="grid md:grid-cols-2 gap-4 pl-4 md:pl-14">
-                <div class="p-4 border border-stone/10 rounded-sm">
-                  <div class="flex items-center gap-2 mb-2">
-                    <span class="w-6 h-6 rounded-full bg-[#1F4E79]/10 text-[#1F4E79] text-xs font-bold flex items-center justify-center">1</span>
-                    <span class="text-xs text-stone section-label">MAP</span>
-                  </div>
-                  <p class="text-charcoal font-medium">Map current workflow</p>
-                  <p class="text-stone text-sm mt-1">Document the journey from prospect call → consultation → contract → case file creation. Identify every manual handoff and delay.</p>
-                </div>
-                <div class="p-4 border border-stone/10 rounded-sm">
-                  <div class="flex items-center gap-2 mb-2">
-                    <span class="w-6 h-6 rounded-full bg-[#1F4E79]/10 text-[#1F4E79] text-xs font-bold flex items-center justify-center">2</span>
-                    <span class="text-xs text-stone section-label">IDENTIFY</span>
-                  </div>
-                  <p class="text-charcoal font-medium">Identify automation candidates</p>
-                  <p class="text-stone text-sm mt-1">Pinpoint repetitive tasks: data entry, document generation, email sequences, calendar scheduling.</p>
-                </div>
-                <div class="p-4 border border-stone/10 rounded-sm">
-                  <div class="flex items-center gap-2 mb-2">
-                    <span class="w-6 h-6 rounded-full bg-[#1F4E79]/10 text-[#1F4E79] text-xs font-bold flex items-center justify-center">3</span>
-                    <span class="text-xs text-stone section-label">PRIORITIZE</span>
-                  </div>
-                  <p class="text-charcoal font-medium">Prioritize by impact</p>
-                  <p class="text-stone text-sm mt-1">Focus on the steps eating the most time: contract drafting (2 hrs), document collection (3 hrs), follow-up tracking (1 hr daily).</p>
-                </div>
-                <div class="p-4 border border-stone/10 rounded-sm">
-                  <div class="flex items-center gap-2 mb-2">
-                    <span class="w-6 h-6 rounded-full bg-[#1F4E79]/10 text-[#1F4E79] text-xs font-bold flex items-center justify-center">4</span>
-                    <span class="text-xs text-stone section-label">VALIDATE</span>
-                  </div>
-                  <p class="text-charcoal font-medium">Validate with your team</p>
-                  <p class="text-stone text-sm mt-1">Review findings with paralegals and partners. Confirm pain points and get buy-in before building.</p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Phase 2 -->
-            <div class="mb-10">
-              <div class="flex items-center gap-3 mb-6">
-                <div class="w-10 h-10 rounded-sm bg-[#6C8261] flex items-center justify-center text-white font-bold text-lg">2</div>
-                <div>
-                  <h3 class="font-sans text-xl font-bold text-[#1F4E79]">Phase 2: Design</h3>
-                  <p class="text-stone text-sm">Planning the solution</p>
-                </div>
-              </div>
-              <div class="grid md:grid-cols-2 gap-4 pl-4 md:pl-14">
-                <div class="p-4 border border-stone/10 rounded-sm">
-                  <div class="flex items-center gap-2 mb-2">
-                    <span class="w-6 h-6 rounded-full bg-[#6C8261]/10 text-[#6C8261] text-xs font-bold flex items-center justify-center">5</span>
-                    <span class="text-xs text-stone section-label">ARCHITECT</span>
-                  </div>
-                  <p class="text-charcoal font-medium">Design the automation architecture</p>
-                  <p class="text-stone text-sm mt-1">Choose the right mix: Zapier for triggers, custom tool for document generation, AI for data extraction.</p>
-                </div>
-                <div class="p-4 border border-stone/10 rounded-sm">
-                  <div class="flex items-center gap-2 mb-2">
-                    <span class="w-6 h-6 rounded-full bg-[#6C8261]/10 text-[#6C8261] text-xs font-bold flex items-center justify-center">6</span>
-                    <span class="text-xs text-stone section-label">INTEGRATE</span>
-                  </div>
-                  <p class="text-charcoal font-medium">Map integrations</p>
-                  <p class="text-stone text-sm mt-1">Connect systems: Phone → CRM (Clio) → Document tool → Email → Calendar. Ensure data flows seamlessly.</p>
-                </div>
-                <div class="p-4 border border-stone/10 rounded-sm">
-                  <div class="flex items-center gap-2 mb-2">
-                    <span class="w-6 h-6 rounded-full bg-[#6C8261]/10 text-[#6C8261] text-xs font-bold flex items-center justify-center">7</span>
-                    <span class="text-xs text-stone section-label">CUSTOMIZE</span>
-                  </div>
-                  <p class="text-charcoal font-medium">Build custom tools</p>
-                  <p class="text-stone text-sm mt-1">Create custom document templates, intake forms, and approval workflows tailored to the firm's practice areas.</p>
-                </div>
-                <div class="p-4 border border-stone/10 rounded-sm">
-                  <div class="flex items-center gap-2 mb-2">
-                    <span class="w-6 h-6 rounded-full bg-[#6C8261]/10 text-[#6C8261] text-xs font-bold flex items-center justify-center">8</span>
-                    <span class="text-xs text-stone section-label">PLAN</span>
-                  </div>
-                  <p class="text-charcoal font-medium">Plan testing & rollout</p>
-                  <p class="text-stone text-sm mt-1">Design pilot with 5 test clients, define success metrics (time saved, error reduction), plan training schedule.</p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Phase 3 -->
-            <div class="mb-10">
-              <div class="flex items-center gap-3 mb-6">
-                <div class="w-10 h-10 rounded-sm bg-[#C96B3B] flex items-center justify-center text-white font-bold text-lg">3</div>
-                <div>
-                  <h3 class="font-sans text-xl font-bold text-[#1F4E79]">Phase 3: Build</h3>
-                  <p class="text-stone text-sm">Creating the automation</p>
-                </div>
-              </div>
-              <div class="grid md:grid-cols-2 gap-4 pl-4 md:pl-14">
-                <div class="p-4 border border-stone/10 rounded-sm">
-                  <div class="flex items-center gap-2 mb-2">
-                    <span class="w-6 h-6 rounded-full bg-[#C96B3B]/10 text-[#C96B3B] text-xs font-bold flex items-center justify-center">9</span>
-                    <span class="text-xs text-stone section-label">DEVELOP</span>
-                  </div>
-                  <p class="text-charcoal font-medium">Develop automation workflows</p>
-                  <p class="text-stone text-sm mt-1">Build the triggers: New call logged → Auto-create case file → Generate retainer agreement → Schedule follow-up.</p>
-                </div>
-                <div class="p-4 border border-stone/10 rounded-sm">
-                  <div class="flex items-center gap-2 mb-2">
-                    <span class="w-6 h-6 rounded-full bg-[#C96B3B]/10 text-[#C96B3B] text-xs font-bold flex items-center justify-center">10</span>
-                    <span class="text-xs text-stone section-label">CODE</span>
-                  </div>
-                  <p class="text-charcoal font-medium">Code custom tools</p>
-                  <p class="text-stone text-sm mt-1">Build custom document generator, intake form with conditional logic, client portal for document upload.</p>
-                </div>
-                <div class="p-4 border border-stone/10 rounded-sm">
-                  <div class="flex items-center gap-2 mb-2">
-                    <span class="w-6 h-6 rounded-full bg-[#C96B3B]/10 text-[#C96B3B] text-xs font-bold flex items-center justify-center">11</span>
-                    <span class="text-xs text-stone section-label">TEST</span>
-                  </div>
-                  <p class="text-charcoal font-medium">Test with real data</p>
-                  <p class="text-stone text-sm mt-1">Run 10 test cases end-to-end. Check document accuracy, data field mapping, email deliverability.</p>
-                </div>
-                <div class="p-4 border border-stone/10 rounded-sm">
-                  <div class="flex items-center gap-2 mb-2">
-                    <span class="w-6 h-6 rounded-full bg-[#C96B3B]/10 text-[#C96B3B] text-xs font-bold flex items-center justify-center">12</span>
-                    <span class="text-xs text-stone section-label">REFINE</span>
-                  </div>
-                  <p class="text-charcoal font-medium">Refine based on feedback</p>
-                  <p class="text-stone text-sm mt-1">Adjust workflows based on paralegal input. Fix edge cases. Add approval checkpoints where needed.</p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Phase 4 -->
-            <div class="mb-8">
-              <div class="flex items-center gap-3 mb-6">
-                <div class="w-10 h-10 rounded-sm bg-[#1F4E79] flex items-center justify-center text-white font-bold text-lg">4</div>
-                <div>
-                  <h3 class="font-sans text-xl font-bold text-[#1F4E79]">Phase 4: Deploy</h3>
-                  <p class="text-stone text-sm">Implementation & handoff</p>
-                </div>
-              </div>
-              <div class="grid md:grid-cols-2 gap-4 pl-4 md:pl-14">
-                <div class="p-4 border border-stone/10 rounded-sm">
-                  <div class="flex items-center gap-2 mb-2">
-                    <span class="w-6 h-6 rounded-full bg-[#1F4E79]/10 text-[#1F4E79] text-xs font-bold flex items-center justify-center">13</span>
-                    <span class="text-xs text-stone section-label">PILOT</span>
-                  </div>
-                  <p class="text-charcoal font-medium">Pilot with select cases</p>
-                  <p class="text-stone text-sm mt-1">Run live pilot with 5 real clients. Monitor closely. Gather feedback daily. Adjust in real-time.</p>
-                </div>
-                <div class="p-4 border border-stone/10 rounded-sm">
-                  <div class="flex items-center gap-2 mb-2">
-                    <span class="w-6 h-6 rounded-full bg-[#1F4E79]/10 text-[#1F4E79] text-xs font-bold flex items-center justify-center">14</span>
-                    <span class="text-xs text-stone section-label">TRAIN</span>
-                  </div>
-                  <p class="text-charcoal font-medium">Train your team</p>
-                  <p class="text-stone text-sm mt-1">Hands-on training for all users. Video recordings, documentation, live Q&A. Ensure everyone's confident.</p>
-                </div>
-                <div class="p-4 border border-stone/10 rounded-sm md:col-span-2">
-                  <div class="flex items-center gap-2 mb-2">
-                    <span class="w-6 h-6 rounded-full bg-[#1F4E79]/10 text-[#1F4E79] text-xs font-bold flex items-center justify-center">15</span>
-                    <span class="text-xs text-stone section-label">HANDOFF</span>
-                  </div>
-                  <p class="text-charcoal font-medium">Handoff & ongoing support</p>
-                  <p class="text-stone text-sm mt-1">Full system documentation, monitoring dashboard, 30-day support included. You're autonomous but never alone.</p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Result -->
-            <div class="bg-[#6C8261]/10 border border-[#6C8261]/20 rounded-sm p-6 mt-8">
-              <div class="flex items-start gap-4">
-                <div class="w-12 h-12 rounded-sm bg-[#6C8261] flex items-center justify-center shrink-0">
-                  <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-                </div>
-                <div>
-                  <p class="font-semibold text-[#6C8261] mb-2">Result: Intake time reduced from 2 days to 2 hours</p>
-                  <p class="text-stone">Prospects now move seamlessly from call to onboarded client. Paralegals spend time on legal work, not paperwork. The firm can handle 3x more clients without hiring.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Lead Routing Panel -->
-          <div id="panel-leads" class="tab-panel hidden" role="tabpanel" aria-labelledby="tab-leads">
-            <div class="bg-[#C96B3B]/5 rounded-sm p-6 mb-8 border-l-4 border-[#C96B3B]">
-              <p class="text-charcoal font-medium mb-2">Common Challenge: Sales Teams</p>
-              <p class="text-stone">Leads come in from multiple sources—website forms, LinkedIn, referrals—but sit in an inbox for hours or days before anyone responds. By then, they've gone cold. We built a system that routes leads instantly and ensures immediate follow-up.</p>
-            </div>
-
-            <!-- Phase 1 -->
-            <div class="mb-10">
-              <div class="flex items-center gap-3 mb-6">
-                <div class="w-10 h-10 rounded-sm bg-[#1F4E79] flex items-center justify-center text-white font-bold text-lg">1</div>
-                <div>
-                  <h3 class="font-sans text-xl font-bold text-[#1F4E79]">Phase 1: Discovery</h3>
-                  <p class="text-stone text-sm">Understanding your bottleneck</p>
-                </div>
-              </div>
-              <div class="grid md:grid-cols-2 gap-4 pl-4 md:pl-14">
-                <div class="p-4 border border-stone/10 rounded-sm">
-                  <div class="flex items-center gap-2 mb-2">
-                    <span class="w-6 h-6 rounded-full bg-[#1F4E79]/10 text-[#1F4E79] text-xs font-bold flex items-center justify-center">1</span>
-                    <span class="text-xs text-stone section-label">MAP</span>
-                  </div>
-                  <p class="text-charcoal font-medium">Map lead sources & flow</p>
-                  <p class="text-stone text-sm mt-1">Document every entry point: website forms, LinkedIn messages, email, phone. Track where leads go and how long they wait.</p>
-                </div>
-                <div class="p-4 border border-stone/10 rounded-sm">
-                  <div class="flex items-center gap-2 mb-2">
-                    <span class="w-6 h-6 rounded-full bg-[#1F4E79]/10 text-[#1F4E79] text-xs font-bold flex items-center justify-center">2</span>
-                    <span class="text-xs text-stone section-label">IDENTIFY</span>
-                  </div>
-                  <p class="text-charcoal font-medium">Find the delays</p>
-                  <p class="text-stone text-sm mt-1">Identify bottlenecks: Leads sit in inbox for 6 hours. Manual assignment takes 2 hours. No visibility into follow-up.</p>
-                </div>
-                <div class="p-4 border border-stone/10 rounded-sm">
-                  <div class="flex items-center gap-2 mb-2">
-                    <span class="w-6 h-6 rounded-full bg-[#1F4E79]/10 text-[#1F4E79] text-xs font-bold flex items-center justify-center">3</span>
-                    <span class="text-xs text-stone section-label">PRIORITIZE</span>
-                  </div>
-                  <p class="text-charcoal font-medium">Prioritize high-value fixes</p>
-                  <p class="text-stone text-sm mt-1">Focus on speed-to-lead: Auto-response within 5 minutes, intelligent routing, instant CRM entry.</p>
-                </div>
-                <div class="p-4 border border-stone/10 rounded-sm">
-                  <div class="flex items-center gap-2 mb-2">
-                    <span class="w-6 h-6 rounded-full bg-[#1F4E79]/10 text-[#1F4E79] text-xs font-bold flex items-center justify-center">4</span>
-                    <span class="text-xs text-stone section-label">VALIDATE</span>
-                  </div>
-                  <p class="text-charcoal font-medium">Validate with sales team</p>
-                  <p class="text-stone text-sm mt-1">Get input from sales reps on routing rules, territory assignments, and follow-up preferences.</p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Phase 2 -->
-            <div class="mb-10">
-              <div class="flex items-center gap-3 mb-6">
-                <div class="w-10 h-10 rounded-sm bg-[#6C8261] flex items-center justify-center text-white font-bold text-lg">2</div>
-                <div>
-                  <h3 class="font-sans text-xl font-bold text-[#1F4E79]">Phase 2: Design</h3>
-                  <p class="text-stone text-sm">Planning the solution</p>
-                </div>
-              </div>
-              <div class="grid md:grid-cols-2 gap-4 pl-4 md:pl-14">
-                <div class="p-4 border border-stone/10 rounded-sm">
-                  <div class="flex items-center gap-2 mb-2">
-                    <span class="w-6 h-6 rounded-full bg-[#6C8261]/10 text-[#6C8261] text-xs font-bold flex items-center justify-center">5</span>
-                    <span class="text-xs text-stone section-label">ARCHITECT</span>
-                  </div>
-                  <p class="text-charcoal font-medium">Design intelligent routing</p>
-                  <p class="text-stone text-sm mt-1">Create rules: Enterprise leads → Senior AE, SMB leads → Junior rep, by territory, by product interest.</p>
-                </div>
-                <div class="p-4 border border-stone/10 rounded-sm">
-                  <div class="flex items-center gap-2 mb-2">
-                    <span class="w-6 h-6 rounded-full bg-[#6C8261]/10 text-[#6C8261] text-xs font-bold flex items-center justify-center">6</span>
-                    <span class="text-xs text-stone section-label">INTEGRATE</span>
-                  </div>
-                  <p class="text-charcoal font-medium">Connect all lead sources</p>
-                  <p class="text-stone text-sm mt-1">Integrate: Website → CRM (HubSpot/Salesforce) → Slack → Email. One unified pipeline.</p>
-                </div>
-                <div class="p-4 border border-stone/10 rounded-sm">
-                  <div class="flex items-center gap-2 mb-2">
-                    <span class="w-6 h-6 rounded-full bg-[#6C8261]/10 text-[#6C8261] text-xs font-bold flex items-center justify-center">7</span>
-                    <span class="text-xs text-stone section-label">CUSTOMIZE</span>
-                  </div>
-                  <p class="text-charcoal font-medium">Build enrichment tools</p>
-                  <p class="text-stone text-sm mt-1">Create tools that auto-enrich leads (LinkedIn lookup, company data, scoring) before routing.</p>
-                </div>
-                <div class="p-4 border border-stone/10 rounded-sm">
-                  <div class="flex items-center gap-2 mb-2">
-                    <span class="w-6 h-6 rounded-full bg-[#6C8261]/10 text-[#6C8261] text-xs font-bold flex items-center justify-center">8</span>
-                    <span class="text-xs text-stone section-label">PLAN</span>
-                  </div>
-                  <p class="text-charcoal font-medium">Plan escalation & fallback</p>
-                  <p class="text-stone text-sm mt-1">Design backup rules: If rep doesn't respond in 15 min → escalate to manager. After hours → assign to on-call.</p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Phase 3 -->
-            <div class="mb-10">
-              <div class="flex items-center gap-3 mb-6">
-                <div class="w-10 h-10 rounded-sm bg-[#C96B3B] flex items-center justify-center text-white font-bold text-lg">3</div>
-                <div>
-                  <h3 class="font-sans text-xl font-bold text-[#1F4E79]">Phase 3: Build</h3>
-                  <p class="text-stone text-sm">Creating the automation</p>
-                </div>
-              </div>
-              <div class="grid md:grid-cols-2 gap-4 pl-4 md:pl-14">
-                <div class="p-4 border border-stone/10 rounded-sm">
-                  <div class="flex items-center gap-2 mb-2">
-                    <span class="w-6 h-6 rounded-full bg-[#C96B3B]/10 text-[#C96B3B] text-xs font-bold flex items-center justify-center">9</span>
-                    <span class="text-xs text-stone section-label">DEVELOP</span>
-                  </div>
-                  <p class="text-charcoal font-medium">Build routing workflows</p>
-                  <p class="text-stone text-sm mt-1">Create automation: Form submitted → Score lead → Route to rep → Send Slack alert → Auto-response email.</p>
-                </div>
-                <div class="p-4 border border-stone/10 rounded-sm">
-                  <div class="flex items-center gap-2 mb-2">
-                    <span class="w-6 h-6 rounded-full bg-[#C96B3B]/10 text-[#C96B3B] text-xs font-bold flex items-center justify-center">10</span>
-                    <span class="text-xs text-stone section-label">CODE</span>
-                  </div>
-                  <p class="text-charcoal font-medium">Code custom scoring tool</p>
-                  <p class="text-stone text-sm mt-1">Build lead scoring algorithm based on your criteria: company size, job title, behavior, source quality.</p>
-                </div>
-                <div class="p-4 border border-stone/10 rounded-sm">
-                  <div class="flex items-center gap-2 mb-2">
-                    <span class="w-6 h-6 rounded-full bg-[#C96B3B]/10 text-[#C96B3B] text-xs font-bold flex items-center justify-center">11</span>
-                    <span class="text-xs text-stone section-label">TEST</span>
-                  </div>
-                  <p class="text-charcoal font-medium">Test routing logic</p>
-                  <p class="text-stone text-sm mt-1">Test 50 sample leads through the system. Verify routing accuracy, response times, notification delivery.</p>
-                </div>
-                <div class="p-4 border border-stone/10 rounded-sm">
-                  <div class="flex items-center gap-2 mb-2">
-                    <span class="w-6 h-6 rounded-full bg-[#C96B3B]/10 text-[#C96B3B] text-xs font-bold flex items-center justify-center">12</span>
-                    <span class="text-xs text-stone section-label">REFINE</span>
-                  </div>
-                  <p class="text-charcoal font-medium">Refine based on feedback</p>
-                  <p class="text-stone text-sm mt-1">Adjust routing rules based on rep feedback. Fix scoring weights. Optimize response templates.</p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Phase 4 -->
-            <div class="mb-8">
-              <div class="flex items-center gap-3 mb-6">
-                <div class="w-10 h-10 rounded-sm bg-[#1F4E79] flex items-center justify-center text-white font-bold text-lg">4</div>
-                <div>
-                  <h3 class="font-sans text-xl font-bold text-[#1F4E79]">Phase 4: Deploy</h3>
-                  <p class="text-stone text-sm">Implementation & handoff</p>
-                </div>
-              </div>
-              <div class="grid md:grid-cols-2 gap-4 pl-4 md:pl-14">
-                <div class="p-4 border border-stone/10 rounded-sm">
-                  <div class="flex items-center gap-2 mb-2">
-                    <span class="w-6 h-6 rounded-full bg-[#1F4E79]/10 text-[#1F4E79] text-xs font-bold flex items-center justify-center">13</span>
-                    <span class="text-xs text-stone section-label">PILOT</span>
-                  </div>
-                  <p class="text-charcoal font-medium">Pilot with live leads</p>
-                  <p class="text-stone text-sm mt-1">Run parallel for 1 week: Old system vs new automation. Compare response times, conversion rates, rep satisfaction.</p>
-                </div>
-                <div class="p-4 border border-stone/10 rounded-sm">
-                  <div class="flex items-center gap-2 mb-2">
-                    <span class="w-6 h-6 rounded-full bg-[#1F4E79]/10 text-[#1F4E79] text-xs font-bold flex items-center justify-center">14</span>
-                    <span class="text-xs text-stone section-label">TRAIN</span>
-                  </div>
-                  <p class="text-charcoal font-medium">Train sales team</p>
-                  <p class="text-stone text-sm mt-1">Show reps how to use the new system. Set expectations for response times. Provide mobile app training.</p>
-                </div>
-                <div class="p-4 border border-stone/10 rounded-sm md:col-span-2">
-                  <div class="flex items-center gap-2 mb-2">
-                    <span class="w-6 h-6 rounded-full bg-[#1F4E79]/10 text-[#1F4E79] text-xs font-bold flex items-center justify-center">15</span>
-                    <span class="text-xs text-stone section-label">HANDOFF</span>
-                  </div>
-                  <p class="text-charcoal font-medium">Handoff & optimize</p>
-                  <p class="text-stone text-sm mt-1">Full system live. Dashboard for managers to monitor response times. Monthly optimization calls. 30-day support.</p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Result -->
-            <div class="bg-[#6C8261]/10 border border-[#6C8261]/20 rounded-sm p-6 mt-8">
-              <div class="flex items-start gap-4">
-                <div class="w-12 h-12 rounded-sm bg-[#6C8261] flex items-center justify-center shrink-0">
-                  <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-                </div>
-                <div>
-                  <p class="font-semibold text-[#6C8261] mb-2">Result: Every lead contacted within 5 minutes, 24/7</p>
-                  <p class="text-stone">No more leads sitting in inboxes. No more manual assignment. Sales reps get notified instantly with full context. Conversion rates increase 40% just from speed-to-lead alone.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Your Workflow Panel -->
-          <div id="panel-custom" class="tab-panel hidden" role="tabpanel" aria-labelledby="tab-custom">
-            <div class="bg-gradient-to-br from-[#1F4E79]/5 to-[#6C8261]/5 rounded-sm p-8 mb-8 border border-[#1F4E79]/20">
-              <div class="text-center">
-                <div class="w-16 h-16 rounded-full bg-[#1F4E79] flex items-center justify-center mx-auto mb-4">
-                  <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
-                  </svg>
-                </div>
-                <h3 class="font-sans text-2xl font-bold text-[#1F4E79] mb-3">Your Unique Workflow</h3>
-                <p class="text-stone text-lg mb-6 max-w-xl mx-auto">Every business has different pain points. We apply this same 15-step process to any workflow—whether it's invoice processing, document approvals, customer onboarding, inventory management, or something entirely unique to your operations.</p>
-                
-                <div class="grid md:grid-cols-3 gap-4 max-w-2xl mx-auto mb-6">
-                  <div class="p-4 bg-white rounded-sm border border-stone/10">
-                    <p class="text-[#C96B3B] font-semibold mb-1">We Listen</p>
-                    <p class="text-stone text-sm">You describe your pain points and current process</p>
-                  </div>
-                  <div class="p-4 bg-white rounded-sm border border-stone/10">
-                    <p class="text-[#6C8261] font-semibold mb-1">We Design</p>
-                    <p class="text-stone text-sm">Custom solution built for your exact needs</p>
-                  </div>
-                  <div class="p-4 bg-white rounded-sm border border-stone/10">
-                    <p class="text-[#1F4E79] font-semibold mb-1">You Thrive</p>
-                    <p class="text-stone text-sm">Automated workflow that saves hours weekly</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="grid md:grid-cols-2 gap-6 mb-8">
-              <div class="p-6 border border-stone/10 rounded-sm">
-                <h4 class="font-semibold text-charcoal mb-3 flex items-center gap-2">
-                  <span class="w-2 h-2 bg-[#C96B3B] rounded-full"></span>
-                  Common Workflows We Automate
-                </h4>
-                <ul class="space-y-2 text-stone">
-                  <li class="flex items-start gap-2">
-                    <span class="text-[#C96B3B]">→</span>
-                    <span>Invoice processing & approval</span>
-                  </li>
-                  <li class="flex items-start gap-2">
-                    <span class="text-[#C96B3B]">→</span>
-                    <span>Customer onboarding sequences</span>
-                  </li>
-                  <li class="flex items-start gap-2">
-                    <span class="text-[#C96B3B]">→</span>
-                    <span>Document routing & approvals</span>
-                  </li>
-                  <li class="flex items-start gap-2">
-                    <span class="text-[#C96B3B]">→</span>
-                    <span>Data entry & system syncing</span>
-                  </li>
-                  <li class="flex items-start gap-2">
-                    <span class="text-[#C96B3B]">→</span>
-                    <span>Email & communication workflows</span>
-                  </li>
-                  <li class="flex items-start gap-2">
-                    <span class="text-[#C96B3B]">→</span>
-                    <span>Custom internal tools & dashboards</span>
-                  </li>
-                </ul>
-              </div>
-
-              <div class="p-6 border border-stone/10 rounded-sm">
-                <h4 class="font-semibold text-charcoal mb-3 flex items-center gap-2">
-                  <span class="w-2 h-2 bg-[#6C8261] rounded-full"></span>
-                  What Makes Us Different
-                </h4>
-                <ul class="space-y-2 text-stone">
-                  <li class="flex items-start gap-2">
-                    <svg class="w-5 h-5 text-[#6C8261] shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-                    <span><strong>No templates.</strong> Every solution is custom-built</span>
-                  </li>
-                  <li class="flex items-start gap-2">
-                    <svg class="w-5 h-5 text-[#6C8261] shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-                    <span><strong>We build tools.</strong> Not just connections</span>
-                  </li>
-                  <li class="flex items-start gap-2">
-                    <svg class="w-5 h-5 text-[#6C8261] shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-                    <span><strong>Right tech.</strong> Rules, AI, or custom code</span>
-                  </li>
-                  <li class="flex items-start gap-2">
-                    <svg class="w-5 h-5 text-[#6C8261] shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-                    <span><strong>Transparent process.</strong> No black boxes</span>
-                  </li>
-                  <li class="flex items-start gap-2">
-                    <svg class="w-5 h-5 text-[#6C8261] shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-                    <span><strong>Real partnership.</strong> We train your team</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            <div class="bg-[#1F4E79] text-white rounded-sm p-8 text-center mt-10">
-              <h4 class="font-sans text-2xl font-bold mb-3">Think you have a similar bottleneck?</h4>
-              <p class="text-white/80 mb-6 max-w-xl mx-auto">We're happy to map it out with you and see if a micro-tool makes sense.</p>
-              <a href="contact.html" class="inline-flex items-center gap-2 bg-[#C96B3B] hover:bg-[#A6552B] transition-colors text-white px-8 py-4 rounded-sm font-bold">
-                Talk to us about your workflow
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <script>
-        // Tab switching functionality
-        (function() {
-          const tabs = document.querySelectorAll('.workflow-tab');
-          const panels = document.querySelectorAll('.tab-panel');
-
-          tabs.forEach(tab => {
-            tab.addEventListener('click', () => {
-              // Deactivate all tabs
-              tabs.forEach(t => {
-                t.classList.remove('active', 'bg-[#1F4E79]', 'text-white', 'border-[#1F4E79]');
-                t.classList.add('text-stone', 'border-stone/20');
-                t.setAttribute('aria-selected', 'false');
-              });
-
-              // Hide all panels
-              panels.forEach(p => {
-                p.classList.add('hidden');
-                p.classList.remove('active');
-              });
-
-              // Activate clicked tab
-              tab.classList.add('active', 'bg-[#1F4E79]', 'text-white', 'border-[#1F4E79]');
-              tab.classList.remove('text-stone', 'border-stone/20');
-              tab.setAttribute('aria-selected', 'true');
-
-              // Show corresponding panel
-              const targetId = tab.getAttribute('data-tab');
-              const targetPanel = document.getElementById('panel-' + targetId);
-              if (targetPanel) {
-                targetPanel.classList.remove('hidden');
-                targetPanel.classList.add('active');
-              }
-            });
-          });
-        })();
-      </script>
-    </section>
-
     <!-- ── TOOLS WE WORK WITH ── -->
     <div class="max-w-4xl mx-auto px-6 pb-4">
-      <p class="section-label text-[#1F4E79] text-sm tracking-widest">[INTEGRATIONS]</p>
+      <p class="section-label text-[#A6552B] text-sm tracking-widest">[INTEGRATIONS]</p>
     </div>
     <section class="max-w-5xl mx-auto px-6 pb-16">
       <div class="bg-white border border-stone/15 rounded-sm p-8 md:p-10">
@@ -1278,7 +902,7 @@
         </div>
         
         <div class="border-t border-stone/10 pt-8">
-          <p class="text-xs text-stone uppercase tracking-widest mb-6 section-label text-center">Popular integrations</p>
+          <p class="text-xs text-[#A6552B] uppercase tracking-widest mb-6 section-label text-center">Popular integrations</p>
           <div class="flex flex-wrap items-center justify-center gap-x-8 gap-y-6">
             <!-- HubSpot -->
             <div class="flex items-center gap-2 text-stone/70 hover:text-stone transition-colors">
@@ -1358,7 +982,7 @@
 
         <div class="mt-8 pt-6 border-t border-stone/10 text-center">
  <p class="text-stone mb-4">Don't see your tool? We integrate with 5000+ apps and can build custom connections for proprietary systems.</p>
-          <a href="contact.html" class="inline-flex items-center gap-2 text-[#C96B3B] font-semibold hover:gap-3 transition-all">
+          <a href="contact.html" class="inline-flex items-center gap-2 text-[#A6552B] font-semibold hover:gap-3 transition-all">
             Ask about your specific tools
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
           </a>

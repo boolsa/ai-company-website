@@ -87,16 +87,46 @@
 
     /* ── Nav ── */
     #site-nav {
-      background-color: #F4F1E8;
-      border-bottom: 1px solid rgba(99, 110, 114, 0.15);
-      transition: box-shadow 0.25s ease, border-color 0.25s ease;
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      isolation: isolate;
+      background: linear-gradient(180deg, rgba(249, 246, 240, 0.88) 0%, rgba(240, 234, 223, 0.9) 100%);
+      border-bottom: 1px solid rgba(23, 33, 43, 0.08);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.65);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      transition: background-color 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+    }
+    #site-nav::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: min(1100px, calc(100% - 48px));
+      height: 1px;
+      transform: translateX(-50%);
+      background: linear-gradient(90deg, rgba(201, 107, 59, 0), rgba(201, 107, 59, 0.3) 18%, rgba(31, 78, 121, 0.25) 50%, rgba(201, 107, 59, 0.3) 82%, rgba(201, 107, 59, 0));
+      pointer-events: none;
+    }
+    #site-nav::after {
+      content: '';
+      position: absolute;
+      inset: auto 0 -22px 0;
+      height: 40px;
+      background: radial-gradient(circle at 50% 0%, rgba(31, 78, 121, 0.08), transparent 68%);
+      pointer-events: none;
+      opacity: 0.7;
     }
     #site-nav.nav-scrolled {
-      box-shadow: 0 1px 16px rgba(31, 78, 121, 0.08), 0 1px 3px rgba(31, 78, 121, 0.06);
-      border-bottom-color: rgba(99, 110, 114, 0.22);
+      background: linear-gradient(180deg, rgba(247, 243, 236, 0.97) 0%, rgba(237, 231, 220, 0.96) 100%);
+      box-shadow: 0 14px 38px rgba(23, 33, 43, 0.1), 0 4px 12px rgba(31, 78, 121, 0.07), inset 0 1px 0 rgba(255, 255, 255, 0.7);
+      border-bottom-color: rgba(23, 33, 43, 0.14);
     }
     #site-nav .nav-inner {
-      transition: padding-top 0.25s ease, padding-bottom 0.25s ease;
+      position: relative;
+      z-index: 1;
+      transition: padding-top 0.25s ease, padding-bottom 0.25s ease, gap 0.25s ease;
     }
     #site-nav.nav-scrolled .nav-inner {
       padding-top: 0.625rem;
@@ -104,38 +134,85 @@
     }
 
     /* Logo */
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.875rem;
+      min-width: 0;
+    }
     .nav-logo {
       font-family: 'Inter', sans-serif;
       font-size: 1.5rem;
       font-weight: 700;
-      color: #1F4E79;
+      color: #17212B;
       letter-spacing: -0.03em;
       line-height: 1;
       display: flex;
       align-items: baseline;
       gap: 0;
       text-decoration: none;
+      white-space: nowrap;
+      transition: color 0.18s ease, opacity 0.18s ease;
+    }
+    .nav-badge {
+      display: none;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.4rem 0.7rem;
+      border: 1px solid rgba(31, 78, 121, 0.1);
+      border-radius: 9999px;
+      background: rgba(255, 255, 255, 0.42);
+      color: rgba(23, 33, 43, 0.72);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .nav-badge::before {
+      content: '';
+      width: 0.42rem;
+      height: 0.42rem;
+      border-radius: 9999px;
+      background: linear-gradient(135deg, #C96B3B, #1F4E79);
+      box-shadow: 0 0 0 4px rgba(201, 107, 59, 0.08);
+      flex: none;
+    }
+    @media (min-width: 1024px) {
+      .nav-badge {
+        display: inline-flex;
+      }
     }
     .nav-logo-tld {
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.6875rem;
       font-weight: 500;
-      color: #636E72;
-      letter-spacing: 0;
-      margin-left: 1px;
+      color: rgba(99, 110, 114, 0.88);
+      letter-spacing: 0.04em;
+      margin-left: 2px;
       position: relative;
       top: -5px;
     }
 
     /* Desktop nav links */
+    .nav-desktop {
+      display: flex;
+      align-items: center;
+      gap: 1.4rem;
+      padding: 0.6rem 1rem;
+      border: 1px solid rgba(23, 33, 43, 0.08);
+      border-radius: 9999px;
+      background: rgba(255, 255, 255, 0.38);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.55);
+    }
     .nav-link {
       position: relative;
-      font-size: 0.8125rem;
+      font-size: 0.79rem;
       font-weight: 500;
-      color: #636E72;
+      color: rgba(23, 33, 43, 0.68);
       text-decoration: none;
-      padding-bottom: 2px;
-      transition: color 0.18s ease;
+      padding-bottom: 3px;
+      transition: color 0.18s ease, opacity 0.18s ease;
     }
     .nav-link::after {
       content: '';
@@ -144,20 +221,20 @@
       left: 0;
       right: 0;
       height: 2px;
-      background-color: #C96B3B;
+      background: linear-gradient(90deg, rgba(201, 107, 59, 0.92), rgba(31, 78, 121, 0.85));
       border-radius: 2px;
       transform: scaleX(0);
-      transform-origin: left center;
-      transition: transform 0.2s ease;
+      transform-origin: center;
+      transition: transform 0.22s ease;
     }
     .nav-link:hover {
-      color: #1F4E79;
+      color: #17212B;
     }
     .nav-link:hover::after {
       transform: scaleX(1);
     }
     .nav-link.active {
-      color: #1F4E79;
+      color: #17212B;
       font-weight: 600;
     }
     .nav-link.active::after {
@@ -165,29 +242,6 @@
     }
 
     /* CTA button */
-    .nav-cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background-color: #C96B3B;
-      color: #fff;
-      font-size: 0.8125rem;
-      font-weight: 600;
-      padding: 0.45rem 1rem;
-      border-radius: 9999px;
-      text-decoration: none;
-      box-shadow: 0 1px 4px rgba(201, 107, 59, 0.35);
-      transition: background-color 0.18s ease, box-shadow 0.18s ease, transform 0.15s ease;
-    }
-    .nav-cta:hover {
-      background-color: #A6552B;
-      box-shadow: 0 3px 10px rgba(201, 107, 59, 0.4);
-      transform: translateY(-1px);
-    }
-    .nav-cta:active {
-      transform: translateY(0);
-      box-shadow: 0 1px 4px rgba(201, 107, 59, 0.3);
-    }
 
     /* Mobile menu */
     #mobileMenu {
@@ -196,8 +250,11 @@
       transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1),
                   opacity 0.25s ease;
       opacity: 0;
-      border-top: 1px solid rgba(99, 110, 114, 0.1);
-      background-color: #F4F1E8;
+      border-top: 1px solid rgba(23, 33, 43, 0.08);
+      background: linear-gradient(180deg, rgba(249, 246, 240, 0.97) 0%, rgba(240, 234, 223, 0.96) 100%);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.65);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
     }
     #mobileMenu.open {
       max-height: 480px;
@@ -206,51 +263,46 @@
     .mobile-nav-link {
       display: flex;
       align-items: center;
-      padding: 0.75rem 1rem;
-      border-radius: 6px;
+      padding: 0.85rem 1rem;
+      border-radius: 10px;
       font-size: 0.9375rem;
       font-weight: 500;
-      color: #636E72;
+      color: rgba(23, 33, 43, 0.82);
       text-decoration: none;
       min-height: 44px;
-      transition: color 0.15s ease, background-color 0.15s ease;
-      border-left: 2px solid transparent;
+      transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease;
+      border: 1px solid transparent;
     }
     .mobile-nav-link:hover {
-      color: #1F4E79;
-      background-color: rgba(31, 78, 121, 0.04);
+      color: #17212B;
+      border-color: rgba(23, 33, 43, 0.08);
+      background-color: rgba(255, 255, 255, 0.46);
     }
     .mobile-nav-link.active {
-      color: #1F4E79;
+      color: #17212B;
       font-weight: 600;
-      background-color: rgba(31, 78, 121, 0.05);
-      border-left-color: #C96B3B;
-    }
-    .mobile-nav-cta {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0.75rem 1rem;
-      border-radius: 9999px;
-      font-size: 0.9375rem;
-      font-weight: 600;
-      color: #fff;
-      background-color: #C96B3B;
-      text-decoration: none;
-      min-height: 44px;
-      box-shadow: 0 1px 4px rgba(201, 107, 59, 0.3);
-      transition: background-color 0.15s ease;
-    }
-    .mobile-nav-cta:hover {
-      background-color: #A6552B;
+      border-color: rgba(23, 33, 43, 0.08);
+      background-color: rgba(255, 255, 255, 0.56);
+      box-shadow: inset 3px 0 0 rgba(201, 107, 59, 0.82);
     }
 
     /* Hamburger morph */
+    #mobileMenuBtn {
+      border: 1px solid rgba(23, 33, 43, 0.08);
+      background: rgba(255, 255, 255, 0.42);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.55);
+      transition: background-color 0.18s ease, border-color 0.18s ease, transform 0.18s ease;
+    }
+    #mobileMenuBtn:hover {
+      background: rgba(255, 255, 255, 0.62);
+      border-color: rgba(31, 78, 121, 0.14);
+      transform: translateY(-1px);
+    }
     .hamburger-line {
       display: block;
       width: 20px;
       height: 1.75px;
-      background-color: #1F4E79;
+      background-color: #17212B;
       border-radius: 2px;
       transition: transform 0.25s ease, opacity 0.2s ease;
       transform-origin: center;
@@ -265,6 +317,56 @@
     #mobileMenuBtn[aria-expanded="true"] .hamburger-line:nth-child(3) {
       transform: translateY(-5.75px) rotate(-45deg);
     }
+    .hero-frame {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(23, 33, 43, 0.08);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.45) 0%, rgba(244, 241, 232, 0.7) 100%);
+      box-shadow: 0 24px 60px rgba(23, 33, 43, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.55);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+    .hero-frame::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top left, rgba(31, 78, 121, 0.1), transparent 34%),
+                  radial-gradient(circle at top right, rgba(201, 107, 59, 0.12), transparent 28%);
+      pointer-events: none;
+    }
+    .hero-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.55rem 0.9rem;
+      border: 1px solid rgba(23, 33, 43, 0.08);
+      border-radius: 9999px;
+      background: rgba(255, 255, 255, 0.56);
+      color: rgba(23, 33, 43, 0.78);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .hero-kicker::before {
+      content: '';
+      width: 0.45rem;
+      height: 0.45rem;
+      border-radius: 9999px;
+      background: linear-gradient(135deg, #C96B3B, #1F4E79);
+      box-shadow: 0 0 0 5px rgba(201, 107, 59, 0.08);
+    }
+    .hero-proof {
+      color: rgba(23, 33, 43, 0.62);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .signal-card {
+      border-top: 1px solid rgba(23, 33, 43, 0.08);
+      background: rgba(255, 255, 255, 0.26);
+    }
   </style>
 </head>
 <body class="text-charcoal antialiased">
@@ -274,20 +376,21 @@
 
   <nav id="site-nav" class="sticky top-0 z-40" role="navigation" aria-label="Main navigation">
     <div class="nav-inner max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
-
-      <!-- Logo -->
-      <a href="index.html" aria-label="Microve.ai — home" class="nav-logo">
-        microve<span class="nav-logo-tld">.ai</span>
-      </a>
+      <div class="nav-brand">
+        <a href="index.html" aria-label="Microve.ai — home" class="nav-logo">microve<span class="nav-logo-tld">.ai</span></a>
+        <span class="nav-badge">Micro automation</span>
+      </div>
 
       <!-- Desktop Navigation -->
-      <div class="hidden md:flex items-center gap-7">
-        <a href="index.html" aria-current="page" class="nav-link active">Home</a>
+      <div class="hidden md:flex items-center"><div class="nav-desktop">
+<a href="index.html" aria-current="page" class="nav-link active">Home</a>
         <a href="what-we-do.html" class="nav-link">What We Do</a>
         <a href="cases.html" class="nav-link">Cases</a>
         <a href="blog.html" class="nav-link">Blog</a>
         <a href="about.html" class="nav-link">About</a>
+        <a href="pricing.html" class="nav-link">Pricing</a>
         <a href="contact.html" class="nav-link">Contact</a>
+        </div>
       </div>
 
       <!-- Mobile Hamburger -->
@@ -304,12 +407,13 @@
 
     <!-- Mobile Menu -->
     <div id="mobileMenu" role="region" aria-label="Mobile navigation">
-      <div class="max-w-5xl mx-auto px-4 py-3 flex flex-col gap-1">
-        <a href="index.html" aria-current="page" class="mobile-nav-link active">Home</a>
+      <div class="max-w-5xl mx-auto px-4 py-4 flex flex-col gap-2">
+<a href="index.html" aria-current="page" class="mobile-nav-link active">Home</a>
         <a href="what-we-do.html" class="mobile-nav-link">What We Do</a>
         <a href="cases.html" class="mobile-nav-link">Cases</a>
         <a href="blog.html" class="mobile-nav-link">Blog</a>
         <a href="about.html" class="mobile-nav-link">About</a>
+        <a href="pricing.html" class="mobile-nav-link">Pricing</a>
         <a href="contact.html" class="mobile-nav-link">Contact</a>
       </div>
     </div>
@@ -358,19 +462,20 @@
   <main id="main-content">
 
     <!-- ── HERO ── -->
-    <section class="max-w-5xl mx-auto px-6 pt-24 pb-12 text-center">
-      <p class="section-label text-xs text-[#C96B3B] mb-5 tracking-widest">MICROVE.AI</p>
+    <section class="max-w-5xl mx-auto px-6 pt-20 pb-14 text-center">
+      <div class="hero-frame rounded-[28px] px-6 py-10 md:px-10 md:py-14">
+        <div class="relative z-10">
+          <p class="hero-proof mb-5">DIAGNOSTIC-FIRST BUILDS / Practical A.I. implementation / INTEGRATES WITH YOUR CURRENT STACK</p>
+          <p class="section-label text-xs text-[#A6552B] mb-5 tracking-widest">MICROVE.AI</p>
 
-      <h1 class="font-sans text-5xl md:text-7xl font-bold mb-6 tight-tracking leading-[1.1] text-[#1F4E79]">Custom AI tools for real workflows.</h1>
-      <p class="text-xl md:text-2xl text-charcoal max-w-2xl mx-auto mb-10 leading-relaxed">We are a problem-first automation firm. We build practical custom A.I. tools that handle repetitive decisions, messy workflows, and manual operational work.</p>
-
-      <div class="flex flex-wrap justify-center gap-4 mb-10">
-        <a href="what-we-do.html" class="bg-[#1F4E79] text-white px-8 py-4 rounded-sm font-semibold hover:bg-[#2a4a73] transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#1F4E79] focus:ring-offset-2">See how we work</a>
+          <h1 class="font-sans text-5xl md:text-7xl font-bold mb-6 tight-tracking leading-[1.05] text-[#1F4E79]">Custom AI tools for real workflows.</h1>
+          <p class="text-xl md:text-2xl text-charcoal max-w-3xl mx-auto mb-8 leading-relaxed">We design practical micro automations for the repetitive decisions, messy workflows, and manual operational steps that slow teams down.</p>
+        </div>
       </div>
 
       <!-- Tools signal -->
-      <div class="border-t border-stone/10 pt-8">
-        <p class="text-xs text-stone uppercase tracking-widest mb-5 section-label">Works with the tools you already use</p>
+      <div class="signal-card pt-8 mt-8">
+        <p class="text-xs text-[#A6552B] uppercase tracking-widest mb-5 section-label">Works with the tools you already use</p>
         <div class="flex flex-wrap items-center justify-center gap-x-7 gap-y-3">
           <!-- HubSpot -->
           <div class="flex items-center gap-2 text-stone/60 hover:text-stone transition-colors">
@@ -451,7 +556,7 @@
 
     <!-- ── WHAT WE BUILD ── -->
     <div class="max-w-5xl mx-auto px-6 pt-16 pb-4">
-      <p class="section-label text-[#1F4E79]/50 text-xs tracking-widest">What we build</p>
+      <p class="section-label text-[#A6552B] text-xs tracking-widest">What we build</p>
     </div>
 
     <section class="max-w-5xl mx-auto px-6 pb-16">
@@ -546,7 +651,7 @@
 
     <!-- ── HOW IT WORKS ── -->
     <div class="max-w-5xl mx-auto px-6 pb-4">
-      <p class="section-label text-[#1F4E79]/50 text-xs tracking-widest">How it works</p>
+      <p class="section-label text-[#A6552B] text-xs tracking-widest">How it works</p>
     </div>
 
     <section class="max-w-5xl mx-auto px-6 pb-16">
@@ -564,7 +669,7 @@
               <svg class="w-7 h-7 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z"/><path d="M19 10v2a7 7 0 01-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/></svg>
             </div>
             <div class="bg-white rounded-sm p-5 border border-stone/10 w-full">
-              <span class="section-label text-xs text-stone/50">Step 1</span>
+              <span class="section-label text-xs text-[#A6552B]">Step 1</span>
               <h3 class="font-semibold text-lg text-charcoal mt-1 mb-2">We listen</h3>
               <p class="text-stone text-sm leading-relaxed">You show us where time bleeds and revenue stalls. No sales pitch.</p>
             </div>
@@ -574,7 +679,7 @@
               <svg class="w-7 h-7 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><path d="M8 11l2 2 4-4"/></svg>
             </div>
             <div class="bg-white rounded-sm p-5 border border-stone/10 w-full">
-              <span class="section-label text-xs text-stone/50">Step 2</span>
+              <span class="section-label text-xs text-[#A6552B]">Step 2</span>
               <h3 class="font-semibold text-lg text-charcoal mt-1 mb-2">We audit</h3>
               <p class="text-stone text-sm leading-relaxed">We map the exact steps eating hours and blocking deals.</p>
             </div>
@@ -584,7 +689,7 @@
               <svg class="w-7 h-7 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
             </div>
             <div class="bg-white rounded-sm p-5 border border-stone/10 w-full">
-              <span class="section-label text-xs text-stone/50">Step 3</span>
+              <span class="section-label text-xs text-[#A6552B]">Step 3</span>
               <h3 class="font-semibold text-lg text-charcoal mt-1 mb-2">We design</h3>
               <p class="text-stone text-sm leading-relaxed">Custom micro-tools using AI, rule-based automation, or both — whatever the problem requires.</p>
             </div>
@@ -594,7 +699,7 @@
               <svg class="w-7 h-7 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
             </div>
             <div class="bg-white rounded-sm p-5 border border-stone/10 w-full">
-              <span class="section-label text-xs text-[#6C8261]/60">Step 4</span>
+              <span class="section-label text-xs text-[#A6552B]">Step 4</span>
               <h3 class="font-semibold text-lg text-charcoal mt-1 mb-2">We implement</h3>
               <p class="text-stone text-sm leading-relaxed">Deployed inside your workflow. Impact visible in your calendar and P&L.</p>
             </div>
@@ -611,7 +716,7 @@
               <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z"/><path d="M19 10v2a7 7 0 01-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/></svg>
             </div>
             <div class="bg-white rounded-sm p-5 border border-stone/10 ml-4">
-              <span class="section-label text-xs text-stone/50">Step 1</span>
+              <span class="section-label text-xs text-[#A6552B]">Step 1</span>
               <h3 class="font-semibold text-lg text-charcoal mt-1 mb-1">We listen</h3>
               <p class="text-stone text-sm">You show us where time bleeds and revenue stalls. No sales pitch.</p>
             </div>
@@ -621,7 +726,7 @@
               <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><path d="M8 11l2 2 4-4"/></svg>
             </div>
             <div class="bg-white rounded-sm p-5 border border-stone/10 ml-4">
-              <span class="section-label text-xs text-stone/50">Step 2</span>
+              <span class="section-label text-xs text-[#A6552B]">Step 2</span>
               <h3 class="font-semibold text-lg text-charcoal mt-1 mb-1">We audit</h3>
               <p class="text-stone text-sm">We map the exact steps eating hours and blocking deals.</p>
             </div>
@@ -631,7 +736,7 @@
               <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
             </div>
             <div class="bg-white rounded-sm p-5 border border-stone/10 ml-4">
-              <span class="section-label text-xs text-stone/50">Step 3</span>
+              <span class="section-label text-xs text-[#A6552B]">Step 3</span>
               <h3 class="font-semibold text-lg text-charcoal mt-1 mb-1">We design</h3>
               <p class="text-stone text-sm">Custom micro-tools using AI, rule-based automation, or both — whatever the problem requires.</p>
             </div>
@@ -641,7 +746,7 @@
               <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
             </div>
             <div class="bg-white rounded-sm p-5 border border-stone/10 ml-4">
-              <span class="section-label text-xs text-[#6C8261]/60">Step 4</span>
+              <span class="section-label text-xs text-[#A6552B]">Step 4</span>
               <h3 class="font-semibold text-lg text-charcoal mt-1 mb-1">We implement</h3>
               <p class="text-stone text-sm">Deployed inside your workflow. Impact visible in your calendar and P&L.</p>
             </div>
