@@ -14,11 +14,11 @@
       theme: {
         extend: {
           colors: {
-            terracotta: '#1E3A5F',
-            sage: '#7A9E7E',
-            coral: '#E07A5F',
-            cream: '#FAF9F7',
-            charcoal: '#2D3436',
+            terracotta: '#1F4E79',
+            sage: '#6C8261',
+            coral: '#C96B3B',
+            cream: '#F4F1E8',
+            charcoal: '#17212B',
             stone: '#636E72'
           },
           fontFamily: {
@@ -37,22 +37,22 @@
       color: #636E72;
     }
     .bg-cream {
-      background-color: #FAF9F7;
+      background-color: #F4F1E8;
     }
     .text-charcoal {
-      color: #2D3436;
+      color: #17212B;
     }
     a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
-      outline: 2px solid #1E3A5F;
+      outline: 2px solid #1F4E79;
       outline-offset: 2px;
     }
     :focus:not(:focus-visible) {
       outline: none;
     }
     :root {
-      --color-coral: #E07A5F;
-      --color-navy: #1E3A5F;
-      --color-cream: #FAF9F7;
+      --color-coral: #C96B3B;
+      --color-navy: #1F4E79;
+      --color-cream: #F4F1E8;
     }
     @media (hover: none) and (pointer: coarse) {
       a, button {
@@ -61,7 +61,7 @@
       }
     }
     .text-highlight {
-      background: linear-gradient(180deg, transparent 60%, rgba(224, 122, 95, 0.25) 60%);
+      background: linear-gradient(180deg, transparent 60%, rgba(201, 107, 59, 0.25) 60%);
       padding: 0 0.25rem;
       font-weight: 600;
     }
@@ -79,20 +79,20 @@
     body {
       position: relative;
       overflow-x: hidden;
-      background-color: #FAF9F7 !important;
+      background-color: #F4F1E8 !important;
       background-image:
-        radial-gradient(circle, rgba(30, 58, 95, 0.18) 1.5px, transparent 1.5px) !important;
+        radial-gradient(circle, rgba(31, 78, 121, 0.18) 1.5px, transparent 1.5px) !important;
       background-size: 28px 28px !important;
     }
 
     /* ── Nav ── */
     #site-nav {
-      background-color: #FAF9F7;
+      background-color: #F4F1E8;
       border-bottom: 1px solid rgba(99, 110, 114, 0.15);
       transition: box-shadow 0.25s ease, border-color 0.25s ease;
     }
     #site-nav.nav-scrolled {
-      box-shadow: 0 1px 16px rgba(30, 58, 95, 0.08), 0 1px 3px rgba(30, 58, 95, 0.06);
+      box-shadow: 0 1px 16px rgba(31, 78, 121, 0.08), 0 1px 3px rgba(31, 78, 121, 0.06);
       border-bottom-color: rgba(99, 110, 114, 0.22);
     }
     #site-nav .nav-inner {
@@ -108,7 +108,7 @@
       font-family: 'Inter', sans-serif;
       font-size: 1.5rem;
       font-weight: 700;
-      color: #1E3A5F;
+      color: #1F4E79;
       letter-spacing: -0.03em;
       line-height: 1;
       display: flex;
@@ -144,20 +144,20 @@
       left: 0;
       right: 0;
       height: 2px;
-      background-color: #E07A5F;
+      background-color: #C96B3B;
       border-radius: 2px;
       transform: scaleX(0);
       transform-origin: left center;
       transition: transform 0.2s ease;
     }
     .nav-link:hover {
-      color: #1E3A5F;
+      color: #1F4E79;
     }
     .nav-link:hover::after {
       transform: scaleX(1);
     }
     .nav-link.active {
-      color: #1E3A5F;
+      color: #1F4E79;
       font-weight: 600;
     }
     .nav-link.active::after {
@@ -169,24 +169,24 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      background-color: #E07A5F;
+      background-color: #C96B3B;
       color: #fff;
       font-size: 0.8125rem;
       font-weight: 600;
       padding: 0.45rem 1rem;
       border-radius: 9999px;
       text-decoration: none;
-      box-shadow: 0 1px 4px rgba(224, 122, 95, 0.35);
+      box-shadow: 0 1px 4px rgba(201, 107, 59, 0.35);
       transition: background-color 0.18s ease, box-shadow 0.18s ease, transform 0.15s ease;
     }
     .nav-cta:hover {
-      background-color: #C96A4F;
-      box-shadow: 0 3px 10px rgba(224, 122, 95, 0.4);
+      background-color: #A6552B;
+      box-shadow: 0 3px 10px rgba(201, 107, 59, 0.4);
       transform: translateY(-1px);
     }
     .nav-cta:active {
       transform: translateY(0);
-      box-shadow: 0 1px 4px rgba(224, 122, 95, 0.3);
+      box-shadow: 0 1px 4px rgba(201, 107, 59, 0.3);
     }
 
     /* Mobile menu */
@@ -197,7 +197,7 @@
                   opacity 0.25s ease;
       opacity: 0;
       border-top: 1px solid rgba(99, 110, 114, 0.1);
-      background-color: #FAF9F7;
+      background-color: #F4F1E8;
     }
     #mobileMenu.open {
       max-height: 480px;
@@ -217,14 +217,14 @@
       border-left: 2px solid transparent;
     }
     .mobile-nav-link:hover {
-      color: #1E3A5F;
-      background-color: rgba(30, 58, 95, 0.04);
+      color: #1F4E79;
+      background-color: rgba(31, 78, 121, 0.04);
     }
     .mobile-nav-link.active {
-      color: #1E3A5F;
+      color: #1F4E79;
       font-weight: 600;
-      background-color: rgba(30, 58, 95, 0.05);
-      border-left-color: #E07A5F;
+      background-color: rgba(31, 78, 121, 0.05);
+      border-left-color: #C96B3B;
     }
     .mobile-nav-cta {
       display: flex;
@@ -235,14 +235,14 @@
       font-size: 0.9375rem;
       font-weight: 600;
       color: #fff;
-      background-color: #E07A5F;
+      background-color: #C96B3B;
       text-decoration: none;
       min-height: 44px;
-      box-shadow: 0 1px 4px rgba(224, 122, 95, 0.3);
+      box-shadow: 0 1px 4px rgba(201, 107, 59, 0.3);
       transition: background-color 0.15s ease;
     }
     .mobile-nav-cta:hover {
-      background-color: #C96A4F;
+      background-color: #A6552B;
     }
 
     /* Hamburger morph */
@@ -250,7 +250,7 @@
       display: block;
       width: 20px;
       height: 1.75px;
-      background-color: #1E3A5F;
+      background-color: #1F4E79;
       border-radius: 2px;
       transition: transform 0.25s ease, opacity 0.2s ease;
       transform-origin: center;
@@ -268,7 +268,7 @@
   </style>
 </head>
 <body class="text-charcoal antialiased">
-  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-[#1E3A5F] focus:text-white focus:px-4 focus:py-2 focus:rounded-sm focus:font-semibold">
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-[#1F4E79] focus:text-white focus:px-4 focus:py-2 focus:rounded-sm focus:font-semibold">
     Skip to main content
   </a>
 
@@ -287,17 +287,12 @@
         <a href="cases.html" class="nav-link">Cases</a>
         <a href="blog.html" class="nav-link">Blog</a>
         <a href="about.html" class="nav-link">About</a>
-        <a href="contact.html" class="nav-cta" aria-label="Book a call with Microve.ai">
-          Book a Call
-          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-            <path d="M2.5 6h7M6.5 3l3 3-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </a>
+        <a href="contact.html" class="nav-link">Contact</a>
       </div>
 
       <!-- Mobile Hamburger -->
       <button id="mobileMenuBtn"
-              class="md:hidden flex flex-col justify-center gap-[4.5px] w-9 h-9 -mr-1 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1E3A5F] focus:ring-offset-2"
+              class="md:hidden flex flex-col justify-center gap-[4.5px] w-9 h-9 -mr-1 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1F4E79] focus:ring-offset-2"
               aria-label="Toggle navigation menu"
               aria-expanded="false"
               aria-controls="mobileMenu">
@@ -315,9 +310,7 @@
         <a href="cases.html" class="mobile-nav-link">Cases</a>
         <a href="blog.html" class="mobile-nav-link">Blog</a>
         <a href="about.html" class="mobile-nav-link">About</a>
-        <div class="pt-2 pb-1">
-          <a href="contact.html" class="mobile-nav-cta">Book a Call</a>
-        </div>
+        <a href="contact.html" class="mobile-nav-link">Contact</a>
       </div>
     </div>
 
@@ -365,16 +358,14 @@
   <main id="main-content">
 
     <!-- ── HERO ── -->
-    <section class="max-w-5xl mx-auto px-6 pt-20 pb-8 text-center">
-      <!-- Eyebrow: who this is for -->
-      <p class="section-label text-xs text-[#E07A5F] mb-5 tracking-widest">CUSTOM WORKFLOW AUTOMATION · PRACTICAL A.I. IMPLEMENTATION · FLEXIBLE TOOLS</p>
+    <section class="max-w-5xl mx-auto px-6 pt-24 pb-12 text-center">
+      <p class="section-label text-xs text-[#C96B3B] mb-5 tracking-widest">MICROVE.AI</p>
 
-      <h1 class="font-sans text-5xl md:text-7xl font-bold mb-6 tight-tracking leading-[1.1] text-[#1E3A5F]">Your best people are<br>drowning in busywork</h1>
-      <p class="text-xl md:text-2xl text-stone max-w-2xl mx-auto mb-10 leading-relaxed">We map your actual bottlenecks and build custom automations that fit your exact stack — no bloatware, no full-time dev required.</p>
+      <h1 class="font-sans text-5xl md:text-7xl font-bold mb-6 tight-tracking leading-[1.1] text-[#1F4E79]">Custom AI tools for real workflows.</h1>
+      <p class="text-xl md:text-2xl text-charcoal max-w-2xl mx-auto mb-10 leading-relaxed">We are a problem-first automation firm. We build practical custom A.I. tools that handle repetitive decisions, messy workflows, and manual operational work.</p>
 
       <div class="flex flex-wrap justify-center gap-4 mb-10">
-        <a href="contact.html" class="bg-[#E07A5F] text-white px-8 py-4 rounded-sm font-semibold hover:bg-[#C96A4F] transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#E07A5F] focus:ring-offset-2">Show us your biggest bottleneck</a>
-        <a href="what-we-do.html" class="border border-charcoal/20 px-8 py-4 rounded-sm font-semibold hover:border-[#E07A5F] hover:text-[#E07A5F] transition-colors duration-200">See what we build</a>
+        <a href="what-we-do.html" class="bg-[#1F4E79] text-white px-8 py-4 rounded-sm font-semibold hover:bg-[#2a4a73] transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#1F4E79] focus:ring-offset-2">See how we work</a>
       </div>
 
       <!-- Tools signal -->
@@ -458,17 +449,17 @@
       </div>
     </section>
 
-    <!-- ── WHAT WE SOLVE ── -->
+    <!-- ── WHAT WE BUILD ── -->
     <div class="max-w-5xl mx-auto px-6 pt-16 pb-4">
-      <p class="section-label text-[#1E3A5F]/50 text-xs tracking-widest">What we solve</p>
+      <p class="section-label text-[#1F4E79]/50 text-xs tracking-widest">What we build</p>
     </div>
 
     <section class="max-w-5xl mx-auto px-6 pb-16">
       <div class="bg-white border border-stone/15 rounded-sm p-8 overflow-hidden relative">
-        <h2 class="font-sans text-4xl md:text-5xl font-bold mb-2 tight-tracking text-[#1E3A5F]">The manual work killing your team's momentum</h2>
-        <p class="text-lg text-stone mb-8">Every hour spent copy-pasting data, chasing status updates, and reformatting reports is an hour not spent closing deals or doing the work you're actually good at.</p>
+        <h2 class="font-sans text-4xl md:text-5xl font-bold mb-2 tight-tracking text-[#1F4E79]">Tools that fit your workflow, not the other way around</h2>
+        <p class="text-lg text-stone mb-8">We don't sell a pre-packaged platform. We find the specific steps where work stalls — data entry, follow-ups, formatting, approvals — and plug in a custom micro-tool to handle it.</p>
         <div class="flex flex-col gap-10">
-          <div class="bg-[#FAF9F7] rounded-sm p-8 border border-stone/10 flex flex-col justify-center min-h-[350px]">
+          <div class="bg-[#F4F1E8] rounded-sm p-8 border border-stone/10 flex flex-col justify-center min-h-[350px]">
             <!-- Abstract Workflow Diagram -->
             <svg viewBox="0 0 600 280" class="w-full h-auto max-w-full" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
               <defs>
@@ -476,11 +467,11 @@
                   <path d="M 0 0 L 10 5 L 0 10 z" fill="#636E72"/>
                 </marker>
                 <marker id="arrow-terra" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto">
-                  <path d="M 0 0 L 10 5 L 0 10 z" fill="#1E3A5F"/>
+                  <path d="M 0 0 L 10 5 L 0 10 z" fill="#1F4E79"/>
                 </marker>
               </defs>
               <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
-                <circle cx="2" cy="2" r="1" fill="#2D3436" opacity="0.05" />
+                <circle cx="2" cy="2" r="1" fill="#17212B" opacity="0.05" />
               </pattern>
               <rect width="600" height="280" fill="url(#grid)" />
               <!-- BEFORE: The Manual Way -->
@@ -488,63 +479,63 @@
               <g transform="translate(10, 50)">
                 <circle cx="30" cy="25" r="14" fill="#ffffff" stroke="#636E72" stroke-width="1.5" stroke-dasharray="3 3" />
                 <path d="M 44 25 L 64 25" fill="none" stroke="#636E72" stroke-width="1.5" marker-end="url(#arrow-stone)"/>
-                <rect x="70" y="10" width="56" height="30" rx="2" fill="#ffffff" stroke="#2D3436" stroke-width="1.5" />
+                <rect x="70" y="10" width="56" height="30" rx="2" fill="#ffffff" stroke="#17212B" stroke-width="1.5" />
                 <text x="98" y="29" font-family="Inter, sans-serif" font-size="9" fill="#636E72" text-anchor="middle">Fill form</text>
                 <path d="M 126 25 L 146 25" fill="none" stroke="#636E72" stroke-width="1.5" marker-end="url(#arrow-stone)"/>
-                <rect x="152" y="10" width="56" height="30" rx="2" fill="#ffffff" stroke="#2D3436" stroke-width="1.5" />
+                <rect x="152" y="10" width="56" height="30" rx="2" fill="#ffffff" stroke="#17212B" stroke-width="1.5" />
                 <text x="180" y="29" font-family="Inter, sans-serif" font-size="9" fill="#636E72" text-anchor="middle">Check email</text>
                 <path d="M 208 25 L 228 25" fill="none" stroke="#636E72" stroke-width="1.5" marker-end="url(#arrow-stone)"/>
-                <rect x="234" y="10" width="64" height="30" rx="2" fill="#ffffff" stroke="#2D3436" stroke-width="1.5" />
+                <rect x="234" y="10" width="64" height="30" rx="2" fill="#ffffff" stroke="#17212B" stroke-width="1.5" />
                 <text x="266" y="22" font-family="Inter, sans-serif" font-size="9" fill="#636E72" text-anchor="middle">Copy to</text>
                 <text x="266" y="35" font-family="Inter, sans-serif" font-size="9" fill="#636E72" text-anchor="middle">CRM</text>
                 <path d="M 298 25 L 318 25" fill="none" stroke="#636E72" stroke-width="1.5" marker-end="url(#arrow-stone)"/>
-                <rect x="324" y="10" width="64" height="30" rx="2" fill="#ffffff" stroke="#2D3436" stroke-width="1.5" />
+                <rect x="324" y="10" width="64" height="30" rx="2" fill="#ffffff" stroke="#17212B" stroke-width="1.5" />
                 <text x="356" y="22" font-family="Inter, sans-serif" font-size="9" fill="#636E72" text-anchor="middle">Ping team</text>
                 <text x="356" y="35" font-family="Inter, sans-serif" font-size="9" fill="#636E72" text-anchor="middle">on Slack</text>
                 <path d="M 388 25 L 408 25" fill="none" stroke="#636E72" stroke-width="1.5" marker-end="url(#arrow-stone)"/>
-                <rect x="414" y="10" width="80" height="30" rx="2" fill="#2D3436" />
+                <rect x="414" y="10" width="80" height="30" rx="2" fill="#17212B" />
                 <text x="454" y="29" font-family="Inter, sans-serif" font-size="9" font-weight="600" fill="#ffffff" text-anchor="middle">Lead contacted</text>
                 <path d="M 70 50 L 70 55 L 388 55 L 388 50" fill="none" stroke="#636E72" stroke-width="1" opacity="0.4" />
                 <text x="229" y="70" font-family="Inter, sans-serif" font-size="10" font-style="italic" fill="#636E72" opacity="0.8" text-anchor="middle">4 manual steps · 25+ min each time</text>
               </g>
               <!-- Divider -->
-              <line x1="30" y1="145" x2="570" y2="145" stroke="#2D3436" stroke-width="1" stroke-dasharray="4 4" opacity="0.1"/>
+              <line x1="30" y1="145" x2="570" y2="145" stroke="#17212B" stroke-width="1" stroke-dasharray="4 4" opacity="0.1"/>
               <!-- AFTER: The Microve Way -->
-              <text x="30" y="178" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#1E3A5F" letter-spacing="2">WITH MICROVE</text>
+              <text x="30" y="178" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#1F4E79" letter-spacing="2">WITH MICROVE</text>
               <g transform="translate(10, 195)">
-                <circle cx="30" cy="25" r="14" fill="#ffffff" stroke="#1E3A5F" stroke-width="2" stroke-dasharray="3 3" />
-                <path d="M 44 25 L 64 25" fill="none" stroke="#1E3A5F" stroke-width="2" marker-end="url(#arrow-terra)"/>
-                <rect x="70" y="10" width="56" height="30" rx="2" fill="#ffffff" stroke="#2D3436" stroke-width="1.5" />
+                <circle cx="30" cy="25" r="14" fill="#ffffff" stroke="#1F4E79" stroke-width="2" stroke-dasharray="3 3" />
+                <path d="M 44 25 L 64 25" fill="none" stroke="#1F4E79" stroke-width="2" marker-end="url(#arrow-terra)"/>
+                <rect x="70" y="10" width="56" height="30" rx="2" fill="#ffffff" stroke="#17212B" stroke-width="1.5" />
                 <text x="98" y="29" font-family="Inter, sans-serif" font-size="9" fill="#636E72" text-anchor="middle">Fill form</text>
-                <path d="M 126 25 L 146 25" fill="none" stroke="#1E3A5F" stroke-width="2" marker-end="url(#arrow-terra)"/>
-                <rect x="152" y="2" width="180" height="46" rx="2" fill="#1E3A5F" />
-                <text x="242" y="18" font-family="Inter, sans-serif" font-size="9" font-weight="600" fill="#7A9E7E" text-anchor="middle">MICROVE AUTOMATES</text>
+                <path d="M 126 25 L 146 25" fill="none" stroke="#1F4E79" stroke-width="2" marker-end="url(#arrow-terra)"/>
+                <rect x="152" y="2" width="180" height="46" rx="2" fill="#1F4E79" />
+                <text x="242" y="18" font-family="Inter, sans-serif" font-size="9" font-weight="600" fill="#6C8261" text-anchor="middle">MICROVE AUTOMATES</text>
                 <text x="242" y="32" font-family="Inter, sans-serif" font-size="9" fill="rgba(255,255,255,0.8)" text-anchor="middle">CRM updated · Slack pinged</text>
                 <text x="242" y="44" font-family="Inter, sans-serif" font-size="9" fill="rgba(255,255,255,0.8)" text-anchor="middle">Follow-up scheduled</text>
-                <path d="M 332 25 L 352 25" fill="none" stroke="#1E3A5F" stroke-width="2" marker-end="url(#arrow-terra)"/>
-                <rect x="358" y="10" width="80" height="30" rx="2" fill="#1E3A5F" />
+                <path d="M 332 25 L 352 25" fill="none" stroke="#1F4E79" stroke-width="2" marker-end="url(#arrow-terra)"/>
+                <rect x="358" y="10" width="80" height="30" rx="2" fill="#1F4E79" />
                 <text x="398" y="29" font-family="Inter, sans-serif" font-size="9" font-weight="600" fill="#ffffff" text-anchor="middle">Lead contacted</text>
-                <rect x="446" y="10" width="80" height="30" rx="2" fill="#FAF9F7" stroke="#7A9E7E" stroke-width="1.5" />
-                <text x="486" y="29" font-family="Inter, sans-serif" font-size="9" font-weight="600" fill="#7A9E7E" text-anchor="middle">+ Time saved</text>
+                <rect x="446" y="10" width="80" height="30" rx="2" fill="#F4F1E8" stroke="#6C8261" stroke-width="1.5" />
+                <text x="486" y="29" font-family="Inter, sans-serif" font-size="9" font-weight="600" fill="#6C8261" text-anchor="middle">+ Time saved</text>
               </g>
               <g transform="translate(10, 0)">
-                <line x1="430" y1="88" x2="430" y2="218" stroke="#7A9E7E" stroke-width="1.5" stroke-dasharray="4 4" opacity="0.4"/>
-                <text x="438" y="155" font-family="Inter, sans-serif" font-size="9" font-style="italic" fill="#7A9E7E" opacity="0.9" text-anchor="start">Runs in</text>
-                <text x="438" y="167" font-family="Inter, sans-serif" font-size="9" font-style="italic" fill="#7A9E7E" opacity="0.9" text-anchor="start">seconds</text>
+                <line x1="430" y1="88" x2="430" y2="218" stroke="#6C8261" stroke-width="1.5" stroke-dasharray="4 4" opacity="0.4"/>
+                <text x="438" y="155" font-family="Inter, sans-serif" font-size="9" font-style="italic" fill="#6C8261" opacity="0.9" text-anchor="start">Runs in</text>
+                <text x="438" y="167" font-family="Inter, sans-serif" font-size="9" font-style="italic" fill="#6C8261" opacity="0.9" text-anchor="start">seconds</text>
               </g>
             </svg>
           </div>
           <div class="grid grid-cols-3 gap-4 max-w-xl mx-auto">
             <div class="text-center">
-              <p class="text-2xl font-bold text-[#1E3A5F]">Capture</p>
+              <p class="text-2xl font-bold text-[#1F4E79]">Capture</p>
               <p class="text-stone text-xs mt-1">new requests automatically</p>
             </div>
             <div class="text-center">
-              <p class="text-2xl font-bold text-[#1E3A5F]">Route</p>
+              <p class="text-2xl font-bold text-[#1F4E79]">Route</p>
               <p class="text-stone text-xs mt-1">to the right person instantly</p>
             </div>
             <div class="text-center">
-              <p class="text-2xl font-bold text-[#1E3A5F]">Sync</p>
+              <p class="text-2xl font-bold text-[#1F4E79]">Sync</p>
               <p class="text-stone text-xs mt-1">records across all your tools</p>
             </div>
           </div>
@@ -555,21 +546,21 @@
 
     <!-- ── HOW IT WORKS ── -->
     <div class="max-w-5xl mx-auto px-6 pb-4">
-      <p class="section-label text-[#1E3A5F]/50 text-xs tracking-widest">How it works</p>
+      <p class="section-label text-[#1F4E79]/50 text-xs tracking-widest">How it works</p>
     </div>
 
     <section class="max-w-5xl mx-auto px-6 pb-16">
       <div class="mb-14">
-        <h2 class="font-sans text-4xl md:text-5xl font-bold mb-3 tight-tracking text-[#1E3A5F]">Every solution is custom-built</h2>
+        <h2 class="font-sans text-4xl md:text-5xl font-bold mb-3 tight-tracking text-[#1F4E79]">Every solution is custom-built</h2>
         <p class="text-stone text-lg">No templates. We design around your specific bottlenecks.</p>
       </div>
 
       <!-- Desktop: Horizontal timeline -->
       <div class="hidden md:block relative">
-        <div class="absolute top-[52px] left-[calc(12.5%+28px)] right-[calc(12.5%+28px)] h-0.5 bg-gradient-to-r from-[#1E3A5F]/20 via-[#1E3A5F]/40 to-[#7A9E7E]"></div>
+        <div class="absolute top-[52px] left-[calc(12.5%+28px)] right-[calc(12.5%+28px)] h-0.5 bg-gradient-to-r from-[#1F4E79]/20 via-[#1F4E79]/40 to-[#6C8261]"></div>
         <div class="grid grid-cols-4 gap-6">
           <div class="relative flex flex-col items-center text-center group">
-            <div class="w-14 h-14 rounded-sm bg-[#1E3A5F] flex items-center justify-center mb-5 relative z-10">
+            <div class="w-14 h-14 rounded-sm bg-[#1F4E79] flex items-center justify-center mb-5 relative z-10">
               <svg class="w-7 h-7 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z"/><path d="M19 10v2a7 7 0 01-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/></svg>
             </div>
             <div class="bg-white rounded-sm p-5 border border-stone/10 w-full">
@@ -579,7 +570,7 @@
             </div>
           </div>
           <div class="relative flex flex-col items-center text-center group">
-            <div class="w-14 h-14 rounded-sm bg-[#1E3A5F] flex items-center justify-center mb-5 relative z-10">
+            <div class="w-14 h-14 rounded-sm bg-[#1F4E79] flex items-center justify-center mb-5 relative z-10">
               <svg class="w-7 h-7 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><path d="M8 11l2 2 4-4"/></svg>
             </div>
             <div class="bg-white rounded-sm p-5 border border-stone/10 w-full">
@@ -589,7 +580,7 @@
             </div>
           </div>
           <div class="relative flex flex-col items-center text-center group">
-            <div class="w-14 h-14 rounded-sm bg-[#1E3A5F] flex items-center justify-center mb-5 relative z-10">
+            <div class="w-14 h-14 rounded-sm bg-[#1F4E79] flex items-center justify-center mb-5 relative z-10">
               <svg class="w-7 h-7 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
             </div>
             <div class="bg-white rounded-sm p-5 border border-stone/10 w-full">
@@ -599,11 +590,11 @@
             </div>
           </div>
           <div class="relative flex flex-col items-center text-center group">
-            <div class="w-14 h-14 rounded-sm bg-[#7A9E7E] flex items-center justify-center mb-5 relative z-10">
+            <div class="w-14 h-14 rounded-sm bg-[#6C8261] flex items-center justify-center mb-5 relative z-10">
               <svg class="w-7 h-7 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
             </div>
             <div class="bg-white rounded-sm p-5 border border-stone/10 w-full">
-              <span class="section-label text-xs text-[#7A9E7E]/60">Step 4</span>
+              <span class="section-label text-xs text-[#6C8261]/60">Step 4</span>
               <h3 class="font-semibold text-lg text-charcoal mt-1 mb-2">We implement</h3>
               <p class="text-stone text-sm leading-relaxed">Deployed inside your workflow. Impact visible in your calendar and P&L.</p>
             </div>
@@ -613,10 +604,10 @@
 
       <!-- Mobile: Vertical timeline -->
       <div class="md:hidden relative pl-10">
-        <div class="absolute left-[27px] top-7 bottom-7 w-0.5 bg-gradient-to-b from-[#1E3A5F]/20 via-[#1E3A5F]/40 to-[#7A9E7E]"></div>
+        <div class="absolute left-[27px] top-7 bottom-7 w-0.5 bg-gradient-to-b from-[#1F4E79]/20 via-[#1F4E79]/40 to-[#6C8261]"></div>
         <div class="space-y-8">
           <div class="relative">
-            <div class="absolute -left-10 top-0 w-12 h-12 rounded-sm bg-[#1E3A5F] flex items-center justify-center z-10">
+            <div class="absolute -left-10 top-0 w-12 h-12 rounded-sm bg-[#1F4E79] flex items-center justify-center z-10">
               <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z"/><path d="M19 10v2a7 7 0 01-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/></svg>
             </div>
             <div class="bg-white rounded-sm p-5 border border-stone/10 ml-4">
@@ -626,7 +617,7 @@
             </div>
           </div>
           <div class="relative">
-            <div class="absolute -left-10 top-0 w-12 h-12 rounded-sm bg-[#1E3A5F] flex items-center justify-center z-10">
+            <div class="absolute -left-10 top-0 w-12 h-12 rounded-sm bg-[#1F4E79] flex items-center justify-center z-10">
               <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><path d="M8 11l2 2 4-4"/></svg>
             </div>
             <div class="bg-white rounded-sm p-5 border border-stone/10 ml-4">
@@ -636,7 +627,7 @@
             </div>
           </div>
           <div class="relative">
-            <div class="absolute -left-10 top-0 w-12 h-12 rounded-sm bg-[#1E3A5F] flex items-center justify-center z-10">
+            <div class="absolute -left-10 top-0 w-12 h-12 rounded-sm bg-[#1F4E79] flex items-center justify-center z-10">
               <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
             </div>
             <div class="bg-white rounded-sm p-5 border border-stone/10 ml-4">
@@ -646,65 +637,14 @@
             </div>
           </div>
           <div class="relative">
-            <div class="absolute -left-10 top-0 w-12 h-12 rounded-sm bg-[#7A9E7E] flex items-center justify-center z-10">
+            <div class="absolute -left-10 top-0 w-12 h-12 rounded-sm bg-[#6C8261] flex items-center justify-center z-10">
               <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
             </div>
             <div class="bg-white rounded-sm p-5 border border-stone/10 ml-4">
-              <span class="section-label text-xs text-[#7A9E7E]/60">Step 4</span>
+              <span class="section-label text-xs text-[#6C8261]/60">Step 4</span>
               <h3 class="font-semibold text-lg text-charcoal mt-1 mb-1">We implement</h3>
               <p class="text-stone text-sm">Deployed inside your workflow. Impact visible in your calendar and P&L.</p>
             </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Mid-page soft CTA -->
-      <div class="mt-10 flex flex-col sm:flex-row items-center justify-between gap-4 bg-white border border-stone/15 rounded-sm p-6">
-        <p class="text-charcoal font-medium">Have a specific workflow in mind?</p>
-        <a href="contact.html" class="shrink-0 inline-flex items-center gap-2 text-[#E07A5F] font-semibold hover:gap-3 transition-all">
-          Describe it to us — no pitch, no obligation
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-        </a>
-      </div>
-    </section>
-
-    <!-- ── WHY IT'S URGENT NOW ── -->
-    <section class="max-w-5xl mx-auto px-6 pb-16">
-      <div class="bg-[#1E3A5F] text-white rounded-sm p-10 md:p-14 relative overflow-hidden">
-        <div class="relative z-10">
-          <p class="section-label text-white/40 text-xs tracking-widest mb-6">Why it's urgent now</p>
-          <h2 class="font-sans text-4xl md:text-5xl font-bold mb-6 tight-tracking">
-            You've used ChatGPT.<br>So has everyone else.<br><span class="text-white/70">That's not a strategy.</span>
-          </h2>
-          <div class="mb-8">
-            <p class="text-lg leading-relaxed text-white/90 mb-4">Everyone's tried AI. But <strong>using AI as an encyclopedia is not the same as deploying it inside your operations.</strong> That gap — between playing with AI and actually putting it to work — is where most businesses are stuck.</p>
-            <p class="text-white/80 leading-relaxed text-lg">Most AI companies sell the dream of eliminating 90% of your workforce. <span class="bg-white/20 px-2 py-1 font-semibold rounded-sm">We don't sell dreams. We build practical tools that save hours and create revenue.</span></p>
-          </div>
-          <div class="grid md:grid-cols-2 gap-4 mb-10">
-            <div class="bg-white/10 rounded-sm p-5 border border-white/20">
-              <div class="w-8 h-8 rounded-sm bg-white/20 flex items-center justify-center mb-3"><span class="font-bold text-sm">1</span></div>
-              <p class="text-white/90 leading-relaxed"><strong>The hype:</strong> AI companies promise to replace your workforce with one magic platform that does everything</p>
-            </div>
-            <div class="bg-white/10 rounded-sm p-5 border border-white/20">
-              <div class="w-8 h-8 rounded-sm bg-white/20 flex items-center justify-center mb-3"><span class="font-bold text-sm">2</span></div>
-              <p class="text-white/90 leading-relaxed"><strong>The chatbot gap:</strong> Using AI to answer questions is not the same as deploying it inside your actual operations</p>
-            </div>
-            <div class="bg-white/10 rounded-sm p-5 border border-white/20">
-              <div class="w-8 h-8 rounded-sm bg-white/20 flex items-center justify-center mb-3"><span class="font-bold text-sm">3</span></div>
-              <p class="text-white/90 leading-relaxed"><strong>The platform trap:</strong> Automation platforms promise easy setup — but the easy ones hit hard limits, and the complex ones still need deep expertise to deliver what you actually need</p>
-            </div>
-            <div class="bg-white/10 rounded-sm p-5 border border-white/30 border-2">
-              <div class="w-8 h-8 rounded-sm bg-white/30 flex items-center justify-center mb-3"><span class="font-bold text-sm">4</span></div>
-              <p class="text-white leading-relaxed"><strong>What actually works:</strong> Custom micro-tools — built around your specific problems — using AI, rule-based automation, or both</p>
-            </div>
-          </div>
-          <p class="text-3xl md:text-5xl font-bold text-white mb-8">"We fit tools to your problems.<br>We never fit your problems into tools."</p>
-          <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4">
-            <a href="contact.html" class="inline-flex items-center gap-2 bg-[#E07A5F] text-white px-8 py-4 rounded-sm font-bold hover:bg-[#C96A4F] transition-colors duration-200">
-              Describe your worst workflow to us
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-            </a>
-            <span class="text-white/50 text-sm">No pitch, no obligation — we'll tell you if we can fix it</span>
           </div>
         </div>
       </div>

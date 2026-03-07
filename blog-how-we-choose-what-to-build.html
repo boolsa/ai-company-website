@@ -14,8 +14,8 @@
       theme: {
         extend: {
           colors: {
-            terracotta: '#1E3A5F', sage: '#7A9E7E', coral: '#E07A5F',
-            cream: '#FAF9F7', charcoal: '#2D3436', stone: '#636E72'
+            terracotta: '#1F4E79', sage: '#6C8261', coral: '#C96B3B',
+            cream: '#F4F1E8', charcoal: '#17212B', stone: '#636E72'
           },
           fontFamily: { sans: ['Inter', 'sans-serif'], mono: ['JetBrains Mono', 'monospace'] }
         }
@@ -25,49 +25,49 @@
   <style>
     html { scroll-behavior: smooth; }
     .text-stone { color: #636E72; }
-    .text-charcoal { color: #2D3436; }
-    a:focus-visible, button:focus-visible { outline: 2px solid #1E3A5F; outline-offset: 2px; }
+    .text-charcoal { color: #17212B; }
+    a:focus-visible, button:focus-visible { outline: 2px solid #1F4E79; outline-offset: 2px; }
     :focus:not(:focus-visible) { outline: none; }
-    :root { --color-coral: #E07A5F; --color-navy: #1E3A5F; --color-cream: #FAF9F7; }
+    :root { --color-coral: #C96B3B; --color-navy: #1F4E79; --color-cream: #F4F1E8; }
     @media (hover: none) and (pointer: coarse) { a, button { min-height: 44px; min-width: 44px; } }
     .section-label { font-family: 'JetBrains Mono', monospace; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; }
     .tight-tracking { letter-spacing: -0.02em; }
-    body { position: relative; overflow-x: hidden; background-color: #FAF9F7 !important; background-image: radial-gradient(circle, rgba(30, 58, 95, 0.18) 1.5px, transparent 1.5px) !important; background-size: 28px 28px !important; }
-    #site-nav { background-color: #FAF9F7; border-bottom: 1px solid rgba(99, 110, 114, 0.15); transition: box-shadow 0.25s ease, border-color 0.25s ease; }
-    #site-nav.nav-scrolled { box-shadow: 0 1px 16px rgba(30, 58, 95, 0.08), 0 1px 3px rgba(30, 58, 95, 0.06); border-bottom-color: rgba(99, 110, 114, 0.22); }
+    body { position: relative; overflow-x: hidden; background-color: #F4F1E8 !important; background-image: radial-gradient(circle, rgba(31, 78, 121, 0.18) 1.5px, transparent 1.5px) !important; background-size: 28px 28px !important; }
+    #site-nav { background-color: #F4F1E8; border-bottom: 1px solid rgba(99, 110, 114, 0.15); transition: box-shadow 0.25s ease, border-color 0.25s ease; }
+    #site-nav.nav-scrolled { box-shadow: 0 1px 16px rgba(31, 78, 121, 0.08), 0 1px 3px rgba(31, 78, 121, 0.06); border-bottom-color: rgba(99, 110, 114, 0.22); }
     #site-nav .nav-inner { transition: padding-top 0.25s ease, padding-bottom 0.25s ease; }
     #site-nav.nav-scrolled .nav-inner { padding-top: 0.625rem; padding-bottom: 0.625rem; }
-    .nav-logo { font-family: 'Inter', sans-serif; font-size: 1.5rem; font-weight: 700; color: #1E3A5F; letter-spacing: -0.03em; line-height: 1; display: flex; align-items: baseline; text-decoration: none; }
+    .nav-logo { font-family: 'Inter', sans-serif; font-size: 1.5rem; font-weight: 700; color: #1F4E79; letter-spacing: -0.03em; line-height: 1; display: flex; align-items: baseline; text-decoration: none; }
     .nav-logo-tld { font-family: 'JetBrains Mono', monospace; font-size: 0.6875rem; font-weight: 500; color: #636E72; margin-left: 1px; position: relative; top: -5px; }
     .nav-link { position: relative; font-size: 0.8125rem; font-weight: 500; color: #636E72; text-decoration: none; padding-bottom: 2px; transition: color 0.18s ease; }
-    .nav-link::after { content: ''; position: absolute; bottom: -2px; left: 0; right: 0; height: 2px; background-color: #E07A5F; border-radius: 2px; transform: scaleX(0); transform-origin: left center; transition: transform 0.2s ease; }
-    .nav-link:hover { color: #1E3A5F; }
+    .nav-link::after { content: ''; position: absolute; bottom: -2px; left: 0; right: 0; height: 2px; background-color: #C96B3B; border-radius: 2px; transform: scaleX(0); transform-origin: left center; transition: transform 0.2s ease; }
+    .nav-link:hover { color: #1F4E79; }
     .nav-link:hover::after { transform: scaleX(1); }
-    .nav-link.active { color: #1E3A5F; font-weight: 600; }
+    .nav-link.active { color: #1F4E79; font-weight: 600; }
     .nav-link.active::after { transform: scaleX(1); }
-    .nav-cta { display: inline-flex; align-items: center; gap: 6px; background-color: #E07A5F; color: #fff; font-size: 0.8125rem; font-weight: 600; padding: 0.45rem 1rem; border-radius: 9999px; text-decoration: none; box-shadow: 0 1px 4px rgba(224, 122, 95, 0.35); transition: background-color 0.18s ease, box-shadow 0.18s ease, transform 0.15s ease; }
-    .nav-cta:hover { background-color: #C96A4F; box-shadow: 0 3px 10px rgba(224, 122, 95, 0.4); transform: translateY(-1px); }
+    .nav-cta { display: inline-flex; align-items: center; gap: 6px; background-color: #C96B3B; color: #fff; font-size: 0.8125rem; font-weight: 600; padding: 0.45rem 1rem; border-radius: 9999px; text-decoration: none; box-shadow: 0 1px 4px rgba(201, 107, 59, 0.35); transition: background-color 0.18s ease, box-shadow 0.18s ease, transform 0.15s ease; }
+    .nav-cta:hover { background-color: #A6552B; box-shadow: 0 3px 10px rgba(201, 107, 59, 0.4); transform: translateY(-1px); }
     .nav-cta:active { transform: translateY(0); }
-    #mobileMenu { overflow: hidden; max-height: 0; transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.25s ease; opacity: 0; border-top: 1px solid rgba(99, 110, 114, 0.1); background-color: #FAF9F7; }
+    #mobileMenu { overflow: hidden; max-height: 0; transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.25s ease; opacity: 0; border-top: 1px solid rgba(99, 110, 114, 0.1); background-color: #F4F1E8; }
     #mobileMenu.open { max-height: 480px; opacity: 1; }
     .mobile-nav-link { display: flex; align-items: center; padding: 0.75rem 1rem; border-radius: 6px; font-size: 0.9375rem; font-weight: 500; color: #636E72; text-decoration: none; min-height: 44px; transition: color 0.15s ease, background-color 0.15s ease; border-left: 2px solid transparent; }
-    .mobile-nav-link:hover { color: #1E3A5F; background-color: rgba(30, 58, 95, 0.04); }
-    .mobile-nav-link.active { color: #1E3A5F; font-weight: 600; background-color: rgba(30, 58, 95, 0.05); border-left-color: #E07A5F; }
-    .mobile-nav-cta { display: flex; align-items: center; justify-content: center; padding: 0.75rem 1rem; border-radius: 9999px; font-size: 0.9375rem; font-weight: 600; color: #fff; background-color: #E07A5F; text-decoration: none; min-height: 44px; transition: background-color 0.15s ease; }
-    .mobile-nav-cta:hover { background-color: #C96A4F; }
-    .hamburger-line { display: block; width: 20px; height: 1.75px; background-color: #1E3A5F; border-radius: 2px; transition: transform 0.25s ease, opacity 0.2s ease; transform-origin: center; }
+    .mobile-nav-link:hover { color: #1F4E79; background-color: rgba(31, 78, 121, 0.04); }
+    .mobile-nav-link.active { color: #1F4E79; font-weight: 600; background-color: rgba(31, 78, 121, 0.05); border-left-color: #C96B3B; }
+    .mobile-nav-cta { display: flex; align-items: center; justify-content: center; padding: 0.75rem 1rem; border-radius: 9999px; font-size: 0.9375rem; font-weight: 600; color: #fff; background-color: #C96B3B; text-decoration: none; min-height: 44px; transition: background-color 0.15s ease; }
+    .mobile-nav-cta:hover { background-color: #A6552B; }
+    .hamburger-line { display: block; width: 20px; height: 1.75px; background-color: #1F4E79; border-radius: 2px; transition: transform 0.25s ease, opacity 0.2s ease; transform-origin: center; }
     #mobileMenuBtn[aria-expanded="true"] .hamburger-line:nth-child(1) { transform: translateY(5.75px) rotate(45deg); }
     #mobileMenuBtn[aria-expanded="true"] .hamburger-line:nth-child(2) { opacity: 0; transform: scaleX(0); }
     #mobileMenuBtn[aria-expanded="true"] .hamburger-line:nth-child(3) { transform: translateY(-5.75px) rotate(-45deg); }
     .prose { max-width: 65ch; }
     .prose p { margin-bottom: 1.25rem; line-height: 1.75; }
-    .prose h2 { margin-top: 2rem; margin-bottom: 1rem; font-size: 1.5rem; font-weight: 700; color: #1E3A5F; }
+    .prose h2 { margin-top: 2rem; margin-bottom: 1rem; font-size: 1.5rem; font-weight: 700; color: #1F4E79; }
     .prose ul { margin-bottom: 1.25rem; }
     .prose li { margin-bottom: 0.5rem; line-height: 1.75; }
   </style>
 </head>
 <body class="text-charcoal antialiased">
-  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-[#1E3A5F] focus:text-white focus:px-4 focus:py-2 focus:rounded-sm focus:font-semibold">Skip to main content</a>
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-[#1F4E79] focus:text-white focus:px-4 focus:py-2 focus:rounded-sm focus:font-semibold">Skip to main content</a>
 
   <nav id="site-nav" class="sticky top-0 z-40" role="navigation" aria-label="Main navigation">
     <div class="nav-inner max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
@@ -78,12 +78,9 @@
         <a href="cases.html" class="nav-link">Cases</a>
         <a href="blog.html" class="nav-link active">Blog</a>
         <a href="about.html" class="nav-link">About</a>
-        <a href="contact.html" class="nav-cta" aria-label="Book a call with Microve.ai">
-          Book a Call
-          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2.5 6h7M6.5 3l3 3-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
+        <a href="contact.html" class="nav-link">Contact</a>
       </div>
-      <button id="mobileMenuBtn" class="md:hidden flex flex-col justify-center gap-[4.5px] w-9 h-9 -mr-1 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1E3A5F] focus:ring-offset-2" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileMenu">
+      <button id="mobileMenuBtn" class="md:hidden flex flex-col justify-center gap-[4.5px] w-9 h-9 -mr-1 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1F4E79] focus:ring-offset-2" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileMenu">
         <span class="hamburger-line"></span>
         <span class="hamburger-line"></span>
         <span class="hamburger-line"></span>
@@ -96,7 +93,7 @@
         <a href="cases.html" class="mobile-nav-link">Cases</a>
         <a href="blog.html" class="mobile-nav-link active">Blog</a>
         <a href="about.html" class="mobile-nav-link">About</a>
-        <div class="pt-2 pb-1"><a href="contact.html" class="mobile-nav-cta">Book a Call</a></div>
+        <a href="contact.html" class="mobile-nav-link">Contact</a>
       </div>
     </div>
     <script>
@@ -129,11 +126,9 @@
     <article>
       <header class="mb-10">
         <div class="flex items-center gap-3 mb-4">
-          <span class="text-xs font-mono text-stone/60 tracking-wider">JANUARY 2026</span>
-          <span class="text-stone/30">·</span>
-          <span class="text-xs text-[#E07A5F] font-medium">Methodology</span>
+          <span class="text-xs font-mono text-[#C96B3B] tracking-wider uppercase">Methodology</span>
         </div>
-        <h1 class="font-sans text-4xl md:text-5xl font-bold tight-tracking text-[#1E3A5F] mb-6">The Right Tool for the Right Bottleneck</h1>
+        <h1 class="font-sans text-4xl md:text-5xl font-bold tight-tracking text-[#1F4E79] mb-6">The Right Tool for the Right Bottleneck</h1>
       </header>
 
       <div class="prose text-stone">
@@ -142,16 +137,16 @@
         </p>
 
         <div class="grid md:grid-cols-3 gap-4 my-8 not-prose">
-          <div class="p-4 bg-[#1E3A5F]/5 rounded-sm text-center">
-            <h3 class="font-semibold text-[#1E3A5F] mb-1">Rules-Based</h3>
+          <div class="p-4 bg-[#1F4E79]/5 rounded-sm text-center">
+            <h3 class="font-semibold text-[#1F4E79] mb-1">Rules-Based</h3>
             <p class="text-sm text-stone mb-0">Predictable & cost-effective</p>
           </div>
-          <div class="p-4 bg-[#E07A5F]/10 rounded-sm text-center">
-            <h3 class="font-semibold text-[#1E3A5F] mb-1">AI Automation</h3>
+          <div class="p-4 bg-[#C96B3B]/10 rounded-sm text-center">
+            <h3 class="font-semibold text-[#1F4E79] mb-1">AI Automation</h3>
             <p class="text-sm text-stone mb-0">Adaptive & intelligent</p>
           </div>
-          <div class="p-4 bg-[#7A9E7E]/10 rounded-sm text-center">
-            <h3 class="font-semibold text-[#1E3A5F] mb-1">Measurable Results</h3>
+          <div class="p-4 bg-[#6C8261]/10 rounded-sm text-center">
+            <h3 class="font-semibold text-[#1F4E79] mb-1">Measurable Results</h3>
             <p class="text-sm text-stone mb-0">Cost savings & growth</p>
           </div>
         </div>
@@ -163,7 +158,7 @@
           <li><strong>Reliable outcomes.</strong> No surprises. The automation does exactly what you programmed it to do, every single time.</li>
         </ul>
         
-        <div class="bg-[#1E3A5F]/5 border-l-4 border-[#E07A5F] p-4 rounded-r-sm my-6">
+        <div class="bg-[#1F4E79]/5 border-l-4 border-[#C96B3B] p-4 rounded-r-sm my-6">
           <p class="text-sm mb-0"><strong>Example:</strong> New client signs contract → folder auto-created in Drive, Slack notification sent, task added to Asana.</p>
         </div>
 
@@ -174,7 +169,7 @@
           <li><strong>Natural language understanding.</strong> When inputs are unstructured—emails, documents, customer messages—that need interpretation.</li>
         </ul>
 
-        <div class="bg-[#1E3A5F]/5 border-l-4 border-[#E07A5F] p-4 rounded-r-sm my-6">
+        <div class="bg-[#1F4E79]/5 border-l-4 border-[#C96B3B] p-4 rounded-r-sm my-6">
           <p class="text-sm mb-0"><strong>Example:</strong> Customer email arrives → AI reads sentiment, drafts personalized response, routes to the right team member.</p>
         </div>
 
@@ -198,17 +193,17 @@
       </div>
 
       <div class="mt-10">
-        <h2 class="font-sans text-2xl font-bold text-[#1E3A5F] mb-6">The results</h2>
+        <h2 class="font-sans text-2xl font-bold text-[#1F4E79] mb-6">The results</h2>
         <div class="grid md:grid-cols-3 gap-5">
-          <div class="p-5 bg-gradient-to-br from-[#1E3A5F] to-[#2a4a73] text-white rounded-sm">
+          <div class="p-5 bg-gradient-to-br from-[#1F4E79] to-[#2a4a73] text-white rounded-sm">
             <h4 class="font-semibold mb-2">Cost Savings</h4>
             <p class="text-sm opacity-90 mb-0">Automations typically pay for themselves within weeks by eliminating hours of manual work.</p>
           </div>
-          <div class="p-5 bg-gradient-to-br from-[#7A9E7E] to-[#5c7d60] text-white rounded-sm">
+          <div class="p-5 bg-gradient-to-br from-[#6C8261] to-[#5c7d60] text-white rounded-sm">
             <h4 class="font-semibold mb-2">Productivity Gains</h4>
             <p class="text-sm opacity-90 mb-0">Your team stops doing grunt work and focuses on strategy, relationships, and growth.</p>
           </div>
-          <div class="p-5 bg-gradient-to-br from-[#E07A5F] to-[#C96A4F] text-white rounded-sm">
+          <div class="p-5 bg-gradient-to-br from-[#C96B3B] to-[#A6552B] text-white rounded-sm">
             <h4 class="font-semibold mb-2">Revenue Impact</h4>
             <p class="text-sm opacity-90 mb-0">Faster response times, fewer errors, and scalable operations mean more closed deals.</p>
           </div>
@@ -217,7 +212,7 @@
     </article>
 
     <div class="mt-16 pt-8 border-t border-stone/15">
-      <a href="blog.html" class="inline-flex items-center gap-2 text-[#1E3A5F] font-semibold hover:text-[#E07A5F] transition-colors">
+      <a href="blog.html" class="inline-flex items-center gap-2 text-[#1F4E79] font-semibold hover:text-[#C96B3B] transition-colors">
         <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 16l-4-4m0 0l4-4m-4 4h18"/></svg>
         Back to all posts
       </a>

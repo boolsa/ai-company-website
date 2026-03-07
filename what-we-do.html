@@ -14,11 +14,11 @@
       theme: {
         extend: {
           colors: {
-            terracotta: '#1E3A5F',
-            sage: '#7A9E7E',
-            coral: '#E07A5F',
-            cream: '#FAF9F7',
-            charcoal: '#2D3436',
+            terracotta: '#1F4E79',
+            sage: '#6C8261',
+            coral: '#C96B3B',
+            cream: '#F4F1E8',
+            charcoal: '#17212B',
             stone: '#636E72'
           },
           fontFamily: {
@@ -37,22 +37,22 @@
       color: #636E72;
     }
     .bg-cream {
-      background-color: #FAF9F7;
+      background-color: #F4F1E8;
     }
     .text-charcoal {
-      color: #2D3436;
+      color: #17212B;
     }
     a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
-      outline: 2px solid #1E3A5F;
+      outline: 2px solid #1F4E79;
       outline-offset: 2px;
     }
     :focus:not(:focus-visible) {
       outline: none;
     }
     :root {
-      --color-coral: #E07A5F;
-      --color-navy: #1E3A5F;
-      --color-cream: #FAF9F7;
+      --color-coral: #C96B3B;
+      --color-navy: #1F4E79;
+      --color-cream: #F4F1E8;
     }
     @media (hover: none) and (pointer: coarse) {
       a, button {
@@ -61,7 +61,7 @@
       }
     }
     .text-highlight {
-      background: linear-gradient(180deg, transparent 60%, rgba(224, 122, 95, 0.25) 60%);
+      background: linear-gradient(180deg, transparent 60%, rgba(201, 107, 59, 0.25) 60%);
       padding: 0 0.25rem;
       font-weight: 600;
     }
@@ -79,9 +79,9 @@
     body {
       position: relative;
       overflow-x: hidden;
-      background-color: #FAF9F7 !important;
+      background-color: #F4F1E8 !important;
       background-image:
-        radial-gradient(circle, rgba(30, 58, 95, 0.18) 1.5px, transparent 1.5px) !important;
+        radial-gradient(circle, rgba(31, 78, 121, 0.18) 1.5px, transparent 1.5px) !important;
       background-size: 28px 28px !important;
     }
 
@@ -93,12 +93,12 @@
 
     /* ── Nav ── */
     #site-nav {
-      background-color: #FAF9F7;
+      background-color: #F4F1E8;
       border-bottom: 1px solid rgba(99, 110, 114, 0.15);
       transition: box-shadow 0.25s ease, border-color 0.25s ease;
     }
     #site-nav.nav-scrolled {
-      box-shadow: 0 1px 16px rgba(30, 58, 95, 0.08), 0 1px 3px rgba(30, 58, 95, 0.06);
+      box-shadow: 0 1px 16px rgba(31, 78, 121, 0.08), 0 1px 3px rgba(31, 78, 121, 0.06);
       border-bottom-color: rgba(99, 110, 114, 0.22);
     }
     #site-nav .nav-inner {
@@ -114,7 +114,7 @@
       font-family: 'Inter', sans-serif;
       font-size: 1.5rem;
       font-weight: 700;
-      color: #1E3A5F;
+      color: #1F4E79;
       letter-spacing: -0.03em;
       line-height: 1;
       display: flex;
@@ -150,20 +150,20 @@
       left: 0;
       right: 0;
       height: 2px;
-      background-color: #E07A5F;
+      background-color: #C96B3B;
       border-radius: 2px;
       transform: scaleX(0);
       transform-origin: left center;
       transition: transform 0.2s ease;
     }
     .nav-link:hover {
-      color: #1E3A5F;
+      color: #1F4E79;
     }
     .nav-link:hover::after {
       transform: scaleX(1);
     }
     .nav-link.active {
-      color: #1E3A5F;
+      color: #1F4E79;
       font-weight: 600;
     }
     .nav-link.active::after {
@@ -175,24 +175,24 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      background-color: #E07A5F;
+      background-color: #C96B3B;
       color: #fff;
       font-size: 0.8125rem;
       font-weight: 600;
       padding: 0.45rem 1rem;
       border-radius: 9999px;
       text-decoration: none;
-      box-shadow: 0 1px 4px rgba(224, 122, 95, 0.35);
+      box-shadow: 0 1px 4px rgba(201, 107, 59, 0.35);
       transition: background-color 0.18s ease, box-shadow 0.18s ease, transform 0.15s ease;
     }
     .nav-cta:hover {
-      background-color: #C96A4F;
-      box-shadow: 0 3px 10px rgba(224, 122, 95, 0.4);
+      background-color: #A6552B;
+      box-shadow: 0 3px 10px rgba(201, 107, 59, 0.4);
       transform: translateY(-1px);
     }
     .nav-cta:active {
       transform: translateY(0);
-      box-shadow: 0 1px 4px rgba(224, 122, 95, 0.3);
+      box-shadow: 0 1px 4px rgba(201, 107, 59, 0.3);
     }
 
     /* Mobile menu */
@@ -203,7 +203,7 @@
                   opacity 0.25s ease;
       opacity: 0;
       border-top: 1px solid rgba(99, 110, 114, 0.1);
-      background-color: #FAF9F7;
+      background-color: #F4F1E8;
     }
     #mobileMenu.open {
       max-height: 480px;
@@ -223,14 +223,14 @@
       border-left: 2px solid transparent;
     }
     .mobile-nav-link:hover {
-      color: #1E3A5F;
-      background-color: rgba(30, 58, 95, 0.04);
+      color: #1F4E79;
+      background-color: rgba(31, 78, 121, 0.04);
     }
     .mobile-nav-link.active {
-      color: #1E3A5F;
+      color: #1F4E79;
       font-weight: 600;
-      background-color: rgba(30, 58, 95, 0.05);
-      border-left-color: #E07A5F;
+      background-color: rgba(31, 78, 121, 0.05);
+      border-left-color: #C96B3B;
     }
     .mobile-nav-cta {
       display: flex;
@@ -241,14 +241,14 @@
       font-size: 0.9375rem;
       font-weight: 600;
       color: #fff;
-      background-color: #E07A5F;
+      background-color: #C96B3B;
       text-decoration: none;
       min-height: 44px;
-      box-shadow: 0 1px 4px rgba(224, 122, 95, 0.3);
+      box-shadow: 0 1px 4px rgba(201, 107, 59, 0.3);
       transition: background-color 0.15s ease;
     }
     .mobile-nav-cta:hover {
-      background-color: #C96A4F;
+      background-color: #A6552B;
     }
 
     /* Hamburger morph */
@@ -256,7 +256,7 @@
       display: block;
       width: 20px;
       height: 1.75px;
-      background-color: #1E3A5F;
+      background-color: #1F4E79;
       border-radius: 2px;
       transition: transform 0.25s ease, opacity 0.2s ease;
       transform-origin: center;
@@ -274,7 +274,7 @@
   </style>
 </head>
 <body class="text-charcoal antialiased">
-  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-[#1E3A5F] focus:text-white focus:px-4 focus:py-2 focus:rounded-sm focus:font-semibold">
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-[#1F4E79] focus:text-white focus:px-4 focus:py-2 focus:rounded-sm focus:font-semibold">
     Skip to main content
   </a>
 
@@ -293,17 +293,12 @@
         <a href="cases.html" class="nav-link">Cases</a>
         <a href="blog.html" class="nav-link">Blog</a>
         <a href="about.html" class="nav-link">About</a>
-        <a href="contact.html" class="nav-cta" aria-label="Book a call with Microve.ai">
-          Book a Call
-          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-            <path d="M2.5 6h7M6.5 3l3 3-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </a>
+        <a href="contact.html" class="nav-link">Contact</a>
       </div>
 
       <!-- Mobile Hamburger -->
       <button id="mobileMenuBtn"
-              class="md:hidden flex flex-col justify-center gap-[4.5px] w-9 h-9 -mr-1 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1E3A5F] focus:ring-offset-2"
+              class="md:hidden flex flex-col justify-center gap-[4.5px] w-9 h-9 -mr-1 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1F4E79] focus:ring-offset-2"
               aria-label="Toggle navigation menu"
               aria-expanded="false"
               aria-controls="mobileMenu">
@@ -321,9 +316,7 @@
         <a href="cases.html" class="mobile-nav-link">Cases</a>
         <a href="blog.html" class="mobile-nav-link">Blog</a>
         <a href="about.html" class="mobile-nav-link">About</a>
-        <div class="pt-2 pb-1">
-          <a href="contact.html" class="mobile-nav-cta">Book a Call</a>
-        </div>
+        <a href="contact.html" class="mobile-nav-link">Contact</a>
       </div>
     </div>
 
@@ -372,7 +365,7 @@
     <header class="pt-8 pb-8">
       <!-- Plain-language open: what Microve does in one sentence -->
       <div class="mb-10 text-center">
-        <p class="section-label text-xs text-[#E07A5F] tracking-widest mb-4">What we do</p>
+        <p class="section-label text-xs text-[#C96B3B] tracking-widest mb-4">What we do</p>
         <h1 class="font-sans text-5xl md:text-7xl font-bold mb-5 tight-tracking">What we do</h1>
         <p class="text-xl text-stone max-w-2xl mx-auto leading-relaxed">We look at your workflows, find the tasks that are draining your team, and build custom automations that run without you — inside the tools you already use.</p>
       </div>
@@ -382,8 +375,8 @@
         <svg class="hidden md:block w-full h-auto" viewBox="0 0 960 400" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Workflow diagram: Microve plugs custom micro-tools directly into your existing workflow bottlenecks">
           <defs>
             <marker id="d-arr-gray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#CBD5E1"/></marker>
-            <marker id="d-arr-sage" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#7A9E7E"/></marker>
-            <marker id="d-arr-coral" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#E07A5F"/></marker>
+            <marker id="d-arr-sage" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#6C8261"/></marker>
+            <marker id="d-arr-coral" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#C96B3B"/></marker>
             <filter id="d-glow" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="3" result="blur" /><feComposite in="SourceGraphic" in2="blur" operator="over" /></filter>
           </defs>
 
@@ -428,21 +421,21 @@
 
 
           <!-- Microve Interventions Zone -->
-          <rect x="20" y="240" width="920" height="140" rx="8" fill="#1E3A5F" fill-opacity="0.04" stroke="#1E3A5F" stroke-width="1.5" stroke-dasharray="6 4"/>
-          <text x="44" y="266" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#1E3A5F" letter-spacing="0.06em">MICROVE INTERVENTIONS</text>
-          <text x="734" y="266" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#1E3A5F" font-style="italic">Targeted fixes, no overhauls</text>
+          <rect x="20" y="240" width="920" height="140" rx="8" fill="#1F4E79" fill-opacity="0.04" stroke="#1F4E79" stroke-width="1.5" stroke-dasharray="6 4"/>
+          <text x="44" y="266" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#1F4E79" letter-spacing="0.06em">MICROVE INTERVENTIONS</text>
+          <text x="734" y="266" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#1F4E79" font-style="italic">Targeted fixes, no overhauls</text>
 
           <!-- Tool 1 (Plugging into Node 2) -->
-          <path d="M 290 280 L 290 156" stroke="#7A9E7E" stroke-width="4" stroke-dasharray="6 4" marker-end="url(#d-arr-sage)"/>
-          <rect x="200" y="280" width="180" height="80" rx="6" fill="white" stroke="#7A9E7E" stroke-width="2" filter="url(#d-glow)"/>
-          <text x="290" y="310" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#7A9E7E">RULE-BASED TOOL</text>
+          <path d="M 290 280 L 290 156" stroke="#6C8261" stroke-width="4" stroke-dasharray="6 4" marker-end="url(#d-arr-sage)"/>
+          <rect x="200" y="280" width="180" height="80" rx="6" fill="white" stroke="#6C8261" stroke-width="2" filter="url(#d-glow)"/>
+          <text x="290" y="310" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#6C8261">RULE-BASED TOOL</text>
           <text x="290" y="330" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#636E72">Auto-syncs data</text>
           <text x="290" y="346" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#636E72">across CRMs</text>
 
           <!-- Tool 2 (Plugging into Node 4) -->
-          <path d="M 670 280 L 670 156" stroke="#E07A5F" stroke-width="4" stroke-dasharray="6 4" marker-end="url(#d-arr-coral)"/>
-          <rect x="580" y="280" width="180" height="80" rx="6" fill="white" stroke="#E07A5F" stroke-width="2" filter="url(#d-glow)"/>
-          <text x="670" y="310" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#E07A5F">AI MICRO-TOOL</text>
+          <path d="M 670 280 L 670 156" stroke="#C96B3B" stroke-width="4" stroke-dasharray="6 4" marker-end="url(#d-arr-coral)"/>
+          <rect x="580" y="280" width="180" height="80" rx="6" fill="white" stroke="#C96B3B" stroke-width="2" filter="url(#d-glow)"/>
+          <text x="670" y="310" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#C96B3B">AI MICRO-TOOL</text>
           <text x="670" y="330" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#636E72">Reads context &</text>
           <text x="670" y="346" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#636E72">generates draft</text>
 
@@ -452,8 +445,8 @@
         <svg class="block md:hidden w-full h-auto" viewBox="0 0 360 640" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Workflow diagram: Microve plugs custom micro-tools directly into your existing workflow bottlenecks">
           <defs>
             <marker id="m-arr-gray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#CBD5E1"/></marker>
-            <marker id="m-arr-sage" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#7A9E7E"/></marker>
-            <marker id="m-arr-coral" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#E07A5F"/></marker>
+            <marker id="m-arr-sage" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#6C8261"/></marker>
+            <marker id="m-arr-coral" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#C96B3B"/></marker>
             <filter id="m-glow" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="3" result="blur" /><feComposite in="SourceGraphic" in2="blur" operator="over" /></filter>
           </defs>
 
@@ -463,8 +456,8 @@
           <text x="90" y="36" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#64748B" letter-spacing="0.04em">YOUR WORKFLOW</text>
 
           <!-- Right: Interventions -->
-          <rect x="180" y="10" width="170" height="620" rx="8" fill="#1E3A5F" fill-opacity="0.04" stroke="#1E3A5F" stroke-width="1.5" stroke-dasharray="4 4"/>
-          <text x="265" y="36" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#1E3A5F" letter-spacing="0.04em">MICROVE TOOLS</text>
+          <rect x="180" y="10" width="170" height="620" rx="8" fill="#1F4E79" fill-opacity="0.04" stroke="#1F4E79" stroke-width="1.5" stroke-dasharray="4 4"/>
+          <text x="265" y="36" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#1F4E79" letter-spacing="0.04em">MICROVE TOOLS</text>
 
           <!-- Vertical Timeline Nodes -->
           
@@ -501,16 +494,16 @@
           <!-- Interventions (Right side) -->
           
           <!-- Tool 1 (Plugs into Node 2) -->
-          <path d="M 200 180 L 116 180" stroke="#7A9E7E" stroke-width="3" stroke-dasharray="5 3" marker-end="url(#m-arr-sage)"/>
-          <rect x="200" y="150" width="130" height="60" rx="4" fill="white" stroke="#7A9E7E" stroke-width="1.5" filter="url(#m-glow)"/>
-          <text x="265" y="174" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#7A9E7E">RULE-BASED TOOL</text>
+          <path d="M 200 180 L 116 180" stroke="#6C8261" stroke-width="3" stroke-dasharray="5 3" marker-end="url(#m-arr-sage)"/>
+          <rect x="200" y="150" width="130" height="60" rx="4" fill="white" stroke="#6C8261" stroke-width="1.5" filter="url(#m-glow)"/>
+          <text x="265" y="174" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#6C8261">RULE-BASED TOOL</text>
           <text x="265" y="190" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#636E72">Auto-syncs data</text>
           <text x="265" y="202" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#636E72">across CRMs</text>
 
           <!-- Tool 2 (Plugs into Node 4) -->
-          <path d="M 200 380 L 116 380" stroke="#E07A5F" stroke-width="3" stroke-dasharray="5 3" marker-end="url(#m-arr-coral)"/>
-          <rect x="200" y="350" width="130" height="60" rx="4" fill="white" stroke="#E07A5F" stroke-width="1.5" filter="url(#m-glow)"/>
-          <text x="265" y="374" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#E07A5F">AI MICRO-TOOL</text>
+          <path d="M 200 380 L 116 380" stroke="#C96B3B" stroke-width="3" stroke-dasharray="5 3" marker-end="url(#m-arr-coral)"/>
+          <rect x="200" y="350" width="130" height="60" rx="4" fill="white" stroke="#C96B3B" stroke-width="1.5" filter="url(#m-glow)"/>
+          <text x="265" y="374" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#C96B3B">AI MICRO-TOOL</text>
           <text x="265" y="390" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#636E72">Reads context &</text>
           <text x="265" y="402" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#636E72">generates draft</text>
 
@@ -520,7 +513,7 @@
 
     <!-- Micro-Automations Definition -->
     <div class="max-w-4xl mx-auto px-6 pb-4">
-      <p class="section-label text-[#1E3A5F] text-sm tracking-widest">[DEFINITION]</p>
+      <p class="section-label text-[#1F4E79] text-sm tracking-widest">[DEFINITION]</p>
     </div>
     <section class="bg-white rounded-sm border border-stone/15 p-8 md:p-10 mb-8">
       <h2 class="font-sans text-3xl md:text-4xl font-bold mb-4 tight-tracking">Micro-automations: A lot of small fixes.<br class="hidden md:block"> Real compounding results.</h2>
@@ -528,9 +521,9 @@
       
       <div class="grid md:grid-cols-3 gap-5 mb-10">
         <!-- Card 1: Pinpoint -->
-        <div class="group relative bg-[#FAF9F7] rounded-sm border border-stone/12 p-6 transition-all duration-200 hover:border-[#1E3A5F]/25 hover:shadow-sm">
-          <div class="w-10 h-10 rounded-full bg-[#1E3A5F]/8 flex items-center justify-center mb-4">
-            <svg class="w-5 h-5 text-[#1E3A5F]" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24">
+        <div class="group relative bg-[#F4F1E8] rounded-sm border border-stone/12 p-6 transition-all duration-200 hover:border-[#1F4E79]/25 hover:shadow-sm">
+          <div class="w-10 h-10 rounded-full bg-[#1F4E79]/8 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-[#1F4E79]" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/>
               <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/>
             </svg>
@@ -540,9 +533,9 @@
         </div>
 
         <!-- Card 2: Right tool -->
-        <div class="group relative bg-[#FAF9F7] rounded-sm border border-stone/12 p-6 transition-all duration-200 hover:border-[#1E3A5F]/25 hover:shadow-sm">
-          <div class="w-10 h-10 rounded-full bg-[#E07A5F]/10 flex items-center justify-center mb-4">
-            <svg class="w-5 h-5 text-[#E07A5F]" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24">
+        <div class="group relative bg-[#F4F1E8] rounded-sm border border-stone/12 p-6 transition-all duration-200 hover:border-[#1F4E79]/25 hover:shadow-sm">
+          <div class="w-10 h-10 rounded-full bg-[#C96B3B]/10 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-[#C96B3B]" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17l-5.71 3.28a1 1 0 01-1.46-1.06l1.09-6.36L.66 6.57a1 1 0 01.56-1.71l6.38-.93L10.45.37a1 1 0 011.1 0l2.85 3.56 6.38.93a1 1 0 01.56 1.71l-4.68 4.46 1.09 6.36a1 1 0 01-1.46 1.06l-5.71-3.28z"/>
             </svg>
           </div>
@@ -551,9 +544,9 @@
         </div>
 
         <!-- Card 3: Team gets better -->
-        <div class="group relative bg-[#FAF9F7] rounded-sm border border-stone/12 p-6 transition-all duration-200 hover:border-[#1E3A5F]/25 hover:shadow-sm">
-          <div class="w-10 h-10 rounded-full bg-[#7A9E7E]/15 flex items-center justify-center mb-4">
-            <svg class="w-5 h-5 text-[#7A9E7E]" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24">
+        <div class="group relative bg-[#F4F1E8] rounded-sm border border-stone/12 p-6 transition-all duration-200 hover:border-[#1F4E79]/25 hover:shadow-sm">
+          <div class="w-10 h-10 rounded-full bg-[#6C8261]/15 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-[#6C8261]" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z"/>
             </svg>
           </div>
@@ -564,10 +557,10 @@
     </section>
 
     <!-- Your alternatives — with customer-language headers -->
-    <div class="max-w-4xl mx-auto px-6 pb-4"><p class="section-label text-[#1E3A5F]/50 text-xs tracking-widest">Your alternatives</p></div>
+    <div class="max-w-4xl mx-auto px-6 pb-4"><p class="section-label text-[#1F4E79]/50 text-xs tracking-widest">The Landscape</p></div>
     <section class="bg-white rounded-sm border border-stone/15 p-7 md:p-10">
-      <h2 class="font-sans text-3xl md:text-4xl font-bold mb-4 tight-tracking">Three paths forward. One actually works.</h2>
-      <p class="text-lg text-charcoal mb-8">Here's what you're actually choosing between — in plain language.</p>
+      <h2 class="font-sans text-3xl md:text-4xl font-bold mb-4 tight-tracking">How micro-tools differ from the alternatives</h2>
+      <p class="text-lg text-charcoal mb-8">When a workflow breaks, businesses typically choose one of three paths.</p>
       
       <!-- Three-way comparison cards -->
       <div class="grid md:grid-cols-3 gap-5 mb-8">
@@ -584,31 +577,31 @@
           <p class="text-sm text-stone mb-4">ChatGPT, Claude, Gemini</p>
           <ul class="space-y-2 text-sm">
             <li class="flex items-start gap-2">
-              <svg class="w-4 h-4 text-[#7A9E7E] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <svg class="w-4 h-4 text-[#6C8261] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
               </svg>
               <span class="text-stone">Great for content & brainstorming</span>
             </li>
             <li class="flex items-start gap-2">
-              <svg class="w-4 h-4 text-[#7A9E7E] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <svg class="w-4 h-4 text-[#6C8261] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
               </svg>
               <span class="text-stone">Instant answers to questions</span>
             </li>
             <li class="flex items-start gap-2">
-              <svg class="w-4 h-4 text-[#E07A5F] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <svg class="w-4 h-4 text-[#C96B3B] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
               </svg>
               <span class="text-stone"><strong>Requires manual prompting</strong></span>
             </li>
             <li class="flex items-start gap-2">
-              <svg class="w-4 h-4 text-[#E07A5F] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <svg class="w-4 h-4 text-[#C96B3B] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
               </svg>
               <span class="text-stone"><strong>No workflow integration</strong></span>
             </li>
             <li class="flex items-start gap-2">
-              <svg class="w-4 h-4 text-[#E07A5F] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <svg class="w-4 h-4 text-[#C96B3B] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
               </svg>
               <span class="text-stone"><strong>Copy-paste overhead</strong></span>
@@ -629,31 +622,31 @@
           <p class="text-sm text-stone mb-4">Dev hire, ops manager, VA</p>
           <ul class="space-y-2 text-sm">
             <li class="flex items-start gap-2">
-              <svg class="w-4 h-4 text-[#7A9E7E] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <svg class="w-4 h-4 text-[#6C8261] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
               </svg>
               <span class="text-stone">Powerful & extensible</span>
             </li>
             <li class="flex items-start gap-2">
-              <svg class="w-4 h-4 text-[#7A9E7E] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <svg class="w-4 h-4 text-[#6C8261] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
               </svg>
               <span class="text-stone">Handles complex logic</span>
             </li>
             <li class="flex items-start gap-2">
-              <svg class="w-4 h-4 text-[#E07A5F] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <svg class="w-4 h-4 text-[#C96B3B] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
               </svg>
               <span class="text-stone"><strong>Complex configuration</strong></span>
             </li>
             <li class="flex items-start gap-2">
-              <svg class="w-4 h-4 text-[#E07A5F] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <svg class="w-4 h-4 text-[#C96B3B] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
               </svg>
               <span class="text-stone"><strong>Requires technical expertise</strong></span>
             </li>
             <li class="flex items-start gap-2">
-              <svg class="w-4 h-4 text-[#E07A5F] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <svg class="w-4 h-4 text-[#C96B3B] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
               </svg>
               <span class="text-stone"><strong>Overkill for most SMBs</strong></span>
@@ -662,46 +655,43 @@
         </div>
 
         <!-- Microve.ai - Highlighted -->
-        <div class="rounded-sm border-2 border-[#1E3A5F] p-5 bg-[#1E3A5F]/5 relative">
-          <div class="absolute -top-3 left-4 bg-[#E07A5F] text-white text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-sm">
-            Microve
-          </div>
+        <div class="rounded-sm border-2 border-[#1F4E79] p-5 bg-[#1F4E79]/5 relative">
           <div class="flex items-center gap-2 mb-4 mt-2">
-            <div class="w-8 h-8 rounded-sm bg-[#1E3A5F] flex items-center justify-center">
+            <div class="w-8 h-8 rounded-sm bg-[#1F4E79] flex items-center justify-center">
               <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/>
               </svg>
             </div>
-            <h3 class="font-semibold text-charcoal">Custom Micro-Automations</h3>
+            <h3 class="font-semibold text-charcoal">Custom Micro-Tools</h3>
           </div>
           <p class="text-sm text-stone mb-4">Built for your workflow</p>
           <ul class="space-y-2 text-sm">
             <li class="flex items-start gap-2">
-              <svg class="w-4 h-4 text-[#1E3A5F] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <svg class="w-4 h-4 text-[#1F4E79] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
               </svg>
               <span class="text-stone"><strong>Zero configuration</strong> by you</span>
             </li>
             <li class="flex items-start gap-2">
-              <svg class="w-4 h-4 text-[#1E3A5F] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <svg class="w-4 h-4 text-[#1F4E79] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
               </svg>
               <span class="text-stone"><strong>Integrates with your tools</strong></span>
             </li>
             <li class="flex items-start gap-2">
-              <svg class="w-4 h-4 text-[#1E3A5F] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <svg class="w-4 h-4 text-[#1F4E79] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
               </svg>
               <span class="text-stone"><strong>Runs automatically</strong> in background</span>
             </li>
             <li class="flex items-start gap-2">
-              <svg class="w-4 h-4 text-[#1E3A5F] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <svg class="w-4 h-4 text-[#1F4E79] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
               </svg>
               <span class="text-stone"><strong>Surgical fixes</strong> for specific steps</span>
             </li>
             <li class="flex items-start gap-2">
-              <svg class="w-4 h-4 text-[#1E3A5F] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <svg class="w-4 h-4 text-[#1F4E79] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
               </svg>
               <span class="text-stone"><strong>No technical expertise needed</strong></span>
@@ -711,9 +701,9 @@
       </div>
 
       <!-- Key insight -->
-      <div class="bg-[#FAF9F7] rounded-sm border border-stone/15 p-5">
+      <div class="bg-[#F4F1E8] rounded-sm border border-stone/15 p-5">
         <p class="text-charcoal leading-relaxed">
-          <strong>The real answer:</strong> Off-the-shelf AI still needs you to do the work. Hiring in-house costs $100K+/person/year before they ship anything. Microve builds automations that run without you — custom-designed for your stack, deployed in weeks.
+          <strong>The difference:</strong> Off-the-shelf AI still requires manual operation. Hiring in-house introduces immense overhead. Micro-tools run quietly in the background, designed specifically for your current stack, and deployed in weeks rather than months.
         </p>
       </div>
     </section>
@@ -722,7 +712,7 @@
 
     <!-- ── THE 15-STEP PROCESS ── -->
     <div class="max-w-4xl mx-auto px-6 pb-4">
-      <p class="section-label text-[#1E3A5F] text-sm tracking-widest">[PROCESS]</p>
+      <p class="section-label text-[#1F4E79] text-sm tracking-widest">[PROCESS]</p>
     </div>
     <section class="bg-white rounded-sm border border-stone/15 p-8 md:p-10">
       <div class="text-center mb-10">
@@ -733,13 +723,13 @@
       <!-- Tab Navigation -->
       <div class="mb-8">
         <div class="flex flex-wrap justify-center gap-2 mb-6" role="tablist" aria-label="Workflow examples">
-          <button class="workflow-tab active px-6 py-3 rounded-sm font-semibold transition-all duration-200 border-2 border-[#1E3A5F] bg-[#1E3A5F] text-white" data-tab="intake" role="tab" aria-selected="true" aria-controls="panel-intake">
+          <button class="workflow-tab active px-6 py-3 rounded-sm font-semibold transition-all duration-200 border-2 border-[#1F4E79] bg-[#1F4E79] text-white" data-tab="intake" role="tab" aria-selected="true" aria-controls="panel-intake">
             Client Intake
           </button>
-          <button class="workflow-tab px-6 py-3 rounded-sm font-semibold transition-all duration-200 border-2 border-stone/20 text-stone hover:border-[#E07A5F] hover:text-[#E07A5F]" data-tab="leads" role="tab" aria-selected="false" aria-controls="panel-leads">
+          <button class="workflow-tab px-6 py-3 rounded-sm font-semibold transition-all duration-200 border-2 border-stone/20 text-stone hover:border-[#C96B3B] hover:text-[#C96B3B]" data-tab="leads" role="tab" aria-selected="false" aria-controls="panel-leads">
             Lead Routing
           </button>
-          <button class="workflow-tab px-6 py-3 rounded-sm font-semibold transition-all duration-200 border-2 border-stone/20 text-stone hover:border-[#7A9E7E] hover:text-[#7A9E7E]" data-tab="custom" role="tab" aria-selected="false" aria-controls="panel-custom">
+          <button class="workflow-tab px-6 py-3 rounded-sm font-semibold transition-all duration-200 border-2 border-stone/20 text-stone hover:border-[#6C8261] hover:text-[#6C8261]" data-tab="custom" role="tab" aria-selected="false" aria-controls="panel-custom">
             Your Workflow
           </button>
         </div>
@@ -748,7 +738,7 @@
         <div class="tab-panels">
           <!-- Client Intake Panel -->
           <div id="panel-intake" class="tab-panel active" role="tabpanel" aria-labelledby="tab-intake">
-            <div class="bg-[#1E3A5F]/5 rounded-sm p-6 mb-8 border-l-4 border-[#1E3A5F]">
+            <div class="bg-[#1F4E79]/5 rounded-sm p-6 mb-8 border-l-4 border-[#1F4E79]">
               <p class="text-charcoal font-medium mb-2">Real Client: Law Firm</p>
               <p class="text-stone">A law firm drowning in manual client onboarding—prospect calls, manual CRM entry, document drafting, and follow-up tracking. We built a system that turns prospects into onboarded clients in hours, not days.</p>
             </div>
@@ -756,16 +746,16 @@
             <!-- Phase 1 -->
             <div class="mb-10">
               <div class="flex items-center gap-3 mb-6">
-                <div class="w-10 h-10 rounded-sm bg-[#1E3A5F] flex items-center justify-center text-white font-bold text-lg">1</div>
+                <div class="w-10 h-10 rounded-sm bg-[#1F4E79] flex items-center justify-center text-white font-bold text-lg">1</div>
                 <div>
-                  <h3 class="font-sans text-xl font-bold text-[#1E3A5F]">Phase 1: Discovery</h3>
+                  <h3 class="font-sans text-xl font-bold text-[#1F4E79]">Phase 1: Discovery</h3>
                   <p class="text-stone text-sm">Understanding your bottleneck</p>
                 </div>
               </div>
               <div class="grid md:grid-cols-2 gap-4 pl-4 md:pl-14">
                 <div class="p-4 border border-stone/10 rounded-sm">
                   <div class="flex items-center gap-2 mb-2">
-                    <span class="w-6 h-6 rounded-full bg-[#1E3A5F]/10 text-[#1E3A5F] text-xs font-bold flex items-center justify-center">1</span>
+                    <span class="w-6 h-6 rounded-full bg-[#1F4E79]/10 text-[#1F4E79] text-xs font-bold flex items-center justify-center">1</span>
                     <span class="text-xs text-stone section-label">MAP</span>
                   </div>
                   <p class="text-charcoal font-medium">Map current workflow</p>
@@ -773,7 +763,7 @@
                 </div>
                 <div class="p-4 border border-stone/10 rounded-sm">
                   <div class="flex items-center gap-2 mb-2">
-                    <span class="w-6 h-6 rounded-full bg-[#1E3A5F]/10 text-[#1E3A5F] text-xs font-bold flex items-center justify-center">2</span>
+                    <span class="w-6 h-6 rounded-full bg-[#1F4E79]/10 text-[#1F4E79] text-xs font-bold flex items-center justify-center">2</span>
                     <span class="text-xs text-stone section-label">IDENTIFY</span>
                   </div>
                   <p class="text-charcoal font-medium">Identify automation candidates</p>
@@ -781,7 +771,7 @@
                 </div>
                 <div class="p-4 border border-stone/10 rounded-sm">
                   <div class="flex items-center gap-2 mb-2">
-                    <span class="w-6 h-6 rounded-full bg-[#1E3A5F]/10 text-[#1E3A5F] text-xs font-bold flex items-center justify-center">3</span>
+                    <span class="w-6 h-6 rounded-full bg-[#1F4E79]/10 text-[#1F4E79] text-xs font-bold flex items-center justify-center">3</span>
                     <span class="text-xs text-stone section-label">PRIORITIZE</span>
                   </div>
                   <p class="text-charcoal font-medium">Prioritize by impact</p>
@@ -789,7 +779,7 @@
                 </div>
                 <div class="p-4 border border-stone/10 rounded-sm">
                   <div class="flex items-center gap-2 mb-2">
-                    <span class="w-6 h-6 rounded-full bg-[#1E3A5F]/10 text-[#1E3A5F] text-xs font-bold flex items-center justify-center">4</span>
+                    <span class="w-6 h-6 rounded-full bg-[#1F4E79]/10 text-[#1F4E79] text-xs font-bold flex items-center justify-center">4</span>
                     <span class="text-xs text-stone section-label">VALIDATE</span>
                   </div>
                   <p class="text-charcoal font-medium">Validate with your team</p>
@@ -801,16 +791,16 @@
             <!-- Phase 2 -->
             <div class="mb-10">
               <div class="flex items-center gap-3 mb-6">
-                <div class="w-10 h-10 rounded-sm bg-[#7A9E7E] flex items-center justify-center text-white font-bold text-lg">2</div>
+                <div class="w-10 h-10 rounded-sm bg-[#6C8261] flex items-center justify-center text-white font-bold text-lg">2</div>
                 <div>
-                  <h3 class="font-sans text-xl font-bold text-[#1E3A5F]">Phase 2: Design</h3>
+                  <h3 class="font-sans text-xl font-bold text-[#1F4E79]">Phase 2: Design</h3>
                   <p class="text-stone text-sm">Planning the solution</p>
                 </div>
               </div>
               <div class="grid md:grid-cols-2 gap-4 pl-4 md:pl-14">
                 <div class="p-4 border border-stone/10 rounded-sm">
                   <div class="flex items-center gap-2 mb-2">
-                    <span class="w-6 h-6 rounded-full bg-[#7A9E7E]/10 text-[#7A9E7E] text-xs font-bold flex items-center justify-center">5</span>
+                    <span class="w-6 h-6 rounded-full bg-[#6C8261]/10 text-[#6C8261] text-xs font-bold flex items-center justify-center">5</span>
                     <span class="text-xs text-stone section-label">ARCHITECT</span>
                   </div>
                   <p class="text-charcoal font-medium">Design the automation architecture</p>
@@ -818,7 +808,7 @@
                 </div>
                 <div class="p-4 border border-stone/10 rounded-sm">
                   <div class="flex items-center gap-2 mb-2">
-                    <span class="w-6 h-6 rounded-full bg-[#7A9E7E]/10 text-[#7A9E7E] text-xs font-bold flex items-center justify-center">6</span>
+                    <span class="w-6 h-6 rounded-full bg-[#6C8261]/10 text-[#6C8261] text-xs font-bold flex items-center justify-center">6</span>
                     <span class="text-xs text-stone section-label">INTEGRATE</span>
                   </div>
                   <p class="text-charcoal font-medium">Map integrations</p>
@@ -826,7 +816,7 @@
                 </div>
                 <div class="p-4 border border-stone/10 rounded-sm">
                   <div class="flex items-center gap-2 mb-2">
-                    <span class="w-6 h-6 rounded-full bg-[#7A9E7E]/10 text-[#7A9E7E] text-xs font-bold flex items-center justify-center">7</span>
+                    <span class="w-6 h-6 rounded-full bg-[#6C8261]/10 text-[#6C8261] text-xs font-bold flex items-center justify-center">7</span>
                     <span class="text-xs text-stone section-label">CUSTOMIZE</span>
                   </div>
                   <p class="text-charcoal font-medium">Build custom tools</p>
@@ -834,7 +824,7 @@
                 </div>
                 <div class="p-4 border border-stone/10 rounded-sm">
                   <div class="flex items-center gap-2 mb-2">
-                    <span class="w-6 h-6 rounded-full bg-[#7A9E7E]/10 text-[#7A9E7E] text-xs font-bold flex items-center justify-center">8</span>
+                    <span class="w-6 h-6 rounded-full bg-[#6C8261]/10 text-[#6C8261] text-xs font-bold flex items-center justify-center">8</span>
                     <span class="text-xs text-stone section-label">PLAN</span>
                   </div>
                   <p class="text-charcoal font-medium">Plan testing & rollout</p>
@@ -846,16 +836,16 @@
             <!-- Phase 3 -->
             <div class="mb-10">
               <div class="flex items-center gap-3 mb-6">
-                <div class="w-10 h-10 rounded-sm bg-[#E07A5F] flex items-center justify-center text-white font-bold text-lg">3</div>
+                <div class="w-10 h-10 rounded-sm bg-[#C96B3B] flex items-center justify-center text-white font-bold text-lg">3</div>
                 <div>
-                  <h3 class="font-sans text-xl font-bold text-[#1E3A5F]">Phase 3: Build</h3>
+                  <h3 class="font-sans text-xl font-bold text-[#1F4E79]">Phase 3: Build</h3>
                   <p class="text-stone text-sm">Creating the automation</p>
                 </div>
               </div>
               <div class="grid md:grid-cols-2 gap-4 pl-4 md:pl-14">
                 <div class="p-4 border border-stone/10 rounded-sm">
                   <div class="flex items-center gap-2 mb-2">
-                    <span class="w-6 h-6 rounded-full bg-[#E07A5F]/10 text-[#E07A5F] text-xs font-bold flex items-center justify-center">9</span>
+                    <span class="w-6 h-6 rounded-full bg-[#C96B3B]/10 text-[#C96B3B] text-xs font-bold flex items-center justify-center">9</span>
                     <span class="text-xs text-stone section-label">DEVELOP</span>
                   </div>
                   <p class="text-charcoal font-medium">Develop automation workflows</p>
@@ -863,7 +853,7 @@
                 </div>
                 <div class="p-4 border border-stone/10 rounded-sm">
                   <div class="flex items-center gap-2 mb-2">
-                    <span class="w-6 h-6 rounded-full bg-[#E07A5F]/10 text-[#E07A5F] text-xs font-bold flex items-center justify-center">10</span>
+                    <span class="w-6 h-6 rounded-full bg-[#C96B3B]/10 text-[#C96B3B] text-xs font-bold flex items-center justify-center">10</span>
                     <span class="text-xs text-stone section-label">CODE</span>
                   </div>
                   <p class="text-charcoal font-medium">Code custom tools</p>
@@ -871,7 +861,7 @@
                 </div>
                 <div class="p-4 border border-stone/10 rounded-sm">
                   <div class="flex items-center gap-2 mb-2">
-                    <span class="w-6 h-6 rounded-full bg-[#E07A5F]/10 text-[#E07A5F] text-xs font-bold flex items-center justify-center">11</span>
+                    <span class="w-6 h-6 rounded-full bg-[#C96B3B]/10 text-[#C96B3B] text-xs font-bold flex items-center justify-center">11</span>
                     <span class="text-xs text-stone section-label">TEST</span>
                   </div>
                   <p class="text-charcoal font-medium">Test with real data</p>
@@ -879,7 +869,7 @@
                 </div>
                 <div class="p-4 border border-stone/10 rounded-sm">
                   <div class="flex items-center gap-2 mb-2">
-                    <span class="w-6 h-6 rounded-full bg-[#E07A5F]/10 text-[#E07A5F] text-xs font-bold flex items-center justify-center">12</span>
+                    <span class="w-6 h-6 rounded-full bg-[#C96B3B]/10 text-[#C96B3B] text-xs font-bold flex items-center justify-center">12</span>
                     <span class="text-xs text-stone section-label">REFINE</span>
                   </div>
                   <p class="text-charcoal font-medium">Refine based on feedback</p>
@@ -891,16 +881,16 @@
             <!-- Phase 4 -->
             <div class="mb-8">
               <div class="flex items-center gap-3 mb-6">
-                <div class="w-10 h-10 rounded-sm bg-[#1E3A5F] flex items-center justify-center text-white font-bold text-lg">4</div>
+                <div class="w-10 h-10 rounded-sm bg-[#1F4E79] flex items-center justify-center text-white font-bold text-lg">4</div>
                 <div>
-                  <h3 class="font-sans text-xl font-bold text-[#1E3A5F]">Phase 4: Deploy</h3>
+                  <h3 class="font-sans text-xl font-bold text-[#1F4E79]">Phase 4: Deploy</h3>
                   <p class="text-stone text-sm">Implementation & handoff</p>
                 </div>
               </div>
               <div class="grid md:grid-cols-2 gap-4 pl-4 md:pl-14">
                 <div class="p-4 border border-stone/10 rounded-sm">
                   <div class="flex items-center gap-2 mb-2">
-                    <span class="w-6 h-6 rounded-full bg-[#1E3A5F]/10 text-[#1E3A5F] text-xs font-bold flex items-center justify-center">13</span>
+                    <span class="w-6 h-6 rounded-full bg-[#1F4E79]/10 text-[#1F4E79] text-xs font-bold flex items-center justify-center">13</span>
                     <span class="text-xs text-stone section-label">PILOT</span>
                   </div>
                   <p class="text-charcoal font-medium">Pilot with select cases</p>
@@ -908,7 +898,7 @@
                 </div>
                 <div class="p-4 border border-stone/10 rounded-sm">
                   <div class="flex items-center gap-2 mb-2">
-                    <span class="w-6 h-6 rounded-full bg-[#1E3A5F]/10 text-[#1E3A5F] text-xs font-bold flex items-center justify-center">14</span>
+                    <span class="w-6 h-6 rounded-full bg-[#1F4E79]/10 text-[#1F4E79] text-xs font-bold flex items-center justify-center">14</span>
                     <span class="text-xs text-stone section-label">TRAIN</span>
                   </div>
                   <p class="text-charcoal font-medium">Train your team</p>
@@ -916,7 +906,7 @@
                 </div>
                 <div class="p-4 border border-stone/10 rounded-sm md:col-span-2">
                   <div class="flex items-center gap-2 mb-2">
-                    <span class="w-6 h-6 rounded-full bg-[#1E3A5F]/10 text-[#1E3A5F] text-xs font-bold flex items-center justify-center">15</span>
+                    <span class="w-6 h-6 rounded-full bg-[#1F4E79]/10 text-[#1F4E79] text-xs font-bold flex items-center justify-center">15</span>
                     <span class="text-xs text-stone section-label">HANDOFF</span>
                   </div>
                   <p class="text-charcoal font-medium">Handoff & ongoing support</p>
@@ -926,13 +916,13 @@
             </div>
 
             <!-- Result -->
-            <div class="bg-[#7A9E7E]/10 border border-[#7A9E7E]/20 rounded-sm p-6 mt-8">
+            <div class="bg-[#6C8261]/10 border border-[#6C8261]/20 rounded-sm p-6 mt-8">
               <div class="flex items-start gap-4">
-                <div class="w-12 h-12 rounded-sm bg-[#7A9E7E] flex items-center justify-center shrink-0">
+                <div class="w-12 h-12 rounded-sm bg-[#6C8261] flex items-center justify-center shrink-0">
                   <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
                 </div>
                 <div>
-                  <p class="font-semibold text-[#7A9E7E] mb-2">Result: Intake time reduced from 2 days to 2 hours</p>
+                  <p class="font-semibold text-[#6C8261] mb-2">Result: Intake time reduced from 2 days to 2 hours</p>
                   <p class="text-stone">Prospects now move seamlessly from call to onboarded client. Paralegals spend time on legal work, not paperwork. The firm can handle 3x more clients without hiring.</p>
                 </div>
               </div>
@@ -941,7 +931,7 @@
 
           <!-- Lead Routing Panel -->
           <div id="panel-leads" class="tab-panel hidden" role="tabpanel" aria-labelledby="tab-leads">
-            <div class="bg-[#E07A5F]/5 rounded-sm p-6 mb-8 border-l-4 border-[#E07A5F]">
+            <div class="bg-[#C96B3B]/5 rounded-sm p-6 mb-8 border-l-4 border-[#C96B3B]">
               <p class="text-charcoal font-medium mb-2">Common Challenge: Sales Teams</p>
               <p class="text-stone">Leads come in from multiple sources—website forms, LinkedIn, referrals—but sit in an inbox for hours or days before anyone responds. By then, they've gone cold. We built a system that routes leads instantly and ensures immediate follow-up.</p>
             </div>
@@ -949,16 +939,16 @@
             <!-- Phase 1 -->
             <div class="mb-10">
               <div class="flex items-center gap-3 mb-6">
-                <div class="w-10 h-10 rounded-sm bg-[#1E3A5F] flex items-center justify-center text-white font-bold text-lg">1</div>
+                <div class="w-10 h-10 rounded-sm bg-[#1F4E79] flex items-center justify-center text-white font-bold text-lg">1</div>
                 <div>
-                  <h3 class="font-sans text-xl font-bold text-[#1E3A5F]">Phase 1: Discovery</h3>
+                  <h3 class="font-sans text-xl font-bold text-[#1F4E79]">Phase 1: Discovery</h3>
                   <p class="text-stone text-sm">Understanding your bottleneck</p>
                 </div>
               </div>
               <div class="grid md:grid-cols-2 gap-4 pl-4 md:pl-14">
                 <div class="p-4 border border-stone/10 rounded-sm">
                   <div class="flex items-center gap-2 mb-2">
-                    <span class="w-6 h-6 rounded-full bg-[#1E3A5F]/10 text-[#1E3A5F] text-xs font-bold flex items-center justify-center">1</span>
+                    <span class="w-6 h-6 rounded-full bg-[#1F4E79]/10 text-[#1F4E79] text-xs font-bold flex items-center justify-center">1</span>
                     <span class="text-xs text-stone section-label">MAP</span>
                   </div>
                   <p class="text-charcoal font-medium">Map lead sources & flow</p>
@@ -966,7 +956,7 @@
                 </div>
                 <div class="p-4 border border-stone/10 rounded-sm">
                   <div class="flex items-center gap-2 mb-2">
-                    <span class="w-6 h-6 rounded-full bg-[#1E3A5F]/10 text-[#1E3A5F] text-xs font-bold flex items-center justify-center">2</span>
+                    <span class="w-6 h-6 rounded-full bg-[#1F4E79]/10 text-[#1F4E79] text-xs font-bold flex items-center justify-center">2</span>
                     <span class="text-xs text-stone section-label">IDENTIFY</span>
                   </div>
                   <p class="text-charcoal font-medium">Find the delays</p>
@@ -974,7 +964,7 @@
                 </div>
                 <div class="p-4 border border-stone/10 rounded-sm">
                   <div class="flex items-center gap-2 mb-2">
-                    <span class="w-6 h-6 rounded-full bg-[#1E3A5F]/10 text-[#1E3A5F] text-xs font-bold flex items-center justify-center">3</span>
+                    <span class="w-6 h-6 rounded-full bg-[#1F4E79]/10 text-[#1F4E79] text-xs font-bold flex items-center justify-center">3</span>
                     <span class="text-xs text-stone section-label">PRIORITIZE</span>
                   </div>
                   <p class="text-charcoal font-medium">Prioritize high-value fixes</p>
@@ -982,7 +972,7 @@
                 </div>
                 <div class="p-4 border border-stone/10 rounded-sm">
                   <div class="flex items-center gap-2 mb-2">
-                    <span class="w-6 h-6 rounded-full bg-[#1E3A5F]/10 text-[#1E3A5F] text-xs font-bold flex items-center justify-center">4</span>
+                    <span class="w-6 h-6 rounded-full bg-[#1F4E79]/10 text-[#1F4E79] text-xs font-bold flex items-center justify-center">4</span>
                     <span class="text-xs text-stone section-label">VALIDATE</span>
                   </div>
                   <p class="text-charcoal font-medium">Validate with sales team</p>
@@ -994,16 +984,16 @@
             <!-- Phase 2 -->
             <div class="mb-10">
               <div class="flex items-center gap-3 mb-6">
-                <div class="w-10 h-10 rounded-sm bg-[#7A9E7E] flex items-center justify-center text-white font-bold text-lg">2</div>
+                <div class="w-10 h-10 rounded-sm bg-[#6C8261] flex items-center justify-center text-white font-bold text-lg">2</div>
                 <div>
-                  <h3 class="font-sans text-xl font-bold text-[#1E3A5F]">Phase 2: Design</h3>
+                  <h3 class="font-sans text-xl font-bold text-[#1F4E79]">Phase 2: Design</h3>
                   <p class="text-stone text-sm">Planning the solution</p>
                 </div>
               </div>
               <div class="grid md:grid-cols-2 gap-4 pl-4 md:pl-14">
                 <div class="p-4 border border-stone/10 rounded-sm">
                   <div class="flex items-center gap-2 mb-2">
-                    <span class="w-6 h-6 rounded-full bg-[#7A9E7E]/10 text-[#7A9E7E] text-xs font-bold flex items-center justify-center">5</span>
+                    <span class="w-6 h-6 rounded-full bg-[#6C8261]/10 text-[#6C8261] text-xs font-bold flex items-center justify-center">5</span>
                     <span class="text-xs text-stone section-label">ARCHITECT</span>
                   </div>
                   <p class="text-charcoal font-medium">Design intelligent routing</p>
@@ -1011,7 +1001,7 @@
                 </div>
                 <div class="p-4 border border-stone/10 rounded-sm">
                   <div class="flex items-center gap-2 mb-2">
-                    <span class="w-6 h-6 rounded-full bg-[#7A9E7E]/10 text-[#7A9E7E] text-xs font-bold flex items-center justify-center">6</span>
+                    <span class="w-6 h-6 rounded-full bg-[#6C8261]/10 text-[#6C8261] text-xs font-bold flex items-center justify-center">6</span>
                     <span class="text-xs text-stone section-label">INTEGRATE</span>
                   </div>
                   <p class="text-charcoal font-medium">Connect all lead sources</p>
@@ -1019,7 +1009,7 @@
                 </div>
                 <div class="p-4 border border-stone/10 rounded-sm">
                   <div class="flex items-center gap-2 mb-2">
-                    <span class="w-6 h-6 rounded-full bg-[#7A9E7E]/10 text-[#7A9E7E] text-xs font-bold flex items-center justify-center">7</span>
+                    <span class="w-6 h-6 rounded-full bg-[#6C8261]/10 text-[#6C8261] text-xs font-bold flex items-center justify-center">7</span>
                     <span class="text-xs text-stone section-label">CUSTOMIZE</span>
                   </div>
                   <p class="text-charcoal font-medium">Build enrichment tools</p>
@@ -1027,7 +1017,7 @@
                 </div>
                 <div class="p-4 border border-stone/10 rounded-sm">
                   <div class="flex items-center gap-2 mb-2">
-                    <span class="w-6 h-6 rounded-full bg-[#7A9E7E]/10 text-[#7A9E7E] text-xs font-bold flex items-center justify-center">8</span>
+                    <span class="w-6 h-6 rounded-full bg-[#6C8261]/10 text-[#6C8261] text-xs font-bold flex items-center justify-center">8</span>
                     <span class="text-xs text-stone section-label">PLAN</span>
                   </div>
                   <p class="text-charcoal font-medium">Plan escalation & fallback</p>
@@ -1039,16 +1029,16 @@
             <!-- Phase 3 -->
             <div class="mb-10">
               <div class="flex items-center gap-3 mb-6">
-                <div class="w-10 h-10 rounded-sm bg-[#E07A5F] flex items-center justify-center text-white font-bold text-lg">3</div>
+                <div class="w-10 h-10 rounded-sm bg-[#C96B3B] flex items-center justify-center text-white font-bold text-lg">3</div>
                 <div>
-                  <h3 class="font-sans text-xl font-bold text-[#1E3A5F]">Phase 3: Build</h3>
+                  <h3 class="font-sans text-xl font-bold text-[#1F4E79]">Phase 3: Build</h3>
                   <p class="text-stone text-sm">Creating the automation</p>
                 </div>
               </div>
               <div class="grid md:grid-cols-2 gap-4 pl-4 md:pl-14">
                 <div class="p-4 border border-stone/10 rounded-sm">
                   <div class="flex items-center gap-2 mb-2">
-                    <span class="w-6 h-6 rounded-full bg-[#E07A5F]/10 text-[#E07A5F] text-xs font-bold flex items-center justify-center">9</span>
+                    <span class="w-6 h-6 rounded-full bg-[#C96B3B]/10 text-[#C96B3B] text-xs font-bold flex items-center justify-center">9</span>
                     <span class="text-xs text-stone section-label">DEVELOP</span>
                   </div>
                   <p class="text-charcoal font-medium">Build routing workflows</p>
@@ -1056,7 +1046,7 @@
                 </div>
                 <div class="p-4 border border-stone/10 rounded-sm">
                   <div class="flex items-center gap-2 mb-2">
-                    <span class="w-6 h-6 rounded-full bg-[#E07A5F]/10 text-[#E07A5F] text-xs font-bold flex items-center justify-center">10</span>
+                    <span class="w-6 h-6 rounded-full bg-[#C96B3B]/10 text-[#C96B3B] text-xs font-bold flex items-center justify-center">10</span>
                     <span class="text-xs text-stone section-label">CODE</span>
                   </div>
                   <p class="text-charcoal font-medium">Code custom scoring tool</p>
@@ -1064,7 +1054,7 @@
                 </div>
                 <div class="p-4 border border-stone/10 rounded-sm">
                   <div class="flex items-center gap-2 mb-2">
-                    <span class="w-6 h-6 rounded-full bg-[#E07A5F]/10 text-[#E07A5F] text-xs font-bold flex items-center justify-center">11</span>
+                    <span class="w-6 h-6 rounded-full bg-[#C96B3B]/10 text-[#C96B3B] text-xs font-bold flex items-center justify-center">11</span>
                     <span class="text-xs text-stone section-label">TEST</span>
                   </div>
                   <p class="text-charcoal font-medium">Test routing logic</p>
@@ -1072,7 +1062,7 @@
                 </div>
                 <div class="p-4 border border-stone/10 rounded-sm">
                   <div class="flex items-center gap-2 mb-2">
-                    <span class="w-6 h-6 rounded-full bg-[#E07A5F]/10 text-[#E07A5F] text-xs font-bold flex items-center justify-center">12</span>
+                    <span class="w-6 h-6 rounded-full bg-[#C96B3B]/10 text-[#C96B3B] text-xs font-bold flex items-center justify-center">12</span>
                     <span class="text-xs text-stone section-label">REFINE</span>
                   </div>
                   <p class="text-charcoal font-medium">Refine based on feedback</p>
@@ -1084,16 +1074,16 @@
             <!-- Phase 4 -->
             <div class="mb-8">
               <div class="flex items-center gap-3 mb-6">
-                <div class="w-10 h-10 rounded-sm bg-[#1E3A5F] flex items-center justify-center text-white font-bold text-lg">4</div>
+                <div class="w-10 h-10 rounded-sm bg-[#1F4E79] flex items-center justify-center text-white font-bold text-lg">4</div>
                 <div>
-                  <h3 class="font-sans text-xl font-bold text-[#1E3A5F]">Phase 4: Deploy</h3>
+                  <h3 class="font-sans text-xl font-bold text-[#1F4E79]">Phase 4: Deploy</h3>
                   <p class="text-stone text-sm">Implementation & handoff</p>
                 </div>
               </div>
               <div class="grid md:grid-cols-2 gap-4 pl-4 md:pl-14">
                 <div class="p-4 border border-stone/10 rounded-sm">
                   <div class="flex items-center gap-2 mb-2">
-                    <span class="w-6 h-6 rounded-full bg-[#1E3A5F]/10 text-[#1E3A5F] text-xs font-bold flex items-center justify-center">13</span>
+                    <span class="w-6 h-6 rounded-full bg-[#1F4E79]/10 text-[#1F4E79] text-xs font-bold flex items-center justify-center">13</span>
                     <span class="text-xs text-stone section-label">PILOT</span>
                   </div>
                   <p class="text-charcoal font-medium">Pilot with live leads</p>
@@ -1101,7 +1091,7 @@
                 </div>
                 <div class="p-4 border border-stone/10 rounded-sm">
                   <div class="flex items-center gap-2 mb-2">
-                    <span class="w-6 h-6 rounded-full bg-[#1E3A5F]/10 text-[#1E3A5F] text-xs font-bold flex items-center justify-center">14</span>
+                    <span class="w-6 h-6 rounded-full bg-[#1F4E79]/10 text-[#1F4E79] text-xs font-bold flex items-center justify-center">14</span>
                     <span class="text-xs text-stone section-label">TRAIN</span>
                   </div>
                   <p class="text-charcoal font-medium">Train sales team</p>
@@ -1109,7 +1099,7 @@
                 </div>
                 <div class="p-4 border border-stone/10 rounded-sm md:col-span-2">
                   <div class="flex items-center gap-2 mb-2">
-                    <span class="w-6 h-6 rounded-full bg-[#1E3A5F]/10 text-[#1E3A5F] text-xs font-bold flex items-center justify-center">15</span>
+                    <span class="w-6 h-6 rounded-full bg-[#1F4E79]/10 text-[#1F4E79] text-xs font-bold flex items-center justify-center">15</span>
                     <span class="text-xs text-stone section-label">HANDOFF</span>
                   </div>
                   <p class="text-charcoal font-medium">Handoff & optimize</p>
@@ -1119,13 +1109,13 @@
             </div>
 
             <!-- Result -->
-            <div class="bg-[#7A9E7E]/10 border border-[#7A9E7E]/20 rounded-sm p-6 mt-8">
+            <div class="bg-[#6C8261]/10 border border-[#6C8261]/20 rounded-sm p-6 mt-8">
               <div class="flex items-start gap-4">
-                <div class="w-12 h-12 rounded-sm bg-[#7A9E7E] flex items-center justify-center shrink-0">
+                <div class="w-12 h-12 rounded-sm bg-[#6C8261] flex items-center justify-center shrink-0">
                   <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
                 </div>
                 <div>
-                  <p class="font-semibold text-[#7A9E7E] mb-2">Result: Every lead contacted within 5 minutes, 24/7</p>
+                  <p class="font-semibold text-[#6C8261] mb-2">Result: Every lead contacted within 5 minutes, 24/7</p>
                   <p class="text-stone">No more leads sitting in inboxes. No more manual assignment. Sales reps get notified instantly with full context. Conversion rates increase 40% just from speed-to-lead alone.</p>
                 </div>
               </div>
@@ -1134,27 +1124,27 @@
 
           <!-- Your Workflow Panel -->
           <div id="panel-custom" class="tab-panel hidden" role="tabpanel" aria-labelledby="tab-custom">
-            <div class="bg-gradient-to-br from-[#1E3A5F]/5 to-[#7A9E7E]/5 rounded-sm p-8 mb-8 border border-[#1E3A5F]/20">
+            <div class="bg-gradient-to-br from-[#1F4E79]/5 to-[#6C8261]/5 rounded-sm p-8 mb-8 border border-[#1F4E79]/20">
               <div class="text-center">
-                <div class="w-16 h-16 rounded-full bg-[#1E3A5F] flex items-center justify-center mx-auto mb-4">
+                <div class="w-16 h-16 rounded-full bg-[#1F4E79] flex items-center justify-center mx-auto mb-4">
                   <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
                   </svg>
                 </div>
-                <h3 class="font-sans text-2xl font-bold text-[#1E3A5F] mb-3">Your Unique Workflow</h3>
+                <h3 class="font-sans text-2xl font-bold text-[#1F4E79] mb-3">Your Unique Workflow</h3>
                 <p class="text-stone text-lg mb-6 max-w-xl mx-auto">Every business has different pain points. We apply this same 15-step process to any workflow—whether it's invoice processing, document approvals, customer onboarding, inventory management, or something entirely unique to your operations.</p>
                 
                 <div class="grid md:grid-cols-3 gap-4 max-w-2xl mx-auto mb-6">
                   <div class="p-4 bg-white rounded-sm border border-stone/10">
-                    <p class="text-[#E07A5F] font-semibold mb-1">We Listen</p>
+                    <p class="text-[#C96B3B] font-semibold mb-1">We Listen</p>
                     <p class="text-stone text-sm">You describe your pain points and current process</p>
                   </div>
                   <div class="p-4 bg-white rounded-sm border border-stone/10">
-                    <p class="text-[#7A9E7E] font-semibold mb-1">We Design</p>
+                    <p class="text-[#6C8261] font-semibold mb-1">We Design</p>
                     <p class="text-stone text-sm">Custom solution built for your exact needs</p>
                   </div>
                   <div class="p-4 bg-white rounded-sm border border-stone/10">
-                    <p class="text-[#1E3A5F] font-semibold mb-1">You Thrive</p>
+                    <p class="text-[#1F4E79] font-semibold mb-1">You Thrive</p>
                     <p class="text-stone text-sm">Automated workflow that saves hours weekly</p>
                   </div>
                 </div>
@@ -1164,32 +1154,32 @@
             <div class="grid md:grid-cols-2 gap-6 mb-8">
               <div class="p-6 border border-stone/10 rounded-sm">
                 <h4 class="font-semibold text-charcoal mb-3 flex items-center gap-2">
-                  <span class="w-2 h-2 bg-[#E07A5F] rounded-full"></span>
+                  <span class="w-2 h-2 bg-[#C96B3B] rounded-full"></span>
                   Common Workflows We Automate
                 </h4>
                 <ul class="space-y-2 text-stone">
                   <li class="flex items-start gap-2">
-                    <span class="text-[#E07A5F]">→</span>
+                    <span class="text-[#C96B3B]">→</span>
                     <span>Invoice processing & approval</span>
                   </li>
                   <li class="flex items-start gap-2">
-                    <span class="text-[#E07A5F]">→</span>
+                    <span class="text-[#C96B3B]">→</span>
                     <span>Customer onboarding sequences</span>
                   </li>
                   <li class="flex items-start gap-2">
-                    <span class="text-[#E07A5F]">→</span>
+                    <span class="text-[#C96B3B]">→</span>
                     <span>Document routing & approvals</span>
                   </li>
                   <li class="flex items-start gap-2">
-                    <span class="text-[#E07A5F]">→</span>
+                    <span class="text-[#C96B3B]">→</span>
                     <span>Data entry & system syncing</span>
                   </li>
                   <li class="flex items-start gap-2">
-                    <span class="text-[#E07A5F]">→</span>
+                    <span class="text-[#C96B3B]">→</span>
                     <span>Email & communication workflows</span>
                   </li>
                   <li class="flex items-start gap-2">
-                    <span class="text-[#E07A5F]">→</span>
+                    <span class="text-[#C96B3B]">→</span>
                     <span>Custom internal tools & dashboards</span>
                   </li>
                 </ul>
@@ -1197,39 +1187,39 @@
 
               <div class="p-6 border border-stone/10 rounded-sm">
                 <h4 class="font-semibold text-charcoal mb-3 flex items-center gap-2">
-                  <span class="w-2 h-2 bg-[#7A9E7E] rounded-full"></span>
+                  <span class="w-2 h-2 bg-[#6C8261] rounded-full"></span>
                   What Makes Us Different
                 </h4>
                 <ul class="space-y-2 text-stone">
                   <li class="flex items-start gap-2">
-                    <svg class="w-5 h-5 text-[#7A9E7E] shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                    <svg class="w-5 h-5 text-[#6C8261] shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
                     <span><strong>No templates.</strong> Every solution is custom-built</span>
                   </li>
                   <li class="flex items-start gap-2">
-                    <svg class="w-5 h-5 text-[#7A9E7E] shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                    <svg class="w-5 h-5 text-[#6C8261] shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
                     <span><strong>We build tools.</strong> Not just connections</span>
                   </li>
                   <li class="flex items-start gap-2">
-                    <svg class="w-5 h-5 text-[#7A9E7E] shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                    <svg class="w-5 h-5 text-[#6C8261] shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
                     <span><strong>Right tech.</strong> Rules, AI, or custom code</span>
                   </li>
                   <li class="flex items-start gap-2">
-                    <svg class="w-5 h-5 text-[#7A9E7E] shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                    <svg class="w-5 h-5 text-[#6C8261] shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
                     <span><strong>Transparent process.</strong> No black boxes</span>
                   </li>
                   <li class="flex items-start gap-2">
-                    <svg class="w-5 h-5 text-[#7A9E7E] shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                    <svg class="w-5 h-5 text-[#6C8261] shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
                     <span><strong>Real partnership.</strong> We train your team</span>
                   </li>
                 </ul>
               </div>
             </div>
 
-            <div class="bg-[#1E3A5F] text-white rounded-sm p-8 text-center">
-              <h4 class="font-sans text-2xl font-bold mb-3">Ready to eliminate your bottleneck?</h4>
-              <p class="text-white/80 mb-6 max-w-xl mx-auto">Describe your workflow to us. In one conversation, we'll tell you if we can automate it—and exactly how we'd approach it using our 15-step process.</p>
-              <a href="contact.html" class="inline-flex items-center gap-2 bg-[#E07A5F] hover:bg-[#C96A4F] transition-colors text-white px-8 py-4 rounded-sm font-bold">
-                Tell us about your workflow
+            <div class="bg-[#1F4E79] text-white rounded-sm p-8 text-center mt-10">
+              <h4 class="font-sans text-2xl font-bold mb-3">Think you have a similar bottleneck?</h4>
+              <p class="text-white/80 mb-6 max-w-xl mx-auto">We're happy to map it out with you and see if a micro-tool makes sense.</p>
+              <a href="contact.html" class="inline-flex items-center gap-2 bg-[#C96B3B] hover:bg-[#A6552B] transition-colors text-white px-8 py-4 rounded-sm font-bold">
+                Talk to us about your workflow
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
               </a>
             </div>
@@ -1247,7 +1237,7 @@
             tab.addEventListener('click', () => {
               // Deactivate all tabs
               tabs.forEach(t => {
-                t.classList.remove('active', 'bg-[#1E3A5F]', 'text-white', 'border-[#1E3A5F]');
+                t.classList.remove('active', 'bg-[#1F4E79]', 'text-white', 'border-[#1F4E79]');
                 t.classList.add('text-stone', 'border-stone/20');
                 t.setAttribute('aria-selected', 'false');
               });
@@ -1259,7 +1249,7 @@
               });
 
               // Activate clicked tab
-              tab.classList.add('active', 'bg-[#1E3A5F]', 'text-white', 'border-[#1E3A5F]');
+              tab.classList.add('active', 'bg-[#1F4E79]', 'text-white', 'border-[#1F4E79]');
               tab.classList.remove('text-stone', 'border-stone/20');
               tab.setAttribute('aria-selected', 'true');
 
@@ -1278,12 +1268,12 @@
 
     <!-- ── TOOLS WE WORK WITH ── -->
     <div class="max-w-4xl mx-auto px-6 pb-4">
-      <p class="section-label text-[#1E3A5F] text-sm tracking-widest">[INTEGRATIONS]</p>
+      <p class="section-label text-[#1F4E79] text-sm tracking-widest">[INTEGRATIONS]</p>
     </div>
     <section class="max-w-5xl mx-auto px-6 pb-16">
       <div class="bg-white border border-stone/15 rounded-sm p-8 md:p-10">
         <div class="text-center mb-8">
-          <h2 class="font-sans text-3xl md:text-4xl font-bold mb-3 tight-tracking text-[#1E3A5F]">Works with the tools you already use</h2>
+          <h2 class="font-sans text-3xl md:text-4xl font-bold mb-3 tight-tracking text-[#1F4E79]">Works with the tools you already use</h2>
           <p class="text-stone text-lg max-w-2xl mx-auto">No rip-and-replace. We integrate with your existing stack. If you use it, we can connect to it.</p>
         </div>
         
@@ -1368,7 +1358,7 @@
 
         <div class="mt-8 pt-6 border-t border-stone/10 text-center">
  <p class="text-stone mb-4">Don't see your tool? We integrate with 5000+ apps and can build custom connections for proprietary systems.</p>
-          <a href="contact.html" class="inline-flex items-center gap-2 text-[#E07A5F] font-semibold hover:gap-3 transition-all">
+          <a href="contact.html" class="inline-flex items-center gap-2 text-[#C96B3B] font-semibold hover:gap-3 transition-all">
             Ask about your specific tools
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
           </a>
@@ -1378,10 +1368,10 @@
 
     <section class="bg-charcoal text-white rounded-sm p-7 md:p-10 flex flex-col md:flex-row gap-8 justify-between items-center">
       <div>
-        <h2 class="font-sans text-3xl md:text-4xl font-bold mb-3 tight-tracking">Describe your worst workflow to us.</h2>
-        <p class="text-white/80 leading-relaxed text-lg max-w-xl">No pitch, no obligation. We'll tell you in one conversation whether we can automate it — and roughly what it would take.</p>
+        <h2 class="font-sans text-3xl md:text-4xl font-bold mb-3 tight-tracking">Have a workflow in mind?</h2>
+        <p class="text-white/80 leading-relaxed text-lg max-w-xl">We're happy to look at your process and give you an honest assessment of whether a micro-tool is the right fit.</p>
       </div>
-      <a href="contact.html" class="shrink-0 bg-[#E07A5F] hover:bg-[#C96A4F] transition-colors text-white px-8 py-4 rounded-sm font-bold shadow-lg focus:outline-none focus:ring-2 focus:ring-[#E07A5F] focus:ring-offset-2">Book a Call →</a>
+      <a href="contact.html" class="shrink-0 bg-[#C96B3B] hover:bg-[#A6552B] transition-colors text-white px-8 py-4 rounded-sm font-bold shadow-lg focus:outline-none focus:ring-2 focus:ring-[#C96B3B] focus:ring-offset-2">Get in touch →</a>
     </section>
   </main>
 
