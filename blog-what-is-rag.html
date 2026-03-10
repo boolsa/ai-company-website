@@ -384,15 +384,23 @@
           <div class="bg-white border border-[#1F4E79]/10 p-5 rounded-lg shadow-sm">
             <h4 class="font-semibold text-charcoal mb-2 flex items-center gap-2">
               <span class="w-2 h-2 rounded-full bg-red-400"></span>
-              3. The Security & Access Problem
+              3. The Privacy & Data Training Problem
             </h4>
-            <p class="text-sm text-stone mb-0">Do you want your employees uploading proprietary company data into their personal OpenAI accounts? Probably not. Even with enterprise plans, it's hard to control who sees what. A custom RAG system runs in an isolated environment. You can set permissions so the HR team's RAG can access payroll data, but the sales team's RAG cannot.</p>
+            <p class="text-sm text-stone mb-0">When you upload documents to standard public LLMs, you are often handing over proprietary business data, customer information, or trade secrets to a third-party black box that might use your data to train its future models. A custom RAG system uses enterprise-grade APIs where your data strictly remains in your secure cloud environment. The AI processes the specific text chunks needed to answer the question and immediately discards them without training on your data.</p>
           </div>
           
           <div class="bg-white border border-[#1F4E79]/10 p-5 rounded-lg shadow-sm">
             <h4 class="font-semibold text-charcoal mb-2 flex items-center gap-2">
               <span class="w-2 h-2 rounded-full bg-red-400"></span>
-              4. Hallucinations vs. Citations
+              4. The Internal Access Problem
+            </h4>
+            <p class="text-sm text-stone mb-0">Even if you use a paid enterprise LLM, it's incredibly difficult to control who sees what internally if everyone is just uploading files. A custom RAG system allows you to set strict internal role-based permissions. You can configure it so the HR team's RAG can answer questions about sensitive payroll data, but the sales team's RAG will block those exact same questions.</p>
+          </div>
+          
+          <div class="bg-white border border-[#1F4E79]/10 p-5 rounded-lg shadow-sm">
+            <h4 class="font-semibold text-charcoal mb-2 flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-red-400"></span>
+              5. Hallucinations vs. Citations
             </h4>
             <p class="text-sm text-stone mb-0">Standard ChatGPT is a people-pleaser; if it doesn't know the answer, it will confidently guess (hallucinate). A well-built RAG system is programmed to say "I don't know" if the answer isn't in your documents. More importantly, it provides citations (e.g., <em>"According to Employee Handbook, page 42"</em>) so your team can verify the facts.</p>
           </div>
