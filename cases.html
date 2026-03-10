@@ -690,6 +690,130 @@
           </div>
         </div>
       </article>
+
+      <!-- Case Study 4 -->
+      <article class="case-card bg-white/60 backdrop-blur-sm rounded-xl border border-[#1F4E79]/10 overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+        <!-- Card Header / Summary -->
+        <div class="p-8 cursor-pointer" onclick="toggleCase('case-4')">
+          <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
+            <div class="flex-1">
+              <div class="flex flex-wrap items-center gap-3 mb-4">
+                <span class="section-label text-xs text-[#1F4E79] bg-[#1F4E79]/5 px-3 py-1 rounded-full">Retail</span>
+                <span class="text-sm text-stone">4 Pet Supply Locations · Las Vegas, NV</span>
+              </div>
+              <h2 class="text-2xl md:text-3xl font-bold text-charcoal mb-3">The KPI Detective Work</h2>
+              <p class="text-stone">Store owner deeply cared about fairly rewarding employees, but tracking individual performance across 4 rotating locations was nearly impossible using fragmented POS and payroll data.</p>
+            </div>
+            <div class="flex flex-row md:flex-col items-center md:items-end gap-6 md:gap-2">
+              <div class="text-center md:text-right">
+                <div class="text-4xl md:text-5xl font-bold text-[#C96B3B]">~10</div>
+                <div class="text-sm text-stone">hours/week saved<br>from being wasted</div>
+              </div>
+              <button class="case-toggle-btn flex items-center gap-2 text-[#1F4E79] font-medium text-sm hover:text-[#C96B3B] transition-colors" aria-expanded="false" aria-controls="case-4-content">
+                <span class="toggle-text">Read the full story</span>
+                <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Expandable Content -->
+        <div id="case-4-content" class="case-content hidden border-t border-[#1F4E79]/10">
+          <div class="p-8 space-y-8">
+            <!-- Step 1: Problem -->
+            <div class="flex gap-4">
+              <div class="w-12 h-12 rounded-full bg-[#C96B3B]/10 flex items-center justify-center flex-shrink-0">
+                <span class="text-[#C96B3B] font-bold">1</span>
+              </div>
+              <div class="flex-1">
+                <h4 class="font-semibold text-charcoal mb-2">We Listen</h4>
+                <p class="text-sm text-stone">A dog supply store owner with 4 Las Vegas locations believed deeply in fairly rewarding his team. But with 3-4 employees rotating across stores simultaneously, figuring out who drove sales was a nightmare. The only hard data came when an employee logged into the POS register—ignoring the floor staff who actually helped the customer decide. He spent <strong>8-12 hours weekly</strong> cross-referencing scheduling data with sales spikes to guess who was performing, but the results were opaque and delayed by weeks.</p>
+              </div>
+            </div>
+
+            <!-- Step 2: Suggestion -->
+            <div class="flex gap-4">
+              <div class="w-12 h-12 rounded-full bg-[#1F4E79]/10 flex items-center justify-center flex-shrink-0">
+                <span class="text-[#1F4E79] font-bold">2</span>
+              </div>
+              <div class="flex-1">
+                <h4 class="font-semibold text-charcoal mb-2">We Audit</h4>
+                <p class="text-sm text-stone">We mapped the data silos: Homebase (scheduling) and Square (POS). The owner was making educated guesses, meaning high performers were being overlooked simply because they weren't the ones ringing up the transaction. The <em>transparency he valued</em> was impossible without finding hidden correlations between foot traffic, shift overlaps, and category-specific sales spikes—a puzzle no human could solve manually in a reasonable timeframe.</p>
+              </div>
+            </div>
+
+            <!-- Step 3: Designing -->
+            <div class="flex gap-4">
+              <div class="w-12 h-12 rounded-full bg-[#6C8261]/10 flex items-center justify-center flex-shrink-0">
+                <span class="text-[#6C8261] font-bold">3</span>
+              </div>
+              <div class="flex-1">
+                <h4 class="font-semibold text-charcoal mb-2">We Design</h4>
+                <p class="text-sm text-stone">Design a system that continuously ingests data from both platforms and uses statistical modeling to attribute sales influence even when staff aren't logged at the register. Two micro-automations: an ETL pipeline that unifies scheduling and transaction data, and an AI analysis engine that weights store busyness, shift compositions, and product categories to score true performance fairly.</p>
+              </div>
+            </div>
+
+            <!-- Step 4: Implementation -->
+            <div class="flex gap-4">
+              <div class="w-12 h-12 rounded-full bg-[#1F4E79]/10 flex items-center justify-center flex-shrink-0">
+                <span class="text-[#1F4E79] font-bold">4</span>
+              </div>
+              <div class="flex-1">
+                <h4 class="font-semibold text-charcoal mb-2">We Implement</h4>
+                <div class="grid md:grid-cols-2 gap-4 mt-3">
+                  <div class="bg-[#1F4E79]/5 rounded-lg p-4">
+                    <h5 class="font-medium text-sm text-charcoal mb-2">Cross-Platform Data Integration</h5>
+                    <ul class="text-xs text-stone space-y-1">
+                      <li>→ API sync with Square POS (transactions, timestamps)</li>
+                      <li>→ API sync with Homebase (actual shift punch-ins)</li>
+                      <li>→ Normalizes employee IDs across disparate systems</li>
+                      <li>→ Maps transaction velocity to exact shift overlaps</li>
+                    </ul>
+                  </div>
+                  <div class="bg-[#6C8261]/5 rounded-lg p-4">
+                    <h5 class="font-medium text-sm text-charcoal mb-2">AI Performance Pattern Analysis</h5>
+                    <ul class="text-xs text-stone space-y-1">
+                      <li>→ Analyzes sales uplift during specific staff combos</li>
+                      <li>→ Weights performance against baseline location traffic</li>
+                      <li>→ Sends Friday SMS alerts for top weekly performers</li>
+                      <li>→ Generates transparent, fair leaderboard dashboard</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 5: Result -->
+            <div class="flex gap-4">
+              <div class="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+              </div>
+              <div class="flex-1">
+                <h4 class="font-semibold text-charcoal mb-2">Result: Improved Business</h4>
+                <div class="grid grid-cols-3 gap-4 mt-3">
+                  <div class="text-center">
+                    <div class="text-2xl font-bold text-[#1F4E79]">0</div>
+                    <div class="text-xs text-stone">hours manual reporting</div>
+                  </div>
+                  <div class="text-center">
+                    <div class="text-2xl font-bold text-[#1F4E79]">Daily</div>
+                    <div class="text-xs text-stone">performance updates</div>
+                  </div>
+                  <div class="text-center">
+                    <div class="text-2xl font-bold text-[#1F4E79]">High</div>
+                    <div class="text-xs text-stone">employee trust</div>
+                  </div>
+                </div>
+                <p class="text-sm text-stone mt-4">The owner now relies on fair, defensible performance insights that account for the complexity of rotating staff. Employees trust the system because it acknowledges floor work, not just register log-ins. Best of all, rewards are given in real-time, keeping morale consistently high across all four stores.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
     </div>
 
     <script>
