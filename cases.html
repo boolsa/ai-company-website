@@ -311,16 +311,407 @@
     </script>
   </nav>
 
-  <main id="main-content" class="max-w-4xl mx-auto px-6 pt-24 pb-32">
-    <div class="mb-12">
+  <main id="main-content" class="max-w-5xl mx-auto px-6 pt-24 pb-32">
+    <div class="mb-16">
       <p class="section-label text-xs text-[#A6552B] tracking-widest mb-4">[CASES]</p>
       <h1 class="font-sans text-5xl md:text-6xl font-bold tight-tracking text-[#1F4E79] mb-6">Case Studies</h1>
+      <p class="text-xl text-stone max-w-2xl">Real workflow bottlenecks we've solved. The problems that held teams back, the automations we built, and the operational changes that followed.</p>
     </div>
 
-    <div class="text-center py-24">
-      <p class="text-xl text-stone max-w-2xl mx-auto mb-8">Examples of the workflow bottlenecks we solve, the systems we build around them, and the operational changes they create. Detailed case studies are being prepared.</p>
+    <div class="space-y-8">
+      <!-- Case Study 1 -->
+      <article class="case-card bg-white/60 backdrop-blur-sm rounded-xl border border-[#1F4E79]/10 overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+        <!-- Card Header / Summary -->
+        <div class="p-8 cursor-pointer" onclick="toggleCase('case-1')">
+          <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
+            <div class="flex-1">
+              <div class="flex flex-wrap items-center gap-3 mb-4">
+                <span class="section-label text-xs text-[#1F4E79] bg-[#1F4E79]/5 px-3 py-1 rounded-full">Logistics</span>
+                <span class="text-sm text-stone">HQ New York City · National footprint</span>
+              </div>
+              <h2 class="text-2xl md:text-3xl font-bold text-charcoal mb-3">The Expense Report Chaos</h2>
+              <p class="text-stone">Field managers emailed receipt photos. Accounting spent 12 hours/week manually filing and entering data—work far below their skill level.</p>
+            </div>
+            <div class="flex flex-row md:flex-col items-center md:items-end gap-6 md:gap-2">
+              <div class="text-center md:text-right">
+                <div class="text-4xl md:text-5xl font-bold text-[#C96B3B]">12</div>
+                <div class="text-sm text-stone">hours/week saved<br>from being wasted</div>
+              </div>
+              <button class="case-toggle-btn flex items-center gap-2 text-[#1F4E79] font-medium text-sm hover:text-[#C96B3B] transition-colors" aria-expanded="false" aria-controls="case-1-content">
+                <span class="toggle-text">Read the full story</span>
+                <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Expandable Content -->
+        <div id="case-1-content" class="case-content hidden border-t border-[#1F4E79]/10">
+          <div class="p-8 space-y-8">
+            <!-- Step 1: Problem -->
+            <div class="flex gap-4">
+              <div class="w-12 h-12 rounded-full bg-[#C96B3B]/10 flex items-center justify-center flex-shrink-0">
+                <span class="text-[#C96B3B] font-bold">1</span>
+              </div>
+              <div class="flex-1">
+                <h4 class="font-semibold text-charcoal mb-2">We Listen</h4>
+                <p class="text-sm text-stone">A logistics company with 16 field managers across the country. The accounting person spent <strong>12 hours/week</strong> manually processing expense reports—creating folders, downloading receipt images, transcribing data, and filing everything. The owner couldn't get managers to use expense software, so email with photo attachments was the only workflow that worked.</p>
+              </div>
+            </div>
+
+            <!-- Step 2: Suggestion -->
+            <div class="flex gap-4">
+              <div class="w-12 h-12 rounded-full bg-[#1F4E79]/10 flex items-center justify-center flex-shrink-0">
+                <span class="text-[#1F4E79] font-bold">2</span>
+              </div>
+              <div class="flex-1">
+                <h4 class="font-semibold text-charcoal mb-2">We Audit</h4>
+                <p class="text-sm text-stone">We observed the accounting workflow for a morning. The email-with-photos method was actually smart—low friction for busy field managers. The problem was everything <em>after</em> the email arrived: manual data entry, folder creation, filing. Work that had to happen but was wasting expensive talent on tasks far below their skill level.</p>
+              </div>
+            </div>
+
+            <!-- Step 3: Designing -->
+            <div class="flex gap-4">
+              <div class="w-12 h-12 rounded-full bg-[#6C8261]/10 flex items-center justify-center flex-shrink-0">
+                <span class="text-[#6C8261] font-bold">3</span>
+              </div>
+              <div class="flex-1">
+                <h4 class="font-semibold text-charcoal mb-2">We Design</h4>
+                <p class="text-sm text-stone">Design a system that keeps the manager workflow exactly the same (email photos) but automates everything on the back end. Two micro-automations working together: one to extract data from receipt images using AI vision, another to automatically organize files and folders without human touch.</p>
+              </div>
+            </div>
+
+            <!-- Step 4: Implementation -->
+            <div class="flex gap-4">
+              <div class="w-12 h-12 rounded-full bg-[#1F4E79]/10 flex items-center justify-center flex-shrink-0">
+                <span class="text-[#1F4E79] font-bold">4</span>
+              </div>
+              <div class="flex-1">
+                <h4 class="font-semibold text-charcoal mb-2">We Implement</h4>
+                <div class="grid md:grid-cols-2 gap-4 mt-3">
+                  <div class="bg-[#1F4E79]/5 rounded-lg p-4">
+                    <h5 class="font-medium text-sm text-charcoal mb-2">Receipt Data Extraction</h5>
+                    <ul class="text-xs text-stone space-y-1">
+                      <li>→ Monitors inbox for receipt emails</li>
+                      <li>→ AI reads images with computer vision</li>
+                      <li>→ Extracts vendor, date, amount, category</li>
+                      <li>→ Populates Google Sheet automatically</li>
+                    </ul>
+                  </div>
+                  <div class="bg-[#6C8261]/5 rounded-lg p-4">
+                    <h5 class="font-medium text-sm text-charcoal mb-2">Smart File Organization</h5>
+                    <ul class="text-xs text-stone space-y-1">
+                      <li>→ Creates folders (Manager → Year → Month)</li>
+                      <li>→ Identifies sender automatically</li>
+                      <li>→ Renames files with date & amount</li>
+                      <li>→ Files images in correct location</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 5: Result -->
+            <div class="flex gap-4">
+              <div class="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+              </div>
+              <div class="flex-1">
+                <h4 class="font-semibold text-charcoal mb-2">Result: Improved Business</h4>
+                <div class="grid grid-cols-3 gap-4 mt-3">
+                  <div class="text-center">
+                    <div class="text-2xl font-bold text-[#1F4E79]">12→0.75</div>
+                    <div class="text-xs text-stone">hours/week</div>
+                  </div>
+                  <div class="text-center">
+                    <div class="text-2xl font-bold text-[#1F4E79]">~0</div>
+                    <div class="text-xs text-stone">data entry errors</div>
+                  </div>
+                  <div class="text-center">
+                    <div class="text-2xl font-bold text-[#1F4E79]">100%</div>
+                    <div class="text-xs text-stone">audit-ready filing</div>
+                  </div>
+                </div>
+                <p class="text-sm text-stone mt-4">The accounting person stopped being a data entry clerk and became the financial strategist the company actually needed—finally doing cash flow forecasting, vendor analysis, and profitability reports.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Case Study 2 -->
+      <article class="case-card bg-white/60 backdrop-blur-sm rounded-xl border border-[#1F4E79]/10 overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+        <!-- Card Header / Summary -->
+        <div class="p-8 cursor-pointer" onclick="toggleCase('case-2')">
+          <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
+            <div class="flex-1">
+              <div class="flex flex-wrap items-center gap-3 mb-4">
+                <span class="section-label text-xs text-[#1F4E79] bg-[#1F4E79]/5 px-3 py-1 rounded-full">Home Services</span>
+                <span class="text-sm text-stone">10 employees — Quebec, Canada</span>
+              </div>
+              <h2 class="text-2xl md:text-3xl font-bold text-charcoal mb-3">The Pricing Explanation Loop</h2>
+              <p class="text-stone">Sales team spent 40% of every call repeating pricing details to tire-kickers before knowing if they were serious. Two salespeople drowning in callbacks while qualified leads waited.</p>
+            </div>
+            <div class="flex flex-row md:flex-col items-center md:items-end gap-6 md:gap-2">
+              <div class="text-center md:text-right">
+                <div class="text-4xl md:text-5xl font-bold text-[#C96B3B]">~15</div>
+                <div class="text-sm text-stone">hours/week saved<br>from being wasted</div>
+              </div>
+              <button class="case-toggle-btn flex items-center gap-2 text-[#1F4E79] font-medium text-sm hover:text-[#C96B3B] transition-colors" aria-expanded="false" aria-controls="case-2-content">
+                <span class="toggle-text">Read the full story</span>
+                <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Expandable Content -->
+        <div id="case-2-content" class="case-content hidden border-t border-[#1F4E79]/10">
+          <div class="p-8 space-y-8">
+            <!-- Step 1: Problem -->
+            <div class="flex gap-4">
+              <div class="w-12 h-12 rounded-full bg-[#C96B3B]/10 flex items-center justify-center flex-shrink-0">
+                <span class="text-[#C96B3B] font-bold">1</span>
+              </div>
+              <div class="flex-1">
+                <h4 class="font-semibold text-charcoal mb-2">We Listen</h4>
+                <p class="text-sm text-stone">A 10-person home generator company in Quebec. Two salespeople (including the owner) drowning in call volume. <strong>40% of every callback</strong> was spent explaining pricing to tire-kickers—3 minutes explaining costs, 2 minutes qualifying interest, 5 minutes booking. Qualified leads waited hours while salespeople educated window shoppers.</p>
+              </div>
+            </div>
+
+            <!-- Step 2: Suggestion -->
+            <div class="flex gap-4">
+              <div class="w-12 h-12 rounded-full bg-[#1F4E79]/10 flex items-center justify-center flex-shrink-0">
+                <span class="text-[#1F4E79] font-bold">2</span>
+              </div>
+              <div class="flex-1">
+                <h4 class="font-semibold text-charcoal mb-2">We Audit</h4>
+                <p class="text-sm text-stone">We tracked the callback workflow. The owner wanted to automate pricing explanations so he could skip to booking. But the real bottleneck was the entire callback cycle—voicemail delays, repetitive explanations, back-and-forth scheduling. Two salespeople at capacity, but not enough volume to hire a third.</p>
+              </div>
+            </div>
+
+            <!-- Step 3: Designing -->
+            <div class="flex gap-4">
+              <div class="w-12 h-12 rounded-full bg-[#6C8261]/10 flex items-center justify-center flex-shrink-0">
+                <span class="text-[#6C8261] font-bold">3</span>
+              </div>
+              <div class="flex-1">
+                <h4 class="font-semibold text-charcoal mb-2">We Design</h4>
+                <p class="text-sm text-stone">Design a system that answers calls immediately—no more voicemail purgatory. AI handles the entire first touch: pricing explanation, qualification, and booking. Salespeople only talk to pre-qualified buyers with confirmed appointments. Two micro-automations: AI voice for instant response and natural conversation, auto-scheduling to remove booking friction.</p>
+              </div>
+            </div>
+
+            <!-- Step 4: Implementation -->
+            <div class="flex gap-4">
+              <div class="w-12 h-12 rounded-full bg-[#1F4E79]/10 flex items-center justify-center flex-shrink-0">
+                <span class="text-[#1F4E79] font-bold">4</span>
+              </div>
+              <div class="flex-1">
+                <h4 class="font-semibold text-charcoal mb-2">We Implement</h4>
+                <div class="grid md:grid-cols-2 gap-4 mt-3">
+                  <div class="bg-[#1F4E79]/5 rounded-lg p-4">
+                    <h5 class="font-medium text-sm text-charcoal mb-2">AI Voice Agent</h5>
+                    <ul class="text-xs text-stone space-y-1">
+                      <li>→ Answers calls instantly 24/7</li>
+                      <li>→ Explains pricing naturally</li>
+                      <li>→ Qualifies buying intent</li>
+                      <li>→ Handles common objections</li>
+                    </ul>
+                  </div>
+                  <div class="bg-[#6C8261]/5 rounded-lg p-4">
+                    <h5 class="font-medium text-sm text-charcoal mb-2">Auto-Scheduling</h5>
+                    <ul class="text-xs text-stone space-y-1">
+                      <li>→ Checks real-time availability</li>
+                      <li>→ Books appointments instantly</li>
+                      <li>→ Sends confirmations via SMS</li>
+                      <li>→ Syncs to team calendar</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 5: Result -->
+            <div class="flex gap-4">
+              <div class="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+              </div>
+              <div class="flex-1">
+                <h4 class="font-semibold text-charcoal mb-2">Result: Improved Business</h4>
+                <div class="grid grid-cols-3 gap-4 mt-3">
+                  <div class="text-center">
+                    <div class="text-2xl font-bold text-[#1F4E79]">24/7</div>
+                    <div class="text-xs text-stone">instant response</div>
+                  </div>
+                  <div class="text-center">
+                    <div class="text-2xl font-bold text-[#1F4E79]">~15 hrs</div>
+                    <div class="text-xs text-stone">saved per week</div>
+                  </div>
+                  <div class="text-center">
+                    <div class="text-2xl font-bold text-[#1F4E79]">100%</div>
+                    <div class="text-xs text-stone">pre-qualified leads</div>
+                  </div>
+                </div>
+                <p class="text-sm text-stone mt-4">The sales team stopped being pricing lecturers and became actual salespeople—closing deals instead of explaining kilowatts. No third salesperson needed.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Case Study 3 -->
+      <article class="case-card bg-white/60 backdrop-blur-sm rounded-xl border border-[#1F4E79]/10 overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+        <!-- Card Header / Summary -->
+        <div class="p-8 cursor-pointer" onclick="toggleCase('case-3')">
+          <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
+            <div class="flex-1">
+              <div class="flex flex-wrap items-center gap-3 mb-4">
+                <span class="section-label text-xs text-[#1F4E79] bg-[#1F4E79]/5 px-3 py-1 rounded-full">Operations</span>
+                <span class="text-sm text-stone">NYC Mailroom · 4 positions</span>
+              </div>
+              <h2 class="text-2xl md:text-3xl font-bold text-charcoal mb-3">The Disappearing Knowledge</h2>
+              <p class="text-stone">SOPs and know-how documents existed—but were scattered in piles, lost on servers, or trapped in employees' heads. New hires couldn't find answers when they needed them.</p>
+            </div>
+            <div class="flex flex-row md:flex-col items-center md:items-end gap-6 md:gap-2">
+              <div class="text-center md:text-right">
+                <div class="text-4xl md:text-5xl font-bold text-[#C96B3B]">~8</div>
+                <div class="text-sm text-stone">hours/week saved<br>from being wasted</div>
+              </div>
+              <button class="case-toggle-btn flex items-center gap-2 text-[#1F4E79] font-medium text-sm hover:text-[#C96B3B] transition-colors" aria-expanded="false" aria-controls="case-3-content">
+                <span class="toggle-text">Read the full story</span>
+                <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Expandable Content -->
+        <div id="case-3-content" class="case-content hidden border-t border-[#1F4E79]/10">
+          <div class="p-8 space-y-8">
+            <!-- Step 1: Problem -->
+            <div class="flex gap-4">
+              <div class="w-12 h-12 rounded-full bg-[#C96B3B]/10 flex items-center justify-center flex-shrink-0">
+                <span class="text-[#C96B3B] font-bold">1</span>
+              </div>
+              <div class="flex-1">
+                <h4 class="font-semibold text-charcoal mb-2">We Listen</h4>
+                <p class="text-sm text-stone">A mailroom operations manager in New York City with 4 positions and rotating new hires. They had SOPs and know-how documents, but everything was scattered—buried in physical file piles, lost on servers, or trapped in veteran employees' heads. New hires spent <strong>10-15 minutes</strong> searching for answers to basic questions, often giving up and interrupting busy colleagues.</p>
+              </div>
+            </div>
+
+            <!-- Step 2: Suggestion -->
+            <div class="flex gap-4">
+              <div class="w-12 h-12 rounded-full bg-[#1F4E79]/10 flex items-center justify-center flex-shrink-0">
+                <span class="text-[#1F4E79] font-bold">2</span>
+              </div>
+              <div class="flex-1">
+                <h4 class="font-semibold text-charcoal mb-2">We Audit</h4>
+                <p class="text-sm text-stone">We reviewed their training process and gathered all relevant documents. The problem wasn't missing information—it was unfindable information. Documents existed but were functionally useless because employees couldn't access them quickly. When people left, their knowledge walked out the door. The manager needed a way to compile everything in one place where it wouldn't get lost again.</p>
+              </div>
+            </div>
+
+            <!-- Step 3: Designing -->
+            <div class="flex gap-4">
+              <div class="w-12 h-12 rounded-full bg-[#6C8261]/10 flex items-center justify-center flex-shrink-0">
+                <span class="text-[#6C8261] font-bold">3</span>
+              </div>
+              <div class="flex-1">
+                <h4 class="font-semibold text-charcoal mb-2">We Design</h4>
+                <p class="text-sm text-stone">Design a private RAG (Retrieval-Augmented Generation) system that employees can access anytime. Two micro-automations: one to continuously ingest new documents and prevent them from getting lost again, another to enable instant knowledge retrieval through natural language chat so employees get answers in 30 seconds instead of 15 minutes.</p>
+              </div>
+            </div>
+
+            <!-- Step 4: Implementation -->
+            <div class="flex gap-4">
+              <div class="w-12 h-12 rounded-full bg-[#1F4E79]/10 flex items-center justify-center flex-shrink-0">
+                <span class="text-[#1F4E79] font-bold">4</span>
+              </div>
+              <div class="flex-1">
+                <h4 class="font-semibold text-charcoal mb-2">We Implement</h4>
+                <div class="grid md:grid-cols-2 gap-4 mt-3">
+                  <div class="bg-[#1F4E79]/5 rounded-lg p-4">
+                    <h5 class="font-medium text-sm text-charcoal mb-2">Continuous Document Ingestion</h5>
+                    <ul class="text-xs text-stone space-y-1">
+                      <li>→ Captures scattered physical & digital docs</li>
+                      <li>→ Auto-processes new SOPs as written</li>
+                      <li>→ Updates knowledge base when procedures change</li>
+                      <li>→ Everything stored in one permanent location</li>
+                    </ul>
+                  </div>
+                  <div class="bg-[#6C8261]/5 rounded-lg p-4">
+                    <h5 class="font-medium text-sm text-charcoal mb-2">Instant Knowledge Retrieval</h5>
+                    <ul class="text-xs text-stone space-y-1">
+                      <li>→ Natural language chat interface</li>
+                      <li>→ Searches across all documents instantly</li>
+                      <li>→ Provides synthesized answers with sources</li>
+                      <li>→ Private access—employees only</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 5: Result -->
+            <div class="flex gap-4">
+              <div class="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+              </div>
+              <div class="flex-1">
+                <h4 class="font-semibold text-charcoal mb-2">Result: Improved Business</h4>
+                <div class="grid grid-cols-3 gap-4 mt-3">
+                  <div class="text-center">
+                    <div class="text-2xl font-bold text-[#1F4E79]">15→0.5</div>
+                    <div class="text-xs text-stone">minutes to answer</div>
+                  </div>
+                  <div class="text-center">
+                    <div class="text-2xl font-bold text-[#1F4E79]">80%</div>
+                    <div class="text-xs text-stone">self-serve training</div>
+                  </div>
+                  <div class="text-center">
+                    <div class="text-2xl font-bold text-[#1F4E79]">~8 hrs</div>
+                    <div class="text-xs text-stone">saved per week</div>
+                  </div>
+                </div>
+                <p class="text-sm text-stone mt-4">Scattered piles became a living knowledge system. New hires train themselves. Veterans' tacit knowledge is captured before they leave. Documents finally serve their purpose.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
     </div>
-  </main>
+
+    <script>
+      function toggleCase(caseId) {
+        const content = document.getElementById(caseId + '-content');
+        const btn = document.querySelector(`[aria-controls="${caseId}-content"]`);
+        const isExpanded = content.classList.contains('hidden');
+        
+        if (isExpanded) {
+          content.classList.remove('hidden');
+          btn.setAttribute('aria-expanded', 'true');
+          btn.querySelector('.toggle-text').textContent = 'Show less';
+          btn.querySelector('svg').classList.add('rotate-180');
+        } else {
+          content.classList.add('hidden');
+          btn.setAttribute('aria-expanded', 'false');
+          btn.querySelector('.toggle-text').textContent = 'Read the full story';
+          btn.querySelector('svg').classList.remove('rotate-180');
+        }
+      }
+    </script>
+  </main> 
 
   <footer class="py-12 text-center text-sm text-stone border-t border-stone/10">
     <p>&copy; 2026 Microve.ai</p>
