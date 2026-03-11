@@ -350,14 +350,35 @@
         <p>
           <strong>RAG is simply giving that brilliant graduate an open-book test with your company's private library.</strong>
         </p>
-        <p>
+        <p class="mb-6">
           When you ask a question, a RAG system:
         </p>
-        <ol class="list-decimal pl-5 space-y-2 mb-6">
-          <li><strong>Retrieves</strong> the specific paragraphs from your internal documents that contain the answer.</li>
-          <li><strong>Augments</strong> your question by attaching those specific paragraphs to it.</li>
-          <li><strong>Generates</strong> a plain-English answer based <em>only</em> on the retrieved facts, citing its sources.</li>
-        </ol>
+        
+        <div class="space-y-4 mb-10 not-prose">
+          <div class="flex items-start gap-4 bg-white p-5 rounded-lg border border-stone/10 shadow-sm">
+            <div class="w-8 h-8 rounded-full bg-[#1F4E79] text-white font-bold flex items-center justify-center flex-shrink-0 mt-0.5">1</div>
+            <div>
+              <h4 class="font-bold text-charcoal text-lg mb-1">Retrieves</h4>
+              <p class="text-sm text-stone m-0">The specific paragraphs from your internal documents that contain the answer.</p>
+            </div>
+          </div>
+          
+          <div class="flex items-start gap-4 bg-white p-5 rounded-lg border border-stone/10 shadow-sm">
+            <div class="w-8 h-8 rounded-full bg-[#1F4E79] text-white font-bold flex items-center justify-center flex-shrink-0 mt-0.5">2</div>
+            <div>
+              <h4 class="font-bold text-charcoal text-lg mb-1">Augments</h4>
+              <p class="text-sm text-stone m-0">Your question by attaching those specific paragraphs to it.</p>
+            </div>
+          </div>
+          
+          <div class="flex items-start gap-4 bg-white p-5 rounded-lg border border-stone/10 shadow-sm">
+            <div class="w-8 h-8 rounded-full bg-[#1F4E79] text-white font-bold flex items-center justify-center flex-shrink-0 mt-0.5">3</div>
+            <div>
+              <h4 class="font-bold text-charcoal text-lg mb-1">Generates</h4>
+              <p class="text-sm text-stone m-0">A plain-English answer based <em>only</em> on the retrieved facts, citing its sources.</p>
+            </div>
+          </div>
+        </div>
 
         <h2 class="text-2xl font-bold text-[#1F4E79] mt-10 mb-4">The problem with the "Upload to ChatGPT" method</h2>
         <p>
@@ -407,24 +428,41 @@
         </div>
 
         <h2 class="text-2xl font-bold text-[#1F4E79] mt-10 mb-4">The Custom RAG Advantage</h2>
-        <p>
+        <p class="mb-6">
           When we build a custom RAG system for a client, we aren't just giving them a chatbot. We are building a continuous knowledge pipeline.
         </p>
 
-        <ul class="space-y-3 mb-8">
-          <li class="flex items-start gap-3">
-            <svg class="w-6 h-6 text-[#6C8261] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-            <span><strong>Continuous Ingestion:</strong> It connects directly to your Google Drive, SharePoint, or Notion. When you update an SOP doc, the RAG system updates its brain automatically.</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <svg class="w-6 h-6 text-[#6C8261] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-            <span><strong>Workflow Integration:</strong> We don't force employees to go to a separate website. We embed the RAG chatbot directly into the tools they already use, like Slack or Microsoft Teams.</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <svg class="w-6 h-6 text-[#6C8261] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-            <span><strong>Analytics & Blind Spots:</strong> You get a dashboard showing exactly what your employees are asking. If 10 people ask the same question and the system says "I don't know," you instantly know where your documentation is lacking.</span>
-          </li>
-        </ul>
+        <div class="grid md:grid-cols-1 gap-4 mb-10 not-prose">
+          <div class="bg-white border border-[#6C8261]/30 p-5 rounded-lg shadow-sm flex items-start gap-4">
+            <div class="w-10 h-10 rounded-full bg-[#6C8261]/10 text-[#6C8261] flex items-center justify-center flex-shrink-0 mt-0.5">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path></svg>
+            </div>
+            <div>
+              <h4 class="font-bold text-charcoal text-lg mb-1">Continuous Ingestion</h4>
+              <p class="text-sm text-stone m-0">It connects directly to your Google Drive, SharePoint, or Notion. When you update an SOP doc, the RAG system updates its brain automatically.</p>
+            </div>
+          </div>
+          
+          <div class="bg-white border border-[#6C8261]/30 p-5 rounded-lg shadow-sm flex items-start gap-4">
+            <div class="w-10 h-10 rounded-full bg-[#6C8261]/10 text-[#6C8261] flex items-center justify-center flex-shrink-0 mt-0.5">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+            </div>
+            <div>
+              <h4 class="font-bold text-charcoal text-lg mb-1">Workflow Integration</h4>
+              <p class="text-sm text-stone m-0">We don't force employees to go to a separate website. We embed the RAG chatbot directly into the tools they already use, like Slack or Microsoft Teams.</p>
+            </div>
+          </div>
+          
+          <div class="bg-white border border-[#6C8261]/30 p-5 rounded-lg shadow-sm flex items-start gap-4">
+            <div class="w-10 h-10 rounded-full bg-[#6C8261]/10 text-[#6C8261] flex items-center justify-center flex-shrink-0 mt-0.5">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+            </div>
+            <div>
+              <h4 class="font-bold text-charcoal text-lg mb-1">Analytics & Blind Spots</h4>
+              <p class="text-sm text-stone m-0">You get a dashboard showing exactly what your employees are asking. If 10 people ask the same question and the system says "I don't know," you instantly know where your documentation is lacking.</p>
+            </div>
+          </div>
+        </div>
 
         <div class="bg-[#1F4E79]/5 border-l-4 border-[#1F4E79] p-6 my-8">
           <h4 class="font-bold text-[#1F4E79] mb-2">The Bottom Line</h4>
