@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Weekly Data Scrape | Microve.ai</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: { extend: { colors: { charcoal: '#17212B', stone: '#636E72' }, fontFamily: { sans: ['Inter', 'sans-serif'], mono: ['JetBrains Mono', 'monospace'] } } }
+    }
+  </script>
+  <style>
+    body { background-color: #F4F1E8 !important; background-image: radial-gradient(circle, rgba(31, 78, 121, 0.18) 1.5px, transparent 1.5px) !important; background-size: 28px 28px !important; }
+    #site-nav { position: sticky; top: 0; z-index: 40; backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); background: linear-gradient(180deg, rgba(249, 246, 240, 0.88) 0%, rgba(240, 234, 223, 0.9) 100%); border-bottom: 1px solid rgba(23, 33, 43, 0.08); }
+    .nav-logo { font-family: 'Inter', sans-serif; font-size: 1.5rem; font-weight: 700; color: #17212B; letter-spacing: -0.03em; text-decoration: none; display: flex; align-items: baseline;}
+    .nav-logo-tld { font-family: 'JetBrains Mono', monospace; font-size: 0.6875rem; font-weight: 500; color: rgba(99, 110, 114, 0.88); letter-spacing: 0.04em; margin-left: 2px; position: relative; top: -5px; }
+  </style>
+</head>
+<body class="text-charcoal antialiased">
+  <nav id="site-nav" class="sticky top-0 z-40" role="navigation">
+    <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="../index.html" class="nav-logo">microve<span class="nav-logo-tld">.ai</span></a>
+      <a href="../cases.html" class="text-sm font-medium text-[#1F4E79] hover:text-[#C96B3B] transition-colors flex items-center gap-2">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+        Back to Cases
+      </a>
+    </div>
+  </nav>
+
+  <main class="max-w-3xl mx-auto px-6 pt-16 pb-32">
+    <header class="mb-12">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="text-xs font-mono bg-[#1F4E79]/10 text-[#1F4E79] px-3 py-1 rounded-full uppercase tracking-wider">Insurance</span>
+        <span class="text-sm text-stone">Independent Brokerage</span>
+      </div>
+      <h1 class="font-sans text-4xl md:text-5xl font-bold text-[#1F4E79] mb-6 leading-tight">The Weekly Data Scrape</h1>
+      <p class="text-xl text-stone leading-relaxed">An insurance broker lost hours every week manually logging into multiple carrier portals just to download data and paste it into his custom Excel dashboard.</p>
+    </header>
+
+    <div class="grid grid-cols-3 gap-4 mb-16 py-8 border-y border-[#1F4E79]/10">
+      <div class="text-center">
+        <div class="text-3xl font-bold text-[#C96B3B] mb-1">0</div>
+        <div class="text-xs text-stone uppercase tracking-wider">manual logins</div>
+      </div>
+      <div class="text-center border-l border-[#1F4E79]/10">
+        <div class="text-3xl font-bold text-[#C96B3B] mb-1">100%</div>
+        <div class="text-xs text-stone uppercase tracking-wider">workflow retained</div>
+      </div>
+      <div class="text-center border-l border-[#1F4E79]/10">
+        <div class="text-3xl font-bold text-[#C96B3B] mb-1">~6 hrs</div>
+        <div class="text-xs text-stone uppercase tracking-wider">saved per week</div>
+      </div>
+    </div>
+
+    <article class="space-y-12">
+      <section>
+        <h2 class="text-2xl font-bold text-[#1F4E79] mb-4 flex items-center gap-3"><span class="flex items-center justify-center w-8 h-8 rounded-full bg-[#1F4E79]/10 text-[#1F4E79] text-sm">1</span> We Listen</h2>
+        <div class="prose prose-stone max-w-none text-stone">
+          <p>An independent insurance broker had a highly specific, time-consuming weekly routine. To keep his business running, he needed data from multiple different insurance carrier portals. Every week, he would manually log into each website, navigate through clumsy menus, download the raw data files, and manually input the numbers into a custom Excel dashboard he had built. It was a mindless, frustrating chore that took up a large chunk of his valuable selling time.</p>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold text-[#1F4E79] mb-4 flex items-center gap-3"><span class="flex items-center justify-center w-8 h-8 rounded-full bg-[#1F4E79]/10 text-[#1F4E79] text-sm">2</span> We Audit</h2>
+        <div class="prose prose-stone max-w-none text-stone">
+          <p>We analyzed his workflow and initially proposed three solutions: 1) A browser agent to auto-login and scrape the data, 2) A script to format and inject that data into his existing Excel sheet, and 3) Building a brand-new, robust web dashboard to replace Excel entirely. The client reviewed the options and made a smart operational decision: he loved his Excel dashboard and didn't want the chore of learning a new tool. He just wanted the data collection automated.</p>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold text-[#1F4E79] mb-4 flex items-center gap-3"><span class="flex items-center justify-center w-8 h-8 rounded-full bg-[#1F4E79]/10 text-[#1F4E79] text-sm">3</span> We Design</h2>
+        <div class="prose prose-stone max-w-none text-stone">
+          <p>Design a background system that respects the client's current workflow without forcing new software adoption. Two micro-automations: one AI browser agent capable of navigating authenticated carrier portals to scrape the required files, and a data-processing script that automatically structures the raw data and inputs it directly into his existing beloved Excel dashboard.</p>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold text-[#1F4E79] mb-6 flex items-center gap-3"><span class="flex items-center justify-center w-8 h-8 rounded-full bg-[#1F4E79]/10 text-[#1F4E79] text-sm">4</span> We Implement</h2>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-white border border-[#1F4E79]/10 p-6 rounded-lg shadow-sm">
+            <h3 class="font-bold text-charcoal mb-4">Authenticated Browser Agent</h3>
+            <ul class="space-y-2 text-sm text-stone">
+              <li class="flex items-start gap-2"><span class="text-[#C96B3B] mt-0.5">→</span> Logs into multiple portals</li>
+              <li class="flex items-start gap-2"><span class="text-[#C96B3B] mt-0.5">→</span> Navigates complex menus</li>
+              <li class="flex items-start gap-2"><span class="text-[#C96B3B] mt-0.5">→</span> Identifies weekly reports</li>
+              <li class="flex items-start gap-2"><span class="text-[#C96B3B] mt-0.5">→</span> Runs reliably on weekends</li>
+            </ul>
+          </div>
+          <div class="bg-white border border-[#1F4E79]/10 p-6 rounded-lg shadow-sm">
+            <h3 class="font-bold text-charcoal mb-4">Excel Data Pipeline</h3>
+            <ul class="space-y-2 text-sm text-stone">
+              <li class="flex items-start gap-2"><span class="text-[#C96B3B] mt-0.5">→</span> Extracts numbers from files</li>
+              <li class="flex items-start gap-2"><span class="text-[#C96B3B] mt-0.5">→</span> Formats to specific layout</li>
+              <li class="flex items-start gap-2"><span class="text-[#C96B3B] mt-0.5">→</span> Injects directly to sheet</li>
+              <li class="flex items-start gap-2"><span class="text-[#C96B3B] mt-0.5">→</span> Preserves custom formulas</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-[#6C8261]/10 p-8 rounded-xl">
+        <h2 class="text-2xl font-bold text-[#1F4E79] mb-4 flex items-center gap-3">
+          <svg class="w-8 h-8 text-[#6C8261]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          The Result
+        </h2>
+        <p class="text-stone">The broker continues to use the exact same Excel dashboard he's comfortable with, but he never has to feed it manually again. Every Monday morning, he simply opens his file and the new data is already there, giving him hours back to focus on client relationships and sales.</p>
+      </section>
+    </article>
+  </main>
+</body>
+</html>
