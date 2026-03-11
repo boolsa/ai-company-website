@@ -11,1081 +11,213 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <script>
     tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            terracotta: '#1F4E79', sage: '#6C8261', coral: '#C96B3B',
-            cream: '#F4F1E8', charcoal: '#17212B', stone: '#636E72'
-          },
-          fontFamily: { sans: ['Inter', 'sans-serif'], mono: ['JetBrains Mono', 'monospace'] }
-        }
-      }
+      theme: { extend: { colors: { terracotta: '#1F4E79', sage: '#6C8261', coral: '#C96B3B', cream: '#F4F1E8', charcoal: '#17212B', stone: '#636E72' }, fontFamily: { sans: ['Inter', 'sans-serif'], mono: ['JetBrains Mono', 'monospace'] } } }
     }
   </script>
   <style>
     html { scroll-behavior: smooth; }
-    .text-stone { color: #636E72; }
-    .text-charcoal { color: #17212B; }
-    a:focus-visible, button:focus-visible { outline: 2px solid #1F4E79; outline-offset: 2px; }
-    :focus:not(:focus-visible) { outline: none; }
-    :root { --color-coral: #C96B3B; --color-navy: #1F4E79; --color-cream: #F4F1E8; }
-    @media (hover: none) and (pointer: coarse) { a, button { min-height: 44px; min-width: 44px; } }
-    .section-label { font-family: 'JetBrains Mono', monospace; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; }
-    .tight-tracking { letter-spacing: -0.02em; }
     body { position: relative; overflow-x: hidden; background-color: #F4F1E8 !important; background-image: radial-gradient(circle, rgba(31, 78, 121, 0.18) 1.5px, transparent 1.5px) !important; background-size: 28px 28px !important; }
-    #site-nav {
-      position: sticky;
-      top: 0;
-      z-index: 40;
-      isolation: isolate;
-      background: linear-gradient(180deg, rgba(249, 246, 240, 0.88) 0%, rgba(240, 234, 223, 0.9) 100%);
-      border-bottom: 1px solid rgba(23, 33, 43, 0.08);
-      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.65);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      transition: background-color 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
-    }
-    #site-nav::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 50%;
-      width: min(1100px, calc(100% - 48px));
-      height: 1px;
-      transform: translateX(-50%);
-      background: linear-gradient(90deg, rgba(201, 107, 59, 0), rgba(201, 107, 59, 0.3) 18%, rgba(31, 78, 121, 0.25) 50%, rgba(201, 107, 59, 0.3) 82%, rgba(201, 107, 59, 0));
-      pointer-events: none;
-    }
-    #site-nav::after {
-      content: '';
-      position: absolute;
-      inset: auto 0 -22px 0;
-      height: 40px;
-      background: radial-gradient(circle at 50% 0%, rgba(31, 78, 121, 0.08), transparent 68%);
-      pointer-events: none;
-      opacity: 0.7;
-    }
-    #site-nav.nav-scrolled {
-      background: linear-gradient(180deg, rgba(247, 243, 236, 0.97) 0%, rgba(237, 231, 220, 0.96) 100%);
-      box-shadow: 0 14px 38px rgba(23, 33, 43, 0.1), 0 4px 12px rgba(31, 78, 121, 0.07), inset 0 1px 0 rgba(255, 255, 255, 0.7);
-      border-bottom-color: rgba(23, 33, 43, 0.14);
-    }
-    #site-nav .nav-inner {
-      position: relative;
-      z-index: 1;
-      transition: padding-top 0.25s ease, padding-bottom 0.25s ease, gap 0.25s ease;
-    }
-    #site-nav.nav-scrolled .nav-inner {
-      padding-top: 0.625rem;
-      padding-bottom: 0.625rem;
-    }
-    .nav-brand {
-      display: flex;
-      align-items: center;
-      gap: 0.875rem;
-      min-width: 0;
-    }
-    .nav-logo {
-      font-family: 'Inter', sans-serif;
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: #17212B;
-      letter-spacing: -0.03em;
-      line-height: 1;
-      display: flex;
-      align-items: baseline;
-      gap: 0;
-      text-decoration: none;
-      white-space: nowrap;
-      transition: color 0.18s ease, opacity 0.18s ease;
-    }
-    .nav-badge {
-      display: none;
-      align-items: center;
-      gap: 0.4rem;
-      padding: 0.4rem 0.7rem;
-      border: 1px solid rgba(31, 78, 121, 0.1);
-      border-radius: 9999px;
-      background: rgba(255, 255, 255, 0.42);
-      color: rgba(23, 33, 43, 0.72);
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.68rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      white-space: nowrap;
-    }
-    .nav-badge::before {
-      content: '';
-      width: 0.42rem;
-      height: 0.42rem;
-      border-radius: 9999px;
-      background: linear-gradient(135deg, #C96B3B, #1F4E79);
-      box-shadow: 0 0 0 4px rgba(201, 107, 59, 0.08);
-      flex: none;
-    }
-    @media (min-width: 1024px) {
-      .nav-badge {
-        display: inline-flex;
-      }
-    }
-    .nav-logo-tld {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.6875rem;
-      font-weight: 500;
-      color: rgba(99, 110, 114, 0.88);
-      letter-spacing: 0.04em;
-      margin-left: 2px;
-      position: relative;
-      top: -5px;
-    }
-    .nav-desktop {
-      display: flex;
-      align-items: center;
-      gap: 1.4rem;
-      padding: 0.6rem 1rem;
-      border: 1px solid rgba(23, 33, 43, 0.08);
-      border-radius: 9999px;
-      background: rgba(255, 255, 255, 0.38);
-      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.55);
-    }
-    .nav-link {
-      position: relative;
-      font-size: 0.79rem;
-      font-weight: 500;
-      color: rgba(23, 33, 43, 0.68);
-      text-decoration: none;
-      padding-bottom: 3px;
-      transition: color 0.18s ease, opacity 0.18s ease;
-    }
-    .nav-link::after {
-      content: '';
-      position: absolute;
-      bottom: -2px;
-      left: 0;
-      right: 0;
-      height: 2px;
-      background: linear-gradient(90deg, rgba(201, 107, 59, 0.92), rgba(31, 78, 121, 0.85));
-      border-radius: 2px;
-      transform: scaleX(0);
-      transform-origin: center;
-      transition: transform 0.22s ease;
-    }
-    .nav-link:hover {
-      color: #17212B;
-    }
-    .nav-link:hover::after {
-      transform: scaleX(1);
-    }
-    .nav-link.active {
-      color: #17212B;
-      font-weight: 600;
-    }
-    .nav-link.active::after {
-      transform: scaleX(1);
-    }
-    #mobileMenu {
-      overflow: hidden;
-      max-height: 0;
-      transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-                  opacity 0.25s ease;
-      opacity: 0;
-      border-top: 1px solid rgba(23, 33, 43, 0.08);
-      background: linear-gradient(180deg, rgba(249, 246, 240, 0.97) 0%, rgba(240, 234, 223, 0.96) 100%);
-      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.65);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-    }
-    #mobileMenu.open {
-      max-height: 480px;
-      opacity: 1;
-    }
-    .mobile-nav-link {
-      display: flex;
-      align-items: center;
-      padding: 0.85rem 1rem;
-      border-radius: 10px;
-      font-size: 0.9375rem;
-      font-weight: 500;
-      color: rgba(23, 33, 43, 0.82);
-      text-decoration: none;
-      min-height: 44px;
-      transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease;
-      border: 1px solid transparent;
-    }
-    .mobile-nav-link:hover {
-      color: #17212B;
-      border-color: rgba(23, 33, 43, 0.08);
-      background-color: rgba(255, 255, 255, 0.46);
-    }
-    .mobile-nav-link.active {
-      color: #17212B;
-      font-weight: 600;
-      border-color: rgba(23, 33, 43, 0.08);
-      background-color: rgba(255, 255, 255, 0.56);
-      box-shadow: inset 3px 0 0 rgba(201, 107, 59, 0.82);
-    }
-    #mobileMenuBtn {
-      border: 1px solid rgba(23, 33, 43, 0.08);
-      background: rgba(255, 255, 255, 0.42);
-      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.55);
-      transition: background-color 0.18s ease, border-color 0.18s ease, transform 0.18s ease;
-    }
-    #mobileMenuBtn:hover {
-      background: rgba(255, 255, 255, 0.62);
-      border-color: rgba(31, 78, 121, 0.14);
-      transform: translateY(-1px);
-    }
-    .hamburger-line {
-      display: block;
-      width: 20px;
-      height: 1.75px;
-      background-color: #17212B;
-      border-radius: 2px;
-      transition: transform 0.25s ease, opacity 0.2s ease;
-      transform-origin: center;
-    }
-    #mobileMenuBtn[aria-expanded="true"] .hamburger-line:nth-child(1) { transform: translateY(5.75px) rotate(45deg); }
-    #mobileMenuBtn[aria-expanded="true"] .hamburger-line:nth-child(2) { opacity: 0; transform: scaleX(0); }
-    #mobileMenuBtn[aria-expanded="true"] .hamburger-line:nth-child(3) { transform: translateY(-5.75px) rotate(-45deg); }
+    #site-nav { position: sticky; top: 0; z-index: 40; backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); background: linear-gradient(180deg, rgba(249, 246, 240, 0.88) 0%, rgba(240, 234, 223, 0.9) 100%); border-bottom: 1px solid rgba(23, 33, 43, 0.08); }
+    #site-nav.nav-scrolled { background: linear-gradient(180deg, rgba(247, 243, 236, 0.97) 0%, rgba(237, 231, 220, 0.96) 100%); box-shadow: 0 14px 38px rgba(23, 33, 43, 0.1); border-bottom-color: rgba(23, 33, 43, 0.14); }
+    .nav-logo { font-family: 'Inter', sans-serif; font-size: 1.5rem; font-weight: 700; color: #17212B; letter-spacing: -0.03em; text-decoration: none; display: flex; align-items: baseline;}
+    .nav-logo-tld { font-family: 'JetBrains Mono', monospace; font-size: 0.6875rem; font-weight: 500; color: rgba(99, 110, 114, 0.88); letter-spacing: 0.04em; margin-left: 2px; position: relative; top: -5px; }
+    .nav-desktop { display: flex; align-items: center; gap: 1.4rem; padding: 0.6rem 1rem; border: 1px solid rgba(23, 33, 43, 0.08); border-radius: 9999px; background: rgba(255, 255, 255, 0.38); }
+    .nav-link { position: relative; font-size: 0.79rem; font-weight: 500; color: rgba(23, 33, 43, 0.68); text-decoration: none; padding-bottom: 3px; }
+    .nav-link:hover, .nav-link.active { color: #17212B; }
+    .nav-link.active { font-weight: 600; }
+    
+    /* Filtering logic */
+    .filter-btn { transition: all 0.2s ease; }
+    .filter-btn.active { background-color: #1F4E79; color: white; border-color: #1F4E79; }
+    .case-card { transition: opacity 0.3s ease, transform 0.3s ease; }
+    .case-card.hidden { display: none; }
   </style>
 </head>
 <body class="text-charcoal antialiased">
-  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-[#1F4E79] focus:text-white focus:px-4 focus:py-2 focus:rounded-sm focus:font-semibold">Skip to main content</a>
-
-  <nav id="site-nav" class="sticky top-0 z-40" role="navigation" aria-label="Main navigation">
-    <div class="nav-inner max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
+  <nav id="site-nav" class="sticky top-0 z-40" role="navigation">
+    <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
       <div class="nav-brand">
-        <a href="index.html" aria-label="Microve.ai — home" class="nav-logo">microve<span class="nav-logo-tld">.ai</span></a>
-        <span class="nav-badge">Micro automation</span>
+        <a href="index.html" class="nav-logo">microve<span class="nav-logo-tld">.ai</span></a>
       </div>
       <div class="hidden md:flex items-center"><div class="nav-desktop">
-<a href="index.html" class="nav-link">Home</a>
+        <a href="index.html" class="nav-link">Home</a>
         <a href="what-we-do.html" class="nav-link">What We Do</a>
         <a href="cases.html" aria-current="page" class="nav-link active">Cases</a>
         <a href="blog.html" class="nav-link">Blog</a>
         <a href="about.html" class="nav-link">About</a>
         <a href="pricing.html" class="nav-link">Pricing</a>
         <a href="contact.html" class="nav-link">Contact</a>
-        </div>
-      </div>
-      <button id="mobileMenuBtn" class="md:hidden flex flex-col justify-center gap-[4.5px] w-9 h-9 -mr-1 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1F4E79] focus:ring-offset-2" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileMenu">
-        <span class="hamburger-line"></span>
-        <span class="hamburger-line"></span>
-        <span class="hamburger-line"></span>
-      </button>
+      </div></div>
     </div>
-    <div id="mobileMenu" role="region" aria-label="Mobile navigation">
-      <div class="max-w-5xl mx-auto px-4 py-4 flex flex-col gap-2">
-<a href="index.html" class="mobile-nav-link">Home</a>
-        <a href="what-we-do.html" class="mobile-nav-link">What We Do</a>
-        <a href="cases.html" aria-current="page" class="mobile-nav-link active">Cases</a>
-        <a href="blog.html" class="mobile-nav-link">Blog</a>
-        <a href="about.html" class="mobile-nav-link">About</a>
-        <a href="pricing.html" class="mobile-nav-link">Pricing</a>
-        <a href="contact.html" class="mobile-nav-link">Contact</a>
-      </div>
-    </div>
-    <script>
-      (function () {
-        const btn = document.getElementById('mobileMenuBtn');
-        const menu = document.getElementById('mobileMenu');
-        const nav = document.getElementById('site-nav');
-        window.addEventListener('scroll', function () { nav.classList.toggle('nav-scrolled', window.scrollY > 12); }, { passive: true });
-        btn.addEventListener('click', function () {
-          const isOpen = this.getAttribute('aria-expanded') === 'true';
-          this.setAttribute('aria-expanded', String(!isOpen));
-          menu.classList.toggle('open', !isOpen);
-          document.body.style.overflow = !isOpen ? 'hidden' : '';
-        });
-        document.addEventListener('click', function (e) {
-          if (!nav.contains(e.target) && menu.classList.contains('open')) {
-            btn.setAttribute('aria-expanded', 'false'); menu.classList.remove('open'); document.body.style.overflow = '';
-          }
-        });
-        document.addEventListener('keydown', function (e) {
-          if (e.key === 'Escape' && menu.classList.contains('open')) {
-            btn.setAttribute('aria-expanded', 'false'); menu.classList.remove('open'); document.body.style.overflow = ''; btn.focus();
-          }
-        });
-      })();
-    </script>
   </nav>
 
-  <main id="main-content" class="max-w-5xl mx-auto px-6 pt-24 pb-32">
+  <main class="max-w-5xl mx-auto px-6 pt-24 pb-32">
     <div class="mb-16">
-      <p class="section-label text-xs text-[#A6552B] tracking-widest mb-4">[CASES]</p>
-      <h1 class="font-sans text-5xl md:text-6xl font-bold tight-tracking text-[#1F4E79] mb-6">Case Studies</h1>
+      <p class="font-mono text-xs text-[#A6552B] tracking-widest mb-4 uppercase">[CASES]</p>
+      <h1 class="font-sans text-5xl md:text-6xl font-bold tracking-tight text-[#1F4E79] mb-6">Case Studies</h1>
       <p class="text-xl text-stone max-w-2xl">Real workflow bottlenecks we've solved. The problems that held teams back, the automations we built, and the operational changes that followed.</p>
     </div>
 
-    <div class="space-y-8">
-      <!-- Case Study 1 -->
-      <article class="case-card bg-white/60 backdrop-blur-sm rounded-xl border border-[#1F4E79]/10 overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-        <!-- Card Header / Summary -->
-        <div class="p-8 cursor-pointer" onclick="toggleCase('case-1')">
-          <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
-            <div class="flex-1">
-              <div class="flex flex-wrap items-center gap-3 mb-4">
-                <span class="section-label text-xs text-[#1F4E79] bg-[#1F4E79]/5 px-3 py-1 rounded-full">Logistics</span>
-                <span class="text-sm text-stone">HQ New York City · National footprint</span>
-              </div>
-              <h2 class="text-2xl md:text-3xl font-bold text-charcoal mb-3">The Expense Report Chaos</h2>
-              <p class="text-stone">Field managers emailed receipt photos. Accounting spent 12 hours/week manually filing and entering data—work far below their skill level.</p>
-            </div>
-            <div class="flex flex-row md:flex-col items-center md:items-end gap-6 md:gap-2">
-              <div class="text-center md:text-right">
-                <div class="text-4xl md:text-5xl font-bold text-[#C96B3B]">12</div>
-                <div class="text-sm text-stone">hours/week saved<br>from being wasted</div>
-              </div>
-              <button class="case-toggle-btn flex items-center gap-2 text-[#1F4E79] font-medium text-sm hover:text-[#C96B3B] transition-colors" aria-expanded="false" aria-controls="case-1-content">
-                <span class="toggle-text">Read the full story</span>
-                <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                </svg>
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Expandable Content -->
-        <div id="case-1-content" class="case-content hidden border-t border-[#1F4E79]/10">
-          <div class="p-8 space-y-8">
-            <!-- Step 1: Problem -->
-            <div class="flex gap-4">
-              <div class="w-12 h-12 rounded-full bg-[#C96B3B]/10 flex items-center justify-center flex-shrink-0">
-                <span class="text-[#C96B3B] font-bold">1</span>
-              </div>
-              <div class="flex-1">
-                <h4 class="font-semibold text-charcoal mb-2">We Listen</h4>
-                <p class="text-sm text-stone">A logistics company with 16 field managers across the country. The accounting person spent <strong>12 hours/week</strong> manually processing expense reports—creating folders, downloading receipt images, transcribing data, and filing everything. The owner couldn't get managers to use expense software, so email with photo attachments was the only workflow that worked.</p>
-              </div>
-            </div>
-
-            <!-- Step 2: Suggestion -->
-            <div class="flex gap-4">
-              <div class="w-12 h-12 rounded-full bg-[#1F4E79]/10 flex items-center justify-center flex-shrink-0">
-                <span class="text-[#1F4E79] font-bold">2</span>
-              </div>
-              <div class="flex-1">
-                <h4 class="font-semibold text-charcoal mb-2">We Audit</h4>
-                <p class="text-sm text-stone">We observed the accounting workflow for a morning. The email-with-photos method was actually smart—low friction for busy field managers. The problem was everything <em>after</em> the email arrived: manual data entry, folder creation, filing. Work that had to happen but was wasting expensive talent on tasks far below their skill level.</p>
-              </div>
-            </div>
-
-            <!-- Step 3: Designing -->
-            <div class="flex gap-4">
-              <div class="w-12 h-12 rounded-full bg-[#6C8261]/10 flex items-center justify-center flex-shrink-0">
-                <span class="text-[#6C8261] font-bold">3</span>
-              </div>
-              <div class="flex-1">
-                <h4 class="font-semibold text-charcoal mb-2">We Design</h4>
-                <p class="text-sm text-stone">Design a system that keeps the manager workflow exactly the same (email photos) but automates everything on the back end. Two micro-automations working together: one to extract data from receipt images using AI vision, another to automatically organize files and folders without human touch.</p>
-              </div>
-            </div>
-
-            <!-- Step 4: Implementation -->
-            <div class="flex gap-4">
-              <div class="w-12 h-12 rounded-full bg-[#1F4E79]/10 flex items-center justify-center flex-shrink-0">
-                <span class="text-[#1F4E79] font-bold">4</span>
-              </div>
-              <div class="flex-1">
-                <h4 class="font-semibold text-charcoal mb-2">We Implement</h4>
-                <div class="grid md:grid-cols-2 gap-4 mt-3">
-                  <div class="bg-[#1F4E79]/5 rounded-lg p-4">
-                    <h5 class="font-medium text-sm text-charcoal mb-2">Receipt Data Extraction</h5>
-                    <ul class="text-xs text-stone space-y-1">
-                      <li>→ Monitors inbox for receipt emails</li>
-                      <li>→ AI reads images with computer vision</li>
-                      <li>→ Extracts vendor, date, amount, category</li>
-                      <li>→ Populates Google Sheet automatically</li>
-                    </ul>
-                  </div>
-                  <div class="bg-[#6C8261]/5 rounded-lg p-4">
-                    <h5 class="font-medium text-sm text-charcoal mb-2">Smart File Organization</h5>
-                    <ul class="text-xs text-stone space-y-1">
-                      <li>→ Creates folders (Manager → Year → Month)</li>
-                      <li>→ Identifies sender automatically</li>
-                      <li>→ Renames files with date & amount</li>
-                      <li>→ Files images in correct location</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Step 5: Result -->
-            <div class="flex gap-4">
-              <div class="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
-                <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                </svg>
-              </div>
-              <div class="flex-1">
-                <h4 class="font-semibold text-charcoal mb-2">Result: Improved Business</h4>
-                <div class="grid grid-cols-3 gap-4 mt-3">
-                  <div class="text-center">
-                    <div class="text-2xl font-bold text-[#1F4E79]">12→0.75</div>
-                    <div class="text-xs text-stone">hours/week</div>
-                  </div>
-                  <div class="text-center">
-                    <div class="text-2xl font-bold text-[#1F4E79]">~0</div>
-                    <div class="text-xs text-stone">data entry errors</div>
-                  </div>
-                  <div class="text-center">
-                    <div class="text-2xl font-bold text-[#1F4E79]">100%</div>
-                    <div class="text-xs text-stone">audit-ready filing</div>
-                  </div>
-                </div>
-                <p class="text-sm text-stone mt-4">The accounting person stopped being a data entry clerk and became the financial strategist the company actually needed—finally doing cash flow forecasting, vendor analysis, and profitability reports.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- Case Study 2 -->
-      <article class="case-card bg-white/60 backdrop-blur-sm rounded-xl border border-[#1F4E79]/10 overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-        <!-- Card Header / Summary -->
-        <div class="p-8 cursor-pointer" onclick="toggleCase('case-2')">
-          <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
-            <div class="flex-1">
-              <div class="flex flex-wrap items-center gap-3 mb-4">
-                <span class="section-label text-xs text-[#1F4E79] bg-[#1F4E79]/5 px-3 py-1 rounded-full">Home Services</span>
-                <span class="text-sm text-stone">10 employees — Quebec, Canada</span>
-              </div>
-              <h2 class="text-2xl md:text-3xl font-bold text-charcoal mb-3">The Pricing Explanation Loop</h2>
-              <p class="text-stone">Sales team spent 40% of every call repeating pricing details to tire-kickers before knowing if they were serious. Two salespeople drowning in callbacks while qualified leads waited.</p>
-            </div>
-            <div class="flex flex-row md:flex-col items-center md:items-end gap-6 md:gap-2">
-              <div class="text-center md:text-right">
-                <div class="text-4xl md:text-5xl font-bold text-[#C96B3B]">~15</div>
-                <div class="text-sm text-stone">hours/week saved<br>from being wasted</div>
-              </div>
-              <button class="case-toggle-btn flex items-center gap-2 text-[#1F4E79] font-medium text-sm hover:text-[#C96B3B] transition-colors" aria-expanded="false" aria-controls="case-2-content">
-                <span class="toggle-text">Read the full story</span>
-                <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                </svg>
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Expandable Content -->
-        <div id="case-2-content" class="case-content hidden border-t border-[#1F4E79]/10">
-          <div class="p-8 space-y-8">
-            <!-- Step 1: Problem -->
-            <div class="flex gap-4">
-              <div class="w-12 h-12 rounded-full bg-[#C96B3B]/10 flex items-center justify-center flex-shrink-0">
-                <span class="text-[#C96B3B] font-bold">1</span>
-              </div>
-              <div class="flex-1">
-                <h4 class="font-semibold text-charcoal mb-2">We Listen</h4>
-                <p class="text-sm text-stone">A 10-person home generator company in Quebec. Two salespeople (including the owner) drowning in call volume. <strong>40% of every callback</strong> was spent explaining pricing to tire-kickers—3 minutes explaining costs, 2 minutes qualifying interest, 5 minutes booking. Qualified leads waited hours while salespeople educated window shoppers.</p>
-              </div>
-            </div>
-
-            <!-- Step 2: Suggestion -->
-            <div class="flex gap-4">
-              <div class="w-12 h-12 rounded-full bg-[#1F4E79]/10 flex items-center justify-center flex-shrink-0">
-                <span class="text-[#1F4E79] font-bold">2</span>
-              </div>
-              <div class="flex-1">
-                <h4 class="font-semibold text-charcoal mb-2">We Audit</h4>
-                <p class="text-sm text-stone">We tracked the callback workflow. The owner wanted to automate pricing explanations so he could skip to booking. But the real bottleneck was the entire callback cycle—voicemail delays, repetitive explanations, back-and-forth scheduling. Two salespeople at capacity, but not enough volume to hire a third.</p>
-              </div>
-            </div>
-
-            <!-- Step 3: Designing -->
-            <div class="flex gap-4">
-              <div class="w-12 h-12 rounded-full bg-[#6C8261]/10 flex items-center justify-center flex-shrink-0">
-                <span class="text-[#6C8261] font-bold">3</span>
-              </div>
-              <div class="flex-1">
-                <h4 class="font-semibold text-charcoal mb-2">We Design</h4>
-                <p class="text-sm text-stone">Design a system that answers calls immediately—no more voicemail purgatory. AI handles the entire first touch: pricing explanation, qualification, and booking. Salespeople only talk to pre-qualified buyers with confirmed appointments. Two micro-automations: AI voice for instant response and natural conversation, auto-scheduling to remove booking friction.</p>
-              </div>
-            </div>
-
-            <!-- Step 4: Implementation -->
-            <div class="flex gap-4">
-              <div class="w-12 h-12 rounded-full bg-[#1F4E79]/10 flex items-center justify-center flex-shrink-0">
-                <span class="text-[#1F4E79] font-bold">4</span>
-              </div>
-              <div class="flex-1">
-                <h4 class="font-semibold text-charcoal mb-2">We Implement</h4>
-                <div class="grid md:grid-cols-2 gap-4 mt-3">
-                  <div class="bg-[#1F4E79]/5 rounded-lg p-4">
-                    <h5 class="font-medium text-sm text-charcoal mb-2">AI Voice Agent</h5>
-                    <ul class="text-xs text-stone space-y-1">
-                      <li>→ Answers calls instantly 24/7</li>
-                      <li>→ Explains pricing naturally</li>
-                      <li>→ Qualifies buying intent</li>
-                      <li>→ Handles common objections</li>
-                    </ul>
-                  </div>
-                  <div class="bg-[#6C8261]/5 rounded-lg p-4">
-                    <h5 class="font-medium text-sm text-charcoal mb-2">Auto-Scheduling</h5>
-                    <ul class="text-xs text-stone space-y-1">
-                      <li>→ Checks real-time availability</li>
-                      <li>→ Books appointments instantly</li>
-                      <li>→ Sends confirmations via SMS</li>
-                      <li>→ Syncs to team calendar</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Step 5: Result -->
-            <div class="flex gap-4">
-              <div class="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
-                <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                </svg>
-              </div>
-              <div class="flex-1">
-                <h4 class="font-semibold text-charcoal mb-2">Result: Improved Business</h4>
-                <div class="grid grid-cols-3 gap-4 mt-3">
-                  <div class="text-center">
-                    <div class="text-2xl font-bold text-[#1F4E79]">24/7</div>
-                    <div class="text-xs text-stone">instant response</div>
-                  </div>
-                  <div class="text-center">
-                    <div class="text-2xl font-bold text-[#1F4E79]">~15 hrs</div>
-                    <div class="text-xs text-stone">saved per week</div>
-                  </div>
-                  <div class="text-center">
-                    <div class="text-2xl font-bold text-[#1F4E79]">100%</div>
-                    <div class="text-xs text-stone">pre-qualified leads</div>
-                  </div>
-                </div>
-                <p class="text-sm text-stone mt-4">The sales team stopped being pricing lecturers and became actual salespeople—closing deals instead of explaining kilowatts. No third salesperson needed.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- Case Study 3 -->
-      <article class="case-card bg-white/60 backdrop-blur-sm rounded-xl border border-[#1F4E79]/10 overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-        <!-- Card Header / Summary -->
-        <div class="p-8 cursor-pointer" onclick="toggleCase('case-3')">
-          <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
-            <div class="flex-1">
-              <div class="flex flex-wrap items-center gap-3 mb-4">
-                <span class="section-label text-xs text-[#1F4E79] bg-[#1F4E79]/5 px-3 py-1 rounded-full">Operations</span>
-                <span class="text-sm text-stone">NYC Mailroom · 4 positions</span>
-              </div>
-              <h2 class="text-2xl md:text-3xl font-bold text-charcoal mb-3">The Disappearing Knowledge</h2>
-              <p class="text-stone">SOPs and know-how documents existed—but were scattered in piles, lost on servers, or trapped in employees' heads. New hires couldn't find answers when they needed them.</p>
-            </div>
-            <div class="flex flex-row md:flex-col items-center md:items-end gap-6 md:gap-2">
-              <div class="text-center md:text-right">
-                <div class="text-4xl md:text-5xl font-bold text-[#C96B3B]">~8</div>
-                <div class="text-sm text-stone">hours/week saved<br>from being wasted</div>
-              </div>
-              <button class="case-toggle-btn flex items-center gap-2 text-[#1F4E79] font-medium text-sm hover:text-[#C96B3B] transition-colors" aria-expanded="false" aria-controls="case-3-content">
-                <span class="toggle-text">Read the full story</span>
-                <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                </svg>
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Expandable Content -->
-        <div id="case-3-content" class="case-content hidden border-t border-[#1F4E79]/10">
-          <div class="p-8 space-y-8">
-            <!-- Step 1: Problem -->
-            <div class="flex gap-4">
-              <div class="w-12 h-12 rounded-full bg-[#C96B3B]/10 flex items-center justify-center flex-shrink-0">
-                <span class="text-[#C96B3B] font-bold">1</span>
-              </div>
-              <div class="flex-1">
-                <h4 class="font-semibold text-charcoal mb-2">We Listen</h4>
-                <p class="text-sm text-stone">A mailroom operations manager in New York City with 4 positions and rotating new hires. They had SOPs and know-how documents, but everything was scattered—buried in physical file piles, lost on servers, or trapped in veteran employees' heads. New hires spent <strong>10-15 minutes</strong> searching for answers to basic questions, often giving up and interrupting busy colleagues.</p>
-              </div>
-            </div>
-
-            <!-- Step 2: Suggestion -->
-            <div class="flex gap-4">
-              <div class="w-12 h-12 rounded-full bg-[#1F4E79]/10 flex items-center justify-center flex-shrink-0">
-                <span class="text-[#1F4E79] font-bold">2</span>
-              </div>
-              <div class="flex-1">
-                <h4 class="font-semibold text-charcoal mb-2">We Audit</h4>
-                <p class="text-sm text-stone">We reviewed their training process and gathered all relevant documents. The problem wasn't missing information—it was unfindable information. Documents existed but were functionally useless because employees couldn't access them quickly. When people left, their knowledge walked out the door. The manager needed a way to compile everything in one place where it wouldn't get lost again.</p>
-              </div>
-            </div>
-
-            <!-- Step 3: Designing -->
-            <div class="flex gap-4">
-              <div class="w-12 h-12 rounded-full bg-[#6C8261]/10 flex items-center justify-center flex-shrink-0">
-                <span class="text-[#6C8261] font-bold">3</span>
-              </div>
-              <div class="flex-1">
-                <h4 class="font-semibold text-charcoal mb-2">We Design</h4>
-                <p class="text-sm text-stone">Design a private RAG (Retrieval-Augmented Generation) system that employees can access anytime. Two micro-automations: one to continuously ingest new documents and prevent them from getting lost again, another to enable instant knowledge retrieval through natural language chat so employees get answers in 30 seconds instead of 15 minutes.</p>
-              </div>
-            </div>
-
-            <!-- Step 4: Implementation -->
-            <div class="flex gap-4">
-              <div class="w-12 h-12 rounded-full bg-[#1F4E79]/10 flex items-center justify-center flex-shrink-0">
-                <span class="text-[#1F4E79] font-bold">4</span>
-              </div>
-              <div class="flex-1">
-                <h4 class="font-semibold text-charcoal mb-2">We Implement</h4>
-                <div class="grid md:grid-cols-2 gap-4 mt-3">
-                  <div class="bg-[#1F4E79]/5 rounded-lg p-4">
-                    <h5 class="font-medium text-sm text-charcoal mb-2">Continuous Document Ingestion</h5>
-                    <ul class="text-xs text-stone space-y-1">
-                      <li>→ Captures scattered physical & digital docs</li>
-                      <li>→ Auto-processes new SOPs as written</li>
-                      <li>→ Updates knowledge base when procedures change</li>
-                      <li>→ Everything stored in one permanent location</li>
-                    </ul>
-                  </div>
-                  <div class="bg-[#6C8261]/5 rounded-lg p-4">
-                    <h5 class="font-medium text-sm text-charcoal mb-2">Instant Knowledge Retrieval</h5>
-                    <ul class="text-xs text-stone space-y-1">
-                      <li>→ Natural language chat interface</li>
-                      <li>→ Searches across all documents instantly</li>
-                      <li>→ Provides synthesized answers with sources</li>
-                      <li>→ Private access—employees only</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Step 5: Result -->
-            <div class="flex gap-4">
-              <div class="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
-                <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                </svg>
-              </div>
-              <div class="flex-1">
-                <h4 class="font-semibold text-charcoal mb-2">Result: Improved Business</h4>
-                <div class="grid grid-cols-3 gap-4 mt-3">
-                  <div class="text-center">
-                    <div class="text-2xl font-bold text-[#1F4E79]">15→0.5</div>
-                    <div class="text-xs text-stone">minutes to answer</div>
-                  </div>
-                  <div class="text-center">
-                    <div class="text-2xl font-bold text-[#1F4E79]">80%</div>
-                    <div class="text-xs text-stone">self-serve training</div>
-                  </div>
-                  <div class="text-center">
-                    <div class="text-2xl font-bold text-[#1F4E79]">~8 hrs</div>
-                    <div class="text-xs text-stone">saved per week</div>
-                  </div>
-                </div>
-                <p class="text-sm text-stone mt-4">Scattered piles became a living knowledge system. New hires train themselves. Veterans' tacit knowledge is captured before they leave. Documents finally serve their purpose.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- Case Study 4 -->
-      <article class="case-card bg-white/60 backdrop-blur-sm rounded-xl border border-[#1F4E79]/10 overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-        <!-- Card Header / Summary -->
-        <div class="p-8 cursor-pointer" onclick="toggleCase('case-4')">
-          <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
-            <div class="flex-1">
-              <div class="flex flex-wrap items-center gap-3 mb-4">
-                <span class="section-label text-xs text-[#1F4E79] bg-[#1F4E79]/5 px-3 py-1 rounded-full">Retail</span>
-                <span class="text-sm text-stone">4 Pet Supply Locations · Las Vegas, NV</span>
-              </div>
-              <h2 class="text-2xl md:text-3xl font-bold text-charcoal mb-3">The KPI Detective Work</h2>
-              <p class="text-stone">Store owner deeply cared about fairly rewarding employees, but tracking individual performance across 4 rotating locations was nearly impossible using fragmented POS and payroll data.</p>
-            </div>
-            <div class="flex flex-row md:flex-col items-center md:items-end gap-6 md:gap-2">
-              <div class="text-center md:text-right">
-                <div class="text-4xl md:text-5xl font-bold text-[#C96B3B]">~10</div>
-                <div class="text-sm text-stone">hours/week saved<br>from being wasted</div>
-              </div>
-              <button class="case-toggle-btn flex items-center gap-2 text-[#1F4E79] font-medium text-sm hover:text-[#C96B3B] transition-colors" aria-expanded="false" aria-controls="case-4-content">
-                <span class="toggle-text">Read the full story</span>
-                <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                </svg>
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Expandable Content -->
-        <div id="case-4-content" class="case-content hidden border-t border-[#1F4E79]/10">
-          <div class="p-8 space-y-8">
-            <!-- Step 1: Problem -->
-            <div class="flex gap-4">
-              <div class="w-12 h-12 rounded-full bg-[#C96B3B]/10 flex items-center justify-center flex-shrink-0">
-                <span class="text-[#C96B3B] font-bold">1</span>
-              </div>
-              <div class="flex-1">
-                <h4 class="font-semibold text-charcoal mb-2">We Listen</h4>
-                <p class="text-sm text-stone">A dog supply store owner with 4 Las Vegas locations believed deeply in fairly rewarding his team. But with 3-4 employees rotating across stores simultaneously, figuring out who drove sales was a nightmare. The only hard data came when an employee logged into the POS register—ignoring the floor staff who actually helped the customer decide. He spent <strong>8-12 hours weekly</strong> cross-referencing scheduling data with sales spikes to guess who was performing, but the results were opaque and delayed by weeks.</p>
-              </div>
-            </div>
-
-            <!-- Step 2: Suggestion -->
-            <div class="flex gap-4">
-              <div class="w-12 h-12 rounded-full bg-[#1F4E79]/10 flex items-center justify-center flex-shrink-0">
-                <span class="text-[#1F4E79] font-bold">2</span>
-              </div>
-              <div class="flex-1">
-                <h4 class="font-semibold text-charcoal mb-2">We Audit</h4>
-                <p class="text-sm text-stone">We mapped the data silos: Homebase (scheduling) and Square (POS). The owner was making educated guesses, meaning high performers were being overlooked simply because they weren't the ones ringing up the transaction. The <em>transparency he valued</em> was impossible without finding hidden correlations between foot traffic, shift overlaps, and category-specific sales spikes—a puzzle no human could solve manually in a reasonable timeframe.</p>
-              </div>
-            </div>
-
-            <!-- Step 3: Designing -->
-            <div class="flex gap-4">
-              <div class="w-12 h-12 rounded-full bg-[#6C8261]/10 flex items-center justify-center flex-shrink-0">
-                <span class="text-[#6C8261] font-bold">3</span>
-              </div>
-              <div class="flex-1">
-                <h4 class="font-semibold text-charcoal mb-2">We Design</h4>
-                <p class="text-sm text-stone">Design a system that continuously ingests data from both platforms and uses statistical modeling to attribute sales influence even when staff aren't logged at the register. Two micro-automations: an ETL pipeline that unifies scheduling and transaction data, and an AI analysis engine that weights store busyness, shift compositions, and product categories to score true performance fairly.</p>
-              </div>
-            </div>
-
-            <!-- Step 4: Implementation -->
-            <div class="flex gap-4">
-              <div class="w-12 h-12 rounded-full bg-[#1F4E79]/10 flex items-center justify-center flex-shrink-0">
-                <span class="text-[#1F4E79] font-bold">4</span>
-              </div>
-              <div class="flex-1">
-                <h4 class="font-semibold text-charcoal mb-2">We Implement</h4>
-                <div class="grid md:grid-cols-2 gap-4 mt-3">
-                  <div class="bg-[#1F4E79]/5 rounded-lg p-4">
-                    <h5 class="font-medium text-sm text-charcoal mb-2">Cross-Platform Data Integration</h5>
-                    <ul class="text-xs text-stone space-y-1">
-                      <li>→ API sync with Square POS (transactions, timestamps)</li>
-                      <li>→ API sync with Homebase (actual shift punch-ins)</li>
-                      <li>→ Normalizes employee IDs across disparate systems</li>
-                      <li>→ Maps transaction velocity to exact shift overlaps</li>
-                    </ul>
-                  </div>
-                  <div class="bg-[#6C8261]/5 rounded-lg p-4">
-                    <h5 class="font-medium text-sm text-charcoal mb-2">AI Performance Pattern Analysis</h5>
-                    <ul class="text-xs text-stone space-y-1">
-                      <li>→ Analyzes sales uplift during specific staff combos</li>
-                      <li>→ Weights performance against baseline location traffic</li>
-                      <li>→ Sends Friday SMS alerts for top weekly performers</li>
-                      <li>→ Generates transparent, fair leaderboard dashboard</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Step 5: Result -->
-            <div class="flex gap-4">
-              <div class="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
-                <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                </svg>
-              </div>
-              <div class="flex-1">
-                <h4 class="font-semibold text-charcoal mb-2">Result: Improved Business</h4>
-                <div class="grid grid-cols-3 gap-4 mt-3">
-                  <div class="text-center">
-                    <div class="text-2xl font-bold text-[#1F4E79]">0</div>
-                    <div class="text-xs text-stone">hours manual reporting</div>
-                  </div>
-                  <div class="text-center">
-                    <div class="text-2xl font-bold text-[#1F4E79]">Daily</div>
-                    <div class="text-xs text-stone">performance updates</div>
-                  </div>
-                  <div class="text-center">
-                    <div class="text-2xl font-bold text-[#1F4E79]">High</div>
-                    <div class="text-xs text-stone">employee trust</div>
-                  </div>
-                </div>
-                <p class="text-sm text-stone mt-4">The owner now relies on fair, defensible performance insights that account for the complexity of rotating staff. Employees trust the system because it acknowledges floor work, not just register log-ins. Best of all, rewards are given in real-time, keeping morale consistently high across all four stores.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- Case Study 5 -->
-      <article class="case-card bg-white/60 backdrop-blur-sm rounded-xl border border-[#1F4E79]/10 overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-        <!-- Card Header / Summary -->
-        <div class="p-8 cursor-pointer" onclick="toggleCase('case-5')">
-          <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
-            <div class="flex-1">
-              <div class="flex flex-wrap items-center gap-3 mb-4">
-                <span class="section-label text-xs text-[#1F4E79] bg-[#1F4E79]/5 px-3 py-1 rounded-full">Insurance</span>
-                <span class="text-sm text-stone">Independent Brokerage</span>
-              </div>
-              <h2 class="text-2xl md:text-3xl font-bold text-charcoal mb-3">The Weekly Data Scrape</h2>
-              <p class="text-stone">An insurance broker lost hours every week manually logging into multiple carrier portals just to download data and paste it into his custom Excel dashboard.</p>
-            </div>
-            <div class="flex flex-row md:flex-col items-center md:items-end gap-6 md:gap-2">
-              <div class="text-center md:text-right">
-                <div class="text-4xl md:text-5xl font-bold text-[#C96B3B]">~6</div>
-                <div class="text-sm text-stone">hours/week saved<br>from being wasted</div>
-              </div>
-              <button class="case-toggle-btn flex items-center gap-2 text-[#1F4E79] font-medium text-sm hover:text-[#C96B3B] transition-colors" aria-expanded="false" aria-controls="case-5-content">
-                <span class="toggle-text">Read the full story</span>
-                <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                </svg>
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Expandable Content -->
-        <div id="case-5-content" class="case-content hidden border-t border-[#1F4E79]/10">
-          <div class="p-8 space-y-8">
-            <!-- Step 1: Problem -->
-            <div class="flex gap-4">
-              <div class="w-12 h-12 rounded-full bg-[#C96B3B]/10 flex items-center justify-center flex-shrink-0">
-                <span class="text-[#C96B3B] font-bold">1</span>
-              </div>
-              <div class="flex-1">
-                <h4 class="font-semibold text-charcoal mb-2">We Listen</h4>
-                <p class="text-sm text-stone">An independent insurance broker had a highly specific, time-consuming weekly routine. To keep his business running, he needed data from multiple different insurance carrier portals. Every week, he would manually log into each website, navigate through clumsy menus, download the raw data files, and manually input the numbers into a custom Excel dashboard he had built. It was a mindless, frustrating chore that took up a large chunk of his valuable selling time.</p>
-              </div>
-            </div>
-
-            <!-- Step 2: Suggestion -->
-            <div class="flex gap-4">
-              <div class="w-12 h-12 rounded-full bg-[#1F4E79]/10 flex items-center justify-center flex-shrink-0">
-                <span class="text-[#1F4E79] font-bold">2</span>
-              </div>
-              <div class="flex-1">
-                <h4 class="font-semibold text-charcoal mb-2">We Audit</h4>
-                <p class="text-sm text-stone">We analyzed his workflow and initially proposed three solutions: 1) A browser agent to auto-login and scrape the data, 2) A script to format and inject that data into his existing Excel sheet, and 3) Building a brand-new, robust web dashboard to replace Excel entirely. The client reviewed the options and made a smart operational decision: he loved his Excel dashboard and didn't want the chore of learning a new tool. He just wanted the data collection automated.</p>
-              </div>
-            </div>
-
-            <!-- Step 3: Designing -->
-            <div class="flex gap-4">
-              <div class="w-12 h-12 rounded-full bg-[#6C8261]/10 flex items-center justify-center flex-shrink-0">
-                <span class="text-[#6C8261] font-bold">3</span>
-              </div>
-              <div class="flex-1">
-                <h4 class="font-semibold text-charcoal mb-2">We Design</h4>
-                <p class="text-sm text-stone">Design a background system that respects the client's current workflow without forcing new software adoption. Two micro-automations: one AI browser agent capable of navigating authenticated carrier portals to scrape the required files, and a data-processing script that automatically structures the raw data and inputs it directly into his existing beloved Excel dashboard.</p>
-              </div>
-            </div>
-
-            <!-- Step 4: Implementation -->
-            <div class="flex gap-4">
-              <div class="w-12 h-12 rounded-full bg-[#1F4E79]/10 flex items-center justify-center flex-shrink-0">
-                <span class="text-[#1F4E79] font-bold">4</span>
-              </div>
-              <div class="flex-1">
-                <h4 class="font-semibold text-charcoal mb-2">We Implement</h4>
-                <div class="grid md:grid-cols-2 gap-4 mt-3">
-                  <div class="bg-[#1F4E79]/5 rounded-lg p-4">
-                    <h5 class="font-medium text-sm text-charcoal mb-2">Authenticated Browser Agent</h5>
-                    <ul class="text-xs text-stone space-y-1">
-                      <li>→ Logs into multiple insurance carrier portals</li>
-                      <li>→ Navigates complex, dynamic web menus</li>
-                      <li>→ Identifies and downloads weekly data reports</li>
-                      <li>→ Runs reliably in the background every weekend</li>
-                    </ul>
-                  </div>
-                  <div class="bg-[#6C8261]/5 rounded-lg p-4">
-                    <h5 class="font-medium text-sm text-charcoal mb-2">Excel Data Pipeline</h5>
-                    <ul class="text-xs text-stone space-y-1">
-                      <li>→ Extracts numbers from downloaded CSV/PDFs</li>
-                      <li>→ Formats data to match the broker's specific layout</li>
-                      <li>→ Injects the data directly into his existing Excel sheet</li>
-                      <li>→ Preserves all of his custom formulas and charts</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Step 5: Result -->
-            <div class="flex gap-4">
-              <div class="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
-                <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                </svg>
-              </div>
-              <div class="flex-1">
-                <h4 class="font-semibold text-charcoal mb-2">Result: Improved Business</h4>
-                <div class="grid grid-cols-3 gap-4 mt-3">
-                  <div class="text-center">
-                    <div class="text-2xl font-bold text-[#1F4E79]">0</div>
-                    <div class="text-xs text-stone">manual portal logins</div>
-                  </div>
-                  <div class="text-center">
-                    <div class="text-2xl font-bold text-[#1F4E79]">100%</div>
-                    <div class="text-xs text-stone">workflow retention</div>
-                  </div>
-                  <div class="text-center">
-                    <div class="text-2xl font-bold text-[#1F4E79]">~6 hrs</div>
-                    <div class="text-xs text-stone">saved per week</div>
-                  </div>
-                </div>
-                <p class="text-sm text-stone mt-4">The broker continues to use the exact same Excel dashboard he's comfortable with, but he never has to feed it manually again. Every Monday morning, he simply opens his file and the new data is already there, giving him hours back to focus on client relationships and sales.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- Case Study 6 -->
-      <article class="case-card bg-white/60 backdrop-blur-sm rounded-xl border border-[#1F4E79]/10 overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-        <!-- Card Header / Summary -->
-        <div class="p-8 cursor-pointer" onclick="toggleCase('case-6')">
-          <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
-            <div class="flex-1">
-              <div class="flex flex-wrap items-center gap-3 mb-4">
-                <span class="section-label text-xs text-[#1F4E79] bg-[#1F4E79]/5 px-3 py-1 rounded-full">Real Estate</span>
-                <span class="text-sm text-stone">Independent Agent</span>
-              </div>
-              <h2 class="text-2xl md:text-3xl font-bold text-charcoal mb-3">The Cold Lead Graveyard</h2>
-              <p class="text-stone">A real estate agent had access to a goldmine of inbound leads but lacked the consistency to scrape, organize, and call them before they went cold.</p>
-            </div>
-            <div class="flex flex-row md:flex-col items-center md:items-end gap-6 md:gap-2">
-              <div class="text-center md:text-right">
-                <div class="text-4xl md:text-5xl font-bold text-[#C96B3B]">100%</div>
-                <div class="text-sm text-stone">lead engagement<br>rate</div>
-              </div>
-              <button class="case-toggle-btn flex items-center gap-2 text-[#1F4E79] font-medium text-sm hover:text-[#C96B3B] transition-colors" aria-expanded="false" aria-controls="case-6-content">
-                <span class="toggle-text">Read the full story</span>
-                <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                </svg>
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Expandable Content -->
-        <div id="case-6-content" class="case-content hidden border-t border-[#1F4E79]/10">
-          <div class="p-8 space-y-8">
-            <!-- Step 1: Problem -->
-            <div class="flex gap-4">
-              <div class="w-12 h-12 rounded-full bg-[#C96B3B]/10 flex items-center justify-center flex-shrink-0">
-                <span class="text-[#C96B3B] font-bold">1</span>
-              </div>
-              <div class="flex-1">
-                <h4 class="font-semibold text-charcoal mb-2">We Listen</h4>
-                <p class="text-sm text-stone">A real estate agent at a large firm had access to a private database of inbound phone leads—people who had expressed interest in buying. But she struggled with consistency. She would get distracted by showings and admin work, failing to log in and pull the new lists. By the time she finally sat down to make the cold calls, it was either too late in the evening to dial, or the leads had already cooled off and gone with another agent.</p>
-              </div>
-            </div>
-
-            <!-- Step 2: Suggestion -->
-            <div class="flex gap-4">
-              <div class="w-12 h-12 rounded-full bg-[#1F4E79]/10 flex items-center justify-center flex-shrink-0">
-                <span class="text-[#1F4E79] font-bold">2</span>
-              </div>
-              <div class="flex-1">
-                <h4 class="font-semibold text-charcoal mb-2">We Audit</h4>
-                <p class="text-sm text-stone">We looked at the firm's web portal and her daily routine. The bottleneck wasn't a lack of leads; it was the friction required to process them. We proposed a menu of options: 1) An AI agent to scrape the leads for her, 2) An automation to clean the data into a readable Excel sheet, 3) An AI voice agent to do the initial cold calling, and 4) A summary system to alert her of warm prospects. She realized that implementing all of them would remove the entire top-of-funnel chore, allowing her to focus strictly on closing.</p>
-              </div>
-            </div>
-
-            <!-- Step 3: Designing -->
-            <div class="flex gap-4">
-              <div class="w-12 h-12 rounded-full bg-[#6C8261]/10 flex items-center justify-center flex-shrink-0">
-                <span class="text-[#6C8261] font-bold">3</span>
-              </div>
-              <div class="flex-1">
-                <h4 class="font-semibold text-charcoal mb-2">We Design</h4>
-                <p class="text-sm text-stone">Design an end-to-end lead qualification pipeline that runs entirely in the background. It strings together four distinct micro-automations that act as a digital SDR (Sales Development Rep) team: scraping the firm's database, structuring the contact list, executing the initial cold calls, and filtering only the interested buyers directly into her inbox.</p>
-              </div>
-            </div>
-
-            <!-- Step 4: Implementation -->
-            <div class="flex gap-4">
-              <div class="w-12 h-12 rounded-full bg-[#1F4E79]/10 flex items-center justify-center flex-shrink-0">
-                <span class="text-[#1F4E79] font-bold">4</span>
-              </div>
-              <div class="flex-1">
-                <h4 class="font-semibold text-charcoal mb-2">We Implement</h4>
-                <div class="grid md:grid-cols-2 gap-4 mt-3">
-                  <div class="bg-[#1F4E79]/5 rounded-lg p-4">
-                    <h5 class="font-medium text-sm text-charcoal mb-2">Data Scraping & Formatting</h5>
-                    <ul class="text-xs text-stone space-y-1">
-                      <li>→ AI browser agent logs into the private firm portal</li>
-                      <li>→ Scrapes the newest daily inbound phone leads</li>
-                      <li>→ Cleans and structures raw data into an organized Excel sheet</li>
-                    </ul>
-                  </div>
-                  <div class="bg-[#6C8261]/5 rounded-lg p-4">
-                    <h5 class="font-medium text-sm text-charcoal mb-2">Voice Outreach & Triage</h5>
-                    <ul class="text-xs text-stone space-y-1">
-                      <li>→ AI Voice Agent dials every lead on the compiled list</li>
-                      <li>→ Inquires naturally if they still need help finding a house</li>
-                      <li>→ Summarizes the conversation via AI</li>
-                      <li>→ Emails the agent a clean list of "Warm Leads to Call Back"</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Step 5: Result -->
-            <div class="flex gap-4">
-              <div class="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
-                <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                </svg>
-              </div>
-              <div class="flex-1">
-                <h4 class="font-semibold text-charcoal mb-2">Result: Improved Business</h4>
-                <div class="grid grid-cols-3 gap-4 mt-3">
-                  <div class="text-center">
-                    <div class="text-2xl font-bold text-[#1F4E79]">0</div>
-                    <div class="text-xs text-stone">leads ignored</div>
-                  </div>
-                  <div class="text-center">
-                    <div class="text-2xl font-bold text-[#1F4E79]">Warm</div>
-                    <div class="text-xs text-stone">callbacks only</div>
-                  </div>
-                  <div class="text-center">
-                    <div class="text-2xl font-bold text-[#1F4E79]">100%</div>
-                    <div class="text-xs text-stone">focus on closing</div>
-                  </div>
-                </div>
-                <p class="text-sm text-stone mt-4">The agent completely outsourced her top-of-funnel friction. She never logs into the portal, never deals with messy data, and never makes a cold dial. She wakes up, checks her email, and only calls people who have actively confirmed to the AI that they are looking to buy.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </article>
+    <!-- Filters -->
+    <div class="flex flex-wrap gap-3 mb-12">
+      <button class="filter-btn active px-4 py-2 rounded-full border border-stone/20 text-sm font-medium hover:border-[#1F4E79] hover:text-[#1F4E79] bg-white" data-filter="all">All Industries</button>
+      <button class="filter-btn px-4 py-2 rounded-full border border-stone/20 text-sm font-medium hover:border-[#1F4E79] hover:text-[#1F4E79] bg-white" data-filter="logistics">Logistics</button>
+      <button class="filter-btn px-4 py-2 rounded-full border border-stone/20 text-sm font-medium hover:border-[#1F4E79] hover:text-[#1F4E79] bg-white" data-filter="real-estate">Real Estate</button>
+      <button class="filter-btn px-4 py-2 rounded-full border border-stone/20 text-sm font-medium hover:border-[#1F4E79] hover:text-[#1F4E79] bg-white" data-filter="insurance">Insurance</button>
+      <button class="filter-btn px-4 py-2 rounded-full border border-stone/20 text-sm font-medium hover:border-[#1F4E79] hover:text-[#1F4E79] bg-white" data-filter="retail">Retail</button>
+      <button class="filter-btn px-4 py-2 rounded-full border border-stone/20 text-sm font-medium hover:border-[#1F4E79] hover:text-[#1F4E79] bg-white" data-filter="operations">Operations</button>
+      <button class="filter-btn px-4 py-2 rounded-full border border-stone/20 text-sm font-medium hover:border-[#1F4E79] hover:text-[#1F4E79] bg-white" data-filter="home-services">Home Services</button>
     </div>
 
-    <script>
-      function toggleCase(caseId) {
-        const content = document.getElementById(caseId + '-content');
-        const btn = document.querySelector(`[aria-controls="${caseId}-content"]`);
-        const isExpanded = content.classList.contains('hidden');
-        
-        if (isExpanded) {
-          content.classList.remove('hidden');
-          btn.setAttribute('aria-expanded', 'true');
-          btn.querySelector('.toggle-text').textContent = 'Show less';
-          btn.querySelector('svg').classList.add('rotate-180');
-        } else {
-          content.classList.add('hidden');
-          btn.setAttribute('aria-expanded', 'false');
-          btn.querySelector('.toggle-text').textContent = 'Read the full story';
-          btn.querySelector('svg').classList.remove('rotate-180');
-        }
-      }
-    </script>
-  </main> 
+    <!-- Grid Layout -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="cases-grid">
+      
+      <!-- Case 1 -->
+      <a href="cases/expense-report-chaos.html" class="case-card block group" data-category="logistics">
+        <div class="h-full bg-white/60 backdrop-blur-sm rounded-xl border border-[#1F4E79]/10 p-6 shadow-sm hover:shadow-md hover:border-[#1F4E79]/30 transition-all flex flex-col">
+          <div class="mb-4">
+            <span class="font-mono text-xs bg-[#1F4E79]/5 text-[#1F4E79] px-2.5 py-1 rounded-full uppercase tracking-wider">Logistics</span>
+          </div>
+          <div class="text-[#C96B3B] font-bold text-3xl mb-1">12→0.75</div>
+          <div class="text-xs text-stone uppercase tracking-wider mb-6">hours/week</div>
+          
+          <h3 class="text-xl font-bold text-charcoal mb-3 group-hover:text-[#1F4E79] transition-colors">The Expense Report Chaos</h3>
+          <p class="text-sm text-stone mb-6 flex-grow">Field managers emailed receipt photos. Accounting spent 12 hours/week manually filing and entering data.</p>
+          
+          <div class="text-[#1F4E79] text-sm font-semibold flex items-center gap-2 mt-auto">
+            Read Case
+            <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </div>
+        </div>
+      </a>
 
-  <footer class="py-12 text-center text-sm text-stone border-t border-stone/10">
-    <p>&copy; 2026 Microve.ai</p>
-  </footer>
+      <!-- Case 2 -->
+      <a href="#" class="case-card block group" data-category="home-services">
+        <div class="h-full bg-white/60 backdrop-blur-sm rounded-xl border border-[#1F4E79]/10 p-6 shadow-sm hover:shadow-md hover:border-[#1F4E79]/30 transition-all flex flex-col">
+          <div class="mb-4">
+            <span class="font-mono text-xs bg-[#1F4E79]/5 text-[#1F4E79] px-2.5 py-1 rounded-full uppercase tracking-wider">Home Svcs</span>
+          </div>
+          <div class="text-[#C96B3B] font-bold text-3xl mb-1">~15</div>
+          <div class="text-xs text-stone uppercase tracking-wider mb-6">hours/week</div>
+          
+          <h3 class="text-xl font-bold text-charcoal mb-3 group-hover:text-[#1F4E79] transition-colors">The Pricing Explanation Loop</h3>
+          <p class="text-sm text-stone mb-6 flex-grow">Sales team spent 40% of every call repeating pricing details to tire-kickers while qualified leads waited.</p>
+          
+          <div class="text-[#1F4E79] text-sm font-semibold flex items-center gap-2 mt-auto">
+            Read Case
+            <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </div>
+        </div>
+      </a>
+
+      <!-- Case 3 -->
+      <a href="#" class="case-card block group" data-category="operations">
+        <div class="h-full bg-white/60 backdrop-blur-sm rounded-xl border border-[#1F4E79]/10 p-6 shadow-sm hover:shadow-md hover:border-[#1F4E79]/30 transition-all flex flex-col">
+          <div class="mb-4">
+            <span class="font-mono text-xs bg-[#1F4E79]/5 text-[#1F4E79] px-2.5 py-1 rounded-full uppercase tracking-wider">Operations</span>
+          </div>
+          <div class="text-[#C96B3B] font-bold text-3xl mb-1">~8</div>
+          <div class="text-xs text-stone uppercase tracking-wider mb-6">hours/week</div>
+          
+          <h3 class="text-xl font-bold text-charcoal mb-3 group-hover:text-[#1F4E79] transition-colors">The Disappearing Knowledge</h3>
+          <p class="text-sm text-stone mb-6 flex-grow">SOPs existed but were scattered in piles or trapped in employees' heads. New hires couldn't find answers.</p>
+          
+          <div class="text-[#1F4E79] text-sm font-semibold flex items-center gap-2 mt-auto">
+            Read Case
+            <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </div>
+        </div>
+      </a>
+
+      <!-- Case 4 -->
+      <a href="#" class="case-card block group" data-category="retail">
+        <div class="h-full bg-white/60 backdrop-blur-sm rounded-xl border border-[#1F4E79]/10 p-6 shadow-sm hover:shadow-md hover:border-[#1F4E79]/30 transition-all flex flex-col">
+          <div class="mb-4">
+            <span class="font-mono text-xs bg-[#1F4E79]/5 text-[#1F4E79] px-2.5 py-1 rounded-full uppercase tracking-wider">Retail</span>
+          </div>
+          <div class="text-[#C96B3B] font-bold text-3xl mb-1">~10</div>
+          <div class="text-xs text-stone uppercase tracking-wider mb-6">hours/week</div>
+          
+          <h3 class="text-xl font-bold text-charcoal mb-3 group-hover:text-[#1F4E79] transition-colors">The KPI Detective Work</h3>
+          <p class="text-sm text-stone mb-6 flex-grow">Tracking individual performance across 4 rotating locations was nearly impossible using fragmented POS data.</p>
+          
+          <div class="text-[#1F4E79] text-sm font-semibold flex items-center gap-2 mt-auto">
+            Read Case
+            <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </div>
+        </div>
+      </a>
+
+      <!-- Case 5 -->
+      <a href="#" class="case-card block group" data-category="insurance">
+        <div class="h-full bg-white/60 backdrop-blur-sm rounded-xl border border-[#1F4E79]/10 p-6 shadow-sm hover:shadow-md hover:border-[#1F4E79]/30 transition-all flex flex-col">
+          <div class="mb-4">
+            <span class="font-mono text-xs bg-[#1F4E79]/5 text-[#1F4E79] px-2.5 py-1 rounded-full uppercase tracking-wider">Insurance</span>
+          </div>
+          <div class="text-[#C96B3B] font-bold text-3xl mb-1">~6</div>
+          <div class="text-xs text-stone uppercase tracking-wider mb-6">hours/week</div>
+          
+          <h3 class="text-xl font-bold text-charcoal mb-3 group-hover:text-[#1F4E79] transition-colors">The Weekly Data Scrape</h3>
+          <p class="text-sm text-stone mb-6 flex-grow">A broker lost hours manually logging into carrier portals just to paste data into his custom Excel dashboard.</p>
+          
+          <div class="text-[#1F4E79] text-sm font-semibold flex items-center gap-2 mt-auto">
+            Read Case
+            <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </div>
+        </div>
+      </a>
+
+      <!-- Case 6 -->
+      <a href="#" class="case-card block group" data-category="real-estate">
+        <div class="h-full bg-white/60 backdrop-blur-sm rounded-xl border border-[#1F4E79]/10 p-6 shadow-sm hover:shadow-md hover:border-[#1F4E79]/30 transition-all flex flex-col">
+          <div class="mb-4">
+            <span class="font-mono text-xs bg-[#1F4E79]/5 text-[#1F4E79] px-2.5 py-1 rounded-full uppercase tracking-wider">Real Estate</span>
+          </div>
+          <div class="text-[#C96B3B] font-bold text-3xl mb-1">100%</div>
+          <div class="text-xs text-stone uppercase tracking-wider mb-6">engagement</div>
+          
+          <h3 class="text-xl font-bold text-charcoal mb-3 group-hover:text-[#1F4E79] transition-colors">The Cold Lead Graveyard</h3>
+          <p class="text-sm text-stone mb-6 flex-grow">An agent had a goldmine of inbound leads but lacked the consistency to scrape, organize, and call them.</p>
+          
+          <div class="text-[#1F4E79] text-sm font-semibold flex items-center gap-2 mt-auto">
+            Read Case
+            <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </main>
+
+  <script>
+    // Filtering logic
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const caseCards = document.querySelectorAll('.case-card');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Remove active class from all
+        filterBtns.forEach(b => b.classList.remove('active', 'bg-[#1F4E79]', 'text-white', 'border-[#1F4E79]'));
+        filterBtns.forEach(b => b.classList.add('bg-white', 'text-charcoal'));
+        
+        // Add active class to clicked
+        btn.classList.remove('bg-white', 'text-charcoal');
+        btn.classList.add('active', 'bg-[#1F4E79]', 'text-white', 'border-[#1F4E79]');
+        
+        const filterValue = btn.getAttribute('data-filter');
+        
+        caseCards.forEach(card => {
+          if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+            card.style.display = 'block';
+            setTimeout(() => { card.style.opacity = '1'; card.style.transform = 'translateY(0)'; }, 50);
+          } else {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(10px)';
+            setTimeout(() => { card.style.display = 'none'; }, 300);
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{TITLE}} | Microve.ai</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            terracotta: '#1F4E79', sage: '#6C8261', coral: '#C96B3B',
+            cream: '#F4F1E8', charcoal: '#17212B', stone: '#636E72'
+          },
+          fontFamily: { sans: ['Inter', 'sans-serif'], mono: ['JetBrains Mono', 'monospace'] }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { background-color: #F4F1E8 !important; background-image: radial-gradient(circle, rgba(31, 78, 121, 0.18) 1.5px, transparent 1.5px) !important; background-size: 28px 28px !important; }
+    #site-nav { position: sticky; top: 0; z-index: 40; backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); background: linear-gradient(180deg, rgba(249, 246, 240, 0.88) 0%, rgba(240, 234, 223, 0.9) 100%); border-bottom: 1px solid rgba(23, 33, 43, 0.08); }
+    .nav-logo { font-family: 'Inter', sans-serif; font-size: 1.5rem; font-weight: 700; color: #17212B; letter-spacing: -0.03em; text-decoration: none; display: flex; align-items: baseline;}
+    .nav-logo-tld { font-family: 'JetBrains Mono', monospace; font-size: 0.6875rem; font-weight: 500; color: rgba(99, 110, 114, 0.88); letter-spacing: 0.04em; margin-left: 2px; position: relative; top: -5px; }
+  </style>
+</head>
+<body class="text-charcoal antialiased">
+  <nav id="site-nav" class="sticky top-0 z-40" role="navigation">
+    <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="../index.html" class="nav-logo">microve<span class="nav-logo-tld">.ai</span></a>
+      <a href="../cases.html" class="text-sm font-medium text-[#1F4E79] hover:text-[#C96B3B] transition-colors flex items-center gap-2">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+        Back to Cases
+      </a>
+    </div>
+  </nav>
+
+  <main class="max-w-3xl mx-auto px-6 pt-16 pb-32">
+    <!-- Header -->
+    <header class="mb-12">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="text-xs font-mono bg-[#1F4E79]/10 text-[#1F4E79] px-3 py-1 rounded-full uppercase tracking-wider">{{INDUSTRY}}</span>
+        <span class="text-sm text-stone">{{COMPANY_INFO}}</span>
+      </div>
+      <h1 class="font-sans text-4xl md:text-5xl font-bold text-[#1F4E79] mb-6 leading-tight">{{TITLE}}</h1>
+      <p class="text-xl text-stone leading-relaxed">{{SUBTITLE}}</p>
+    </header>
+
+    <!-- Metrics -->
+    <div class="grid grid-cols-3 gap-4 mb-16 py-8 border-y border-[#1F4E79]/10">
+      <div class="text-center">
+        <div class="text-3xl font-bold text-[#C96B3B] mb-1">{{METRIC_1_VAL}}</div>
+        <div class="text-xs text-stone uppercase tracking-wider">{{METRIC_1_LABEL}}</div>
+      </div>
+      <div class="text-center border-l border-[#1F4E79]/10">
+        <div class="text-3xl font-bold text-[#C96B3B] mb-1">{{METRIC_2_VAL}}</div>
+        <div class="text-xs text-stone uppercase tracking-wider">{{METRIC_2_LABEL}}</div>
+      </div>
+      <div class="text-center border-l border-[#1F4E79]/10">
+        <div class="text-3xl font-bold text-[#C96B3B] mb-1">{{METRIC_3_VAL}}</div>
+        <div class="text-xs text-stone uppercase tracking-wider">{{METRIC_3_LABEL}}</div>
+      </div>
+    </div>
+
+    <!-- Content -->
+    <article class="space-y-12">
+      {{CONTENT}}
+    </article>
+  </main>
+</body>
+</html>
