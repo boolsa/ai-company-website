@@ -937,6 +937,127 @@
             </div>
           </div>
         </div>
+      <!-- Case Study 6 -->
+      <article class="case-card bg-white/60 backdrop-blur-sm rounded-xl border border-[#1F4E79]/10 overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+        <!-- Card Header / Summary -->
+        <div class="p-8 cursor-pointer" onclick="toggleCase('case-6')">
+          <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
+            <div class="flex-1">
+              <div class="flex flex-wrap items-center gap-3 mb-4">
+                <span class="section-label text-xs text-[#1F4E79] bg-[#1F4E79]/5 px-3 py-1 rounded-full">Real Estate</span>
+                <span class="text-sm text-stone">Independent Agent</span>
+              </div>
+              <h2 class="text-2xl md:text-3xl font-bold text-charcoal mb-3">The Cold Lead Graveyard</h2>
+              <p class="text-stone">A real estate agent had access to a goldmine of inbound leads but lacked the consistency to scrape, organize, and call them before they went cold.</p>
+            </div>
+            <div class="flex flex-row md:flex-col items-center md:items-end gap-6 md:gap-2">
+              <div class="text-center md:text-right">
+                <div class="text-4xl md:text-5xl font-bold text-[#C96B3B]">100%</div>
+                <div class="text-sm text-stone">lead engagement<br>rate</div>
+              </div>
+              <button class="case-toggle-btn flex items-center gap-2 text-[#1F4E79] font-medium text-sm hover:text-[#C96B3B] transition-colors" aria-expanded="false" aria-controls="case-6-content">
+                <span class="toggle-text">Read the full story</span>
+                <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Expandable Content -->
+        <div id="case-6-content" class="case-content hidden border-t border-[#1F4E79]/10">
+          <div class="p-8 space-y-8">
+            <!-- Step 1: Problem -->
+            <div class="flex gap-4">
+              <div class="w-12 h-12 rounded-full bg-[#C96B3B]/10 flex items-center justify-center flex-shrink-0">
+                <span class="text-[#C96B3B] font-bold">1</span>
+              </div>
+              <div class="flex-1">
+                <h4 class="font-semibold text-charcoal mb-2">We Listen</h4>
+                <p class="text-sm text-stone">A real estate agent at a large firm had access to a private database of inbound phone leads—people who had expressed interest in buying. But she struggled with consistency. She would get distracted by showings and admin work, failing to log in and pull the new lists. By the time she finally sat down to make the cold calls, it was either too late in the evening to dial, or the leads had already cooled off and gone with another agent.</p>
+              </div>
+            </div>
+
+            <!-- Step 2: Suggestion -->
+            <div class="flex gap-4">
+              <div class="w-12 h-12 rounded-full bg-[#1F4E79]/10 flex items-center justify-center flex-shrink-0">
+                <span class="text-[#1F4E79] font-bold">2</span>
+              </div>
+              <div class="flex-1">
+                <h4 class="font-semibold text-charcoal mb-2">We Audit</h4>
+                <p class="text-sm text-stone">We looked at the firm's web portal and her daily routine. The bottleneck wasn't a lack of leads; it was the friction required to process them. We proposed a menu of options: 1) An AI agent to scrape the leads for her, 2) An automation to clean the data into a readable Excel sheet, 3) An AI voice agent to do the initial cold calling, and 4) A summary system to alert her of warm prospects. She realized that implementing all of them would remove the entire top-of-funnel chore, allowing her to focus strictly on closing.</p>
+              </div>
+            </div>
+
+            <!-- Step 3: Designing -->
+            <div class="flex gap-4">
+              <div class="w-12 h-12 rounded-full bg-[#6C8261]/10 flex items-center justify-center flex-shrink-0">
+                <span class="text-[#6C8261] font-bold">3</span>
+              </div>
+              <div class="flex-1">
+                <h4 class="font-semibold text-charcoal mb-2">We Design</h4>
+                <p class="text-sm text-stone">Design an end-to-end lead qualification pipeline that runs entirely in the background. It strings together four distinct micro-automations that act as a digital SDR (Sales Development Rep) team: scraping the firm's database, structuring the contact list, executing the initial cold calls, and filtering only the interested buyers directly into her inbox.</p>
+              </div>
+            </div>
+
+            <!-- Step 4: Implementation -->
+            <div class="flex gap-4">
+              <div class="w-12 h-12 rounded-full bg-[#1F4E79]/10 flex items-center justify-center flex-shrink-0">
+                <span class="text-[#1F4E79] font-bold">4</span>
+              </div>
+              <div class="flex-1">
+                <h4 class="font-semibold text-charcoal mb-2">We Implement</h4>
+                <div class="grid md:grid-cols-2 gap-4 mt-3">
+                  <div class="bg-[#1F4E79]/5 rounded-lg p-4">
+                    <h5 class="font-medium text-sm text-charcoal mb-2">Data Scraping & Formatting</h5>
+                    <ul class="text-xs text-stone space-y-1">
+                      <li>→ AI browser agent logs into the private firm portal</li>
+                      <li>→ Scrapes the newest daily inbound phone leads</li>
+                      <li>→ Cleans and structures raw data into an organized Excel sheet</li>
+                    </ul>
+                  </div>
+                  <div class="bg-[#6C8261]/5 rounded-lg p-4">
+                    <h5 class="font-medium text-sm text-charcoal mb-2">Voice Outreach & Triage</h5>
+                    <ul class="text-xs text-stone space-y-1">
+                      <li>→ AI Voice Agent dials every lead on the compiled list</li>
+                      <li>→ Inquires naturally if they still need help finding a house</li>
+                      <li>→ Summarizes the conversation via AI</li>
+                      <li>→ Emails the agent a clean list of "Warm Leads to Call Back"</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 5: Result -->
+            <div class="flex gap-4">
+              <div class="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+              </div>
+              <div class="flex-1">
+                <h4 class="font-semibold text-charcoal mb-2">Result: Improved Business</h4>
+                <div class="grid grid-cols-3 gap-4 mt-3">
+                  <div class="text-center">
+                    <div class="text-2xl font-bold text-[#1F4E79]">0</div>
+                    <div class="text-xs text-stone">leads ignored</div>
+                  </div>
+                  <div class="text-center">
+                    <div class="text-2xl font-bold text-[#1F4E79]">Warm</div>
+                    <div class="text-xs text-stone">callbacks only</div>
+                  </div>
+                  <div class="text-center">
+                    <div class="text-2xl font-bold text-[#1F4E79]">100%</div>
+                    <div class="text-xs text-stone">focus on closing</div>
+                  </div>
+                </div>
+                <p class="text-sm text-stone mt-4">The agent completely outsourced her top-of-funnel friction. She never logs into the portal, never deals with messy data, and never makes a cold dial. She wakes up, checks her email, and only calls people who have actively confirmed to the AI that they are looking to buy.</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </article>
     </div>
 
