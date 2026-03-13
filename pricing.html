@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Pricing | Microve.ai</title>
   <meta name="description" content="Custom micro-automation pricing — no subscriptions, no per-seat fees. One-time build, ongoing support.">
   <script src="https://cdn.tailwindcss.com"></script>
@@ -30,6 +30,17 @@
     }
   </script>
   <style>
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
     html { scroll-behavior: smooth; }
     .text-stone { color: #636E72; }
     .text-charcoal { color: #17212B; }
@@ -39,7 +50,7 @@
     @media (hover: none) and (pointer: coarse) { a, button { min-height: 44px; min-width: 44px; } }
     .section-label { font-family: 'JetBrains Mono', monospace; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; }
     .tight-tracking { letter-spacing: -0.02em; }
-    body { position: relative; overflow-x: hidden; background-color: #F4F1E8 !important; background-image: radial-gradient(circle, rgba(31, 78, 121, 0.18) 1.5px, transparent 1.5px) !important; background-size: 28px 28px !important; }
+    body { position: relative; overflow-x: hidden; background-color: #F4F1E8 !important; background-image: radial-gradient(circle, rgba(31, 78, 121, 0.18) 1.5px, transparent 1.5px) !important; background-size: 28px 28px !important;  -webkit-text-size-adjust: 100%; text-size-adjust: 100%;}
     #site-nav {
       position: sticky;
       top: 0;
@@ -254,6 +265,31 @@
     #mobileMenuBtn[aria-expanded="true"] .hamburger-line:nth-child(1) { transform: translateY(5.75px) rotate(45deg); }
     #mobileMenuBtn[aria-expanded="true"] .hamburger-line:nth-child(2) { opacity: 0; transform: scaleX(0); }
     #mobileMenuBtn[aria-expanded="true"] .hamburger-line:nth-child(3) { transform: translateY(-5.75px) rotate(-45deg); }
+  
+    a, button {
+      touch-action: manipulation;
+    }
+    @supports (-webkit-touch-callout: none) {
+      input, textarea, select {
+        font-size: 16px;
+      }
+    }
+    @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+      #site-nav,
+      #mobileMenu,
+      .hero-frame {
+        -webkit-backdrop-filter: none;
+        backdrop-filter: none;
+      }
+      #site-nav,
+      #mobileMenu {
+        background: rgba(244, 241, 232, 0.98);
+      }
+      .hero-frame {
+        background: rgba(255, 255, 255, 0.88);
+      }
+    }
+
   </style>
 </head>
 <body class="text-charcoal antialiased">
@@ -301,21 +337,51 @@
         const btn = document.getElementById('mobileMenuBtn');
         const menu = document.getElementById('mobileMenu');
         const nav = document.getElementById('site-nav');
-        window.addEventListener('scroll', function () { nav.classList.toggle('nav-scrolled', window.scrollY > 12); }, { passive: true });
+        if (!btn || !menu || !nav) return;
+
+        const closeMenu = function (returnFocus) {
+          btn.setAttribute('aria-expanded', 'false');
+          menu.classList.remove('open');
+          document.body.style.overflow = '';
+          if (returnFocus) btn.focus();
+        };
+
+        window.addEventListener('scroll', function () {
+          nav.classList.toggle('nav-scrolled', window.scrollY > 12);
+        }, { passive: true });
+
         btn.addEventListener('click', function () {
           const isOpen = this.getAttribute('aria-expanded') === 'true';
-          this.setAttribute('aria-expanded', String(!isOpen));
-          menu.classList.toggle('open', !isOpen);
-          document.body.style.overflow = !isOpen ? 'hidden' : '';
+          if (isOpen) {
+            closeMenu(false);
+            return;
+          }
+          this.setAttribute('aria-expanded', 'true');
+          menu.classList.add('open');
+          document.body.style.overflow = 'hidden';
         });
+
+        menu.querySelectorAll('a').forEach(function (link) {
+          link.addEventListener('click', function () {
+            closeMenu(false);
+          });
+        });
+
         document.addEventListener('click', function (e) {
           if (!nav.contains(e.target) && menu.classList.contains('open')) {
-            btn.setAttribute('aria-expanded', 'false'); menu.classList.remove('open'); document.body.style.overflow = '';
+            closeMenu(false);
           }
         });
+
         document.addEventListener('keydown', function (e) {
           if (e.key === 'Escape' && menu.classList.contains('open')) {
-            btn.setAttribute('aria-expanded', 'false'); menu.classList.remove('open'); document.body.style.overflow = ''; btn.focus();
+            closeMenu(true);
+          }
+        });
+
+        window.addEventListener('resize', function () {
+          if (window.innerWidth >= 768 && menu.classList.contains('open')) {
+            closeMenu(false);
           }
         });
       })();

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>The Cold Lead Graveyard | Microve.ai</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,10 +14,46 @@
     }
   </script>
   <style>
-    body { background-color: #F4F1E8 !important; background-image: radial-gradient(circle, rgba(31, 78, 121, 0.18) 1.5px, transparent 1.5px) !important; background-size: 28px 28px !important; }
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+    body { background-color: #F4F1E8 !important; background-image: radial-gradient(circle, rgba(31, 78, 121, 0.18) 1.5px, transparent 1.5px) !important; background-size: 28px 28px !important;  -webkit-text-size-adjust: 100%; text-size-adjust: 100%;}
     #site-nav { position: sticky; top: 0; z-index: 40; backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); background: linear-gradient(180deg, rgba(249, 246, 240, 0.88) 0%, rgba(240, 234, 223, 0.9) 100%); border-bottom: 1px solid rgba(23, 33, 43, 0.08); }
     .nav-logo { font-family: 'Inter', sans-serif; font-size: 1.5rem; font-weight: 700; color: #17212B; letter-spacing: -0.03em; text-decoration: none; display: flex; align-items: baseline;}
     .nav-logo-tld { font-family: 'JetBrains Mono', monospace; font-size: 0.6875rem; font-weight: 500; color: rgba(99, 110, 114, 0.88); letter-spacing: 0.04em; margin-left: 2px; position: relative; top: -5px; }
+  
+    a, button {
+      touch-action: manipulation;
+    }
+    @supports (-webkit-touch-callout: none) {
+      input, textarea, select {
+        font-size: 16px;
+      }
+    }
+    @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+      #site-nav,
+      #mobileMenu,
+      .hero-frame {
+        -webkit-backdrop-filter: none;
+        backdrop-filter: none;
+      }
+      #site-nav,
+      #mobileMenu {
+        background: rgba(244, 241, 232, 0.98);
+      }
+      .hero-frame {
+        background: rgba(255, 255, 255, 0.88);
+      }
+    }
+
   </style>
 </head>
 <body class="text-charcoal antialiased">

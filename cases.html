@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Cases | Microve.ai</title>
   <meta name="description" content="Real automations we've built for real teams — what the problem was, what we built, and what changed.">
   <script src="https://cdn.tailwindcss.com"></script>
@@ -15,8 +15,19 @@
     }
   </script>
   <style>
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
     html { scroll-behavior: smooth; }
-    body { position: relative; overflow-x: hidden; background-color: #F4F1E8 !important; background-image: radial-gradient(circle, rgba(31, 78, 121, 0.18) 1.5px, transparent 1.5px) !important; background-size: 28px 28px !important; }
+    body { position: relative; overflow-x: hidden; background-color: #F4F1E8 !important; background-image: radial-gradient(circle, rgba(31, 78, 121, 0.18) 1.5px, transparent 1.5px) !important; background-size: 28px 28px !important;  -webkit-text-size-adjust: 100%; text-size-adjust: 100%;}
     #site-nav { position: sticky; top: 0; z-index: 40; backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); background: linear-gradient(180deg, rgba(249, 246, 240, 0.88) 0%, rgba(240, 234, 223, 0.9) 100%); border-bottom: 1px solid rgba(23, 33, 43, 0.08); }
     #site-nav.nav-scrolled { background: linear-gradient(180deg, rgba(247, 243, 236, 0.97) 0%, rgba(237, 231, 220, 0.96) 100%); box-shadow: 0 14px 38px rgba(23, 33, 43, 0.1); border-bottom-color: rgba(23, 33, 43, 0.14); }
     .nav-logo { font-family: 'Inter', sans-serif; font-size: 1.5rem; font-weight: 700; color: #17212B; letter-spacing: -0.03em; text-decoration: none; display: flex; align-items: baseline;}
@@ -31,6 +42,31 @@
     .filter-btn.active { background-color: #1F4E79; color: white; border-color: #1F4E79; }
     .case-card { transition: opacity 0.3s ease, transform 0.3s ease; }
     .case-card.hidden { display: none; }
+  
+    a, button {
+      touch-action: manipulation;
+    }
+    @supports (-webkit-touch-callout: none) {
+      input, textarea, select {
+        font-size: 16px;
+      }
+    }
+    @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+      #site-nav,
+      #mobileMenu,
+      .hero-frame {
+        -webkit-backdrop-filter: none;
+        backdrop-filter: none;
+      }
+      #site-nav,
+      #mobileMenu {
+        background: rgba(244, 241, 232, 0.98);
+      }
+      .hero-frame {
+        background: rgba(255, 255, 255, 0.88);
+      }
+    }
+
   </style>
 </head>
 <body class="text-charcoal antialiased">
