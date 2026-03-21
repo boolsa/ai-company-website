@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing | Microve.ai</title>
+    <meta name="description" content="Custom micro-automation pricing — no subscriptions, no per-seat fees. One-time build, ongoing support.">
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: {
+                            DEFAULT: '#1F4E79',
+                            dark: '#163a5c',
+                            light: '#2d6a9f',
+                        },
+                        accent: {
+                            DEFAULT: '#C96B3B',
+                            dark: '#A6552B',
+                            light: '#d67f52',
+                        },
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .tight-tracking {
+            letter-spacing: -0.02em;
+        }
+        .gradient-line {
+            background: linear-gradient(to right, rgba(31, 78, 121, 0.2), rgba(31, 78, 121, 0.4), #6C8261);
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-900 antialiased">
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-[#1F4E79] focus:text-white focus:px-4 focus:py-2 focus:rounded-sm focus:font-semibold">Skip to main content</a>
+
+  <!-- Navigation -->
+<nav class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-gray-100">
+    <div class="max-w-5xl mx-auto px-6 py-4">
+        <div class="flex items-center justify-between">
+            <a href="index.html" class="text-xl font-bold text-primary" aria-label="Microve.ai — home">
+                microve<span class="text-accent">.ai</span>
+            </a>
+            <div class="hidden md:flex items-center space-x-6 text-sm">
+                <a href="index.html" class="text-gray-600 hover:text-primary transition-colors">Home</a>
+                <a href="what-we-do.html" class="text-gray-600 hover:text-primary transition-colors">What We Do</a>
+                <a href="cases.html" class="text-gray-600 hover:text-primary transition-colors">Cases</a>
+                <a href="blog.html" class="text-gray-600 hover:text-primary transition-colors">Blog</a>
+                <a href="about.html" class="text-gray-600 hover:text-primary transition-colors">About</a>
+                <a href="pricing.html" class="text-gray-600 hover:text-primary transition-colors">Pricing</a>
+                <a href="contact.html" class="text-gray-600 hover:text-primary transition-colors">Contact</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+  <main id="main-content" class="max-w-4xl mx-auto px-6 pt-24 pb-32">
+    <div class="text-center py-24">
+      <p class="section-label text-xs text-[#A6552B] tracking-widest mb-4">Pricing</p>
+      <h1 class="font-sans text-5xl md:text-6xl font-bold tight-tracking text-[#1F4E79] mb-6">Pricing follows workflow complexity</h1>
+      <p class="text-xl text-gray-600 max-w-xl mx-auto mb-8">Each build is scoped around the bottleneck, the systems involved, and the level of judgment required. We price the work after reviewing the workflow so the recommendation matches the operational reality.</p>
+    </div>
+  </main>
+
+  <footer class="py-12 text-center text-sm text-gray-600 border-t border-gray-200/10">
+    <p>&copy; 2026 Microve.ai</p>
+  </footer>
+</body>
+</html>

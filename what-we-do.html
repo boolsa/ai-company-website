@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What We Do | Microve.ai</title>
+    <meta name="description" content="Microve is a custom A.I. service. We listen to your business problems, then design and build focused A.I. tools that solve them. Full service, start to finish.">
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: {
+                            DEFAULT: '#1F4E79',
+                            dark: '#163a5c',
+                            light: '#2d6a9f',
+                        },
+                        accent: {
+                            DEFAULT: '#C96B3B',
+                            dark: '#A6552B',
+                            light: '#d67f52',
+                        },
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .tight-tracking {
+            letter-spacing: -0.02em;
+        }
+        .gradient-line {
+            background: linear-gradient(to right, rgba(31, 78, 121, 0.2), rgba(31, 78, 121, 0.4), #6C8261);
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-900 antialiased">
+
+    <!-- Skip Link -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-primary focus:text-white focus:px-4 focus:py-2 focus:rounded focus:font-semibold">
+        Skip to main content
+    </a>
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-gray-100">
+        <div class="max-w-5xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="index.html" class="text-xl font-bold text-primary" aria-label="Microve.ai — home">
+                    microve<span class="text-accent">.ai</span>
+                </a>
+                <div class="hidden md:flex items-center space-x-6 text-sm">
+                    <a href="index.html" class="text-gray-600 hover:text-primary transition-colors">Home</a>
+                    <a href="what-we-do.html" class="text-gray-900 font-medium">What We Do</a>
+                    <a href="cases.html" class="text-gray-600 hover:text-primary transition-colors">Cases</a>
+                    <a href="blog.html" class="text-gray-600 hover:text-primary transition-colors">Blog</a>
+                    <a href="about.html" class="text-gray-600 hover:text-primary transition-colors">About</a>
+                    <a href="pricing.html" class="text-gray-600 hover:text-primary transition-colors">Pricing</a>
+                    <a href="contact.html" class="text-gray-600 hover:text-primary transition-colors">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+  <main id="main-content" class="max-w-4xl mx-auto px-6 pt-24 pb-32 space-y-12">
+
+    <!-- ── HERO ── -->
+    <header class="pt-8 pb-4 text-center">
+      <p class="text-xs text-accent uppercase tracking-widest mb-4">WHAT WE DO</p>
+      <h1 class="text-5xl md:text-7xl font-bold mb-5 tight-tracking text-primary">We build the A.I. tools your business actually needs.</h1>
+      <p class="text-xl text-gray-500 max-w-2xl mx-auto leading-relaxed">You describe the problem. Because we've built and sold businesses ourselves, we know what to ask. We design, build, and deliver the solution that fits your actual situation—not just your initial request. No platforms to learn, no subscriptions to manage. Just focused tools built around the way your team already works.</p>
+    </header>
+
+    <!-- ── SERVICE FLOW DIAGRAM ── -->
+    <div class="relative w-full overflow-hidden">
+      <!-- Desktop -->
+      <svg class="hidden md:block w-full h-auto" viewBox="0 0 960 250" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Service flow: Your problem, we listen, we propose, we build, measurable results">
+        <defs>
+          <marker id="d-arrow-navy" viewBox="0 0 10 7" refX="9" refY="3.5" markerWidth="8" markerHeight="7" orient="auto"><path d="M0 0 L10 3.5 L0 7z" fill="#1F4E79"/></marker>
+          <marker id="d-arrow-sage" viewBox="0 0 10 7" refX="9" refY="3.5" markerWidth="8" markerHeight="7" orient="auto"><path d="M0 0 L10 3.5 L0 7z" fill="#6C8261"/></marker>
+        </defs>
+        <text x="96" y="46" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#C96B3B" letter-spacing="0.08em">01</text>
+        <rect x="20" y="60" width="152" height="90" rx="10" fill="#F9FAFB" stroke="#636E72" stroke-width="1.5"/>
+        <text x="96" y="96" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#17212B">Your Problem</text>
+        <text x="96" y="118" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#636E72">You describe what</text>
+        <text x="96" y="133" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#636E72">needs fixing</text>
+        <line x1="172" y1="105" x2="213" y2="105" stroke="#1F4E79" stroke-width="1.5" marker-end="url(#d-arrow-navy)"/>
+        <text x="298" y="46" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#C96B3B" letter-spacing="0.08em">02</text>
+        <rect x="222" y="60" width="152" height="90" rx="10" fill="white" stroke="#1F4E79" stroke-width="1.5"/>
+        <text x="298" y="96" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#17212B">We Listen</text>
+        <text x="298" y="118" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#636E72">We learn</text>
+        <text x="298" y="133" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#636E72">your business</text>
+        <line x1="374" y1="105" x2="415" y2="105" stroke="#1F4E79" stroke-width="1.5" marker-end="url(#d-arrow-navy)"/>
+        <text x="500" y="46" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#C96B3B" letter-spacing="0.08em">03</text>
+        <rect x="424" y="60" width="152" height="90" rx="10" fill="white" stroke="#1F4E79" stroke-width="1.5"/>
+        <text x="500" y="96" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#17212B">We Propose</text>
+        <text x="500" y="118" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#636E72">A.I. solutions mapped</text>
+        <text x="500" y="133" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#636E72">to your needs</text>
+        <line x1="576" y1="105" x2="617" y2="105" stroke="#1F4E79" stroke-width="1.5" marker-end="url(#d-arrow-navy)"/>
+        <text x="702" y="46" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#C96B3B" letter-spacing="0.08em">04</text>
+        <rect x="626" y="60" width="152" height="90" rx="10" fill="white" stroke="#1F4E79" stroke-width="1.5"/>
+        <text x="702" y="92" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#17212B">We Design</text>
+        <text x="702" y="109" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#17212B">&amp; Build</text>
+        <text x="702" y="133" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#636E72">Custom tools for</text>
+        <text x="702" y="146" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#636E72">your operation</text>
+        <line x1="778" y1="105" x2="819" y2="105" stroke="#6C8261" stroke-width="1.5" marker-end="url(#d-arrow-sage)"/>
+        <text x="884" y="46" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#C96B3B" letter-spacing="0.08em">05</text>
+        <rect x="828" y="60" width="112" height="90" rx="10" fill="#6C8261"/>
+        <text x="884" y="96" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="white">Measurable</text>
+        <text x="884" y="113" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="white">Results</text>
+        <text x="884" y="135" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="rgba(255,255,255,0.85)">Time saved.</text>
+        <text x="884" y="148" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="rgba(255,255,255,0.85)">Money saved.</text>
+        <text x="480" y="210" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#636E72">A service engagement, not a software purchase.</text>
+      </svg>
+      <!-- Mobile -->
+      <svg class="block md:hidden w-full h-auto" viewBox="0 0 360 660" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Service flow: Your problem, we listen, we propose, we build, measurable results">
+        <defs>
+          <marker id="m-arrow-navy" viewBox="0 0 10 7" refX="9" refY="3.5" markerWidth="8" markerHeight="7" orient="auto"><path d="M0 0 L10 3.5 L0 7z" fill="#1F4E79"/></marker>
+          <marker id="m-arrow-sage" viewBox="0 0 10 7" refX="9" refY="3.5" markerWidth="8" markerHeight="7" orient="auto"><path d="M0 0 L10 3.5 L0 7z" fill="#6C8261"/></marker>
+        </defs>
+        <text x="44" y="22" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#C96B3B" letter-spacing="0.08em">01</text>
+        <rect x="30" y="32" width="300" height="72" rx="10" fill="#F9FAFB" stroke="#636E72" stroke-width="1.5"/>
+        <text x="180" y="60" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#17212B">Your Problem</text>
+        <text x="180" y="80" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#636E72">You describe what needs fixing</text>
+        <line x1="180" y1="104" x2="180" y2="132" stroke="#1F4E79" stroke-width="1.5" marker-end="url(#m-arrow-navy)"/>
+        <text x="44" y="148" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#C96B3B" letter-spacing="0.08em">02</text>
+        <rect x="30" y="158" width="300" height="72" rx="10" fill="white" stroke="#1F4E79" stroke-width="1.5"/>
+        <text x="180" y="186" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#17212B">We Listen</text>
+        <text x="180" y="206" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#636E72">We learn your business</text>
+        <line x1="180" y1="230" x2="180" y2="258" stroke="#1F4E79" stroke-width="1.5" marker-end="url(#m-arrow-navy)"/>
+        <text x="44" y="274" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#C96B3B" letter-spacing="0.08em">03</text>
+        <rect x="30" y="284" width="300" height="72" rx="10" fill="white" stroke="#1F4E79" stroke-width="1.5"/>
+        <text x="180" y="312" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#17212B">We Propose</text>
+        <text x="180" y="332" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#636E72">A.I. solutions mapped to your needs</text>
+        <line x1="180" y1="356" x2="180" y2="384" stroke="#1F4E79" stroke-width="1.5" marker-end="url(#m-arrow-navy)"/>
+        <text x="44" y="400" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#C96B3B" letter-spacing="0.08em">04</text>
+        <rect x="30" y="410" width="300" height="72" rx="10" fill="white" stroke="#1F4E79" stroke-width="1.5"/>
+        <text x="180" y="438" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#17212B">We Design &amp; Build</text>
+        <text x="180" y="458" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#636E72">Custom tools for your operation</text>
+        <line x1="180" y1="482" x2="180" y2="510" stroke="#6C8261" stroke-width="1.5" marker-end="url(#m-arrow-sage)"/>
+        <text x="44" y="526" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#C96B3B" letter-spacing="0.08em">05</text>
+        <rect x="30" y="536" width="300" height="72" rx="10" fill="#6C8261"/>
+        <text x="180" y="564" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="white">Measurable Results</text>
+        <text x="180" y="584" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="rgba(255,255,255,0.85)">Time saved. Money saved.</text>
+        <text x="180" y="640" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#636E72">A service engagement, not a software purchase.</text>
+      </svg>
+    </div>
+
+    <!-- ── OUR SERVICE ── -->
+    <div class="max-w-4xl mx-auto px-6 pb-2">
+      <p class="text-accent text-xs tracking-widest uppercase">OUR SERVICE</p>
+    </div>
+    <section class="bg-white rounded-sm border border-gray-200 p-8 md:p-10">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4 tight-tracking text-primary">Custom A.I. tools, built from your problem forward.</h2>
+      <p class="text-lg text-gray-900 mb-10 max-w-3xl leading-relaxed">Every engagement starts the same way. You tell us where your business is losing time, missing opportunities, or hitting limits. We translate that into a focused A.I. tool designed to do one thing well. We handle the entire process. Architecture, data work, model selection, integration, and deployment. You stay focused on your business. We deliver something that works.</p>
+      <div class="grid md:grid-cols-3 gap-5">
+        <div class="group relative bg-gray-50 rounded-sm border border-gray-200 p-6 transition-all duration-200 hover:border-primary/25 hover:shadow-sm">
+          <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
+          </div>
+          <h3 class="font-semibold text-gray-900 text-lg mb-2">Problem First</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">We start by understanding your operations, not by pitching technology. The tool we build is shaped entirely by the problem you need solved.</p>
+        </div>
+        <div class="group relative bg-gray-50 rounded-sm border border-gray-200 p-6 transition-all duration-200 hover:border-primary/25 hover:shadow-sm">
+          <div class="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-accent-dark" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17l-5.71 3.28a1 1 0 01-1.46-1.06l1.09-6.36L.66 6.57a1 1 0 01.56-1.71l6.38-.93L10.45.37a1 1 0 011.1 0l2.85 3.56 6.38.93a1 1 0 01.56 1.71l-4.68 4.46 1.09 6.36a1 1 0 01-1.46 1.06l-5.71-3.28z"/></svg>
+          </div>
+          <h3 class="font-semibold text-gray-900 text-lg mb-2">Built to Fit</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Every solution is designed around your existing workflows, systems, and team. Nothing off the shelf. Nothing you need to reshape your business around.</p>
+        </div>
+        <div class="group relative bg-gray-50 rounded-sm border border-gray-200 p-6 transition-all duration-200 hover:border-primary/25 hover:shadow-sm">
+          <div class="w-10 h-10 rounded-full bg-green-700/15 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-green-700" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <h3 class="font-semibold text-gray-900 text-lg mb-2">Fully Delivered</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">We handle everything from concept through deployment. You get a working tool, not a project plan or a proof of concept.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── HOW WE WORK ── -->
+    <div class="max-w-4xl mx-auto px-6 pb-2">
+      <p class="text-accent text-xs tracking-widest uppercase">OUR PROCESS</p>
+    </div>
+    <section class="bg-white rounded-sm border border-gray-200 p-8 md:p-10">
+      <div class="mb-10">
+        <h2 class="text-3xl md:text-4xl font-bold mb-3 tight-tracking text-primary">From Problem to Production in Four Steps</h2>
+        <p class="text-gray-500 text-lg max-w-3xl">Every engagement follows the same disciplined path. You describe the problem. We handle everything else.</p>
+      </div>
+      <div class="space-y-8">
+        <!-- Step 1 -->
+        <div class="process-step flex flex-col md:flex-row gap-4 md:gap-8 pb-8 border-b border-gray-200">
+          <div class="md:w-1/3">
+            <div class="flex items-center gap-3 mb-2">
+              <span class="text-accent-dark font-mono text-sm font-semibold">01</span>
+              <h3 class="font-semibold text-xl text-gray-900">Listen</h3>
+            </div>
+            <p class="text-gray-500 text-sm">Understanding your business before proposing solutions</p>
+          </div>
+          <div class="md:w-2/3">
+            <p class="text-gray-500 mb-3">You tell us what's wrong. We dig in with an operator's lens—evaluating whether your initial read matches the real problem, because we've learned that the first explanation is rarely the full story.</p>
+            <ul class="space-y-2 text-gray-500">
+              <li class="flex items-start gap-2">
+                <span class="text-primary font-bold">•</span>
+                <span><strong>Discovery session</strong> — You walk us through the problem in your own terms, no jargon required</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-primary font-bold">•</span>
+                <span><strong>Stakeholder interviews</strong> — We learn your workflows, constraints, and capabilities</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-primary font-bold">•</span>
+                <span><strong>Problem Definition document</strong> — Captures exactly what needs to change and why</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- Step 2 -->
+        <div class="process-step flex flex-col md:flex-row gap-4 md:gap-8 pb-8 border-b border-gray-200">
+          <div class="md:w-1/3">
+            <div class="flex items-center gap-3 mb-2">
+              <span class="text-accent-dark font-mono text-sm font-semibold">02</span>
+              <h3 class="font-semibold text-xl text-gray-900">Propose</h3>
+            </div>
+            <p class="text-gray-500 text-sm">Translating your problem into a concrete plan</p>
+          </div>
+          <div class="md:w-2/3">
+            <p class="text-gray-500 mb-3">Instead of building exactly what was asked for, we propose what should be built—with reasoning you can evaluate. Once you decide, we implement. No PowerPoint. Just working software.</p>
+            <ul class="space-y-2 text-gray-500">
+              <li class="flex items-start gap-2">
+                <span class="text-primary font-bold">•</span>
+                <span><strong>Data & architecture review</strong> — We identify the right A.I. approach for your situation</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-primary font-bold">•</span>
+                <span><strong>Clear proposal document</strong> — Scope, timeline, outcomes, and cost in plain language</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-primary font-bold">•</span>
+                <span><strong>Explicit boundaries</strong> — What we're building AND what we deliberately chose not to</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- Step 3 -->
+        <div class="process-step flex flex-col md:flex-row gap-4 md:gap-8 pb-8 border-b border-gray-200">
+          <div class="md:w-1/3">
+            <div class="flex items-center gap-3 mb-2">
+              <span class="text-accent-dark font-mono text-sm font-semibold">03</span>
+              <h3 class="font-semibold text-xl text-gray-900">Design and Build</h3>
+            </div>
+            <p class="text-gray-500 text-sm">Engineering a solution tailored to your workflow</p>
+          </div>
+          <div class="md:w-2/3">
+            <p class="text-gray-500 mb-3">This is where the solution takes shape. Our engineers design the A.I. system, build the models, and integrate them into your existing tools and workflows.</p>
+            <ul class="space-y-2 text-gray-500">
+              <li class="flex items-start gap-2">
+                <span class="text-primary font-bold">•</span>
+                <span><strong>End-to-end development</strong> — Models, interfaces, and integration as one coordinated effort</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-primary font-bold">•</span>
+                <span><strong>Working prototypes</strong> — See the solution evolve with regular progress updates</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-primary font-bold">•</span>
+                <span><strong>Custom-built tool</strong> — Not a generic platform configured with your logo</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- Step 4 -->
+        <div class="process-step flex flex-col md:flex-row gap-4 md:gap-8">
+          <div class="md:w-1/3">
+            <div class="flex items-center gap-3 mb-2">
+              <span class="text-green-700 font-mono text-sm font-semibold">04</span>
+              <h3 class="font-semibold text-xl text-gray-900">Implement and Measure</h3>
+            </div>
+            <p class="text-gray-500 text-sm">Deploying results you can actually see</p>
+          </div>
+          <div class="md:w-2/3">
+            <p class="text-gray-500 mb-3">Delivery does not end at deployment. We roll the solution into your live environment, show your team how to use it, and monitor performance against the success metrics defined in the proposal.</p>
+            <ul class="space-y-2 text-gray-500">
+              <li class="flex items-start gap-2">
+                <span class="text-green-700 font-bold">•</span>
+                <span><strong>Live deployment</strong> — Full integration into your existing tools and workflows</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-green-700 font-bold">•</span>
+                <span><strong>Performance monitoring</strong> — We track against the success metrics defined upfront</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-green-700 font-bold">•</span>
+                <span><strong>Clear results report</strong> — Time saved, errors reduced, decisions accelerated</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── WHAT WE SOLVE ── -->
+    <div class="max-w-4xl mx-auto px-6 pb-2">
+      <p class="text-accent text-xs tracking-widest uppercase">WHAT WE SOLVE</p>
+    </div>
+    <section class="bg-white rounded-sm border border-gray-200 p-8 md:p-10">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4 tight-tracking text-primary">The kinds of problems our clients bring to us.</h2>
+      <p class="text-lg text-gray-500 mb-8 max-w-3xl leading-relaxed">Every business has different pressure points. These are some patterns we see most often, amongst many other problems. If something here sounds familiar—or if your challenge is different—there is a good chance we can build a tool that fixes it.</p>
+      <div class="grid md:grid-cols-2 gap-5">
+        <div class="p-5 border border-gray-200 rounded-sm">
+          <h4 class="font-semibold text-gray-900 mb-2">Manual processes that eat hours every week.</h4>
+          <p class="text-gray-500 text-sm leading-relaxed">Repetitive tasks your team handles by hand because no existing software fits the way you actually work.</p>
+        </div>
+        <div class="p-5 border border-gray-200 rounded-sm">
+          <h4 class="font-semibold text-gray-900 mb-2">Decisions made on gut feel instead of data.</h4>
+          <p class="text-gray-500 text-sm leading-relaxed">Important calls that depend on experience and intuition because the relevant information is scattered, incomplete, or too slow to compile.</p>
+        </div>
+        <div class="p-5 border border-gray-200 rounded-sm">
+          <h4 class="font-semibold text-gray-900 mb-2">Knowledge that walks out the door with employees.</h4>
+          <p class="text-gray-500 text-sm leading-relaxed">Institutional expertise trapped in people's heads, email threads, or documents that nobody can find when it matters.</p>
+        </div>
+        <div class="p-5 border border-gray-200 rounded-sm">
+          <h4 class="font-semibold text-gray-900 mb-2">Customer communication that does not scale.</h4>
+          <p class="text-gray-500 text-sm leading-relaxed">Growing volume of inquiries, requests, or support interactions that your team can no longer handle with consistent quality.</p>
+        </div>
+        <div class="p-5 border border-gray-200 rounded-sm">
+          <h4 class="font-semibold text-gray-900 mb-2">Data that exists but never gets used.</h4>
+          <p class="text-gray-500 text-sm leading-relaxed">Reports, records, and systems full of valuable information that sits untouched because extracting insight from it takes too long.</p>
+        </div>
+        <div class="p-5 border border-gray-200 rounded-sm">
+          <h4 class="font-semibold text-gray-900 mb-2">Quality issues that surface too late.</h4>
+          <p class="text-gray-500 text-sm leading-relaxed">Errors, inconsistencies, or compliance gaps that only get caught downstream when they are already expensive to fix.</p>
+        </div>
+        <div class="p-5 border border-gray-200 rounded-sm bg-primary/5">
+          <h4 class="font-semibold text-gray-900 mb-2">Your specific bottlenecks.</h4>
+          <p class="text-gray-500 text-sm leading-relaxed">Every company has unique friction points in their workflows that don't fit standard categories. If it's slowing you down, we can probably automate it.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── HOW WE COMPARE ── -->
+    <div class="max-w-4xl mx-auto px-6 pb-2">
+      <p class="text-accent text-xs tracking-widest uppercase">YOUR OPTIONS</p>
+    </div>
+    <section class="bg-white rounded-sm border border-gray-200 p-7 md:p-10">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4 tight-tracking text-primary">Three Ways to Get A.I. Into Your Business</h2>
+      <p class="text-lg text-gray-900 mb-8">Each path has real strengths and real limitations. Here is an honest look at how they compare.</p>
+      <div class="grid md:grid-cols-3 gap-5 mb-8">
+        <div class="rounded-sm border border-gray-200 p-5 bg-gray-50/30">
+          <div class="flex items-center gap-2 mb-4">
+            <div class="w-8 h-8 rounded-sm bg-gray-200 flex items-center justify-center"><svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg></div>
+            <h3 class="font-semibold text-gray-900">Off the Shelf A.I.</h3>
+          </div>
+          <p class="text-sm text-gray-500 mb-4">General purpose tools like ChatGPT and similar platforms</p>
+          <ul class="space-y-2 text-sm">
+            <li class="flex items-start gap-2"><svg class="w-4 h-4 text-green-700 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span class="text-gray-500">Fast to start using immediately</span></li>
+            <li class="flex items-start gap-2"><svg class="w-4 h-4 text-green-700 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span class="text-gray-500">Low upfront cost</span></li>
+            <li class="flex items-start gap-2"><svg class="w-4 h-4 text-green-700 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span class="text-gray-500">Good for general tasks like drafting and research</span></li>
+            <li class="flex items-start gap-2"><svg class="w-4 h-4 text-accent-dark shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg><span class="text-gray-500"><strong>Not built for your specific workflow</strong></span></li>
+            <li class="flex items-start gap-2"><svg class="w-4 h-4 text-accent-dark shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg><span class="text-gray-500"><strong>Output depends on how well your team prompts it</strong></span></li>
+            <li class="flex items-start gap-2"><svg class="w-4 h-4 text-accent-dark shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg><span class="text-gray-500"><strong>No integration with your internal systems or data</strong></span></li>
+          </ul>
+        </div>
+        <div class="rounded-sm border border-gray-200 p-5 bg-gray-50/30">
+          <div class="flex items-center gap-2 mb-4">
+            <div class="w-8 h-8 rounded-sm bg-gray-200 flex items-center justify-center"><svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z"/></svg></div>
+            <h3 class="font-semibold text-gray-900">Hiring In House</h3>
+          </div>
+          <p class="text-sm text-gray-500 mb-4">Bringing on a developer or A.I. ops manager</p>
+          <ul class="space-y-2 text-sm">
+            <li class="flex items-start gap-2"><svg class="w-4 h-4 text-green-700 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span class="text-gray-500">Full time resource dedicated to your business</span></li>
+            <li class="flex items-start gap-2"><svg class="w-4 h-4 text-green-700 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span class="text-gray-500">Deep internal knowledge over time</span></li>
+            <li class="flex items-start gap-2"><svg class="w-4 h-4 text-green-700 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span class="text-gray-500">Direct control over priorities</span></li>
+            <li class="flex items-start gap-2"><svg class="w-4 h-4 text-accent-dark shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg><span class="text-gray-500"><strong>Expensive to recruit and retain specialized talent</strong></span></li>
+            <li class="flex items-start gap-2"><svg class="w-4 h-4 text-accent-dark shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg><span class="text-gray-500"><strong>Single point of failure if that person leaves</strong></span></li>
+            <li class="flex items-start gap-2"><svg class="w-4 h-4 text-accent-dark shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg><span class="text-gray-500"><strong>Long ramp up time before the first tool is operational</strong></span></li>
+          </ul>
+        </div>
+        <div class="rounded-sm border-2 border-primary p-5 bg-primary/5 relative">
+          <div class="flex items-center gap-2 mb-4 mt-2">
+            <div class="w-8 h-8 rounded-sm bg-primary flex items-center justify-center"><svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></div>
+            <h3 class="font-semibold text-gray-900">Microve</h3>
+          </div>
+          <p class="text-sm text-gray-500 mb-4">Custom A.I. built around your specific problem</p>
+          <ul class="space-y-2 text-sm">
+            <li class="flex items-start gap-2"><svg class="w-4 h-4 text-primary shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span class="text-gray-500"><strong>Solutions designed for your exact workflow and data</strong></span></li>
+            <li class="flex items-start gap-2"><svg class="w-4 h-4 text-primary shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span class="text-gray-500"><strong>Full service from discovery through deployment</strong></span></li>
+            <li class="flex items-start gap-2"><svg class="w-4 h-4 text-primary shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span class="text-gray-500"><strong>No hiring or technical management required on your side</strong></span></li>
+            <li class="flex items-start gap-2"><svg class="w-4 h-4 text-primary shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span class="text-gray-500"><strong>Integrated directly into the tools your team already uses</strong></span></li>
+            <li class="flex items-start gap-2"><svg class="w-4 h-4 text-primary shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span class="text-gray-500"><strong>You own the solution and the results it produces</strong></span></li>
+            <li class="flex items-start gap-2"><svg class="w-4 h-4 text-primary shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span class="text-gray-500"><strong>Questions your brief with real business experience, then delivers working software</strong></span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="bg-gray-50 rounded-sm border border-gray-200 p-5">
+        <p class="text-gray-900 leading-relaxed">Off the shelf tools solve general problems. In house hires solve problems over time. We solve your specific problem, then hand you a working tool that keeps solving it without us.</p>
+      </div>
+    </section>
+
+    <!-- ── INTEGRATIONS ── -->
+    <div class="max-w-4xl mx-auto px-6 pb-2">
+      <p class="text-accent text-xs tracking-widest uppercase">WE WORK WITH SOFTWARES YOU ALREADY USE</p>
+    </div>
+    <section class="bg-white rounded-sm border border-gray-200 p-8 md:p-10">
+      <div class="flex flex-wrap items-center justify-center gap-x-8 gap-y-6 mb-6">
+        <div class="flex items-center gap-2 text-gray-500 hover:text-gray-600 transition-colors"><svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M18.164 7.93V5.084a2.198 2.198 0 001.267-1.984 2.21 2.21 0 00-4.42 0c0 .852.488 1.59 1.198 1.955v2.876c-.954.218-1.813.62-2.547 1.16l-7.24-5.63a2.166 2.166 0 00.086-.522 2.21 2.21 0 00-4.42 0c0 1.18.928 2.144 2.09 2.2v7.98c-1.162.056-2.09 1.02-2.09 2.2a2.21 2.21 0 004.42 0 2.198 2.198 0 00-1.267-1.984v-7.98c.486-.236 1.02-.368 1.584-.38l7.174 5.58a4.386 4.386 0 00-.1.937c0 2.425 1.975 4.4 4.4 4.4s4.4-1.975 4.4-4.4-1.975-4.388-4.4-4.388c-.378 0-.742.05-1.09.14l-.01.002z"/></svg><span class="text-sm font-semibold">HubSpot</span></div>
+        <span class="text-gray-200">·</span>
+        <div class="flex items-center gap-2 text-gray-500 hover:text-gray-600 transition-colors"><svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M10.006 5.415a4.195 4.195 0 013.045-1.306c1.56 0 2.954.9 3.655 2.24a5.11 5.11 0 012.94-.925 5.155 5.155 0 015.155 5.156c0 .427-.054.84-.154 1.237a4.2 4.2 0 01-.087 8.386H5.988a3.96 3.96 0 01-.488-7.88 4.198 4.198 0 014.506-6.908z"/></svg><span class="text-sm font-semibold">Salesforce</span></div>
+        <span class="text-gray-200">·</span>
+        <div class="flex items-center gap-2 text-gray-500 hover:text-gray-600 transition-colors"><svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M5.042 15.165a2.528 2.528 0 01-2.52 2.523A2.528 2.528 0 010 15.165a2.527 2.527 0 012.522-2.52h2.52v2.52zM6.313 15.165a2.527 2.527 0 012.521-2.52 2.527 2.527 0 012.521 2.52v6.313A2.528 2.528 0 018.834 24a2.528 2.528 0 01-2.521-2.522v-6.313zM8.834 5.042a2.528 2.528 0 01-2.521-2.52A2.528 2.528 0 018.834 0a2.528 2.528 0 012.521 2.522v2.52H8.834zM8.834 6.313a2.528 2.528 0 012.521 2.521 2.528 2.528 0 01-2.521 2.521H2.522A2.528 2.528 0 010 8.834a2.528 2.528 0 012.522-2.521h6.312z"/></svg><span class="text-sm font-semibold">Slack</span></div>
+        <span class="text-gray-200">·</span>
+        <div class="flex items-center gap-2 text-gray-500 hover:text-gray-600 transition-colors"><svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg><span class="text-sm font-semibold">Google Workspace</span></div>
+        <span class="text-gray-200">·</span>
+        <div class="flex items-center gap-2 text-gray-500 hover:text-gray-600 transition-colors"><svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M3 3v18h18V3H3zm16 16H5V5h14v14zM7 7h10v2H7V7zm0 4h10v2H7v-2zm0 4h10v2H7v-2z"/></svg><span class="text-sm font-semibold">Microsoft</span></div>
+        <span class="text-gray-200">·</span>
+        <span class="text-gray-400 text-sm italic">and more</span>
+      </div>
+      <p class="text-gray-500 text-sm text-center">Every business runs on different software. Whatever you use, we build around it.</p>
+    </section>
+
+  </main>
+
+  <footer class="py-12 text-center text-sm text-gray-500 border-t border-gray-100">
+    <p>&copy; 2026 Microve.ai</p>
+  </footer>
+</body>
+</html>

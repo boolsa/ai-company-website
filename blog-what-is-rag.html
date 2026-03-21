@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What is RAG vs Uploading to ChatGPT? | Microve.ai</title>
+    <meta name="description" content="Understanding the difference between custom Retrieval-Augmented Generation (RAG) and simply uploading your business documents to ChatGPT.">
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: {
+                            DEFAULT: '#1F4E79',
+                            dark: '#163a5c',
+                            light: '#2d6a9f',
+                        },
+                        accent: {
+                            DEFAULT: '#C96B3B',
+                            dark: '#A6552B',
+                            light: '#d67f52',
+                        },
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .tight-tracking {
+            letter-spacing: -0.02em;
+        }
+        .gradient-line {
+            background: linear-gradient(to right, rgba(31, 78, 121, 0.2), rgba(31, 78, 121, 0.4), #6C8261);
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-900 antialiased">
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-[#1F4E79] focus:text-white focus:px-4 focus:py-2 focus:rounded-sm focus:font-semibold">Skip to main content</a>
+
+  <!-- Navigation -->
+<nav class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-gray-100">
+    <div class="max-w-5xl mx-auto px-6 py-4">
+        <div class="flex items-center justify-between">
+            <a href="index.html" class="text-xl font-bold text-primary" aria-label="Microve.ai — home">
+                microve<span class="text-accent">.ai</span>
+            </a>
+            <div class="hidden md:flex items-center space-x-6 text-sm">
+                <a href="index.html" class="text-gray-600 hover:text-primary transition-colors">Home</a>
+                <a href="what-we-do.html" class="text-gray-600 hover:text-primary transition-colors">What We Do</a>
+                <a href="cases.html" class="text-gray-600 hover:text-primary transition-colors">Cases</a>
+                <a href="blog.html" class="text-gray-600 hover:text-primary transition-colors">Blog</a>
+                <a href="about.html" class="text-gray-600 hover:text-primary transition-colors">About</a>
+                <a href="pricing.html" class="text-gray-600 hover:text-primary transition-colors">Pricing</a>
+                <a href="contact.html" class="text-gray-600 hover:text-primary transition-colors">Contact</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+  <main id="main-content" class="max-w-3xl mx-auto px-6 pt-16 pb-20">
+    <article>
+      <header class="mb-10">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="text-xs font-mono text-[#C96B3B] tracking-wider uppercase">AI Technologies</span>
+        </div>
+        <h1 class="font-sans text-4xl md:text-5xl font-bold tight-tracking text-[#1F4E79] mb-6">What is RAG? And why not just upload files to ChatGPT?</h1>
+      </header>
+
+      <div class="prose prose-stone max-w-none">
+        <p class="text-lg text-gray-900 font-medium">
+          "I have all these company SOPs and training manuals. Can't I just upload them to ChatGPT and let my employees ask it questions?"
+        </p>
+        
+        <p>
+          We hear this question every week. And the short answer is: technically yes, but functionally no. 
+        </p>
+        <p>
+          If you want your team to actually use company knowledge efficiently, securely, and accurately, simply dragging a PDF into ChatGPT breaks down very quickly. The solution businesses actually need is called <strong>RAG (Retrieval-Augmented Generation)</strong>. 
+        </p>
+        <p>
+          Here is a breakdown of what RAG is, why the "upload to ChatGPT" method fails for businesses, and what a custom RAG system actually does.
+        </p>
+
+        <h2 class="text-2xl font-bold text-[#1F4E79] mt-10 mb-4">What is RAG?</h2>
+        <p>
+          RAG stands for Retrieval-Augmented Generation. But don't let the technical acronym intimidate you. 
+        </p>
+        <p>
+          Think of a standard Large Language Model (LLM) like ChatGPT as a brilliant college graduate who has read the entire public internet up until a year ago. It's smart, but it knows <em>nothing</em> about your specific company, your private customer data, or your proprietary workflows.
+        </p>
+        <p>
+          <strong>RAG is simply giving that brilliant graduate an open-book test with your company's private library.</strong>
+        </p>
+        <p class="mb-6">
+          When you ask a question, a RAG system:
+        </p>
+        
+        <div class="space-y-4 mb-10 not-prose">
+          <div class="flex items-start gap-4 bg-white p-5 rounded-lg border border-gray-200/10 shadow-sm">
+            <div class="w-8 h-8 rounded-full bg-[#1F4E79] text-white font-bold flex items-center justify-center flex-shrink-0 mt-0.5">1</div>
+            <div>
+              <h4 class="font-bold text-gray-900 text-lg mb-1">Retrieves</h4>
+              <p class="text-sm text-gray-600 m-0">The specific paragraphs from your internal documents that contain the answer.</p>
+            </div>
+          </div>
+          
+          <div class="flex items-start gap-4 bg-white p-5 rounded-lg border border-gray-200/10 shadow-sm">
+            <div class="w-8 h-8 rounded-full bg-[#1F4E79] text-white font-bold flex items-center justify-center flex-shrink-0 mt-0.5">2</div>
+            <div>
+              <h4 class="font-bold text-gray-900 text-lg mb-1">Augments</h4>
+              <p class="text-sm text-gray-600 m-0">Your question by attaching those specific paragraphs to it.</p>
+            </div>
+          </div>
+          
+          <div class="flex items-start gap-4 bg-white p-5 rounded-lg border border-gray-200/10 shadow-sm">
+            <div class="w-8 h-8 rounded-full bg-[#1F4E79] text-white font-bold flex items-center justify-center flex-shrink-0 mt-0.5">3</div>
+            <div>
+              <h4 class="font-bold text-gray-900 text-lg mb-1">Generates</h4>
+              <p class="text-sm text-gray-600 m-0">A plain-English answer based <em>only</em> on the retrieved facts, citing its sources.</p>
+            </div>
+          </div>
+        </div>
+
+        <h2 class="text-2xl font-bold text-[#1F4E79] mt-10 mb-4">The problem with the "Upload to ChatGPT" method</h2>
+        <p>
+          Uploading a PDF to the ChatGPT interface seems like it does the same thing. But for a business trying to build a reliable internal tool, it creates massive bottlenecks:
+        </p>
+
+        <div class="space-y-6 my-8">
+          <div class="bg-white border border-[#1F4E79]/10 p-5 rounded-lg shadow-sm">
+            <h4 class="font-semibold text-gray-900 mb-2 flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-red-400"></span>
+              1. The Amnesia Problem (Context Limits)
+            </h4>
+            <p class="text-sm text-gray-600 mb-0">ChatGPT has a "context window"—a limit to how much information it can hold in its short-term memory. If you upload a 200-page manual, it can't read the whole thing at once. It skims, summarizes, and forgets. A custom RAG system breaks your documents into tiny, searchable "chunks," meaning it can search through 10,000 pages instantly without forgetting anything.</p>
+          </div>
+
+          <div class="bg-white border border-[#1F4E79]/10 p-5 rounded-lg shadow-sm">
+            <h4 class="font-semibold text-gray-900 mb-2 flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-red-400"></span>
+              2. The "Start Over Every Time" Problem
+            </h4>
+            <p class="text-sm text-gray-600 mb-0">When an employee needs an answer, they have to open a new chat, find the right file on their hard drive, upload it, wait for processing, and write a prompt. A custom RAG system has your knowledge base permanently ingested. Employees just type their question and get an instant answer.</p>
+          </div>
+
+          <div class="bg-white border border-[#1F4E79]/10 p-5 rounded-lg shadow-sm">
+            <h4 class="font-semibold text-gray-900 mb-2 flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-red-400"></span>
+              3. The Privacy & Data Training Problem
+            </h4>
+            <p class="text-sm text-gray-600 mb-0">When you upload documents to standard public LLMs, you are often handing over proprietary business data, customer information, or trade secrets to a third-party black box that might use your data to train its future models. A custom RAG system uses enterprise-grade APIs where your data strictly remains in your secure cloud environment. The AI processes the specific text chunks needed to answer the question and immediately discards them without training on your data.</p>
+          </div>
+          
+          <div class="bg-white border border-[#1F4E79]/10 p-5 rounded-lg shadow-sm">
+            <h4 class="font-semibold text-gray-900 mb-2 flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-red-400"></span>
+              4. The Internal Access Problem
+            </h4>
+            <p class="text-sm text-gray-600 mb-0">Even if you use a paid enterprise LLM, it's incredibly difficult to control who sees what internally if everyone is just uploading files. A custom RAG system allows you to set strict internal role-based permissions. You can configure it so the HR team's RAG can answer questions about sensitive payroll data, but the sales team's RAG will block those exact same questions.</p>
+          </div>
+          
+          <div class="bg-white border border-[#1F4E79]/10 p-5 rounded-lg shadow-sm">
+            <h4 class="font-semibold text-gray-900 mb-2 flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-red-400"></span>
+              5. Hallucinations vs. Citations
+            </h4>
+            <p class="text-sm text-gray-600 mb-0">Standard ChatGPT is a people-pleaser; if it doesn't know the answer, it will confidently guess (hallucinate). A well-built RAG system is programmed to say "I don't know" if the answer isn't in your documents. More importantly, it provides citations (e.g., <em>"According to Employee Handbook, page 42"</em>) so your team can verify the facts.</p>
+          </div>
+        </div>
+
+        <h2 class="text-2xl font-bold text-[#1F4E79] mt-10 mb-4">The Custom RAG Advantage</h2>
+        <p class="mb-6">
+          When we build a custom RAG system for a client, we aren't just giving them a chatbot. We are building a continuous knowledge pipeline.
+        </p>
+
+        <div class="grid md:grid-cols-1 gap-4 mb-10 not-prose">
+          <div class="bg-white border border-[#6C8261]/30 p-5 rounded-lg shadow-sm flex items-start gap-4">
+            <div class="w-10 h-10 rounded-full bg-[#6C8261]/10 text-[#6C8261] flex items-center justify-center flex-shrink-0 mt-0.5">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path></svg>
+            </div>
+            <div>
+              <h4 class="font-bold text-gray-900 text-lg mb-1">Continuous Ingestion</h4>
+              <p class="text-sm text-gray-600 m-0">It connects directly to your Google Drive, SharePoint, or Notion. When you update an SOP doc, the RAG system updates its brain automatically.</p>
+            </div>
+          </div>
+          
+          <div class="bg-white border border-[#6C8261]/30 p-5 rounded-lg shadow-sm flex items-start gap-4">
+            <div class="w-10 h-10 rounded-full bg-[#6C8261]/10 text-[#6C8261] flex items-center justify-center flex-shrink-0 mt-0.5">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+            </div>
+            <div>
+              <h4 class="font-bold text-gray-900 text-lg mb-1">Workflow Integration</h4>
+              <p class="text-sm text-gray-600 m-0">We don't force employees to go to a separate website. We embed the RAG chatbot directly into the tools they already use, like Slack or Microsoft Teams.</p>
+            </div>
+          </div>
+          
+          <div class="bg-white border border-[#6C8261]/30 p-5 rounded-lg shadow-sm flex items-start gap-4">
+            <div class="w-10 h-10 rounded-full bg-[#6C8261]/10 text-[#6C8261] flex items-center justify-center flex-shrink-0 mt-0.5">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+            </div>
+            <div>
+              <h4 class="font-bold text-gray-900 text-lg mb-1">Analytics & Blind Spots</h4>
+              <p class="text-sm text-gray-600 m-0">You get a dashboard showing exactly what your employees are asking. If 10 people ask the same question and the system says "I don't know," you instantly know where your documentation is lacking.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-[#1F4E79]/5 border-l-4 border-[#1F4E79] p-6 my-8">
+          <h4 class="font-bold text-[#1F4E79] mb-2">The Bottom Line</h4>
+          <p class="text-sm mb-0">
+            Uploading files to ChatGPT is like using a calculator. It's great for quick, isolated, personal tasks. 
+            <br><br>
+            A custom RAG system is like implementing an accounting software. It's built for scale, security, permanence, and integration into your actual business operations.
+          </p>
+        </div>
+        
+        <p>
+          If your team is wasting hours searching through disorganized server folders, or if veteran employees are spending half their day answering basic questions for new hires, a custom RAG system is usually the highest-ROI automation you can build.
+        </p>
+
+      </div>
+    </article>
+
+    <div class="mt-16 pt-8 border-t border-gray-200/15">
+      <a href="blog.html" class="inline-flex items-center gap-2 text-[#1F4E79] font-semibold hover:text-[#C96B3B] transition-colors">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 16l-4-4m0 0l4-4m-4 4h18"/></svg>
+        Back to all posts
+      </a>
+    </div>
+  </main>
+
+  <footer class="py-12 text-center text-sm text-gray-600 border-t border-gray-200/10">
+    <p>&copy; 2026 Microve.ai</p>
+  </footer>
+</body>
+</html>

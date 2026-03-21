@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Microve.ai</title>
+    <meta name="description" content="Practical thinking on automation, workflow design, and what actually works for small teams.">
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: {
+                            DEFAULT: '#1F4E79',
+                            dark: '#163a5c',
+                            light: '#2d6a9f',
+                        },
+                        accent: {
+                            DEFAULT: '#C96B3B',
+                            dark: '#A6552B',
+                            light: '#d67f52',
+                        },
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .tight-tracking {
+            letter-spacing: -0.02em;
+        }
+        .gradient-line {
+            background: linear-gradient(to right, rgba(31, 78, 121, 0.2), rgba(31, 78, 121, 0.4), #6C8261);
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-900 antialiased">
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-[#1F4E79] focus:text-white focus:px-4 focus:py-2 focus:rounded-sm focus:font-semibold">Skip to main content</a>
+
+  <!-- Navigation -->
+<nav class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-gray-100">
+    <div class="max-w-5xl mx-auto px-6 py-4">
+        <div class="flex items-center justify-between">
+            <a href="index.html" class="text-xl font-bold text-primary" aria-label="Microve.ai — home">
+                microve<span class="text-accent">.ai</span>
+            </a>
+            <div class="hidden md:flex items-center space-x-6 text-sm">
+                <a href="index.html" class="text-gray-600 hover:text-primary transition-colors">Home</a>
+                <a href="what-we-do.html" class="text-gray-600 hover:text-primary transition-colors">What We Do</a>
+                <a href="cases.html" class="text-gray-600 hover:text-primary transition-colors">Cases</a>
+                <a href="blog.html" class="text-gray-600 hover:text-primary transition-colors">Blog</a>
+                <a href="about.html" class="text-gray-600 hover:text-primary transition-colors">About</a>
+                <a href="pricing.html" class="text-gray-600 hover:text-primary transition-colors">Pricing</a>
+                <a href="contact.html" class="text-gray-600 hover:text-primary transition-colors">Contact</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+  <main id="main-content" class="max-w-4xl mx-auto px-6 pt-24 pb-32">
+    <div class="mb-12">
+      <p class="section-label text-xs text-[#A6552B] tracking-widest mb-4">[BLOG]</p>
+      <h1 class="font-sans text-5xl md:text-6xl font-bold tight-tracking text-[#1F4E79] mb-6">Practical thinking</h1>
+      <p class="text-lg text-gray-600 max-w-2xl">Notes from building micro automations for real teams — where AI helps, where it does not, and how to design around actual workflow friction.</p>
+    </div>
+
+    <!-- Blog Post 1 -->
+    <article class="bg-white rounded-sm border border-gray-200/15 mb-8 overflow-hidden hover:border-gray-200/25 transition-colors">
+      <a href="blog-what-is-rag.html" class="block p-8">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="text-xs font-mono text-[#C96B3B] tracking-wider uppercase">AI Technologies</span>
+        </div>
+        <h2 class="font-sans text-2xl md:text-3xl font-bold text-[#1F4E79] mb-4 tight-tracking hover:text-[#C96B3B] transition-colors">What is RAG? And why not just upload files to ChatGPT?</h2>
+        <p class="text-gray-600 leading-relaxed mb-4">Uploading files to ChatGPT works for quick tasks, but it's fundamentally broken for business operations. Here's why a custom Retrieval-Augmented Generation (RAG) system is the only way to build a reliable internal knowledge base.</p>
+        <span class="inline-flex items-center gap-2 text-[#1F4E79] font-semibold text-sm group">
+          Read article
+          <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </span>
+      </a>
+    </article>
+
+    <!-- Blog Post 2 -->
+    <article class="bg-white rounded-sm border border-gray-200/15 mb-8 overflow-hidden hover:border-gray-200/25 transition-colors">
+      <a href="blog-most-ai-projects-fail.html" class="block p-8">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="text-xs font-mono text-[#C96B3B] tracking-wider uppercase">Strategy</span>
+        </div>
+        <h2 class="font-sans text-2xl md:text-3xl font-bold text-[#1F4E79] mb-4 tight-tracking hover:text-[#C96B3B] transition-colors">Most AI Projects Fail. Here's Why Ours Don't.</h2>
+        <p class="text-gray-600 leading-relaxed mb-4">We say no to 80% of the AI requests we receive. Not because we can't build them. Because you shouldn't. The AI industrial complex has convinced businesses that intelligence is something you buy, not something you build deliberately.</p>
+        <span class="inline-flex items-center gap-2 text-[#1F4E79] font-semibold text-sm group">
+          Read article
+          <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </span>
+      </a>
+    </article>
+
+    <!-- Blog Post 2 -->
+    <article class="bg-white rounded-sm border border-gray-200/15 mb-8 overflow-hidden hover:border-gray-200/25 transition-colors">
+      <a href="blog-how-we-choose-what-to-build.html" class="block p-8">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="text-xs font-mono text-[#C96B3B] tracking-wider uppercase">Methodology</span>
+        </div>
+        <h2 class="font-sans text-2xl md:text-3xl font-bold text-[#1F4E79] mb-4 tight-tracking hover:text-[#C96B3B] transition-colors">The Right Tool for the Right Bottleneck</h2>
+        <p class="text-gray-600 leading-relaxed mb-4">We build custom micro-tools using rule-based automation, AI, or both — whatever the problem requires. We don't sell AI for the sake of AI. We look at your actual bottleneck—the specific step where work stalls, costs pile up, or people get frustrated.</p>
+        <span class="inline-flex items-center gap-2 text-[#1F4E79] font-semibold text-sm group">
+          Read article
+          <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </span>
+      </a>
+    </article>
+  </main>
+
+  <footer class="py-12 text-center text-sm text-gray-600 border-t border-gray-200/10">
+    <p>&copy; 2026 Microve.ai</p>
+  </footer>
+</body>
+</html>
