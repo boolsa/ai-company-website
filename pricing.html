@@ -1,402 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Pricing | Microve.ai</title>
-  <meta name="description" content="Custom micro-automation pricing — no subscriptions, no per-seat fees. One-time build, ongoing support.">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            terracotta: '#1F4E79',
-            sage: '#6C8261',
-            coral: '#C96B3B',
-            cream: '#F4F1E8',
-            charcoal: '#17212B',
-            stone: '#636E72'
-          },
-          fontFamily: {
-            sans: ['Inter', 'sans-serif'],
-            mono: ['JetBrains Mono', 'monospace']
-          }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing | Microve.ai</title>
+    <meta name="description" content="Custom micro-automation pricing — no subscriptions, no per-seat fees. One-time build, ongoing support.">
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: {
+                            DEFAULT: '#1F4E79',
+                            dark: '#163a5c',
+                            light: '#2d6a9f',
+                        },
+                        accent: {
+                            DEFAULT: '#C96B3B',
+                            dark: '#A6552B',
+                            light: '#d67f52',
+                        },
+                    }
+                }
+            }
         }
-      }
-    }
-  </script>
-  <style>
-    @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
-      *, *::before, *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
-      }
-    }
-    html { scroll-behavior: smooth; }
-    .text-stone { color: #636E72; }
-    .text-charcoal { color: #17212B; }
-    a:focus-visible, button:focus-visible { outline: 2px solid #1F4E79; outline-offset: 2px; }
-    :focus:not(:focus-visible) { outline: none; }
-    :root { --color-coral: #C96B3B; --color-navy: #1F4E79; --color-cream: #F4F1E8; }
-    @media (hover: none) and (pointer: coarse) { a, button { min-height: 44px; min-width: 44px; } }
-    .section-label { font-family: 'JetBrains Mono', monospace; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; }
-    .tight-tracking { letter-spacing: -0.02em; }
-    body { position: relative; overflow-x: hidden; background-color: #F4F1E8 !important; background-image: radial-gradient(circle, rgba(31, 78, 121, 0.18) 1.5px, transparent 1.5px) !important; background-size: 28px 28px !important;  -webkit-text-size-adjust: 100%; text-size-adjust: 100%;}
-    #site-nav {
-      position: sticky;
-      top: 0;
-      z-index: 40;
-      isolation: isolate;
-      background: linear-gradient(180deg, rgba(249, 246, 240, 0.88) 0%, rgba(240, 234, 223, 0.9) 100%);
-      border-bottom: 1px solid rgba(23, 33, 43, 0.08);
-      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.65);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      transition: background-color 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
-    }
-    #site-nav::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 50%;
-      width: min(1100px, calc(100% - 48px));
-      height: 1px;
-      transform: translateX(-50%);
-      background: linear-gradient(90deg, rgba(201, 107, 59, 0), rgba(201, 107, 59, 0.3) 18%, rgba(31, 78, 121, 0.25) 50%, rgba(201, 107, 59, 0.3) 82%, rgba(201, 107, 59, 0));
-      pointer-events: none;
-    }
-    #site-nav::after {
-      content: '';
-      position: absolute;
-      inset: auto 0 -22px 0;
-      height: 40px;
-      background: radial-gradient(circle at 50% 0%, rgba(31, 78, 121, 0.08), transparent 68%);
-      pointer-events: none;
-      opacity: 0.7;
-    }
-    #site-nav.nav-scrolled {
-      background: linear-gradient(180deg, rgba(247, 243, 236, 0.97) 0%, rgba(237, 231, 220, 0.96) 100%);
-      box-shadow: 0 14px 38px rgba(23, 33, 43, 0.1), 0 4px 12px rgba(31, 78, 121, 0.07), inset 0 1px 0 rgba(255, 255, 255, 0.7);
-      border-bottom-color: rgba(23, 33, 43, 0.14);
-    }
-    #site-nav .nav-inner {
-      position: relative;
-      z-index: 1;
-      transition: padding-top 0.25s ease, padding-bottom 0.25s ease, gap 0.25s ease;
-    }
-    #site-nav.nav-scrolled .nav-inner {
-      padding-top: 0.625rem;
-      padding-bottom: 0.625rem;
-    }
-    .nav-brand {
-      display: flex;
-      align-items: center;
-      gap: 0.875rem;
-      min-width: 0;
-    }
-    .nav-logo {
-      font-family: 'Inter', sans-serif;
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: #17212B;
-      letter-spacing: -0.03em;
-      line-height: 1;
-      display: flex;
-      align-items: baseline;
-      gap: 0;
-      text-decoration: none;
-      white-space: nowrap;
-      transition: color 0.18s ease, opacity 0.18s ease;
-    }
-    .nav-badge {
-      display: none;
-      align-items: center;
-      gap: 0.4rem;
-      padding: 0.4rem 0.7rem;
-      border: 1px solid rgba(31, 78, 121, 0.1);
-      border-radius: 9999px;
-      background: rgba(255, 255, 255, 0.42);
-      color: rgba(23, 33, 43, 0.72);
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.68rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      white-space: nowrap;
-    }
-    .nav-badge::before {
-      content: '';
-      width: 0.42rem;
-      height: 0.42rem;
-      border-radius: 9999px;
-      background: linear-gradient(135deg, #C96B3B, #1F4E79);
-      box-shadow: 0 0 0 4px rgba(201, 107, 59, 0.08);
-      flex: none;
-    }
-    @media (min-width: 1024px) {
-      .nav-badge {
-        display: inline-flex;
-      }
-    }
-    .nav-logo-tld {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.6875rem;
-      font-weight: 500;
-      color: rgba(99, 110, 114, 0.88);
-      letter-spacing: 0.04em;
-      margin-left: 2px;
-      position: relative;
-      top: -5px;
-    }
-    .nav-desktop {
-      display: flex;
-      align-items: center;
-      gap: 1.4rem;
-      padding: 0.6rem 1rem;
-      border: 1px solid rgba(23, 33, 43, 0.08);
-      border-radius: 9999px;
-      background: rgba(255, 255, 255, 0.38);
-      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.55);
-    }
-    .nav-link {
-      position: relative;
-      font-size: 0.79rem;
-      font-weight: 500;
-      color: rgba(23, 33, 43, 0.68);
-      text-decoration: none;
-      padding-bottom: 3px;
-      transition: color 0.18s ease, opacity 0.18s ease;
-    }
-    .nav-link::after {
-      content: '';
-      position: absolute;
-      bottom: -2px;
-      left: 0;
-      right: 0;
-      height: 2px;
-      background: linear-gradient(90deg, rgba(201, 107, 59, 0.92), rgba(31, 78, 121, 0.85));
-      border-radius: 2px;
-      transform: scaleX(0);
-      transform-origin: center;
-      transition: transform 0.22s ease;
-    }
-    .nav-link:hover {
-      color: #17212B;
-    }
-    .nav-link:hover::after {
-      transform: scaleX(1);
-    }
-    .nav-link.active {
-      color: #17212B;
-      font-weight: 600;
-    }
-    .nav-link.active::after {
-      transform: scaleX(1);
-    }
-    #mobileMenu {
-      overflow: hidden;
-      max-height: 0;
-      transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-                  opacity 0.25s ease;
-      opacity: 0;
-      border-top: 1px solid rgba(23, 33, 43, 0.08);
-      background: linear-gradient(180deg, rgba(249, 246, 240, 0.97) 0%, rgba(240, 234, 223, 0.96) 100%);
-      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.65);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-    }
-    #mobileMenu.open {
-      max-height: 480px;
-      opacity: 1;
-    }
-    .mobile-nav-link {
-      display: flex;
-      align-items: center;
-      padding: 0.85rem 1rem;
-      border-radius: 10px;
-      font-size: 0.9375rem;
-      font-weight: 500;
-      color: rgba(23, 33, 43, 0.82);
-      text-decoration: none;
-      min-height: 44px;
-      transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease;
-      border: 1px solid transparent;
-    }
-    .mobile-nav-link:hover {
-      color: #17212B;
-      border-color: rgba(23, 33, 43, 0.08);
-      background-color: rgba(255, 255, 255, 0.46);
-    }
-    .mobile-nav-link.active {
-      color: #17212B;
-      font-weight: 600;
-      border-color: rgba(23, 33, 43, 0.08);
-      background-color: rgba(255, 255, 255, 0.56);
-      box-shadow: inset 3px 0 0 rgba(201, 107, 59, 0.82);
-    }
-    #mobileMenuBtn {
-      border: 1px solid rgba(23, 33, 43, 0.08);
-      background: rgba(255, 255, 255, 0.42);
-      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.55);
-      transition: background-color 0.18s ease, border-color 0.18s ease, transform 0.18s ease;
-    }
-    #mobileMenuBtn:hover {
-      background: rgba(255, 255, 255, 0.62);
-      border-color: rgba(31, 78, 121, 0.14);
-      transform: translateY(-1px);
-    }
-    .hamburger-line {
-      display: block;
-      width: 20px;
-      height: 1.75px;
-      background-color: #17212B;
-      border-radius: 2px;
-      transition: transform 0.25s ease, opacity 0.2s ease;
-      transform-origin: center;
-    }
-    #mobileMenuBtn[aria-expanded="true"] .hamburger-line:nth-child(1) { transform: translateY(5.75px) rotate(45deg); }
-    #mobileMenuBtn[aria-expanded="true"] .hamburger-line:nth-child(2) { opacity: 0; transform: scaleX(0); }
-    #mobileMenuBtn[aria-expanded="true"] .hamburger-line:nth-child(3) { transform: translateY(-5.75px) rotate(-45deg); }
-  
-    a, button {
-      touch-action: manipulation;
-    }
-    @supports (-webkit-touch-callout: none) {
-      input, textarea, select {
-        font-size: 16px;
-      }
-    }
-    @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
-      #site-nav,
-      #mobileMenu,
-      .hero-frame {
-        -webkit-backdrop-filter: none;
-        backdrop-filter: none;
-      }
-      #site-nav,
-      #mobileMenu {
-        background: rgba(244, 241, 232, 0.98);
-      }
-      .hero-frame {
-        background: rgba(255, 255, 255, 0.88);
-      }
-    }
-
-  </style>
+    </script>
+    
+    <style>
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .tight-tracking {
+            letter-spacing: -0.02em;
+        }
+        .gradient-line {
+            background: linear-gradient(to right, rgba(31, 78, 121, 0.2), rgba(31, 78, 121, 0.4), #6C8261);
+        }
+    </style>
 </head>
-<body class="text-charcoal antialiased">
+<body class="bg-white text-gray-900 antialiased">
   <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-[#1F4E79] focus:text-white focus:px-4 focus:py-2 focus:rounded-sm focus:font-semibold">Skip to main content</a>
 
-  <nav id="site-nav" class="sticky top-0 z-40" role="navigation" aria-label="Main navigation">
-    <div class="nav-inner max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
-      <div class="nav-brand">
-        <a href="index.html" aria-label="Microve.ai — home" class="nav-logo">microve<span class="nav-logo-tld">.ai</span></a>
-        <div class="hidden lg:flex items-center gap-1.5 ml-1.5 opacity-80 hover:opacity-100 transition-opacity" title="Microve = Micro + Improvement">
-          <span class="font-mono text-[0.6rem] font-semibold tracking-[0.1em] text-[#1F4E79] bg-[#1F4E79]/5 border border-[#1F4E79]/20 px-2 py-0.5 rounded uppercase shadow-sm">Micro</span>
-          <svg class="w-3 h-3 text-stone/40" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 4v16m8-8H4"/></svg>
-          <span class="font-mono text-[0.6rem] font-semibold tracking-[0.1em] text-[#C96B3B] bg-[#C96B3B]/5 border border-[#C96B3B]/20 px-2 py-0.5 rounded uppercase shadow-sm">Improvement</span>
+  <!-- Navigation -->
+<nav class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-gray-100">
+    <div class="max-w-5xl mx-auto px-6 py-4">
+        <div class="flex items-center justify-between">
+            <a href="index.html" class="text-xl font-bold text-primary" aria-label="Microve.ai — home">
+                microve<span class="text-accent">.ai</span>
+            </a>
+            <div class="hidden md:flex items-center space-x-6 text-sm">
+                <a href="index.html" class="text-gray-600 hover:text-primary transition-colors">Home</a>
+                <a href="what-we-do.html" class="text-gray-600 hover:text-primary transition-colors">What We Do</a>
+                <a href="cases.html" class="text-gray-600 hover:text-primary transition-colors">Cases</a>
+                <a href="blog.html" class="text-gray-600 hover:text-primary transition-colors">Blog</a>
+                <a href="about.html" class="text-gray-600 hover:text-primary transition-colors">About</a>
+                <a href="pricing.html" class="text-gray-600 hover:text-primary transition-colors">Pricing</a>
+                <a href="contact.html" class="text-gray-600 hover:text-primary transition-colors">Contact</a>
+            </div>
         </div>
-      </div>
-      <div class="hidden md:flex items-center"><div class="nav-desktop">
-<a href="index.html" class="nav-link">Home</a>
-        <a href="what-we-do.html" class="nav-link">What We Do</a>
-        <a href="cases.html" class="nav-link">Cases</a>
-        <a href="blog.html" class="nav-link">Blog</a>
-        <a href="about.html" class="nav-link">About</a>
-        <a href="pricing.html" aria-current="page" class="nav-link active">Pricing</a>
-        <a href="contact.html" class="nav-link">Contact</a>
-        </div>
-      </div>
-      <button id="mobileMenuBtn" class="md:hidden flex flex-col justify-center gap-[4.5px] w-9 h-9 -mr-1 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1F4E79] focus:ring-offset-2" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileMenu">
-        <span class="hamburger-line"></span>
-        <span class="hamburger-line"></span>
-        <span class="hamburger-line"></span>
-      </button>
     </div>
-    <div id="mobileMenu" role="region" aria-label="Mobile navigation">
-      <div class="max-w-5xl mx-auto px-4 py-4 flex flex-col gap-2">
-<a href="index.html" class="mobile-nav-link">Home</a>
-        <a href="what-we-do.html" class="mobile-nav-link">What We Do</a>
-        <a href="cases.html" class="mobile-nav-link">Cases</a>
-        <a href="blog.html" class="mobile-nav-link">Blog</a>
-        <a href="about.html" class="mobile-nav-link">About</a>
-        <a href="pricing.html" aria-current="page" class="mobile-nav-link active">Pricing</a>
-        <a href="contact.html" class="mobile-nav-link">Contact</a>
-      </div>
-    </div>
-    <script>
-      (function () {
-        const btn = document.getElementById('mobileMenuBtn');
-        const menu = document.getElementById('mobileMenu');
-        const nav = document.getElementById('site-nav');
-        if (!btn || !menu || !nav) return;
-
-        const closeMenu = function (returnFocus) {
-          btn.setAttribute('aria-expanded', 'false');
-          menu.classList.remove('open');
-          document.body.style.overflow = '';
-          if (returnFocus) btn.focus();
-        };
-
-        window.addEventListener('scroll', function () {
-          nav.classList.toggle('nav-scrolled', window.scrollY > 12);
-        }, { passive: true });
-
-        btn.addEventListener('click', function () {
-          const isOpen = this.getAttribute('aria-expanded') === 'true';
-          if (isOpen) {
-            closeMenu(false);
-            return;
-          }
-          this.setAttribute('aria-expanded', 'true');
-          menu.classList.add('open');
-          document.body.style.overflow = 'hidden';
-        });
-
-        menu.querySelectorAll('a').forEach(function (link) {
-          link.addEventListener('click', function () {
-            closeMenu(false);
-          });
-        });
-
-        document.addEventListener('click', function (e) {
-          if (!nav.contains(e.target) && menu.classList.contains('open')) {
-            closeMenu(false);
-          }
-        });
-
-        document.addEventListener('keydown', function (e) {
-          if (e.key === 'Escape' && menu.classList.contains('open')) {
-            closeMenu(true);
-          }
-        });
-
-        window.addEventListener('resize', function () {
-          if (window.innerWidth >= 768 && menu.classList.contains('open')) {
-            closeMenu(false);
-          }
-        });
-      })();
-    </script>
-  </nav>
+</nav>
 
   <main id="main-content" class="max-w-4xl mx-auto px-6 pt-24 pb-32">
     <div class="text-center py-24">
       <p class="section-label text-xs text-[#A6552B] tracking-widest mb-4">Pricing</p>
       <h1 class="font-sans text-5xl md:text-6xl font-bold tight-tracking text-[#1F4E79] mb-6">Pricing follows workflow complexity</h1>
-      <p class="text-xl text-stone max-w-xl mx-auto mb-8">Each build is scoped around the bottleneck, the systems involved, and the level of judgment required. We price the work after reviewing the workflow so the recommendation matches the operational reality.</p>
+      <p class="text-xl text-gray-600 max-w-xl mx-auto mb-8">Each build is scoped around the bottleneck, the systems involved, and the level of judgment required. We price the work after reviewing the workflow so the recommendation matches the operational reality.</p>
     </div>
   </main>
 
-  <footer class="py-12 text-center text-sm text-stone border-t border-stone/10">
+  <footer class="py-12 text-center text-sm text-gray-600 border-t border-gray-200/10">
     <p>&copy; 2026 Microve.ai</p>
   </footer>
 </body>

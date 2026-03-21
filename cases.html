@@ -1,113 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Cases | Microve.ai</title>
-  <meta name="description" content="Real automations we've built for real teams — what the problem was, what we built, and what changed.">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-  <script>
-    tailwind.config = {
-      theme: { extend: { colors: { terracotta: '#1F4E79', sage: '#6C8261', coral: '#C96B3B', cream: '#F4F1E8', charcoal: '#17212B', stone: '#636E72' }, fontFamily: { sans: ['Inter', 'sans-serif'], mono: ['JetBrains Mono', 'monospace'] } } }
-    }
-  </script>
-  <style>
-    @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
-      *, *::before, *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
-      }
-    }
-    html { scroll-behavior: smooth; }
-    body { position: relative; overflow-x: hidden; background-color: #F4F1E8 !important; background-image: radial-gradient(circle, rgba(31, 78, 121, 0.18) 1.5px, transparent 1.5px) !important; background-size: 28px 28px !important;  -webkit-text-size-adjust: 100%; text-size-adjust: 100%;}
-    #site-nav { position: sticky; top: 0; z-index: 40; backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); background: linear-gradient(180deg, rgba(249, 246, 240, 0.88) 0%, rgba(240, 234, 223, 0.9) 100%); border-bottom: 1px solid rgba(23, 33, 43, 0.08); }
-    #site-nav.nav-scrolled { background: linear-gradient(180deg, rgba(247, 243, 236, 0.97) 0%, rgba(237, 231, 220, 0.96) 100%); box-shadow: 0 14px 38px rgba(23, 33, 43, 0.1); border-bottom-color: rgba(23, 33, 43, 0.14); }
-    .nav-logo { font-family: 'Inter', sans-serif; font-size: 1.5rem; font-weight: 700; color: #17212B; letter-spacing: -0.03em; text-decoration: none; display: flex; align-items: baseline;}
-    .nav-logo-tld { font-family: 'JetBrains Mono', monospace; font-size: 0.6875rem; font-weight: 500; color: rgba(99, 110, 114, 0.88); letter-spacing: 0.04em; margin-left: 2px; position: relative; top: -5px; }
-    .nav-desktop { display: flex; align-items: center; gap: 1.4rem; padding: 0.6rem 1rem; border: 1px solid rgba(23, 33, 43, 0.08); border-radius: 9999px; background: rgba(255, 255, 255, 0.38); }
-    .nav-link { position: relative; font-size: 0.79rem; font-weight: 500; color: rgba(23, 33, 43, 0.68); text-decoration: none; padding-bottom: 3px; }
-    .nav-link:hover, .nav-link.active { color: #17212B; }
-    .nav-link.active { font-weight: 600; }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cases | Microve.ai</title>
+    <meta name="description" content="Real automations we">
     
-    /* Filtering logic */
-    .filter-btn { transition: all 0.2s ease; }
-    .filter-btn.active { background-color: #1F4E79; color: white; border-color: #1F4E79; }
-    .case-card { transition: opacity 0.3s ease, transform 0.3s ease; }
-    .case-card.hidden { display: none; }
-  
-    a, button {
-      touch-action: manipulation;
-    }
-    @supports (-webkit-touch-callout: none) {
-      input, textarea, select {
-        font-size: 16px;
-      }
-    }
-    @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
-      #site-nav,
-      #mobileMenu,
-      .hero-frame {
-        -webkit-backdrop-filter: none;
-        backdrop-filter: none;
-      }
-      #site-nav,
-      #mobileMenu {
-        background: rgba(244, 241, 232, 0.98);
-      }
-      .hero-frame {
-        background: rgba(255, 255, 255, 0.88);
-      }
-    }
-
-  </style>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: {
+                            DEFAULT: '#1F4E79',
+                            dark: '#163a5c',
+                            light: '#2d6a9f',
+                        },
+                        accent: {
+                            DEFAULT: '#C96B3B',
+                            dark: '#A6552B',
+                            light: '#d67f52',
+                        },
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .tight-tracking {
+            letter-spacing: -0.02em;
+        }
+        .gradient-line {
+            background: linear-gradient(to right, rgba(31, 78, 121, 0.2), rgba(31, 78, 121, 0.4), #6C8261);
+        }
+    </style>
 </head>
-<body class="text-charcoal antialiased">
-  <nav id="site-nav" class="sticky top-0 z-40" role="navigation">
-    <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
-      <div class="nav-brand flex items-center">
-        <a href="index.html" class="nav-logo">microve<span class="nav-logo-tld">.ai</span></a>
-        <div class="hidden lg:flex items-center gap-1.5 ml-1.5 opacity-80 hover:opacity-100 transition-opacity" title="Microve = Micro + Improvement">
-          <span class="font-mono text-[0.6rem] font-semibold tracking-[0.1em] text-[#1F4E79] bg-[#1F4E79]/5 border border-[#1F4E79]/20 px-2 py-0.5 rounded uppercase shadow-sm">Micro</span>
-          <svg class="w-3 h-3 text-stone/40" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 4v16m8-8H4"/></svg>
-          <span class="font-mono text-[0.6rem] font-semibold tracking-[0.1em] text-[#C96B3B] bg-[#C96B3B]/5 border border-[#C96B3B]/20 px-2 py-0.5 rounded uppercase shadow-sm">Improvement</span>
+<body class="bg-white text-gray-900 antialiased">
+  <!-- Skip Link -->
+<a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-primary focus:text-white focus:px-4 focus:py-2 focus:rounded focus:font-semibold">
+    Skip to main content
+</a>
+
+<!-- Navigation -->
+<nav class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-gray-100">
+    <div class="max-w-5xl mx-auto px-6 py-4">
+        <div class="flex items-center justify-between">
+            <a href="index.html" class="text-xl font-bold text-primary" aria-label="Microve.ai — home">
+                microve<span class="text-accent">.ai</span>
+            </a>
+            <div class="hidden md:flex items-center space-x-6 text-sm">
+                <a href="index.html" class="text-gray-600 hover:text-primary transition-colors">Home</a>
+                <a href="what-we-do.html" class="text-gray-600 hover:text-primary transition-colors">What We Do</a>
+                <a href="cases.html" class="text-gray-600 hover:text-primary transition-colors">Cases</a>
+                <a href="blog.html" class="text-gray-600 hover:text-primary transition-colors">Blog</a>
+                <a href="about.html" class="text-gray-600 hover:text-primary transition-colors">About</a>
+                <a href="pricing.html" class="text-gray-600 hover:text-primary transition-colors">Pricing</a>
+                <a href="contact.html" class="text-gray-600 hover:text-primary transition-colors">Contact</a>
+            </div>
         </div>
-      </div>
-      <div class="hidden md:flex items-center"><div class="nav-desktop">
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="what-we-do.html" class="nav-link">What We Do</a>
-        <a href="cases.html" aria-current="page" class="nav-link active">Cases</a>
-        <a href="blog.html" class="nav-link">Blog</a>
-        <a href="about.html" class="nav-link">About</a>
-        <a href="pricing.html" class="nav-link">Pricing</a>
-        <a href="contact.html" class="nav-link">Contact</a>
-      </div></div>
     </div>
-  </nav>
+</nav>
 
   <main class="max-w-5xl mx-auto px-6 pt-24 pb-32">
     <div class="mb-16">
       <p class="font-mono text-xs text-[#A6552B] tracking-widest mb-4 uppercase">[CASES]</p>
       <h1 class="font-sans text-5xl md:text-6xl font-bold tracking-tight text-[#1F4E79] mb-6">Case Studies</h1>
-      <p class="text-xl text-stone max-w-2xl">Real workflow bottlenecks we've solved. The problems that held teams back, the automations we built, and the operational changes that followed.</p>
+      <p class="text-xl text-gray-600 max-w-2xl">Real workflow bottlenecks we've solved. The problems that held teams back, the automations we built, and the operational changes that followed.</p>
     </div>
 
     <!-- Filters -->
     <div class="flex flex-wrap gap-3 mb-12">
-      <button class="filter-btn active px-4 py-2 rounded-full border border-stone/20 text-sm font-medium hover:border-[#1F4E79] hover:text-[#1F4E79] bg-white" data-filter="all">All Industries</button>
-      <button class="filter-btn px-4 py-2 rounded-full border border-stone/20 text-sm font-medium hover:border-[#1F4E79] hover:text-[#1F4E79] bg-white" data-filter="logistics">Logistics</button>
-      <button class="filter-btn px-4 py-2 rounded-full border border-stone/20 text-sm font-medium hover:border-[#1F4E79] hover:text-[#1F4E79] bg-white" data-filter="real-estate">Real Estate</button>
-      <button class="filter-btn px-4 py-2 rounded-full border border-stone/20 text-sm font-medium hover:border-[#1F4E79] hover:text-[#1F4E79] bg-white" data-filter="insurance">Insurance</button>
-      <button class="filter-btn px-4 py-2 rounded-full border border-stone/20 text-sm font-medium hover:border-[#1F4E79] hover:text-[#1F4E79] bg-white" data-filter="retail">Retail</button>
-      <button class="filter-btn px-4 py-2 rounded-full border border-stone/20 text-sm font-medium hover:border-[#1F4E79] hover:text-[#1F4E79] bg-white" data-filter="operations">Operations</button>
-      <button class="filter-btn px-4 py-2 rounded-full border border-stone/20 text-sm font-medium hover:border-[#1F4E79] hover:text-[#1F4E79] bg-white" data-filter="home-services">Home Services</button>
+      <button class="filter-btn active px-4 py-2 rounded-full border border-gray-200/20 text-sm font-medium hover:border-[#1F4E79] hover:text-[#1F4E79] bg-white" data-filter="all">All Industries</button>
+      <button class="filter-btn px-4 py-2 rounded-full border border-gray-200/20 text-sm font-medium hover:border-[#1F4E79] hover:text-[#1F4E79] bg-white" data-filter="logistics">Logistics</button>
+      <button class="filter-btn px-4 py-2 rounded-full border border-gray-200/20 text-sm font-medium hover:border-[#1F4E79] hover:text-[#1F4E79] bg-white" data-filter="real-estate">Real Estate</button>
+      <button class="filter-btn px-4 py-2 rounded-full border border-gray-200/20 text-sm font-medium hover:border-[#1F4E79] hover:text-[#1F4E79] bg-white" data-filter="insurance">Insurance</button>
+      <button class="filter-btn px-4 py-2 rounded-full border border-gray-200/20 text-sm font-medium hover:border-[#1F4E79] hover:text-[#1F4E79] bg-white" data-filter="retail">Retail</button>
+      <button class="filter-btn px-4 py-2 rounded-full border border-gray-200/20 text-sm font-medium hover:border-[#1F4E79] hover:text-[#1F4E79] bg-white" data-filter="operations">Operations</button>
+      <button class="filter-btn px-4 py-2 rounded-full border border-gray-200/20 text-sm font-medium hover:border-[#1F4E79] hover:text-[#1F4E79] bg-white" data-filter="home-services">Home Services</button>
     </div>
 
     <!-- Grid Layout -->
@@ -120,10 +106,10 @@
             <span class="font-mono text-xs bg-[#1F4E79]/5 text-[#1F4E79] px-2.5 py-1 rounded-full uppercase tracking-wider">Logistics</span>
           </div>
           <div class="text-[#C96B3B] font-bold text-3xl mb-1">12→0.75</div>
-          <div class="text-xs text-stone uppercase tracking-wider mb-6">hours/week</div>
+          <div class="text-xs text-gray-600 uppercase tracking-wider mb-6">hours/week</div>
           
-          <h3 class="text-xl font-bold text-charcoal mb-3 group-hover:text-[#1F4E79] transition-colors">The Expense Report Chaos</h3>
-          <p class="text-sm text-stone mb-6 flex-grow">Field managers emailed receipt photos. Accounting spent 12 hours/week manually filing and entering data.</p>
+          <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-[#1F4E79] transition-colors">The Expense Report Chaos</h3>
+          <p class="text-sm text-gray-600 mb-6 flex-grow">Field managers emailed receipt photos. Accounting spent 12 hours/week manually filing and entering data.</p>
           
           <div class="text-[#1F4E79] text-sm font-semibold flex items-center gap-2 mt-auto">
             Read Case
@@ -139,10 +125,10 @@
             <span class="font-mono text-xs bg-[#1F4E79]/5 text-[#1F4E79] px-2.5 py-1 rounded-full uppercase tracking-wider">Home Svcs</span>
           </div>
           <div class="text-[#C96B3B] font-bold text-3xl mb-1">~15</div>
-          <div class="text-xs text-stone uppercase tracking-wider mb-6">hours/week</div>
+          <div class="text-xs text-gray-600 uppercase tracking-wider mb-6">hours/week</div>
           
-          <h3 class="text-xl font-bold text-charcoal mb-3 group-hover:text-[#1F4E79] transition-colors">The Pricing Explanation Loop</h3>
-          <p class="text-sm text-stone mb-6 flex-grow">Sales team spent 40% of every call repeating pricing details to tire-kickers while qualified leads waited.</p>
+          <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-[#1F4E79] transition-colors">The Pricing Explanation Loop</h3>
+          <p class="text-sm text-gray-600 mb-6 flex-grow">Sales team spent 40% of every call repeating pricing details to tire-kickers while qualified leads waited.</p>
           
           <div class="text-[#1F4E79] text-sm font-semibold flex items-center gap-2 mt-auto">
             Read Case
@@ -158,10 +144,10 @@
             <span class="font-mono text-xs bg-[#1F4E79]/5 text-[#1F4E79] px-2.5 py-1 rounded-full uppercase tracking-wider">Operations</span>
           </div>
           <div class="text-[#C96B3B] font-bold text-3xl mb-1">~8</div>
-          <div class="text-xs text-stone uppercase tracking-wider mb-6">hours/week</div>
+          <div class="text-xs text-gray-600 uppercase tracking-wider mb-6">hours/week</div>
           
-          <h3 class="text-xl font-bold text-charcoal mb-3 group-hover:text-[#1F4E79] transition-colors">The Disappearing Knowledge</h3>
-          <p class="text-sm text-stone mb-6 flex-grow">SOPs existed but were scattered in piles or trapped in employees' heads. New hires couldn't find answers.</p>
+          <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-[#1F4E79] transition-colors">The Disappearing Knowledge</h3>
+          <p class="text-sm text-gray-600 mb-6 flex-grow">SOPs existed but were scattered in piles or trapped in employees' heads. New hires couldn't find answers.</p>
           
           <div class="text-[#1F4E79] text-sm font-semibold flex items-center gap-2 mt-auto">
             Read Case
@@ -177,10 +163,10 @@
             <span class="font-mono text-xs bg-[#1F4E79]/5 text-[#1F4E79] px-2.5 py-1 rounded-full uppercase tracking-wider">Retail</span>
           </div>
           <div class="text-[#C96B3B] font-bold text-3xl mb-1">~10</div>
-          <div class="text-xs text-stone uppercase tracking-wider mb-6">hours/week</div>
+          <div class="text-xs text-gray-600 uppercase tracking-wider mb-6">hours/week</div>
           
-          <h3 class="text-xl font-bold text-charcoal mb-3 group-hover:text-[#1F4E79] transition-colors">The KPI Detective Work</h3>
-          <p class="text-sm text-stone mb-6 flex-grow">Tracking individual performance across 4 rotating locations was nearly impossible using fragmented POS data.</p>
+          <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-[#1F4E79] transition-colors">The KPI Detective Work</h3>
+          <p class="text-sm text-gray-600 mb-6 flex-grow">Tracking individual performance across 4 rotating locations was nearly impossible using fragmented POS data.</p>
           
           <div class="text-[#1F4E79] text-sm font-semibold flex items-center gap-2 mt-auto">
             Read Case
@@ -196,10 +182,10 @@
             <span class="font-mono text-xs bg-[#1F4E79]/5 text-[#1F4E79] px-2.5 py-1 rounded-full uppercase tracking-wider">Insurance</span>
           </div>
           <div class="text-[#C96B3B] font-bold text-3xl mb-1">~6</div>
-          <div class="text-xs text-stone uppercase tracking-wider mb-6">hours/week</div>
+          <div class="text-xs text-gray-600 uppercase tracking-wider mb-6">hours/week</div>
           
-          <h3 class="text-xl font-bold text-charcoal mb-3 group-hover:text-[#1F4E79] transition-colors">The Weekly Data Scrape</h3>
-          <p class="text-sm text-stone mb-6 flex-grow">A broker lost hours manually logging into carrier portals just to paste data into his custom Excel dashboard.</p>
+          <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-[#1F4E79] transition-colors">The Weekly Data Scrape</h3>
+          <p class="text-sm text-gray-600 mb-6 flex-grow">A broker lost hours manually logging into carrier portals just to paste data into his custom Excel dashboard.</p>
           
           <div class="text-[#1F4E79] text-sm font-semibold flex items-center gap-2 mt-auto">
             Read Case
@@ -215,10 +201,10 @@
             <span class="font-mono text-xs bg-[#1F4E79]/5 text-[#1F4E79] px-2.5 py-1 rounded-full uppercase tracking-wider">Real Estate</span>
           </div>
           <div class="text-[#C96B3B] font-bold text-3xl mb-1">100%</div>
-          <div class="text-xs text-stone uppercase tracking-wider mb-6">engagement</div>
+          <div class="text-xs text-gray-600 uppercase tracking-wider mb-6">engagement</div>
           
-          <h3 class="text-xl font-bold text-charcoal mb-3 group-hover:text-[#1F4E79] transition-colors">The Cold Lead Graveyard</h3>
-          <p class="text-sm text-stone mb-6 flex-grow">An agent had a goldmine of inbound leads but lacked the consistency to scrape, organize, and call them.</p>
+          <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-[#1F4E79] transition-colors">The Cold Lead Graveyard</h3>
+          <p class="text-sm text-gray-600 mb-6 flex-grow">An agent had a goldmine of inbound leads but lacked the consistency to scrape, organize, and call them.</p>
           
           <div class="text-[#1F4E79] text-sm font-semibold flex items-center gap-2 mt-auto">
             Read Case
@@ -239,10 +225,10 @@
       btn.addEventListener('click', () => {
         // Remove active class from all
         filterBtns.forEach(b => b.classList.remove('active', 'bg-[#1F4E79]', 'text-white', 'border-[#1F4E79]'));
-        filterBtns.forEach(b => b.classList.add('bg-white', 'text-charcoal'));
+        filterBtns.forEach(b => b.classList.add('bg-white', 'text-gray-900'));
         
         // Add active class to clicked
-        btn.classList.remove('bg-white', 'text-charcoal');
+        btn.classList.remove('bg-white', 'text-gray-900');
         btn.classList.add('active', 'bg-[#1F4E79]', 'text-white', 'border-[#1F4E79]');
         
         const filterValue = btn.getAttribute('data-filter');

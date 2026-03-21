@@ -1,436 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>About | Microve.ai</title>
-  <meta name="description" content="The team behind Microve.ai — operators who got tired of manual work and built automations to fix it.">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            terracotta: '#1F4E79',
-            sage: '#6C8261',
-            coral: '#C96B3B',
-            cream: '#F4F1E8',
-            charcoal: '#17212B',
-            stone: '#636E72'
-          },
-          fontFamily: {
-            sans: ['Inter', 'sans-serif'],
-            mono: ['JetBrains Mono', 'monospace']
-          }
-        }
-      }
-    }
-  </script>
-  <style>
-    @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
-      *, *::before, *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
-      }
-    }
-    html { scroll-behavior: smooth; }
-    .text-stone { color: #636E72; }
-    .text-charcoal { color: #17212B; }
-    a:focus-visible, button:focus-visible { outline: 2px solid #1F4E79; outline-offset: 2px; }
-    :focus:not(:focus-visible) { outline: none; }
-    :root { --color-coral: #C96B3B; --color-navy: #1F4E79; --color-cream: #F4F1E8; }
-    @media (hover: none) and (pointer: coarse) { a, button { min-height: 44px; min-width: 44px; } }
-    .section-label { font-family: 'JetBrains Mono', monospace; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; }
-    .tight-tracking { letter-spacing: -0.02em; }
-    body { position: relative; overflow-x: hidden; background-color: #F4F1E8 !important; background-image: radial-gradient(circle, rgba(31, 78, 121, 0.18) 1.5px, transparent 1.5px) !important; background-size: 28px 28px !important;  -webkit-text-size-adjust: 100%; text-size-adjust: 100%;}
-    #site-nav {
-      position: sticky;
-      top: 0;
-      z-index: 40;
-      isolation: isolate;
-      background: linear-gradient(180deg, rgba(249, 246, 240, 0.88) 0%, rgba(240, 234, 223, 0.9) 100%);
-      border-bottom: 1px solid rgba(23, 33, 43, 0.08);
-      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.65);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      transition: background-color 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
-    }
-    #site-nav::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 50%;
-      width: min(1100px, calc(100% - 48px));
-      height: 1px;
-      transform: translateX(-50%);
-      background: linear-gradient(90deg, rgba(201, 107, 59, 0), rgba(201, 107, 59, 0.3) 18%, rgba(31, 78, 121, 0.25) 50%, rgba(201, 107, 59, 0.3) 82%, rgba(201, 107, 59, 0));
-      pointer-events: none;
-    }
-    #site-nav::after {
-      content: '';
-      position: absolute;
-      inset: auto 0 -22px 0;
-      height: 40px;
-      background: radial-gradient(circle at 50% 0%, rgba(31, 78, 121, 0.08), transparent 68%);
-      pointer-events: none;
-      opacity: 0.7;
-    }
-    #site-nav.nav-scrolled {
-      background: linear-gradient(180deg, rgba(247, 243, 236, 0.97) 0%, rgba(237, 231, 220, 0.96) 100%);
-      box-shadow: 0 14px 38px rgba(23, 33, 43, 0.1), 0 4px 12px rgba(31, 78, 121, 0.07), inset 0 1px 0 rgba(255, 255, 255, 0.7);
-      border-bottom-color: rgba(23, 33, 43, 0.14);
-    }
-    #site-nav .nav-inner {
-      position: relative;
-      z-index: 1;
-      transition: padding-top 0.25s ease, padding-bottom 0.25s ease, gap 0.25s ease;
-    }
-    #site-nav.nav-scrolled .nav-inner {
-      padding-top: 0.625rem;
-      padding-bottom: 0.625rem;
-    }
-    .nav-brand {
-      display: flex;
-      align-items: center;
-      gap: 0.875rem;
-      min-width: 0;
-    }
-    .nav-logo {
-      font-family: 'Inter', sans-serif;
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: #17212B;
-      letter-spacing: -0.03em;
-      line-height: 1;
-      display: flex;
-      align-items: baseline;
-      gap: 0;
-      text-decoration: none;
-      white-space: nowrap;
-      transition: color 0.18s ease, opacity 0.18s ease;
-    }
-    .nav-badge {
-      display: none;
-      align-items: center;
-      gap: 0.4rem;
-      padding: 0.4rem 0.7rem;
-      border: 1px solid rgba(31, 78, 121, 0.1);
-      border-radius: 9999px;
-      background: rgba(255, 255, 255, 0.42);
-      color: rgba(23, 33, 43, 0.72);
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.68rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      white-space: nowrap;
-    }
-    .nav-badge::before {
-      content: '';
-      width: 0.42rem;
-      height: 0.42rem;
-      border-radius: 9999px;
-      background: linear-gradient(135deg, #C96B3B, #1F4E79);
-      box-shadow: 0 0 0 4px rgba(201, 107, 59, 0.08);
-      flex: none;
-    }
-    @media (min-width: 1024px) {
-      .nav-badge {
-        display: inline-flex;
-      }
-    }
-    .nav-logo-tld {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.6875rem;
-      font-weight: 500;
-      color: rgba(99, 110, 114, 0.88);
-      letter-spacing: 0.04em;
-      margin-left: 2px;
-      position: relative;
-      top: -5px;
-    }
-    .nav-desktop {
-      display: flex;
-      align-items: center;
-      gap: 1.4rem;
-      padding: 0.6rem 1rem;
-      border: 1px solid rgba(23, 33, 43, 0.08);
-      border-radius: 9999px;
-      background: rgba(255, 255, 255, 0.38);
-      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.55);
-    }
-    .nav-link {
-      position: relative;
-      font-size: 0.79rem;
-      font-weight: 500;
-      color: rgba(23, 33, 43, 0.68);
-      text-decoration: none;
-      padding-bottom: 3px;
-      transition: color 0.18s ease, opacity 0.18s ease;
-    }
-    .nav-link::after {
-      content: '';
-      position: absolute;
-      bottom: -2px;
-      left: 0;
-      right: 0;
-      height: 2px;
-      background: linear-gradient(90deg, rgba(201, 107, 59, 0.92), rgba(31, 78, 121, 0.85));
-      border-radius: 2px;
-      transform: scaleX(0);
-      transform-origin: center;
-      transition: transform 0.22s ease;
-    }
-    .nav-link:hover {
-      color: #17212B;
-    }
-    .nav-link:hover::after {
-      transform: scaleX(1);
-    }
-    .nav-link.active {
-      color: #17212B;
-      font-weight: 600;
-    }
-    .nav-link.active::after {
-      transform: scaleX(1);
-    }
-    #mobileMenu {
-      overflow: hidden;
-      max-height: 0;
-      transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-                  opacity 0.25s ease;
-      opacity: 0;
-      border-top: 1px solid rgba(23, 33, 43, 0.08);
-      background: linear-gradient(180deg, rgba(249, 246, 240, 0.97) 0%, rgba(240, 234, 223, 0.96) 100%);
-      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.65);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-    }
-    #mobileMenu.open {
-      max-height: 480px;
-      opacity: 1;
-    }
-    .mobile-nav-link {
-      display: flex;
-      align-items: center;
-      padding: 0.85rem 1rem;
-      border-radius: 10px;
-      font-size: 0.9375rem;
-      font-weight: 500;
-      color: rgba(23, 33, 43, 0.82);
-      text-decoration: none;
-      min-height: 44px;
-      transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease;
-      border: 1px solid transparent;
-    }
-    .mobile-nav-link:hover {
-      color: #17212B;
-      border-color: rgba(23, 33, 43, 0.08);
-      background-color: rgba(255, 255, 255, 0.46);
-    }
-    .mobile-nav-link.active {
-      color: #17212B;
-      font-weight: 600;
-      border-color: rgba(23, 33, 43, 0.08);
-      background-color: rgba(255, 255, 255, 0.56);
-      box-shadow: inset 3px 0 0 rgba(201, 107, 59, 0.82);
-    }
-    #mobileMenuBtn {
-      border: 1px solid rgba(23, 33, 43, 0.08);
-      background: rgba(255, 255, 255, 0.42);
-      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.55);
-      transition: background-color 0.18s ease, border-color 0.18s ease, transform 0.18s ease;
-    }
-    #mobileMenuBtn:hover {
-      background: rgba(255, 255, 255, 0.62);
-      border-color: rgba(31, 78, 121, 0.14);
-      transform: translateY(-1px);
-    }
-    .hamburger-line {
-      display: block;
-      width: 20px;
-      height: 1.75px;
-      background-color: #17212B;
-      border-radius: 2px;
-      transition: transform 0.25s ease, opacity 0.2s ease;
-      transform-origin: center;
-    }
-    #mobileMenuBtn[aria-expanded="true"] .hamburger-line:nth-child(1) { transform: translateY(5.75px) rotate(45deg); }
-    #mobileMenuBtn[aria-expanded="true"] .hamburger-line:nth-child(2) { opacity: 0; transform: scaleX(0); }
-    #mobileMenuBtn[aria-expanded="true"] .hamburger-line:nth-child(3) { transform: translateY(-5.75px) rotate(-45deg); }
-  
-    a, button {
-      touch-action: manipulation;
-    }
-    @supports (-webkit-touch-callout: none) {
-      input, textarea, select {
-        font-size: 16px;
-      }
-    }
-    @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
-      #site-nav,
-      #mobileMenu,
-      .hero-frame {
-        -webkit-backdrop-filter: none;
-        backdrop-filter: none;
-      }
-      #site-nav,
-      #mobileMenu {
-        background: rgba(244, 241, 232, 0.98);
-      }
-      .hero-frame {
-        background: rgba(255, 255, 255, 0.88);
-      }
-    }
-
-  </style>
-</head>
-<body class="text-charcoal antialiased">
-  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-[#1F4E79] focus:text-white focus:px-4 focus:py-2 focus:rounded-sm focus:font-semibold">Skip to main content</a>
-
-  <nav id="site-nav" class="sticky top-0 z-40" role="navigation" aria-label="Main navigation">
-    <div class="nav-inner max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
-      <div class="nav-brand">
-        <a href="index.html" aria-label="Microve.ai — home" class="nav-logo">microve<span class="nav-logo-tld">.ai</span></a>
-        <div class="hidden lg:flex items-center gap-1.5 ml-1.5 opacity-80 hover:opacity-100 transition-opacity" title="Microve = Micro + Improvement">
-          <span class="font-mono text-[0.6rem] font-semibold tracking-[0.1em] text-[#1F4E79] bg-[#1F4E79]/5 border border-[#1F4E79]/20 px-2 py-0.5 rounded uppercase shadow-sm">Micro</span>
-          <svg class="w-3 h-3 text-stone/40" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 4v16m8-8H4"/></svg>
-          <span class="font-mono text-[0.6rem] font-semibold tracking-[0.1em] text-[#C96B3B] bg-[#C96B3B]/5 border border-[#C96B3B]/20 px-2 py-0.5 rounded uppercase shadow-sm">Improvement</span>
-        </div>
-      </div>
-      <div class="hidden md:flex items-center"><div class="nav-desktop">
-<a href="index.html" class="nav-link">Home</a>
-        <a href="what-we-do.html" class="nav-link">What We Do</a>
-        <a href="cases.html" class="nav-link">Cases</a>
-        <a href="blog.html" class="nav-link">Blog</a>
-        <a href="about.html" aria-current="page" class="nav-link active">About</a>
-        <a href="pricing.html" class="nav-link">Pricing</a>
-        <a href="contact.html" class="nav-link">Contact</a>
-        </div>
-      </div>
-      <button id="mobileMenuBtn" class="md:hidden flex flex-col justify-center gap-[4.5px] w-9 h-9 -mr-1 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1F4E79] focus:ring-offset-2" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileMenu">
-        <span class="hamburger-line"></span>
-        <span class="hamburger-line"></span>
-        <span class="hamburger-line"></span>
-      </button>
-    </div>
-    <div id="mobileMenu" role="region" aria-label="Mobile navigation">
-      <div class="max-w-5xl mx-auto px-4 py-4 flex flex-col gap-2">
-<a href="index.html" class="mobile-nav-link">Home</a>
-        <a href="what-we-do.html" class="mobile-nav-link">What We Do</a>
-        <a href="cases.html" class="mobile-nav-link">Cases</a>
-        <a href="blog.html" class="mobile-nav-link">Blog</a>
-        <a href="about.html" aria-current="page" class="mobile-nav-link active">About</a>
-        <a href="pricing.html" class="mobile-nav-link">Pricing</a>
-        <a href="contact.html" class="mobile-nav-link">Contact</a>
-      </div>
-    </div>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Microve.ai</title>
+    <meta name="description" content="The team behind Microve.ai — operators who got tired of manual work and built automations to fix it.">
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
     <script>
-      (function () {
-        const btn = document.getElementById('mobileMenuBtn');
-        const menu = document.getElementById('mobileMenu');
-        const nav = document.getElementById('site-nav');
-        if (!btn || !menu || !nav) return;
-
-        const closeMenu = function (returnFocus) {
-          btn.setAttribute('aria-expanded', 'false');
-          menu.classList.remove('open');
-          document.body.style.overflow = '';
-          if (returnFocus) btn.focus();
-        };
-
-        window.addEventListener('scroll', function () {
-          nav.classList.toggle('nav-scrolled', window.scrollY > 12);
-        }, { passive: true });
-
-        btn.addEventListener('click', function () {
-          const isOpen = this.getAttribute('aria-expanded') === 'true';
-          if (isOpen) {
-            closeMenu(false);
-            return;
-          }
-          this.setAttribute('aria-expanded', 'true');
-          menu.classList.add('open');
-          document.body.style.overflow = 'hidden';
-        });
-
-        menu.querySelectorAll('a').forEach(function (link) {
-          link.addEventListener('click', function () {
-            closeMenu(false);
-          });
-        });
-
-        document.addEventListener('click', function (e) {
-          if (!nav.contains(e.target) && menu.classList.contains('open')) {
-            closeMenu(false);
-          }
-        });
-
-        document.addEventListener('keydown', function (e) {
-          if (e.key === 'Escape' && menu.classList.contains('open')) {
-            closeMenu(true);
-          }
-        });
-
-        window.addEventListener('resize', function () {
-          if (window.innerWidth >= 768 && menu.classList.contains('open')) {
-            closeMenu(false);
-          }
-        });
-      })();
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: {
+                            DEFAULT: '#1F4E79',
+                            dark: '#163a5c',
+                            light: '#2d6a9f',
+                        },
+                        accent: {
+                            DEFAULT: '#C96B3B',
+                            dark: '#A6552B',
+                            light: '#d67f52',
+                        },
+                    }
+                }
+            }
+        }
     </script>
-  </nav>
+    
+    <style>
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .tight-tracking {
+            letter-spacing: -0.02em;
+        }
+        .gradient-line {
+            background: linear-gradient(to right, rgba(31, 78, 121, 0.2), rgba(31, 78, 121, 0.4), #6C8261);
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-900 antialiased">
+
+    <!-- Skip Link -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-primary focus:text-white focus:px-4 focus:py-2 focus:rounded focus:font-semibold">
+        Skip to main content
+    </a>
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-gray-100">
+        <div class="max-w-5xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="index.html" class="text-xl font-bold text-primary" aria-label="Microve.ai — home">
+                    microve<span class="text-accent">.ai</span>
+                </a>
+                <div class="hidden md:flex items-center space-x-6 text-sm">
+                    <a href="index.html" class="text-gray-600 hover:text-primary transition-colors">Home</a>
+                    <a href="what-we-do.html" class="text-gray-600 hover:text-primary transition-colors">What We Do</a>
+                    <a href="cases.html" class="text-gray-600 hover:text-primary transition-colors">Cases</a>
+                    <a href="blog.html" class="text-gray-600 hover:text-primary transition-colors">Blog</a>
+                    <a href="about.html" class="text-gray-900 font-medium">About</a>
+                    <a href="pricing.html" class="text-gray-600 hover:text-primary transition-colors">Pricing</a>
+                    <a href="contact.html" class="text-gray-600 hover:text-primary transition-colors">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
 
   <main id="main-content" class="max-w-4xl mx-auto px-6 pt-24 pb-32">
     <!-- Hero Section -->
     <div class="mb-16">
-      <p class="section-label text-xs text-[#A6552B] tracking-widest mb-4">[ABOUT]</p>
-      <h1 class="font-sans text-5xl md:text-6xl font-bold tight-tracking text-[#1F4E79] mb-6">Built by operators,<br>for operators</h1>
-      <p class="text-xl text-stone max-w-2xl leading-relaxed">We've built, scaled, and sold businesses. We know how operational friction kills momentum and margins. That's why we don't just code—we bring operator judgment to every project.</p>
+      <p class="text-xs text-accent uppercase tracking-widest mb-4">[ABOUT]</p>
+      <h1 class="text-5xl md:text-6xl font-bold tight-tracking text-primary mb-6">Built by operators,<br>for operators</h1>
+      <p class="text-xl text-gray-600 max-w-2xl leading-relaxed">We've built, scaled, and sold businesses. We know how operational friction kills momentum and margins. That's why we don't just code—we bring operator judgment to every project.</p>
     </div>
 
     <!-- The Operator Difference -->
     <section class="mb-16">
-      <h2 class="font-sans text-3xl md:text-4xl font-bold mb-8 tight-tracking text-charcoal">The difference business experience makes</h2>
+      <h2 class="text-3xl md:text-4xl font-bold mb-8 tight-tracking text-gray-900">The difference business experience makes</h2>
       
       <div class="grid md:grid-cols-2 gap-6 mb-8">
         <!-- Typical Approach -->
-        <div class="bg-stone/5 rounded-sm border border-stone/10 p-6 md:p-8">
+        <div class="bg-gray-50 rounded-sm border border-gray-200 p-6 md:p-8">
           <div class="flex items-center gap-3 mb-6">
-            <div class="w-10 h-10 rounded-full bg-stone/20 flex items-center justify-center">
-              <svg class="w-5 h-5 text-stone" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+            <div class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center">
+              <svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
             </div>
-            <h3 class="font-semibold text-lg text-stone">Typical Developer</h3>
+            <h3 class="font-semibold text-lg text-gray-500">Typical Developer</h3>
           </div>
-          <ul class="space-y-4 text-stone">
+          <ul class="space-y-4 text-gray-500">
             <li class="flex items-start gap-3">
-              <span class="text-stone/40 mt-1">—</span>
+              <span class="text-gray-400 mt-1">—</span>
               <span>Takes your brief and builds exactly what you asked for</span>
             </li>
             <li class="flex items-start gap-3">
-              <span class="text-stone/40 mt-1">—</span>
+              <span class="text-gray-400 mt-1">—</span>
               <span>Technical expertise only—no business context</span>
             </li>
             <li class="flex items-start gap-3">
-              <span class="text-stone/40 mt-1">—</span>
+              <span class="text-gray-400 mt-1">—</span>
               <span>"You said build X, so we built X"</span>
             </li>
             <li class="flex items-start gap-3">
-              <span class="text-stone/40 mt-1">—</span>
+              <span class="text-gray-400 mt-1">—</span>
               <span>Solution-first, problem-second thinking</span>
             </li>
           </ul>
         </div>
 
         <!-- Our Approach -->
-        <div class="bg-[#1F4E79] rounded-sm p-6 md:p-8 text-white">
+        <div class="bg-primary rounded-sm p-6 md:p-8 text-white">
           <div class="flex items-center gap-3 mb-6">
             <div class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center">
               <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
@@ -439,67 +130,67 @@
           </div>
           <ul class="space-y-4 text-white/90">
             <li class="flex items-start gap-3">
-              <svg class="w-5 h-5 text-[#C96B3B] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+              <svg class="w-5 h-5 text-accent shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
               <span>Evaluates your problem through an operator's lens</span>
             </li>
             <li class="flex items-start gap-3">
-              <svg class="w-5 h-5 text-[#C96B3B] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+              <svg class="w-5 h-5 text-accent shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
               <span>Business judgment + technical execution</span>
             </li>
             <li class="flex items-start gap-3">
-              <svg class="w-5 h-5 text-[#C96B3B] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+              <svg class="w-5 h-5 text-accent shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
               <span>"You said the problem is X, but actually it's Y—here's why"</span>
             </li>
             <li class="flex items-start gap-3">
-              <svg class="w-5 h-5 text-[#C96B3B] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+              <svg class="w-5 h-5 text-accent shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
               <span>Outcome-first, solution-second thinking</span>
             </li>
           </ul>
         </div>
       </div>
 
-      <p class="text-lg text-charcoal bg-[#C96B3B]/10 rounded-sm p-6 border-l-4 border-[#C96B3B]">When we see a 3-hour weekly task, we don't just see code to write. We see <strong>$15K/year in lost productivity</strong>, delayed follow-ups, and frustrated team members. That business perspective changes everything about how we solve problems.</p>
+      <p class="text-lg text-gray-900 bg-accent/10 rounded-sm p-6 border-l-4 border-accent">When we see a 3-hour weekly task, we don't just see code to write. We see <strong>$15K/year in lost productivity</strong>, delayed follow-ups, and frustrated team members. That business perspective changes everything about how we solve problems.</p>
     </section>
 
     <!-- Why This Matters -->
-    <section class="bg-white rounded-sm border border-stone/15 p-8 md:p-10 mb-12">
-      <h2 class="font-sans text-3xl md:text-4xl font-bold mb-8 tight-tracking text-charcoal">What our business experience means for you</h2>
+    <section class="bg-white rounded-sm border border-gray-200 p-8 md:p-10 mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold mb-8 tight-tracking text-gray-900">What our business experience means for you</h2>
       
       <div class="space-y-8">
         <div class="flex flex-col md:flex-row gap-6">
           <div class="md:w-12 shrink-0">
-            <div class="w-12 h-12 rounded-sm bg-[#1F4E79] flex items-center justify-center">
+            <div class="w-12 h-12 rounded-sm bg-primary flex items-center justify-center">
               <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
             </div>
           </div>
           <div>
-            <h3 class="font-semibold text-xl text-charcoal mb-2">We understand how operational friction affects your bottom line</h3>
-            <p class="text-stone leading-relaxed">We've sat in your seat. We know that a "small" inefficiency isn't small when it compounds across a team of 20. We've experienced how manual processes become bottlenecks that slow growth and kill margins. This isn't theory for us—it's scars from building our own companies.</p>
+            <h3 class="font-semibold text-xl text-gray-900 mb-2">We understand how operational friction affects your bottom line</h3>
+            <p class="text-gray-500 leading-relaxed">We've sat in your seat. We know that a "small" inefficiency isn't small when it compounds across a team of 20. We've experienced how manual processes become bottlenecks that slow growth and kill margins. This isn't theory for us—it's scars from building our own companies.</p>
           </div>
         </div>
 
-        <div class="border-t border-stone/10 pt-8 flex flex-col md:flex-row gap-6">
+        <div class="border-t border-gray-200 pt-8 flex flex-col md:flex-row gap-6">
           <div class="md:w-12 shrink-0">
-            <div class="w-12 h-12 rounded-sm bg-[#6C8261] flex items-center justify-center">
+            <div class="w-12 h-12 rounded-sm bg-green-700 flex items-center justify-center">
               <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/></svg>
             </div>
           </div>
           <div>
-            <h3 class="font-semibold text-xl text-charcoal mb-2">We diagnose before we prescribe</h3>
-            <p class="text-stone leading-relaxed mb-3">Because we've operated businesses, we know the first explanation of a problem is rarely the full story. We ask different questions. We challenge assumptions. We dig until we understand what's actually costing you money—not just what looks broken on the surface.</p>
-            <p class="text-sm text-[#6C8261] font-medium">If a $20 Zapier integration fixes it, we'll tell you. If you need custom AI, we'll build it. But we figure that out first.</p>
+            <h3 class="font-semibold text-xl text-gray-900 mb-2">We diagnose before we prescribe</h3>
+            <p class="text-gray-500 leading-relaxed mb-3">Because we've operated businesses, we know the first explanation of a problem is rarely the full story. We ask different questions. We challenge assumptions. We dig until we understand what's actually costing you money—not just what looks broken on the surface.</p>
+            <p class="text-sm text-green-700 font-medium">If a $20 Zapier integration fixes it, we'll tell you. If you need custom AI, we'll build it. But we figure that out first.</p>
           </div>
         </div>
 
-        <div class="border-t border-stone/10 pt-8 flex flex-col md:flex-row gap-6">
+        <div class="border-t border-gray-200 pt-8 flex flex-col md:flex-row gap-6">
           <div class="md:w-12 shrink-0">
-            <div class="w-12 h-12 rounded-sm bg-[#C96B3B] flex items-center justify-center">
+            <div class="w-12 h-12 rounded-sm bg-accent flex items-center justify-center">
               <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/></svg>
             </div>
           </div>
           <div>
-            <h3 class="font-semibold text-xl text-charcoal mb-2">We eat our own cooking</h3>
-            <p class="text-stone leading-relaxed">The same automations we build for clients run our own operations. When we recommend a tool or workflow, it's because we're using it ourselves—right now—to run real businesses. We don't experiment on you; we implement what we know works.</p>
+            <h3 class="font-semibold text-xl text-gray-900 mb-2">We eat our own cooking</h3>
+            <p class="text-gray-500 leading-relaxed">The same automations we build for clients run our own operations. When we recommend a tool or workflow, it's because we're using it ourselves—right now—to run real businesses. We don't experiment on you; we implement what we know works.</p>
           </div>
         </div>
       </div>
@@ -507,42 +198,42 @@
 
     <!-- Process Section -->
     <section class="mb-16">
-      <h2 class="font-sans text-3xl md:text-4xl font-bold mb-8 tight-tracking text-charcoal">How we work</h2>
-      <p class="text-lg text-stone mb-8">Our process puts business judgment at the center. The consultation isn't a formality—it's where we apply everything we've learned from building and scaling companies.</p>
+      <h2 class="text-3xl md:text-4xl font-bold mb-8 tight-tracking text-gray-900">How we work</h2>
+      <p class="text-lg text-gray-500 mb-8">Our process puts business judgment at the center. The consultation isn't a formality—it's where we apply everything we've learned from building and scaling companies.</p>
       
       <div class="grid md:grid-cols-4 gap-4">
-        <div class="bg-white rounded-sm border border-stone/15 p-6 relative">
-          <div class="absolute -top-3 left-6 w-6 h-6 rounded-full bg-[#1F4E79] text-white text-sm font-bold flex items-center justify-center">1</div>
-          <h3 class="font-semibold text-charcoal mt-2 mb-2">Listen</h3>
-          <p class="text-sm text-stone">You describe the bottleneck. We listen with an operator's ear, not a developer's checklist.</p>
+        <div class="bg-white rounded-sm border border-gray-200 p-6 relative">
+          <div class="absolute -top-3 left-6 w-6 h-6 rounded-full bg-primary text-white text-sm font-bold flex items-center justify-center">1</div>
+          <h3 class="font-semibold text-gray-900 mt-2 mb-2">Listen</h3>
+          <p class="text-sm text-gray-500">You describe the bottleneck. We listen with an operator's ear, not a developer's checklist.</p>
         </div>
-        <div class="bg-white rounded-sm border border-stone/15 p-6 relative">
-          <div class="absolute -top-3 left-6 w-6 h-6 rounded-full bg-[#1F4E79] text-white text-sm font-bold flex items-center justify-center">2</div>
-          <h3 class="font-semibold text-charcoal mt-2 mb-2">Evaluate</h3>
-          <p class="text-sm text-stone">We apply business judgment to identify the real problem—and the real cost of not fixing it.</p>
+        <div class="bg-white rounded-sm border border-gray-200 p-6 relative">
+          <div class="absolute -top-3 left-6 w-6 h-6 rounded-full bg-primary text-white text-sm font-bold flex items-center justify-center">2</div>
+          <h3 class="font-semibold text-gray-900 mt-2 mb-2">Evaluate</h3>
+          <p class="text-sm text-gray-500">We apply business judgment to identify the real problem—and the real cost of not fixing it.</p>
         </div>
-        <div class="bg-white rounded-sm border border-stone/15 p-6 relative">
-          <div class="absolute -top-3 left-6 w-6 h-6 rounded-full bg-[#1F4E79] text-white text-sm font-bold flex items-center justify-center">3</div>
-          <h3 class="font-semibold text-charcoal mt-2 mb-2">Propose</h3>
-          <p class="text-sm text-stone">We present options with clear reasoning. You choose the approach that fits your business.</p>
+        <div class="bg-white rounded-sm border border-gray-200 p-6 relative">
+          <div class="absolute -top-3 left-6 w-6 h-6 rounded-full bg-primary text-white text-sm font-bold flex items-center justify-center">3</div>
+          <h3 class="font-semibold text-gray-900 mt-2 mb-2">Propose</h3>
+          <p class="text-sm text-gray-500">We present options with clear reasoning. You choose the approach that fits your business.</p>
         </div>
-        <div class="bg-white rounded-sm border border-stone/15 p-6 relative">
-          <div class="absolute -top-3 left-6 w-6 h-6 rounded-full bg-[#6C8261] text-white text-sm font-bold flex items-center justify-center">4</div>
-          <h3 class="font-semibold text-charcoal mt-2 mb-2">Build</h3>
-          <p class="text-sm text-stone">We build the custom tool, integrate it, and train your team. You get working software, not just code.</p>
+        <div class="bg-white rounded-sm border border-gray-200 p-6 relative">
+          <div class="absolute -top-3 left-6 w-6 h-6 rounded-full bg-green-700 text-white text-sm font-bold flex items-center justify-center">4</div>
+          <h3 class="font-semibold text-gray-900 mt-2 mb-2">Build</h3>
+          <p class="text-sm text-gray-500">We build the custom tool, integrate it, and train your team. You get working software, not just code.</p>
         </div>
       </div>
     </section>
 
     <!-- CTA Section -->
-    <div class="bg-[#1F4E79] text-white rounded-sm p-8 md:p-10 text-center">
-      <h3 class="font-sans text-2xl md:text-3xl font-bold mb-4">Built by operators who get it</h3>
+    <div class="bg-primary text-white rounded-sm p-8 md:p-10 text-center">
+      <h3 class="text-2xl md:text-3xl font-bold mb-4">Built by operators who get it</h3>
       <p class="text-white/80 mb-6 max-w-xl mx-auto">Tell us what's slowing you down. We'll apply the same business judgment we use in our own companies to figure out the right fix.</p>
-      <a href="contact.html" class="inline-flex items-center gap-2 bg-[#C96B3B] hover:bg-[#A6552B] transition-colors text-white px-8 py-4 rounded-sm font-bold">Start the conversation →</a>
+      <a href="contact.html" class="inline-flex items-center gap-2 bg-accent hover:bg-accent-dark transition-colors text-white px-8 py-4 rounded-sm font-bold">Start the conversation →</a>
     </div>
   </main>
 
-  <footer class="py-12 text-center text-sm text-stone border-t border-stone/10">
+  <footer class="py-12 text-center text-sm text-gray-500 border-t border-gray-100">
     <p>&copy; 2026 Microve.ai</p>
   </footer>
 </body>
