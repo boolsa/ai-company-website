@@ -65,20 +65,45 @@
             <a href="../index.html" class="text-xl font-bold text-primary" aria-label="Microve.ai — home">
                 microve<span class="text-accent">.ai</span>
             </a>
+            
+            <!-- Desktop Menu -->
             <div class="hidden md:flex items-center space-x-6 text-sm">
                 <a href="../index.html" class="text-gray-600 hover:text-primary transition-colors">Home</a>
                 <a href="../what-we-do.html" class="text-gray-600 hover:text-primary transition-colors">What We Do</a>
-                <a href="../cases.html" class="text-gray-600 hover:text-primary transition-colors">Cases</a>
+                <a href="../cases.html" class="text-gray-900 font-medium">Cases</a>
                 <a href="../blog.html" class="text-gray-600 hover:text-primary transition-colors">Blog</a>
                 <a href="../about.html" class="text-gray-600 hover:text-primary transition-colors">About</a>
                 <a href="../pricing.html" class="text-gray-600 hover:text-primary transition-colors">Pricing</a>
                 <a href="../contact.html" class="text-gray-600 hover:text-primary transition-colors">Contact</a>
             </div>
+            
+            <!-- Mobile Hamburger Button -->
+            <button id="mobile-menu-btn" class="md:hidden p-2 rounded-md text-gray-600 hover:text-primary hover:bg-gray-100 transition-colors" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobile-menu">
+                <svg id="menu-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+                <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 border-t border-gray-200/80 pt-4">
+            <div class="flex flex-col space-y-3 text-sm">
+                <a href="../index.html" class="text-gray-600 hover:text-primary px-2 py-2 rounded-md hover:bg-gray-50 transition-colors">Home</a>
+                <a href="../what-we-do.html" class="text-gray-600 hover:text-primary px-2 py-2 rounded-md hover:bg-gray-50 transition-colors">What We Do</a>
+                <a href="../cases.html" class="text-gray-900 font-medium px-2 py-2 rounded-md hover:bg-gray-50 transition-colors">Cases</a>
+                <a href="../blog.html" class="text-gray-600 hover:text-primary px-2 py-2 rounded-md hover:bg-gray-50 transition-colors">Blog</a>
+                <a href="../about.html" class="text-gray-600 hover:text-primary px-2 py-2 rounded-md hover:bg-gray-50 transition-colors">About</a>
+                <a href="../pricing.html" class="text-gray-600 hover:text-primary px-2 py-2 rounded-md hover:bg-gray-50 transition-colors">Pricing</a>
+                <a href="../contact.html" class="text-gray-600 hover:text-primary px-2 py-2 rounded-md hover:bg-gray-50 transition-colors">Contact</a>
+            </div>
         </div>
     </div>
 </nav>
 
-  <main class="max-w-4xl mx-auto px-6 pt-16 pb-32">
+  <main id="main-content" class="max-w-4xl mx-auto px-6 pt-16 pb-32">
     <header class="mb-12">
       <div class="flex items-center gap-3 mb-6">
         <span class="text-xs font-mono bg-primary/10 text-primary px-3 py-1 rounded-full uppercase tracking-wider">Logistics</span>
@@ -128,7 +153,7 @@
       <section>
         <h2 class="text-2xl font-bold text-primary mb-6 flex items-center gap-3"><span class="flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary text-sm">4</span> We Implement</h2>
         <div class="grid md:grid-cols-2 gap-6">
-          <div class="bg-white border border-primary/10 p-6 rounded-lg shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 shadow-sm shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300">
+          <div class="bg-white border border-primary/10 p-6 rounded-lg shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300">
             <h3 class="font-bold text-gray-900 mb-4">Receipt Data Extraction</h3>
             <ul class="space-y-2 text-sm text-gray-600">
               <li class="flex items-start gap-2"><span class="text-accent mt-0.5">→</span> Monitors inbox for receipt emails</li>
@@ -137,7 +162,7 @@
               <li class="flex items-start gap-2"><span class="text-accent mt-0.5">→</span> Populates Google Sheet automatically</li>
             </ul>
           </div>
-          <div class="bg-white border border-primary/10 p-6 rounded-lg shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 shadow-sm shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300">
+          <div class="bg-white border border-primary/10 p-6 rounded-lg shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300">
             <h3 class="font-bold text-gray-900 mb-4">Smart File Organization</h3>
             <ul class="space-y-2 text-sm text-gray-600">
               <li class="flex items-start gap-2"><span class="text-accent mt-0.5">→</span> Creates folders (Manager → Year → Month)</li>
@@ -158,5 +183,73 @@
       </section>
     </article>
   </main>
+
+  <!-- Footer -->
+    <footer class="bg-white/95 backdrop-blur border-t border-gray-200/80">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+                <!-- Logo -->
+                <a href="../index.html" class="text-xl font-bold text-primary" aria-label="Microve.ai — home">
+                    microve<span class="text-accent">.ai</span>
+                </a>
+                
+                <!-- Navigation Links -->
+                <div class="flex flex-wrap gap-x-6 gap-y-2 text-sm">
+                    <a href="../index.html" class="text-gray-600 hover:text-primary transition-colors">Home</a>
+                    <a href="../what-we-do.html" class="text-gray-600 hover:text-primary transition-colors">What We Do</a>
+                    <a href="../cases.html" class="text-gray-900 font-medium">Cases</a>
+                    <a href="../blog.html" class="text-gray-600 hover:text-primary transition-colors">Blog</a>
+                    <a href="../about.html" class="text-gray-600 hover:text-primary transition-colors">About</a>
+                    <a href="../pricing.html" class="text-gray-600 hover:text-primary transition-colors">Pricing</a>
+                    <a href="../contact.html" class="text-gray-600 hover:text-primary transition-colors">Contact</a>
+                </div>
+                
+                <!-- Copyright -->
+                <p class="text-sm text-gray-500">© 2026 Microve.ai</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu JavaScript -->
+    <script>
+        (function() {
+            const menuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuIcon = document.getElementById('menu-icon');
+            const closeIcon = document.getElementById('close-icon');
+            
+            if (!menuBtn || !mobileMenu) return;
+            
+            function toggleMenu() {
+                const isOpen = !mobileMenu.classList.contains('hidden');
+                
+                if (isOpen) {
+                    mobileMenu.classList.add('hidden');
+                    menuIcon.classList.remove('hidden');
+                    closeIcon.classList.add('hidden');
+                    menuBtn.setAttribute('aria-expanded', 'false');
+                } else {
+                    mobileMenu.classList.remove('hidden');
+                    menuIcon.classList.add('hidden');
+                    closeIcon.classList.remove('hidden');
+                    menuBtn.setAttribute('aria-expanded', 'true');
+                }
+            }
+            
+            menuBtn.addEventListener('click', toggleMenu);
+            
+            // Close menu when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!menuBtn.contains(e.target) && !mobileMenu.contains(e.target) && !mobileMenu.classList.contains('hidden')) {
+                    toggleMenu();
+                }
+            });
+            
+            // Close menu when clicking a link
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', toggleMenu);
+            });
+        })();
+    </script>
 </body>
 </html>

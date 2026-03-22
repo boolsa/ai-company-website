@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Right Tool for the Right Bottleneck | Microve.ai</title>
-    <meta name="description" content="We build custom micro-tools using rule-based automation, AI, or both. We don">
+    <meta name="description" content="We build custom micro-tools using rule-based automation, AI, or both. Learn how we choose the right approach for each bottleneck.">
     
     <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -62,14 +62,39 @@
             <a href="index.html" class="text-xl font-bold text-primary" aria-label="Microve.ai — home">
                 microve<span class="text-accent">.ai</span>
             </a>
+            
+            <!-- Desktop Menu -->
             <div class="hidden md:flex items-center space-x-6 text-sm">
                 <a href="index.html" class="text-gray-600 hover:text-primary transition-colors">Home</a>
                 <a href="what-we-do.html" class="text-gray-600 hover:text-primary transition-colors">What We Do</a>
                 <a href="cases.html" class="text-gray-600 hover:text-primary transition-colors">Cases</a>
-                <a href="blog.html" class="text-gray-600 hover:text-primary transition-colors">Blog</a>
+                <a href="blog.html" class="text-gray-900 font-medium">Blog</a>
                 <a href="about.html" class="text-gray-600 hover:text-primary transition-colors">About</a>
                 <a href="pricing.html" class="text-gray-600 hover:text-primary transition-colors">Pricing</a>
                 <a href="contact.html" class="text-gray-600 hover:text-primary transition-colors">Contact</a>
+            </div>
+            
+            <!-- Mobile Hamburger Button -->
+            <button id="mobile-menu-btn" class="md:hidden p-2 rounded-md text-gray-600 hover:text-primary hover:bg-gray-100 transition-colors" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobile-menu">
+                <svg id="menu-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+                <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 border-t border-gray-200/80 pt-4">
+            <div class="flex flex-col space-y-3 text-sm">
+                <a href="index.html" class="text-gray-600 hover:text-primary px-2 py-2 rounded-md hover:bg-gray-50 transition-colors">Home</a>
+                <a href="what-we-do.html" class="text-gray-600 hover:text-primary px-2 py-2 rounded-md hover:bg-gray-50 transition-colors">What We Do</a>
+                <a href="cases.html" class="text-gray-600 hover:text-primary px-2 py-2 rounded-md hover:bg-gray-50 transition-colors">Cases</a>
+                <a href="blog.html" class="text-gray-900 font-medium px-2 py-2 rounded-md hover:bg-gray-50 transition-colors">Blog</a>
+                <a href="about.html" class="text-gray-600 hover:text-primary px-2 py-2 rounded-md hover:bg-gray-50 transition-colors">About</a>
+                <a href="pricing.html" class="text-gray-600 hover:text-primary px-2 py-2 rounded-md hover:bg-gray-50 transition-colors">Pricing</a>
+                <a href="contact.html" class="text-gray-600 hover:text-primary px-2 py-2 rounded-md hover:bg-gray-50 transition-colors">Contact</a>
             </div>
         </div>
     </div>
@@ -106,7 +131,7 @@
 
         <h2 class="text-2xl font-bold text-primary mt-10 mb-6">When we use rules-based automation</h2>
         <div class="space-y-4 mb-6 not-prose">
-          <div class="flex items-start gap-4 bg-white p-5 rounded-lg shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 border border-gray-200/10 shadow-sm shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300">
+          <div class="flex items-start gap-4 bg-white p-5 rounded-lg shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 border border-gray-200/10 shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300">
             <div class="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center flex-shrink-0 mt-0.5">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
             </div>
@@ -116,7 +141,7 @@
             </div>
           </div>
           
-          <div class="flex items-start gap-4 bg-white p-5 rounded-lg shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 border border-gray-200/10 shadow-sm shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300">
+          <div class="flex items-start gap-4 bg-white p-5 rounded-lg shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 border border-gray-200/10 shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300">
             <div class="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center flex-shrink-0 mt-0.5">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
             </div>
@@ -126,7 +151,7 @@
             </div>
           </div>
           
-          <div class="flex items-start gap-4 bg-white p-5 rounded-lg shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 border border-gray-200/10 shadow-sm shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300">
+          <div class="flex items-start gap-4 bg-white p-5 rounded-lg shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 border border-gray-200/10 shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300">
             <div class="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center flex-shrink-0 mt-0.5">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
             </div>
@@ -143,7 +168,7 @@
 
         <h2 class="text-2xl font-bold text-primary mt-10 mb-6">When we use AI automation</h2>
         <div class="space-y-4 mb-6 not-prose">
-          <div class="flex items-start gap-4 bg-white p-5 rounded-lg shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 border border-gray-200/10 shadow-sm shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300">
+          <div class="flex items-start gap-4 bg-white p-5 rounded-lg shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 border border-gray-200/10 shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300">
             <div class="w-10 h-10 rounded-full bg-accent/10 text-accent flex items-center justify-center flex-shrink-0 mt-0.5">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
             </div>
@@ -153,7 +178,7 @@
             </div>
           </div>
           
-          <div class="flex items-start gap-4 bg-white p-5 rounded-lg shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 border border-gray-200/10 shadow-sm shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300">
+          <div class="flex items-start gap-4 bg-white p-5 rounded-lg shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 border border-gray-200/10 shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300">
             <div class="w-10 h-10 rounded-full bg-accent/10 text-accent flex items-center justify-center flex-shrink-0 mt-0.5">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"></path></svg>
             </div>
@@ -163,7 +188,7 @@
             </div>
           </div>
           
-          <div class="flex items-start gap-4 bg-white p-5 rounded-lg shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 border border-gray-200/10 shadow-sm shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300">
+          <div class="flex items-start gap-4 bg-white p-5 rounded-lg shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 border border-gray-200/10 shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300">
             <div class="w-10 h-10 rounded-full bg-accent/10 text-accent flex items-center justify-center flex-shrink-0 mt-0.5">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"></path></svg>
             </div>
@@ -224,8 +249,72 @@
     </div>
   </main>
 
-  <footer class="py-12 text-center text-sm text-gray-600 border-t border-gray-200/10">
-    <p>&copy; 2026 Microve.ai</p>
-  </footer>
+  <!-- Footer -->
+    <footer class="bg-white/95 backdrop-blur border-t border-gray-200/80">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+                <!-- Logo -->
+                <a href="index.html" class="text-xl font-bold text-primary" aria-label="Microve.ai — home">
+                    microve<span class="text-accent">.ai</span>
+                </a>
+                
+                <!-- Navigation Links -->
+                <div class="flex flex-wrap gap-x-6 gap-y-2 text-sm">
+                    <a href="index.html" class="text-gray-600 hover:text-primary transition-colors">Home</a>
+                    <a href="what-we-do.html" class="text-gray-600 hover:text-primary transition-colors">What We Do</a>
+                    <a href="cases.html" class="text-gray-600 hover:text-primary transition-colors">Cases</a>
+                    <a href="blog.html" class="text-gray-900 font-medium">Blog</a>
+                    <a href="about.html" class="text-gray-600 hover:text-primary transition-colors">About</a>
+                    <a href="pricing.html" class="text-gray-600 hover:text-primary transition-colors">Pricing</a>
+                    <a href="contact.html" class="text-gray-600 hover:text-primary transition-colors">Contact</a>
+                </div>
+                
+                <!-- Copyright -->
+                <p class="text-sm text-gray-500">© 2026 Microve.ai</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu JavaScript -->
+    <script>
+        (function() {
+            const menuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuIcon = document.getElementById('menu-icon');
+            const closeIcon = document.getElementById('close-icon');
+            
+            if (!menuBtn || !mobileMenu) return;
+            
+            function toggleMenu() {
+                const isOpen = !mobileMenu.classList.contains('hidden');
+                
+                if (isOpen) {
+                    mobileMenu.classList.add('hidden');
+                    menuIcon.classList.remove('hidden');
+                    closeIcon.classList.add('hidden');
+                    menuBtn.setAttribute('aria-expanded', 'false');
+                } else {
+                    mobileMenu.classList.remove('hidden');
+                    menuIcon.classList.add('hidden');
+                    closeIcon.classList.remove('hidden');
+                    menuBtn.setAttribute('aria-expanded', 'true');
+                }
+            }
+            
+            menuBtn.addEventListener('click', toggleMenu);
+            
+            // Close menu when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!menuBtn.contains(e.target) && !mobileMenu.contains(e.target) && !mobileMenu.classList.contains('hidden')) {
+                    toggleMenu();
+                }
+            });
+            
+            // Close menu when clicking a link
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', toggleMenu);
+            });
+        })();
+    </script>
 </body>
 </html>
