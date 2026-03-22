@@ -23,14 +23,14 @@
                     },
                     colors: {
                         primary: {
-                            DEFAULT: '#1F4E79',
-                            dark: '#163a5c',
-                            light: '#2d6a9f',
+                            DEFAULT: '#1E293B',
+                            dark: '#0f172a',
+                            light: '#334155',
                         },
                         accent: {
-                            DEFAULT: '#C96B3B',
-                            dark: '#A6552B',
-                            light: '#d67f52',
+                            DEFAULT: '#F97316',
+                            dark: '#ea580c',
+                            light: '#fb923c',
                         },
                     }
                 }
@@ -48,7 +48,7 @@
             letter-spacing: -0.02em;
         }
         .gradient-line {
-            background: linear-gradient(to right, rgba(31, 78, 121, 0.2), rgba(31, 78, 121, 0.4), #6C8261);
+            background: linear-gradient(to right, rgba(30, 41, 59, 0.2), rgba(30, 41, 59, 0.4), #F97316);
         }
     </style>
 </head>
@@ -59,8 +59,8 @@
 </a>
 
 <!-- Navigation -->
-<nav class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-gray-100">
-    <div class="max-w-5xl mx-auto px-6 py-4">
+<nav class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-gray-200/80">
+    <div class="max-w-6xl mx-auto px-6 py-5">
         <div class="flex items-center justify-between">
             <a href="index.html" class="text-xl font-bold text-primary" aria-label="Microve.ai — home">
                 microve<span class="text-accent">.ai</span>
@@ -78,22 +78,22 @@
     </div>
 </nav>
 
-  <main class="max-w-5xl mx-auto px-6 pt-24 pb-32">
+  <main class="max-w-6xl mx-auto px-6 py-24">
     <div class="mb-16">
-      <p class="font-mono text-xs text-[#A6552B] tracking-widest mb-4 uppercase">[CASES]</p>
-      <h1 class="font-sans text-5xl md:text-6xl font-bold tracking-tight text-[#1F4E79] mb-6">Case Studies</h1>
+      <p class="font-mono text-xs text-accent tracking-widest mb-4 uppercase">[CASES]</p>
+      <h1 class="font-sans text-5xl md:text-6xl font-bold tracking-tight text-primary mb-6">Case Studies</h1>
       <p class="text-xl text-gray-600 max-w-2xl">Real workflow bottlenecks we've solved. The problems that held teams back, the automations we built, and the operational changes that followed.</p>
     </div>
 
     <!-- Filters -->
     <div class="flex flex-wrap gap-3 mb-12">
-      <button class="filter-btn active px-4 py-2 rounded-full border border-gray-200/20 text-sm font-medium hover:border-[#1F4E79] hover:text-[#1F4E79] bg-white" data-filter="all">All Industries</button>
-      <button class="filter-btn px-4 py-2 rounded-full border border-gray-200/20 text-sm font-medium hover:border-[#1F4E79] hover:text-[#1F4E79] bg-white" data-filter="logistics">Logistics</button>
-      <button class="filter-btn px-4 py-2 rounded-full border border-gray-200/20 text-sm font-medium hover:border-[#1F4E79] hover:text-[#1F4E79] bg-white" data-filter="real-estate">Real Estate</button>
-      <button class="filter-btn px-4 py-2 rounded-full border border-gray-200/20 text-sm font-medium hover:border-[#1F4E79] hover:text-[#1F4E79] bg-white" data-filter="insurance">Insurance</button>
-      <button class="filter-btn px-4 py-2 rounded-full border border-gray-200/20 text-sm font-medium hover:border-[#1F4E79] hover:text-[#1F4E79] bg-white" data-filter="retail">Retail</button>
-      <button class="filter-btn px-4 py-2 rounded-full border border-gray-200/20 text-sm font-medium hover:border-[#1F4E79] hover:text-[#1F4E79] bg-white" data-filter="operations">Operations</button>
-      <button class="filter-btn px-4 py-2 rounded-full border border-gray-200/20 text-sm font-medium hover:border-[#1F4E79] hover:text-[#1F4E79] bg-white" data-filter="home-services">Home Services</button>
+      <button class="filter-btn active px-4 py-2 rounded-full border border-gray-200/20 text-sm font-medium hover:border-primary hover:text-primary bg-white" data-filter="all">All Industries</button>
+      <button class="filter-btn px-4 py-2 rounded-full border border-gray-200/20 text-sm font-medium hover:border-primary hover:text-primary bg-white" data-filter="logistics">Logistics</button>
+      <button class="filter-btn px-4 py-2 rounded-full border border-gray-200/20 text-sm font-medium hover:border-primary hover:text-primary bg-white" data-filter="real-estate">Real Estate</button>
+      <button class="filter-btn px-4 py-2 rounded-full border border-gray-200/20 text-sm font-medium hover:border-primary hover:text-primary bg-white" data-filter="insurance">Insurance</button>
+      <button class="filter-btn px-4 py-2 rounded-full border border-gray-200/20 text-sm font-medium hover:border-primary hover:text-primary bg-white" data-filter="retail">Retail</button>
+      <button class="filter-btn px-4 py-2 rounded-full border border-gray-200/20 text-sm font-medium hover:border-primary hover:text-primary bg-white" data-filter="operations">Operations</button>
+      <button class="filter-btn px-4 py-2 rounded-full border border-gray-200/20 text-sm font-medium hover:border-primary hover:text-primary bg-white" data-filter="home-services">Home Services</button>
     </div>
 
     <!-- Grid Layout -->
@@ -101,114 +101,114 @@
       
       <!-- Case 1 -->
       <a href="cases/expense-report-chaos.html" class="case-card block group" data-category="logistics">
-        <div class="h-full bg-white/60 backdrop-blur-sm rounded-xl border border-[#1F4E79]/10 p-6 shadow-sm hover:shadow-md hover:border-[#1F4E79]/30 transition-all flex flex-col">
+        <div class="h-full bg-white/60 backdrop-blur-sm rounded-xl shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 border border-primary/10 p-6 shadow-sm hover:shadow-md hover:border-primary/30 transition-all flex flex-col shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300">
           <div class="mb-4">
-            <span class="font-mono text-xs bg-[#1F4E79]/5 text-[#1F4E79] px-2.5 py-1 rounded-full uppercase tracking-wider">Logistics</span>
+            <span class="font-mono text-xs bg-primary/5 text-primary px-2.5 py-1 rounded-full uppercase tracking-wider">Logistics</span>
           </div>
-          <div class="text-[#C96B3B] font-bold text-3xl mb-1">12→0.75</div>
+          <div class="text-accent font-bold text-3xl mb-1">12→0.75</div>
           <div class="text-xs text-gray-600 uppercase tracking-wider mb-6">hours/week</div>
           
-          <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-[#1F4E79] transition-colors">The Expense Report Chaos</h3>
+          <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">The Expense Report Chaos</h3>
           <p class="text-sm text-gray-600 mb-6 flex-grow">Field managers emailed receipt photos. Accounting spent 12 hours/week manually filing and entering data.</p>
           
-          <div class="text-[#1F4E79] text-sm font-semibold flex items-center gap-2 mt-auto">
+          <div class="text-primary text-sm font-semibold flex items-center gap-2 mt-auto">
             Read Case
-            <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
           </div>
         </div>
       </a>
 
       <!-- Case 2 -->
       <a href="cases/pricing-explanation-loop.html" class="case-card block group" data-category="home-services">
-        <div class="h-full bg-white/60 backdrop-blur-sm rounded-xl border border-[#1F4E79]/10 p-6 shadow-sm hover:shadow-md hover:border-[#1F4E79]/30 transition-all flex flex-col">
+        <div class="h-full bg-white/60 backdrop-blur-sm rounded-xl shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 border border-primary/10 p-6 shadow-sm hover:shadow-md hover:border-primary/30 transition-all flex flex-col shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300">
           <div class="mb-4">
-            <span class="font-mono text-xs bg-[#1F4E79]/5 text-[#1F4E79] px-2.5 py-1 rounded-full uppercase tracking-wider">Home Svcs</span>
+            <span class="font-mono text-xs bg-primary/5 text-primary px-2.5 py-1 rounded-full uppercase tracking-wider">Home Svcs</span>
           </div>
-          <div class="text-[#C96B3B] font-bold text-3xl mb-1">~15</div>
+          <div class="text-accent font-bold text-3xl mb-1">~15</div>
           <div class="text-xs text-gray-600 uppercase tracking-wider mb-6">hours/week</div>
           
-          <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-[#1F4E79] transition-colors">The Pricing Explanation Loop</h3>
+          <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">The Pricing Explanation Loop</h3>
           <p class="text-sm text-gray-600 mb-6 flex-grow">Sales team spent 40% of every call repeating pricing details to tire-kickers while qualified leads waited.</p>
           
-          <div class="text-[#1F4E79] text-sm font-semibold flex items-center gap-2 mt-auto">
+          <div class="text-primary text-sm font-semibold flex items-center gap-2 mt-auto">
             Read Case
-            <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
           </div>
         </div>
       </a>
 
       <!-- Case 3 -->
       <a href="cases/disappearing-knowledge.html" class="case-card block group" data-category="operations">
-        <div class="h-full bg-white/60 backdrop-blur-sm rounded-xl border border-[#1F4E79]/10 p-6 shadow-sm hover:shadow-md hover:border-[#1F4E79]/30 transition-all flex flex-col">
+        <div class="h-full bg-white/60 backdrop-blur-sm rounded-xl shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 border border-primary/10 p-6 shadow-sm hover:shadow-md hover:border-primary/30 transition-all flex flex-col shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300">
           <div class="mb-4">
-            <span class="font-mono text-xs bg-[#1F4E79]/5 text-[#1F4E79] px-2.5 py-1 rounded-full uppercase tracking-wider">Operations</span>
+            <span class="font-mono text-xs bg-primary/5 text-primary px-2.5 py-1 rounded-full uppercase tracking-wider">Operations</span>
           </div>
-          <div class="text-[#C96B3B] font-bold text-3xl mb-1">~8</div>
+          <div class="text-accent font-bold text-3xl mb-1">~8</div>
           <div class="text-xs text-gray-600 uppercase tracking-wider mb-6">hours/week</div>
           
-          <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-[#1F4E79] transition-colors">The Disappearing Knowledge</h3>
+          <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">The Disappearing Knowledge</h3>
           <p class="text-sm text-gray-600 mb-6 flex-grow">SOPs existed but were scattered in piles or trapped in employees' heads. New hires couldn't find answers.</p>
           
-          <div class="text-[#1F4E79] text-sm font-semibold flex items-center gap-2 mt-auto">
+          <div class="text-primary text-sm font-semibold flex items-center gap-2 mt-auto">
             Read Case
-            <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
           </div>
         </div>
       </a>
 
       <!-- Case 4 -->
       <a href="cases/kpi-detective.html" class="case-card block group" data-category="retail">
-        <div class="h-full bg-white/60 backdrop-blur-sm rounded-xl border border-[#1F4E79]/10 p-6 shadow-sm hover:shadow-md hover:border-[#1F4E79]/30 transition-all flex flex-col">
+        <div class="h-full bg-white/60 backdrop-blur-sm rounded-xl shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 border border-primary/10 p-6 shadow-sm hover:shadow-md hover:border-primary/30 transition-all flex flex-col shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300">
           <div class="mb-4">
-            <span class="font-mono text-xs bg-[#1F4E79]/5 text-[#1F4E79] px-2.5 py-1 rounded-full uppercase tracking-wider">Retail</span>
+            <span class="font-mono text-xs bg-primary/5 text-primary px-2.5 py-1 rounded-full uppercase tracking-wider">Retail</span>
           </div>
-          <div class="text-[#C96B3B] font-bold text-3xl mb-1">~10</div>
+          <div class="text-accent font-bold text-3xl mb-1">~10</div>
           <div class="text-xs text-gray-600 uppercase tracking-wider mb-6">hours/week</div>
           
-          <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-[#1F4E79] transition-colors">The KPI Detective Work</h3>
+          <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">The KPI Detective Work</h3>
           <p class="text-sm text-gray-600 mb-6 flex-grow">Tracking individual performance across 4 rotating locations was nearly impossible using fragmented POS data.</p>
           
-          <div class="text-[#1F4E79] text-sm font-semibold flex items-center gap-2 mt-auto">
+          <div class="text-primary text-sm font-semibold flex items-center gap-2 mt-auto">
             Read Case
-            <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
           </div>
         </div>
       </a>
 
       <!-- Case 5 -->
       <a href="cases/weekly-data-scrape.html" class="case-card block group" data-category="insurance">
-        <div class="h-full bg-white/60 backdrop-blur-sm rounded-xl border border-[#1F4E79]/10 p-6 shadow-sm hover:shadow-md hover:border-[#1F4E79]/30 transition-all flex flex-col">
+        <div class="h-full bg-white/60 backdrop-blur-sm rounded-xl shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 border border-primary/10 p-6 shadow-sm hover:shadow-md hover:border-primary/30 transition-all flex flex-col shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300">
           <div class="mb-4">
-            <span class="font-mono text-xs bg-[#1F4E79]/5 text-[#1F4E79] px-2.5 py-1 rounded-full uppercase tracking-wider">Insurance</span>
+            <span class="font-mono text-xs bg-primary/5 text-primary px-2.5 py-1 rounded-full uppercase tracking-wider">Insurance</span>
           </div>
-          <div class="text-[#C96B3B] font-bold text-3xl mb-1">~6</div>
+          <div class="text-accent font-bold text-3xl mb-1">~6</div>
           <div class="text-xs text-gray-600 uppercase tracking-wider mb-6">hours/week</div>
           
-          <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-[#1F4E79] transition-colors">The Weekly Data Scrape</h3>
+          <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">The Weekly Data Scrape</h3>
           <p class="text-sm text-gray-600 mb-6 flex-grow">A broker lost hours manually logging into carrier portals just to paste data into his custom Excel dashboard.</p>
           
-          <div class="text-[#1F4E79] text-sm font-semibold flex items-center gap-2 mt-auto">
+          <div class="text-primary text-sm font-semibold flex items-center gap-2 mt-auto">
             Read Case
-            <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
           </div>
         </div>
       </a>
 
       <!-- Case 6 -->
       <a href="cases/cold-lead-graveyard.html" class="case-card block group" data-category="real-estate">
-        <div class="h-full bg-white/60 backdrop-blur-sm rounded-xl border border-[#1F4E79]/10 p-6 shadow-sm hover:shadow-md hover:border-[#1F4E79]/30 transition-all flex flex-col">
+        <div class="h-full bg-white/60 backdrop-blur-sm rounded-xl shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 border border-primary/10 p-6 shadow-sm hover:shadow-md hover:border-primary/30 transition-all flex flex-col shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300">
           <div class="mb-4">
-            <span class="font-mono text-xs bg-[#1F4E79]/5 text-[#1F4E79] px-2.5 py-1 rounded-full uppercase tracking-wider">Real Estate</span>
+            <span class="font-mono text-xs bg-primary/5 text-primary px-2.5 py-1 rounded-full uppercase tracking-wider">Real Estate</span>
           </div>
-          <div class="text-[#C96B3B] font-bold text-3xl mb-1">100%</div>
+          <div class="text-accent font-bold text-3xl mb-1">100%</div>
           <div class="text-xs text-gray-600 uppercase tracking-wider mb-6">engagement</div>
           
-          <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-[#1F4E79] transition-colors">The Cold Lead Graveyard</h3>
+          <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">The Cold Lead Graveyard</h3>
           <p class="text-sm text-gray-600 mb-6 flex-grow">An agent had a goldmine of inbound leads but lacked the consistency to scrape, organize, and call them.</p>
           
-          <div class="text-[#1F4E79] text-sm font-semibold flex items-center gap-2 mt-auto">
+          <div class="text-primary text-sm font-semibold flex items-center gap-2 mt-auto">
             Read Case
-            <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
           </div>
         </div>
       </a>
@@ -224,12 +224,12 @@
     filterBtns.forEach(btn => {
       btn.addEventListener('click', () => {
         // Remove active class from all
-        filterBtns.forEach(b => b.classList.remove('active', 'bg-[#1F4E79]', 'text-white', 'border-[#1F4E79]'));
+        filterBtns.forEach(b => b.classList.remove('active', 'bg-primary', 'text-white', 'border-primary'));
         filterBtns.forEach(b => b.classList.add('bg-white', 'text-gray-900'));
         
         // Add active class to clicked
         btn.classList.remove('bg-white', 'text-gray-900');
-        btn.classList.add('active', 'bg-[#1F4E79]', 'text-white', 'border-[#1F4E79]');
+        btn.classList.add('active', 'bg-primary', 'text-white', 'border-primary');
         
         const filterValue = btn.getAttribute('data-filter');
         

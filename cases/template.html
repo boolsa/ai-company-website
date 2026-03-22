@@ -23,14 +23,14 @@
                     },
                     colors: {
                         primary: {
-                            DEFAULT: '#1F4E79',
-                            dark: '#163a5c',
-                            light: '#2d6a9f',
+                            DEFAULT: '#1E293B',
+                            dark: '#0f172a',
+                            light: '#334155',
                         },
                         accent: {
-                            DEFAULT: '#C96B3B',
-                            dark: '#A6552B',
-                            light: '#d67f52',
+                            DEFAULT: '#F97316',
+                            dark: '#ea580c',
+                            light: '#fb923c',
                         },
                     }
                 }
@@ -48,7 +48,7 @@
             letter-spacing: -0.02em;
         }
         .gradient-line {
-            background: linear-gradient(to right, rgba(31, 78, 121, 0.2), rgba(31, 78, 121, 0.4), #6C8261);
+            background: linear-gradient(to right, rgba(30, 41, 59, 0.2), rgba(30, 41, 59, 0.4), #F97316);
         }
     </style>
 </head>
@@ -59,8 +59,8 @@
 </a>
 
 <!-- Navigation -->
-<nav class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-gray-100">
-    <div class="max-w-5xl mx-auto px-6 py-4">
+<nav class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-gray-200/80">
+    <div class="max-w-6xl mx-auto px-6 py-5">
         <div class="flex items-center justify-between">
             <a href="../index.html" class="text-xl font-bold text-primary" aria-label="Microve.ai — home">
                 microve<span class="text-accent">.ai</span>
@@ -78,29 +78,29 @@
     </div>
 </nav>
 
-  <main class="max-w-3xl mx-auto px-6 pt-16 pb-32">
+  <main class="max-w-4xl mx-auto px-6 pt-16 pb-32">
     <!-- Header -->
     <header class="mb-12">
       <div class="flex items-center gap-3 mb-6">
-        <span class="text-xs font-mono bg-[#1F4E79]/10 text-[#1F4E79] px-3 py-1 rounded-full uppercase tracking-wider">{{INDUSTRY}}</span>
+        <span class="text-xs font-mono bg-primary/10 text-primary px-3 py-1 rounded-full uppercase tracking-wider">{{INDUSTRY}}</span>
         <span class="text-sm text-gray-600">{{COMPANY_INFO}}</span>
       </div>
-      <h1 class="font-sans text-4xl md:text-5xl font-bold text-[#1F4E79] mb-6 leading-tight">{{TITLE}}</h1>
+      <h1 class="font-sans text-4xl md:text-5xl font-bold text-primary mb-6 leading-[1.1]">{{TITLE}}</h1>
       <p class="text-xl text-gray-600 leading-relaxed">{{SUBTITLE}}</p>
     </header>
 
     <!-- Metrics -->
-    <div class="grid grid-cols-3 gap-4 mb-16 py-8 border-y border-[#1F4E79]/10">
+    <div class="grid grid-cols-3 gap-4 mb-16 py-8 border-y border-primary/10">
       <div class="text-center">
-        <div class="text-3xl font-bold text-[#C96B3B] mb-1">{{METRIC_1_VAL}}</div>
+        <div class="text-3xl font-bold text-accent mb-1">{{METRIC_1_VAL}}</div>
         <div class="text-xs text-gray-600 uppercase tracking-wider">{{METRIC_1_LABEL}}</div>
       </div>
-      <div class="text-center border-l border-[#1F4E79]/10">
-        <div class="text-3xl font-bold text-[#C96B3B] mb-1">{{METRIC_2_VAL}}</div>
+      <div class="text-center border-l border-primary/10">
+        <div class="text-3xl font-bold text-accent mb-1">{{METRIC_2_VAL}}</div>
         <div class="text-xs text-gray-600 uppercase tracking-wider">{{METRIC_2_LABEL}}</div>
       </div>
-      <div class="text-center border-l border-[#1F4E79]/10">
-        <div class="text-3xl font-bold text-[#C96B3B] mb-1">{{METRIC_3_VAL}}</div>
+      <div class="text-center border-l border-primary/10">
+        <div class="text-3xl font-bold text-accent mb-1">{{METRIC_3_VAL}}</div>
         <div class="text-xs text-gray-600 uppercase tracking-wider">{{METRIC_3_LABEL}}</div>
       </div>
     </div>
