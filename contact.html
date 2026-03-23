@@ -370,8 +370,9 @@
       
       // Check if Formspree ID has been configured
       const formAction = form.getAttribute('action');
-      if (formAction.includes('YOUR_FORMSPREE_FORM_ID')) {
-        alert('Please configure your Formspree form ID.\n\n1. Go to https://formspree.io/register\n2. Create a new form\n3. Replace YOUR_FORMSPREE_FORM_ID in the form action attribute');
+      console.log('Form action:', formAction); // Debug log
+      if (formAction.includes('YOUR_FORMSPREE_FORM_ID') || !formAction.includes('formspree.io/f/')) {
+        alert('Error: Form not properly configured. Form action is: ' + formAction + '\n\nPlease check the form action attribute in contact.html');
         return;
       }
       
