@@ -203,7 +203,17 @@
 
       <!-- Right Column: Form -->
       <section class="bg-white border border-gray-200/15 rounded-sm shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 p-7 shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300">
-      <form id="contactForm" class="space-y-5" novalidate>
+      <!-- IMPORTANT: Replace YOUR_FORMSPREE_FORM_ID with your actual Formspree form ID -->
+      <!-- 1. Go to https://formspree.io/register -->
+      <!-- 2. Create a new form -->
+      <!-- 3. Set notification email to: support@microve.ai -->
+      <!-- 4. Copy the form endpoint and replace below -->
+      <form id="contactForm" class="space-y-5" novalidate action="https://formspree.io/f/YOUR_FORMSPREE_FORM_ID" method="POST">
+        <!-- Hidden field for reply-to -->
+        <input type="hidden" name="_replyto" id="replyToField">
+        <!-- Hidden field for subject -->
+        <input type="hidden" name="_subject" value="New contact form submission from Microve.ai">
+        
         <div>
           <label for="name" class="block font-semibold mb-2">Name <span class="text-accent">*</span></label>
           <input id="name" name="name" required class="w-full border border-gray-200/30 rounded-sm px-4 py-3 focus:border-[#F97316] focus:ring-2 focus:ring-[#F97316]/20 transition-all duration-200" type="text" placeholder="Your name" aria-describedby="name-error">
@@ -351,47 +361,63 @@
       
       if (!isFormValid) return;
       
-      // Get form data
-      const formData = new FormData(form);
-      const name = formData.get('name');
-      const email = formData.get('email');
-      const company = formData.get('company') || 'Not provided';
-      const workflow = formData.get('workflow');
+      // Set reply-to field to user's email
+      const emailField = document.getElementById('email');
+      const replyToField = document.getElementById('replyToField');
+      if (emailField && replyToField) {
+        replyToField.value = emailField.value;
+      }
       
-      // Construct email body
-      const subject = encodeURIComponent('Contact Form Submission from ' + name);
-      const body = encodeURIComponent(
-        'Name: ' + name + '\n' +
-        'Email: ' + email + '\n' +
-        'Company: ' + company + '\n\n' +
-        'Workflow to automate:\n' + workflow
-      );
+      // Check if Formspree ID has been configured
+      const formAction = form.getAttribute('action');
+      if (formAction.includes('YOUR_FORMSPREE_FORM_ID')) {
+        alert('Please configure your Formspree form ID.\n\n1. Go to https://formspree.io/register\n2. Create a new form\n3. Replace YOUR_FORMSPREE_FORM_ID in the form action attribute');
+        return;
+      }
       
       // Show loading state
       submitBtn.disabled = true;
-      btnText.textContent = 'Opening email...';
+      btnText.textContent = 'Sending...';
       spinner.classList.remove('hidden');
       
-      // Open mailto link
-      window.location.href = 'mailto:support@microve.ai?subject=' + subject + '&body=' + body;
-      
-      // Reset form and show success after a brief delay
-      setTimeout(() => {
-        form.reset();
+      try {
+        // Submit to Formspree
+        const response = await fetch(formAction, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+        
+        if (response.ok) {
+          // Success - reset form and show message
+          form.reset();
+          submitBtn.disabled = false;
+          btnText.textContent = 'Send';
+          spinner.classList.add('hidden');
+          success.classList.remove('hidden');
+          success.focus();
+          
+          // Smooth scroll to success message
+          success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          
+          // Hide success after 5 seconds
+          setTimeout(() => {
+            success.classList.add('hidden');
+          }, 5000);
+        } else {
+          // Error from Formspree
+          const data = await response.json();
+          throw new Error(data.error || 'Form submission failed');
+        }
+      } catch (error) {
+        console.error('Form submission error:', error);
         submitBtn.disabled = false;
         btnText.textContent = 'Send';
         spinner.classList.add('hidden');
-        success.classList.remove('hidden');
-        success.focus();
-        
-        // Smooth scroll to success message
-        success.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        
-        // Hide success after 5 seconds
-        setTimeout(() => {
-          success.classList.add('hidden');
-        }, 5000);
-      }, 1000);
+        alert('Sorry, there was an error sending your message. Please try again or email us directly at support@microve.ai');
+      }
     });
     
     // Mobile Menu
